@@ -23,7 +23,7 @@ int countSubarrays(vector<int>& nums, int k)
 {
     int kIndex=find(nums.begin(),nums.end(),k)-nums.begin(); // nums[kIndex]=k
 
-    unordered_map<int,int> counts; // <sum,counts>:<[0,i]里大于k的元素数, 次数>
+    unordered_map<int,int> counts; // <prefix sum[0,i], 次数>
     counts[0]=1; // k
     int sum=0, ans=0;
     for (int i=0;i<nums.size();i++) 
@@ -31,10 +31,10 @@ int countSubarrays(vector<int>& nums, int k)
         sum+=sign(nums[i]-k); // nums[i], >k->1, <k->-1, =k->0; sum[0,i]
         if (i<kIndex)
             counts[sum]++; // left=i+1 
-        else               // [left,kIndex,right]
+        else               // [left, kIndex, i]
         {
-            int pre0=counts[sum]; // (left,i]
-            int pre1=counts[sum-1];
+            int pre0=counts[sum]; // (left,kIndex,i]
+            int pre1=counts[sum-1]; // [left, kIndex, i]
             ans+=pre0+pre1;
         }
     }
