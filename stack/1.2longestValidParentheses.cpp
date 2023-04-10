@@ -7,20 +7,19 @@ int longestValidParentheses(string s);
 int main()
 {
     string s = ")()())()"; // 输入
-    cout<<longestValidParentheses(s)<<endl; // 输出
+    cout<<longestValidParentheses(s)<<endl; // 输出:4 "()()"
     system("pause");
 }
 
 int longestValidParentheses(string s)
 {
-    int len = 0;    // 有效括号长度
-    stack<int> stk; // 建立栈，存储索引int
+    int len = 0;
+    stack<int> stk; // <index of s>
     stk.push(-1);  // 索引为0时，避免栈为空
-    // 从左往右遍历s
     for (int i = 0; i < s.size(); i++)
     {
         if (s[i] == '(') 
-            stk.push(i); //左括号的索引
+            stk.push(i);
         else
         {
             stk.pop();  // 出栈

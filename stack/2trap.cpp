@@ -13,9 +13,9 @@ int main()
 int trap(vector<int>&heights)
 {
     int n=heights.size();
-    int ans=0; // 接水量
-    if (n<=2) return ans;
+    if (n<=2) return 0;
 
+    int ans=0; // 接水量
     stack<int>sk; // 单调递减；依次存储左边，凹槽
     sk.push(0); // 存下标0
     

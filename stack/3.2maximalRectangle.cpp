@@ -12,11 +12,11 @@ int main()
         {'1','1','1','1','1'},
         {'1','0','0','1','0'},
     };  // 输入
-    cout<<"最大矩形面积："<<maximalRectangle(matrix)<<endl; // 输出:6
+    cout<<maximalRectangle(matrix)<<endl; // 输出:6
     system("pause");
 }
 
-// 柱形图的最大面积
+// 柱形图的最大面积(同3.1)
 int maxArea(vector<int>&heights)
 {
     heights.insert(heights.begin(),0); // 前后哨兵
