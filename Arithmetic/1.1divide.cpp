@@ -70,19 +70,18 @@ int divide(int dividend, int divisor)
         return true;
     };
     
-// 二分查找
-int left = 1, right = INT_MAX, ans = 0;
-while (left <= right) // 注意溢出，不能用left+right；并且不能使用除法
-{
-    int mid = left + ((right - left) >> 1); //等价于mid = (left + right)/2，1和INT_MAX的mid为偶数
-    
-    bool check = quickAdd(dividend,divisor, mid); //检查dividen<=divisor*mid是否成立
-    if (check) 
+    // 二分查找
+    int left = 1, right = INT_MAX, ans = 0;
+    while (left <= right) // 注意溢出，不能用left+right；并且不能使用除法
     {
+        int mid = left + ((right - left) >> 1); //等价于mid = (left + right)/2，1和INT_MAX的mid为偶数
+        
+        bool check = quickAdd(dividend,divisor, mid); //检查dividen<=divisor*mid是否成立
+        if (check) 
+        {
             ans = mid;
-            // 注意溢出
             if (mid == INT_MAX) break; // 防止溢出
-            left = mid + 1; // 这样mid一直为偶数
+            left = mid + 1; // mid一直为偶数
         }
         else 
             right = mid - 1; 
