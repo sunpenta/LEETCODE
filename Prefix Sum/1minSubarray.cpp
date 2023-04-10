@@ -1,5 +1,5 @@
 // 移除最短子数组后数组和能被p整除-prefix sum + hash  l-1590
-// 子数组：原数组的连续元素; 
+// 子数组：原数组的连续元素; nums.length∈[1,1e5], nums[i]∈[1,1e9]
 #include <bits/stdc++.h>
 using namespace std;
 int minSubarray(vector<int>&nums,int p);
@@ -11,7 +11,7 @@ int main()
     system("pause");
 }
 
-// 数组和%p=子数组和%p，则移除子数组后能被p整除
+// 数组和%p=子数组和%p，则sum(nums)%p==0
 int minSubarray(vector<int>&nums,int p)
 {
     int x=0;
