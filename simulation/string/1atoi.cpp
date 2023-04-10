@@ -22,7 +22,7 @@ int atoi(string s)
     while (s[i]>='0' && s[i]<='9' && i<s.size()) // 字符'0'-'9'，不要写错成数字
     {
         int r=s[i]-'0'; // 字符转成数字
-        //处理溢出   -2147483648 2147483647
+        // 处理溢出   -2147483648 2147483647
         if (res>INT_MAX/10 || (res==INT_MAX/10 && r>7)) 
             return flag>0? INT_MAX:INT_MIN;
         res=res*10+r;
