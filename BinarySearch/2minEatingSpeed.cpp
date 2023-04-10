@@ -1,5 +1,5 @@
 // 吃香蕉-binary search  l-875
-// piles.length∈[1,1e4], piles[i]∈[1,1e9]
+// piles.length∈[1,1e4], piles[i]∈[1,1e9], h∈[piles.length,1e9]
 #include <iostream>
 #include <vector>
 #include <algorithm>
