@@ -1,4 +1,4 @@
-// 移除最短子数组后数组和能被p整除-前缀和+哈希  l-1590
+// 移除最短子数组后数组和能被p整除-prefix sum + hash  l-1590
 // 子数组：原数组的连续元素
 #include <bits/stdc++.h>
 using namespace std;
