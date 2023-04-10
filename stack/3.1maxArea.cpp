@@ -20,9 +20,9 @@ int maxArea(vector<int>&heights)
     int maxarea=0, area=0;
     for (int i=0;i<n;i++) // 找到第1个比自己小的柱子
     {
-        while (heights[i]<heights[sk.top()] && !sk.empty()) // 注意while
+        while (heights[i]<heights[sk.top()] && !sk.empty()) // while not if
         {
-            int height=heights[sk.top()]; // 矩形高
+            int height=heights[sk.top()];
             sk.pop();
             if (!sk.empty())
             {
