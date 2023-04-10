@@ -17,6 +17,7 @@ int main()
 vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart)
 {
     vector<vector<int>> path;
+    path.push_back({rStart,cStart});
     int dx=0, dy=1, tmp;
     for (int n=0; path.size()<rows*cols-1; n++)
     {
@@ -26,6 +27,7 @@ vector<vector<int>> spiralMatrixIII(int rows, int cols, int rStart, int cStart)
             if (rStart>=0 && rStart<rows && cStart>=0 && cStart<cols)
                 path.push_back({rStart,cStart});
         }
-        tmp=dx, dx=dy, dy=-tmp;
+        tmp=dx, dx=dy, dy=-tmp; // turn right:[]
     }
+    return path;
 }
