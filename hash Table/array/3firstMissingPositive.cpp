@@ -21,14 +21,14 @@ int firstMissingPositive(vector<int>&nums)
         if (nums[i]==1) flag=false;
     }
     if (flag) return 1;
-    
-    // 在1-n范围外的数置1
+
+    // nums范围内的正数：[1,n],在范围外的数置1
     for (int i=0;i<n;i++)
     {
         if (nums[i]<=0 || nums[i]>n) 
             nums[i]=1;
     }
-    // 哈希
+    
     for (int i=0;i<n;i++)
     {
         int pos=nums[i]>0?nums[i]:-nums[i];
