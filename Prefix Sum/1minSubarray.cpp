@@ -20,8 +20,9 @@ int minSubarray(vector<int>&nums,int p)
     if (x==0) return 0;
 
     int numRemove=nums.size();
-    unordered_map<int,int>index; // <prefix sum%p, index> [0,index]
-    int y=0; index[0]=-1; // 前缀和
+    unordered_map<int,int> index; // <prefix sum%p, index> [0,index]
+    index[0]=-1; // 前缀和
+    int y=0;
     for (int i=0;i<nums.size();i++)
     {
         y=(y+nums[i])%p;
