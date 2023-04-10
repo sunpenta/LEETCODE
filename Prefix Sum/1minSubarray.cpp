@@ -1,5 +1,5 @@
 // 移除最短子数组后数组和能被p整除-prefix sum + hash  l-1590
-// 子数组：原数组的连续元素; nums.length∈[1,1e5], nums[i]∈[1,1e9]
+// 子数组：原数组元素连续; nums.length∈[1,1e5], nums[i]∈[1,1e9]
 #include <bits/stdc++.h>
 using namespace std;
 int minSubarray(vector<int>&nums,int p);

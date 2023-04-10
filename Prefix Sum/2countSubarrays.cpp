@@ -1,5 +1,5 @@
 // 统计中位数为k的子数组-prefix sum + hash  l-2488
-// 中位数：数组经排序, 位于中间或中间偏左的元素.例{2,1,3,4}中位数是2
+// 中位数：数组经排序, 位于中间或中间偏左的元素.例{2,1,3,4}中位数是2; 子数组：原数组元素连续
 #include <bits/stdc++.h>
 using namespace std;
 int countSubarrays(vector<int>& nums, int k);
