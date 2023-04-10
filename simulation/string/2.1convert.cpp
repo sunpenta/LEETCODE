@@ -1,4 +1,4 @@
-// N字形变换-模拟法1：找规律  l-6
+// N字形变换-找规律  l-6
 // 1 <= s.length <= 1000; 1 <= numRows <= 1000; s由英文字母（小写和大写）、',' 和 '.' 组成
 #include <bits/stdc++.h>
 using namespace std;
