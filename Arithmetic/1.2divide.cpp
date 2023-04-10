@@ -1,4 +1,5 @@
-// 除法（不能使用乘法、除法、取余运算）-类二分查找  l-29
+// 除法-类二分查找  l-29
+// 不能使用乘法、除法、取余运算
 #include <iostream>
 #include <vector>
 #include <limits.h>
