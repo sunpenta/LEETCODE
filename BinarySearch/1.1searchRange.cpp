@@ -31,13 +31,13 @@ vector<int> searchRange(vector<int>& nums, int target)
 {
     vector<int>ans(2,-1);
     int n=nums.size();
-    if (n==1) nums[0]==target?ans={0,0}:ans={-1,-1};
+    if (n==1)  nums[0]==target?ans={0,0}:ans={-1,-1};
 
     //一般情况-二分查找   
     ans[0]=binary_search(nums,target); // 第1个
     ans[1]=binary_search(nums,target+1)-1; // 最后1个
     if (ans[0]==n || nums[ans[0]]!=target) // 找到最后未找到，或找到元素不等于target
-        ans={-1,-1};
+        return {-1,-1};
     return ans;
 }
    
