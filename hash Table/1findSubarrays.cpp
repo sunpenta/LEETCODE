@@ -7,7 +7,7 @@ bool findSubarrays(vector<int>& nums);
 int main()
 {
     vector<int>nums={2,4,2}; // 输入
-    cout<<boolalpha<<findSubarrays(nums)<<endl; // 输出
+    cout<<boolalpha<<findSubarrays(nums)<<endl; // 输出:true 2+4=4+2
     system("pause");
 }
 
