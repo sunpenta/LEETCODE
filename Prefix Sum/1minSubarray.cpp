@@ -1,5 +1,5 @@
 // 移除最短子数组后数组和能被p整除-prefix sum + hash  l-1590
-// 子数组：原数组的连续元素
+// 子数组：原数组的连续元素; 
 #include <bits/stdc++.h>
 using namespace std;
 int minSubarray(vector<int>&nums,int p);
@@ -16,11 +16,11 @@ int minSubarray(vector<int>&nums,int p)
 {
     int x=0;
     for (auto num:nums)
-        x=(x+num)%p; // 防止溢出
+        x=(x+num)%p; // 防溢出
     if (x==0) return 0;
 
-    int numRemove=nums.size(); // 移除元素个数
-    unordered_map<int,int>index; // 前缀和的下标
+    int numRemove=nums.size();
+    unordered_map<int,int>index; // <prefix sum, index> [0,index]
     int y=0; index[0]=-1; // 前缀和
     for (int i=0;i<nums.size();i++)
     {
