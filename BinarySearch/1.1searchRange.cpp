@@ -6,7 +6,7 @@ vector<int> searchRange(vector<int>& nums, int target);
 
 int main()
 {
-    vector<int>nums{5,7,7,8,8,10};int target=8; // 输入
+    vector<int>nums{5,7,7,8,8,10}; int target=8; // 输入
     vector<int>ans=searchRange(nums,target); // 输出:{3,4}
     cout<<ans[0]<<" "<<ans[1]<<endl;
     system("pause");

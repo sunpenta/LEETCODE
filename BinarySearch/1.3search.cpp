@@ -14,10 +14,10 @@ int main()
 bool search(vector<int>&nums,int target)
 {
     int n=nums.size();
-    // 特殊情况：只有1个元素
     if (n==1) return nums[0]==target;
+
     int left=0; int right=n-1; // 左右下标
-    while (left<=right) // 有等号
+    while (left<=right) // =
     {
         int mid=(left+right)/2;
         if (nums[mid]==target) return true;
