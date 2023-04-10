@@ -26,9 +26,9 @@ int minSubarray(vector<int>&nums,int p)
     {
         cur=(cur+nums[i])%p;
         index[cur]=i;
-        int target=(cur-need+p)%p; // y-x可能为负
+        int target=(cur-need+p)%p; // 可能为负,[0,p)
         if (index.count(target)) // 最近的下标
-              numRemove=min(numRemove,i-index[target]);
+              numRemove=min(numRemove,i-index[target]); // [index[target], i]
     } // (right-left)%p=x%p => (right-x)%p=left%p
     return numRemove==nums.size()?-1:numRemove; // 若移除整个数组，返回-1
 }
