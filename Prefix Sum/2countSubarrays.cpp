@@ -28,7 +28,7 @@ int countSubarrays(vector<int>& nums, int k)
     int sum=0, ans=0;
     for (int i=0;i<nums.size();i++) 
     {
-        sum+=sign(nums[i]-k); // nums[i], >k->1, <k->-1, =k->0
+        sum+=sign(nums[i]-k); // nums[i], >k->1, <k->-1, =k->0; sum[0,i]
         if (i<kIndex)
             counts[sum]++; // left=i+1 
         else
