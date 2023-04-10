@@ -32,13 +32,12 @@ vector<int> searchRange(vector<int>& nums, int target)
     vector<int>ans(2);
     int n=nums.size();
     if (n==1 && nums[0]==target)  return {0,0};
-
-    //一般情况-二分查找   
+  
     ans[0]=binary_search(nums,target); // 第1个
     ans[1]=binary_search(nums,target+1)-1; // 最后1个
-    if (ans[0]==n || nums[ans[0]]!=target) // 找到最后未找到，或找到元素不等于target
-        return {-1,-1};
-    return ans;
+    if (ans[0]<n && nums[ans[0]]==target) 
+        return ans;
+    return {-1,-1}; // 找到最后未找到，或找到元素不等于target
 }
    
 
