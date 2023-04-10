@@ -1,4 +1,4 @@
-// valid word square-simulation  l-422
+// valid word square-simulation  l-422(会员))
 #include <bits/stdc++.h>
 using namespace std;
 bool validWordSquare(vector<string>& words);
