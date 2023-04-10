@@ -7,7 +7,7 @@ int minSubarray(vector<int>&nums,int p);
 int main()
 {
     vector<int>nums={3,1,4,2}; int p=6; // 输入
-    cout<<minSubarray(nums,p)<<endl; // 输出:1移除{4}
+    cout<<minSubarray(nums,p)<<endl; // 输出:1 移除{4}, sum{3,1,2}=6%6=0
     system("pause");
 }
 
