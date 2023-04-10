@@ -15,10 +15,21 @@ int main()
 // speed is k, eat all piles
 bool check(vector<int>& piles, int h, int k)
 {
-    
+    int time=0;
+    for (int pile:piles)
+        time+=(pile-1)/k+1; // 同ceil(double(pile)/double(k))
+    return time<=h;
 }
 int minEatingSpeed(vector<int>& piles, int h)
 {
     int left=1, right=*max_element(piles.begin(),piles.end());
-
+    while (left<right)
+    {
+        int mid=(left+right)/2;
+        if (check(piles,h,mid))
+            right=mid;
+        else
+            left=mid+1;
+    }
+    return left;
 }
