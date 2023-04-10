@@ -11,7 +11,7 @@ int main()
     system("pause");
 }
 
-// num正数->1，负数->-1，0->0
+// num为，正数->1，负数->-1，0->0
 int sign(int num)
 {
     if (num==0) return 0;

@@ -30,5 +30,5 @@ int minSubarray(vector<int>&nums,int p)
         if (index.count(target)) // 最近的下标
               numRemove=min(numRemove,i-index[target]); // (index[target], i]
     } // (right-left)%p=x%p => (right-x)%p=left%p
-    return numRemove==nums.size()?-1:numRemove; // 若移除整个数组，返回-1
+    return numRemove<n?numRemove:-1; // 若移除整个数组，返回-1
 }
