@@ -30,7 +30,22 @@ int divide(int dividend, int divisor)
     if (dividend == 0)
         return 0;
     
-    // 将所有正数取相反数，则只需要考虑一种情况
+    /*
+    // 特殊情况:
+    //被除数为0
+    if (dividend==0) return 0;
+    //除数等于1,包含被除数为INT_MIN的情况
+    if (divisor==1) return dividend;
+    //除数等于-1
+    if (divisor==-1)
+    {   
+        if (dividend>INT_MIN)
+            return -dividend;
+        else   
+            return INT_MAX; //被除数为INT_MIN的情况
+    }
+    */
+    // 被除数，除数都变负
     bool rev = false;
     if (dividend > 0)
     {
