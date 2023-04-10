@@ -14,21 +14,20 @@ int main()
 // 数组和%p=子数组和%p，则sum(nums)%p==0
 int minSubarray(vector<int>&nums,int p)
 {
-    int x=0;
+    int n=nums.size(), need=0, cur=0;
     for (auto num:nums)
-        x=(x+num)%p; // 防溢出
-    if (x==0) return 0;
+        need=(need+num)%p; // 防溢出
+    if (need==0) return 0;
 
     int numRemove=nums.size();
     unordered_map<int,int> index; // <prefix sum%p, index> [0,index]
-    index[0]=-1; // 前缀和
-    int y=0;
+    index[0]=-1;
     for (int i=0;i<nums.size();i++)
     {
-        y=(y+nums[i])%p;
-        index[y]=i;
-        int target=(y-x+p)%p; // y-x可能为负
-        if (index.count(target)>0) // 最近的下标
+        cur=(cur+nums[i])%p;
+        index[cur]=i;
+        int target=(cur-need+p)%p; // y-x可能为负
+        if (index.count(target)) // 最近的下标
               numRemove=min(numRemove,i-index[target]);
     } // (right-left)%p=x%p => (right-x)%p=left%p
     return numRemove==nums.size()?-1:numRemove; // 若移除整个数组，返回-1
