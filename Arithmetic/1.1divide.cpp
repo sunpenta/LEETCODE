@@ -43,7 +43,7 @@ int divide(int dividend, int divisor)
         rev = !rev;
     }
 
-    // 快速乘-需要判断 z * y >= x 是否成立
+    // 快速乘：判断 z * y >= x 是否成立； x(被除数) 和 y(除数) 是负数，z是正数
     auto quickAdd = [](int x,int y, int z)
     {  
         // x(被除数) 和 y(除数) 是负数，z() 是正数   
@@ -51,21 +51,20 @@ int divide(int dividend, int divisor)
         // z循环除2
         while (z)
         {   
-            if (z & 1) //按位与，z的二进制的最末位1，结果就不是0，为true。相当于if(n%2==1)
+            if (z & 1) // z的二进制的最末位1，相当于if(n%2==1)
             {  
-                // 需要保证 result + add >= x，防止溢出，用差来表示
+                // 保证 result + add >= x，防止溢出，用差来表示
                 if (result < x - add) return false; // y<x
                 result += add; // y
             }
 
             if (z != 1) 
             {
-                // 需要保证 add + add >= x
+                // 保证 add + add >= x
                 if (add < x - add)  return false;//y+y<x
                 add += add; //2add
             }
-            // 不能使用除法
-            z >>= 1; //按位右移1位，相当于/=2
+            z >>= 1; // 按位右移1位，相当于/=2
         }
         return true;
     };
