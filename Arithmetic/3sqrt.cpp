@@ -19,8 +19,8 @@ int sqrt(int x)
     while (left<right)
     {
         int mid=left+(right-left)/2; // 注意溢出
-        if (mid==x/mid) return mid; // 注意溢出
-        else if (mid<x/mid) // 注意溢出
+        if (mid==x/mid) return mid;
+        else if (mid<x/mid)
         {
             left=mid+1;
         }

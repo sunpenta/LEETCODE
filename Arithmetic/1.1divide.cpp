@@ -57,7 +57,7 @@ int divide(int dividend, int divisor)
         divisor = -divisor;
         rev = !rev;
     }
-
+    if(dividend>divisor) return 0;
     // 快速乘：判断 z * y >= x 是否成立； x(被除数) 和 y(除数) 是负数，z是正数
     auto quickAdd = [](int x,int y, int z)
     {  
