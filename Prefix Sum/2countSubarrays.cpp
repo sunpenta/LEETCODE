@@ -2,12 +2,12 @@
 // 中位数：数组经排序, 位于中间或中间偏左的元素.例{2,1,3,4}中位数是2
 #include <bits/stdc++.h>
 using namespace std;
-int countSubarrays(vector<int>&nums,int k);
+int countSubarrays(vector<int>& nums, int k);
 
 int main()
 {
     vector<int>nums={3,2,1,4,5}; int k=4; // 输入
-    cout<<countSubarrays(nums,k)<<endl; // 输出:3 {4}{4,5}{1,4,5}
+    cout<<countSubarrays(nums,k)<<endl; // 输出:3 {4} {4,5} {1,4,5}
     system("pause");
 }
 
@@ -19,12 +19,11 @@ int sign(int num)
 }
 
 // k(中位数)在中间，>k的元素数 = <k的元素数；k在中间偏左，>k的元素数 = <k的元素数+1
-int countSubarrays(vector<int>&nums,int k)
+int countSubarrays(vector<int>& nums, int k)
 {
-    auto it=find(nums.begin(),nums.end(),k);
-    int kIndex=it-nums.begin(); // k的下标
+    int kIndex=find(nums.begin(),nums.end(),k)-nums.begin(); // nums[kIndex]=k
 
-    unordered_map<int,int>counts; // <sum,counts>:<[0,i]大于k的元素数, 次数>
+    unordered_map<int,int> counts; // <sum,counts>:<[0,i]大于k的元素数, 次数>
     counts[0]=1; // k
     int sum=0, ans=0;
     for (int i=0;i<nums.size();i++) 
