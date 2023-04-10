@@ -1,5 +1,5 @@
-// 不同路径（有障碍）-动态规划+分类 l-63
-// 方向：向右或向下; '1'：障碍，'0'：空格
+// 不同路径（有障碍）-动态规划+分类 l-63  -DFSorRecursion/matrix/shortestPath
+// ->int; 方向：向右或向下; '1'：障碍，'0'：空格
 #include <bits/stdc++.h>
 using namespace std;
 int uniquePathsWithObstacles(vector<vector<int>>& grid);

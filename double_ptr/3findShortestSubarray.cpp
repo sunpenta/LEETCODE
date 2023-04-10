@@ -1,13 +1,13 @@
-// É¾³ý×î¶Ì×ÓÊý×éºóÊ£ÓàÊý×éÓÐÐò-Ë«Ö¸Õë  l-1574  -DP/vector/1|prefixSum
-// nums.length¡Ê[1,1e5]
+// É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-Ë«Ö¸ï¿½ï¿½  l-1574  -DP/vector/1 | prefixSum
+// nums.lengthï¿½ï¿½[1,1e5]
 #include <bits/stdc++.h>
 using namespace std;
 int findShortestSubarray(vector<int>& nums);
 
 int main()
 {
-    vector<int>nums={1,2,2,2,3,1,7,5,1,2,2,2,2,5,6}; // ÊäÈë
-    cout<<findShortestSubarray(nums)<<endl; // Êä³ö:5 Ê£ÓàÊý×é:{1,2,2,2,2,2,2,2,5,6}
+    vector<int>nums={1,2,2,2,3,1,7,5,1,2,2,2,2,5,6}; // ï¿½ï¿½ï¿½ï¿½
+    cout<<findShortestSubarray(nums)<<endl; // ï¿½ï¿½ï¿½:5 Ê£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½:{1,2,2,2,2,2,2,2,5,6}
     system("pause");
 }
 
@@ -18,14 +18,14 @@ int findShortestSubarray(vector<int>& nums)
 
     while (right>=0 && nums[right-1]<=nums[right])
         --right;
-    if (right==0) return 0; // Ô­Êý×éÓÐÐò
-    int ans=right; // É¾³ý[0,right-1]
+    if (right==0) return 0; // Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    int ans=right; // É¾ï¿½ï¿½[0,right-1]
 
     for (left=0;left==0 || nums[left-1]<=nums[left];left++)
     {
         while (right<n && nums[left]>nums[right]) 
             ++right;
-        ans=min(ans,right-left-1); // É¾³ý(left,right)
+        ans=min(ans,right-left-1); // É¾ï¿½ï¿½(left,right)
     }
     return ans;
 }

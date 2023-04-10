@@ -1,5 +1,5 @@
-// 不同路径（无障碍)  l-62
-// 方向向下或向右
+// 不同路径（无障碍)-dp  l-62
+// ->int; dfs TLE; 方向:向下, 或向右
 #include <bits/stdc++.h>
 using namespace std;
 int uniquePaths(int m,int n);

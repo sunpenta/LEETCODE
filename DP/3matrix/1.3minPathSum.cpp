@@ -9,7 +9,8 @@ int main()
     vector<vector<int>>grid={
         {1,2,3},
         {4,5,6},
-        {1,2,3}}; // 输入
+        {1,2,3}
+    }; // 输入
     cout<<minPathSum(grid)<<endl; // 输出:11 1->4->1->2->3 
     system("pause");
 }
