@@ -17,9 +17,9 @@ bool isPalindrome(string s)
     string news; // 存入新字符串
     for (char &ch:s)
     {
-        if (isalnum(ch)) // 是字母或数字
+        if (isalnum(ch)) // 字母或数字
             news+=tolower(ch);
     }
-    string rs(news.rbegin(),news.rend()); // 反转
-    return news==rs; // "0p!=p0"
+    string rs(news.rbegin(),news.rend()); // reverse
+    return news==rs; // "0p"!="p0"
 }

@@ -16,13 +16,11 @@ bool isPalindrome(int x)
     if (x < 0 || (x%10==0 && x!=0)) return false;
     if (x < 10)  return true; // 个位数
 
-    int reverted = 0;
-    int xx = x;
+    int reverted = 0, xx=x;
     while (xx)
-    {
-        int digit = xx % 10;
+    {   
+        reverted = reverted * 10 + xx % 10;
         xx/=10;
-        reverted = reverted * 10 + digit;
     }
     return x == reverted;
 }
