@@ -21,7 +21,6 @@ public:
         if (dividend == 0)
             return 0;
         
-        // 一般情况，使用类二分查找
         // 将所有的正数取相反数，这样就只需要考虑一种情况
         bool rev = false;
         if (dividend > 0)
