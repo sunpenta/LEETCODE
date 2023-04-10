@@ -6,7 +6,7 @@ bool validWordSquare(vector<string>& words);
 int main()
 {
     vector<string> words = {"abcd", "bnrt", "crm", "dt" }; // input
-    cout << boolalpha << validWordSquare(words)<<endl; // output
+    cout << boolalpha << validWordSquare(words)<<endl; // output:true row[0]="abcd"==col[0]="abcd"
     system("pause");
 }
 
