@@ -31,7 +31,7 @@ int countSubarrays(vector<int>& nums, int k)
         sum+=sign(nums[i]-k); // nums[i], >k->1, <k->-1, =k->0; sum[0,i]
         if (i<kIndex)
             counts[sum]++; // left=i+1 
-        else
+        else               // [left,kIndex,right]
         {
             int pre0=counts[sum]; // (left,i]
             int pre1=counts[sum-1];
