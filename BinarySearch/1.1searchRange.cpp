@@ -13,7 +13,7 @@ int main()
 }
 
 // 大于等于target的第一个元素下标
-int binary_search(vector<int>&nums,int target)
+int binary_search(vector<int>&nums, int target)
 {
     int left=0,right=nums.size();
     while (left<right)
@@ -31,9 +31,7 @@ vector<int> searchRange(vector<int>& nums, int target)
 {
     vector<int>ans(2,-1);
     int n=nums.size();
-    //特殊情况：只有1个元素
-    if (n==1)
-        nums[0]==target?ans={0,0}:ans={-1,-1};
+    if (n==1) nums[0]==target?ans={0,0}:ans={-1,-1};
 
     //一般情况-二分查找   
     ans[0]=binary_search(nums,target); // 第1个

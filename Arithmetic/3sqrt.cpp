@@ -29,5 +29,5 @@ int sqrt(int x)
             right=mid;
         }
     }
-    return left-1; // left是mid*mid大于x的第1个数，只保留整数部分，那么left-1
+    return left-1; // left是平方大于x的第1个数，只保留整数部分，那么left-1
 }
