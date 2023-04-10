@@ -6,7 +6,7 @@ double pow(double x,int n);
 
 int main()
 {
-    double x=4;long n=3; // 输入
+    double x=4; long n=3; // 输入
     cout<<quickMul(x,n)<<endl; // 输出
     system("pause");
 }
