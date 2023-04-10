@@ -13,7 +13,7 @@ int main()
 
 int longestConsecutive(vector<int>nums)
 {
-    unordered_set<int>hash(nums.begin(),nums.end());
+    unordered_set<int> hash(nums.begin(),nums.end());
     int maxlen=0;
     for (int num:hash)
     {
@@ -21,9 +21,8 @@ int longestConsecutive(vector<int>nums)
         {
             int curnum=num, len=1;
             while (hash.count(++curnum))
-            {
                 len++;
-            }
+            
             maxlen=max(maxlen,len);
         }
     }
