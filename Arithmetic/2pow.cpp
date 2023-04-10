@@ -1,6 +1,6 @@
 // 快速幂-迭代
 // -100.0 < x < 100.0; INT_MIN <= n <= INT_MAX; -1e4 <= x^n <= 1e4
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 double pow(double x,int n);
 

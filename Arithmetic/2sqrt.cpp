@@ -1,6 +1,6 @@
 // x的平方根-二分查找 l-69
 // 结果只保留整数部分，小数部分舍去
-# include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 int sqrt(int x);
 

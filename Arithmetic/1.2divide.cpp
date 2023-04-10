@@ -1,5 +1,7 @@
 // 除法（不能使用乘法、除法、取余运算）-类二分查找  l-29
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <limits.h>
 using namespace std;
 
 class Solution {
