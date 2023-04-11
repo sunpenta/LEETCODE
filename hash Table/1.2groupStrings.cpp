@@ -25,7 +25,7 @@ vector<vector<string>> groupStrings(vector<string>& strs)
     {
         string tmp=str;
         for (int i=0;i<tmp.length();i++)
-            tmp[i]=(str[i]-str[0]+26)%26; // 当超过z或者小于a时，取模处理防止越界; +26
+            tmp[i]=(str[i]-str[0]+26)%26; // 当>z或者<a时，+26取模处理防止越界; 
         if (!map.count(tmp))
         {
             map[tmp]=index++;
