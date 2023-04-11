@@ -22,7 +22,7 @@ string reverseWords(string s)
             int j=i; // next space or end
             for (; s[j]!=' ' && j<n; j++) {};
             reverse(s.begin()+i, s.begin()+j);
-            i=j-1;
+            i=j;
         }
     }
     return s;
