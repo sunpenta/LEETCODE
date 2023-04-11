@@ -9,7 +9,6 @@ int main()
 {
     string s="Let's take LeetCode contest"; // input
     cout<<reverseWords(s)<<endl; // output
-    system("pause");
 }
 
 string reverseWords(string s)
