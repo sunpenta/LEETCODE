@@ -1,4 +1,4 @@
-// 正则表达式匹配-动态规划+分类  l-44  -Greed/3
+// 正则表达式匹配-dp+分类  l-44  -Greed/3
 // '?' 可以匹配任何单个字符,'*' 可以匹配任意字符串（包括空字符串）
 #include <bits/stdc++.h>
 using namespace std;
