@@ -18,7 +18,7 @@ string reverseWords(string s)
     for (int i=0; i<n; i++)
     {
         int j=i; // next space or end
-        for (;s[j]!=' ' && j<n; j++) {};
+        for (; s[j]!=' ' && j<n; j++) {};
         reverse(s.begin()+i, s.begin()+j);
         i=j-1;
     }
