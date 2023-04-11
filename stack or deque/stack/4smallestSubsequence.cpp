@@ -43,8 +43,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
                 lastInd=index;
                 dq.pop_front();
                 break; // ?
-            }
-            
+            }            
         }
     }
     return ans;
