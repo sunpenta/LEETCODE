@@ -8,8 +8,8 @@ bool checkInclusion(string s1, string s2);
 
 int main()
 {
-    string s1="ab", s2=; // input
-    cout<<boolalpha<<checkInclusion(s1,s2)<<endl; // output
+    string s1="hello", s2="oohelabe"; // input
+    cout<<boolalpha<<checkInclusion(s1,s2)<<endl; // output:false
     system("pause");
 }
 
@@ -19,8 +19,8 @@ bool checkInclusion(string s1, string s2)
     array<int, 26> mp1, mp2;
     for (char ch:s1) mp1[ch-'a']++;
 
-    for (int i=0; i<m; i++) mp2[s2[i]-'a']++;
-    if (mp1==mp2) return true;
+    for (int i=0; i<m; i++) ++mp2[s2[i]-'a'];
+    if (mp1==mp2) return true; // int[]不能判==
     for (int i=m; i<n; i++)
     {
         --mp2[s2[i-m]-'a'];
