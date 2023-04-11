@@ -6,7 +6,7 @@ vector<vector<string>> groupStrings(vector<string>& strs);
 int main()
 {   
     vector<string>strs={"abc", "bcd", "xyz", "nat", "bat"};  // 输入        
-    vector<vector<string>>ans=groupStrings(strs); // 输出: {}
+    vector<vector<string>>ans=groupStrings(strs); // 输出: {{"abc", "bcd", "xyz"}, {"nat"}, {"bat"}}
     for (int i=0;i<ans.size();i++)
     {
         for (auto str:ans[i])
