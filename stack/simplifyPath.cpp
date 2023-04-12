@@ -30,18 +30,18 @@ string simplifyPath(string path)
     string str;
     while (ss>>str)
     {
-        if (str!="." && str!="..") // 注意:" ",不是字符' '
+        if (str!="." && str!="..") // note:" ",不是字符' '
             sk.push(str);
         else if (str==".." && !sk.empty()) // 返回上1级
             sk.pop();
     }
     if (sk.empty()) return "/";
-    
+
     string res=""; // stack -> res
     while (!sk.empty())
     {
         string tmp=sk.top(); sk.pop();
-        res='/'+tmp+res;  // 注意顺序LIFO     
+        res='/'+tmp+res;  // note:LIFO     
     }
     return res;
 }
