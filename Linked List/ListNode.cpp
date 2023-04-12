@@ -30,12 +30,12 @@ ListNode::ListNode(int arr[])
 
 void ListNode::printList()
 {
-	ListNode *current = this;
-	while(current)
+	ListNode *cur = this;
+	while(cur)
 	{
-		printf("%d",current->val);
-		if(current->next!=NULL)
-			printf("->");
-		current = current->next; // 指向下一个节点
+		cout<<cur->val;
+		if(cur->next)
+			cout<<"->";
+		cur = cur->next; // 指向下一个节点
 	}
 }
