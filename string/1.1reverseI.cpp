@@ -5,7 +5,8 @@ string reverseI(string s);
 
 int main()
 {
-
+    string s="leetcode"; // input
+    
 }
 
 string reverseI(string s)
