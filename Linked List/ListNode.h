@@ -14,6 +14,6 @@ struct ListNode {
     // 输入输出
 	ListNode(int arr[]);
 	~ListNode();
-	void printList(ListNode* head);
+	void print();
 };
 #endif
