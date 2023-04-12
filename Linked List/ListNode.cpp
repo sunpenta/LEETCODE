@@ -19,7 +19,6 @@ ListNode::ListNode(int arr[])
     int len=sizeof(arr)/sizeof(arr[0]);
     if (len==0) // ?
 	this->val = arr[0];
-    // this->next =nullptr;
 	ListNode *cur = this;
 	for(int i = 1; i<len; i++) //遍历n-1次
 	{
