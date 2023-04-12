@@ -1,5 +1,5 @@
 // 移除'*' - newstr  l-2390
-// 时间复杂度:O(n) 空间复杂度:O(1)
+// 移除'*'和它相邻左边的非'*'字母，； 时间复杂度:O(n) 空间复杂度:O(1)
 #include <iostream>
 using namespace std;
 string removeStars(string s);
@@ -17,7 +17,7 @@ string removeStars(string s)
     {
         if (s[i]!='*')
             res+=s[i];
-        else if (s[i]=='*' && s.size())
+        else
             s.pop_back();
     }
     return res;
