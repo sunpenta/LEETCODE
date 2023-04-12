@@ -1,4 +1,4 @@
-// reverse words in string - 原地修改 l-557
+// reverse words in string - 原地 l-557
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -18,8 +18,8 @@ string reverseWords(string s)
     {
         if (s[i]!=' ')
         {
-            int j=i; // next space or end
-            for (; s[j]!=' ' && j<n; j++) {};
+            int j=i;
+            for (; s[j]!=' ' && j<n; j++) {}; // next space or end
             reverse(s.begin()+i, s.begin()+j);
             i=j;
         }
