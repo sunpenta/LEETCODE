@@ -28,8 +28,13 @@ ListNode::ListNode(int arr[])
 	}
 }
 
-void ListNode::printList()
+void ListNode::printList(ListNode* head)
 {
+    if (!head) 
+    {
+        cout<<"Null";
+        return;
+    }
 	ListNode *cur = this;
 	while(cur)
 	{
