@@ -1,4 +1,4 @@
-// 字典序最小k-length subsequence with Occurrences of a Letter
+// 字典序最小的 k-length subsequence with Occurrences of a Letter
 #include <iostream>
 #include <vector>
 #include <deque>
@@ -16,8 +16,7 @@ int main()
 string smallestSubsequence(string s, int k, char letter, int repetition) 
 {
     int n=s.length();
-    // number of letter in s[i,n-1]
-    int cnt[n];
+    int cnt[n]; // number of letter in s[i,n-1]
     cnt[n-1]=(s[n-1]==letter);
     for (int i=n-2;i>=0;--i) cnt[i]=cnt[i+1]+(s[i]==letter);
     
