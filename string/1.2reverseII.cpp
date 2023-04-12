@@ -1,4 +1,4 @@
-// reverse k-length string per 2k- Group  l-541
+// reverse k-length string per 2k-Group - 原地 l-541
 // 若剩下的<k,reverse all; 剩下的∈[k,2k),reverse 前k;  时间复杂度:O(n) 空间复杂度:O(1)
 #include <iostream>
 #include <string>
