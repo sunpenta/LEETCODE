@@ -18,7 +18,7 @@ string reverseII(string s, int k)
         if (n-i<k)
             reverse(s.begin()+i,s.end());
         else
-            reverse(s.begin()+i, s.begin()+k);
+            reverse(s.begin()+i, s.begin()+i+k);
     }
     return s;
 }
