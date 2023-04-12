@@ -5,8 +5,8 @@ string reverseI(string s);
 
 int main()
 {
-    string s="leetcode"; // input
-    
+    string s="edocteel"; // input
+    cout<<reverseI(s)<<endl; // output
 }
 
 string reverseI(string s)
