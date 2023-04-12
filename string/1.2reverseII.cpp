@@ -1,1 +1,1 @@
-// reverse  
+// reverse k-length string per 2k-length 
