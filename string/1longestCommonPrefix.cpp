@@ -17,9 +17,9 @@ string longestCommonPrefix(vector<string>& strs)
 {
     string ans;
     if (strs.empty()) return ans;
-    //排序
+
     sort(strs.begin(), strs.end()); 
-    // 比较头尾
+
     string s1 = strs.front();
     string s2 = strs.back();
     int ll;
