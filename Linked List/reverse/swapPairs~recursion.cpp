@@ -1,13 +1,9 @@
 //两两交换链表中的节点 - 原地  l-24
 /* 输入：head = [1,2,3,4]
    输出：       [2,1,4,3] */
-#include <list>
-struct ListNode 
-{
-    int val;
-    ListNode *next;
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+#include <iostream>
+#include <ListNode.h>
+using namespace std;
 
 // 1.递归法
 ListNode* swapPairs(ListNode* head) 
