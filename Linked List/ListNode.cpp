@@ -33,11 +33,9 @@ void ListNode::print()
     if (!this) 
         cout<<"Null";
 	ListNode *cur = this;
-	while(cur)
+	while(cur->next)
 	{
-		cout<<cur->val;
-		if(cur->next)
-			cout<<"->";
+		cout<<cur->val<<"->";
 		cur = cur->next; // 指向下一个节点
 	}
 }
