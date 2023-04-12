@@ -14,14 +14,17 @@ ListNode::~ListNode()
 	}
 }
 
-ListNode::ListNode(int arr[],int n)
+ListNode::ListNode(int arr[])
 {
-	this->val = arr[0];this->next =nullptr;
-	ListNode *current = this;
-	for(int i = 1;i<n;i++) //遍历n-1次
+    int len=sizeof(arr)/sizeof(arr[0]);
+    if (len==0) // ?
+	this->val = arr[0];
+    // this->next =nullptr;
+	ListNode *cur = this;
+	for(int i = 1; i<len; i++) //遍历n-1次
 	{
-		current->next = new ListNode(arr[i]);
-		current = current->next;//指向下一个节点
+		cur->next = new ListNode(arr[i]);
+		cur = cur->next;//指向下一个节点
 	}
 }
 
