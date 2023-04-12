@@ -1,5 +1,5 @@
 // 移除'*' - newstr  l-2390
-// 移除'*'和它相邻左边的非'*'字母，每个输入都make operation possible； 时间复杂度:O(n) 空间复杂度:O(1)
+// 移除'*'和它相邻左边的非'*'字母，每个输入都make operation possible；时间复杂度:O(n) 空间复杂度:O(1); 原地TLE
 #include <iostream>
 using namespace std;
 string removeStars(string s);

@@ -14,7 +14,7 @@ string simplifyPath(string path);
 int main()
 {
     string path="/a//.././c/"; // input
-    cout<<simplifyPath(path)<<endl; // output:"/c"
+    cout<<simplifyPath(path)<<endl; // output: "/c"
 }
 
 string simplifyPath(string path)
