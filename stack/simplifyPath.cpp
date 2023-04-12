@@ -25,10 +25,9 @@ string simplifyPath(string path)
         if (ch=='/') ch=' '; // 把所有'/'换成空格
     }
 
-    stringstream ss(path); // 把path分割为单词
+    stringstream ss(path); string str;
     stack<string> sk;
-    string str;
-    while (ss>>str)
+    while (ss>>str) // 把path分割为单词
     {
         if (str!="." && str!="..") // note:" ",不是字符' '
             sk.push(str);
