@@ -28,19 +28,20 @@ string simplifyPath(string path)
     stringstream ss(path); // 把path分割为单词
     stack<string> sk;
     string str;
-    while (ss>>str) // 从os对象读取字符串str
+    while (ss>>str)
     {
-        if (str!="." && str!="..") // 注意格式" ",不是字符' '
+        if (str!="." && str!="..") // 注意:" ",不是字符' '
             sk.push(str);
-        else if (str==".." && !sk.empty()) // 已忽略"."
-            sk.pop(); // 当/之间的字符串是..且前面有东西
+        else if (str==".." && !sk.empty()) // 返回上1级
+            sk.pop();
     }
-    string s; // 简化后
+    if (sk.empty()) return "/";
+    
+    string res=""; // stack -> res
     while (!sk.empty())
     {
-        s='/'+sk.top()+s;  // 注意顺序LIFO
-        sk.pop();
+        string tmp=sk.top(); sk.pop();
+        res='/'+tmp+res;  // 注意顺序LIFO     
     }
-    if (s!="") return s;
-    return "/";
+    return res;
 }
