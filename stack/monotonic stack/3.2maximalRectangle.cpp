@@ -1,4 +1,4 @@
-// 最大矩形-单调递增栈  l-85
+// 最大矩形 - monotonic stack  l-85
 // matrix[i][j] 为 '0' 或 '1'
 #include <bits/stdc++.h>
 using namespace std;

@@ -1,4 +1,4 @@
-// 柱状图中的最大矩形-单调递增栈  l-84
+// 柱状图中的最大矩形 - monotonic stack  l-84
 #include <bits/stdc++.h>
 using namespace std;
 int maxArea(vector<int>&heights);

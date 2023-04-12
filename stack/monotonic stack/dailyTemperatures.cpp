@@ -1,4 +1,4 @@
-// 每日温度 - stack   l-739
+// 每日温度 - monotonic stack   l-739
 // 等？天有更高温度; 时间复杂度:O(n) 空间复杂度:O(1)
 #include <iostream>
 #include <vector>

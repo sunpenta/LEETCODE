@@ -1,4 +1,4 @@
-// 接雨水-单调递减栈  l-42  -double_ptr | -dp
+// 接雨水- monotonic stack  l-42  -double_ptr | -dp
 #include <bits/stdc++.h>
 using namespace std;
 int trap(vector<int>&heights);

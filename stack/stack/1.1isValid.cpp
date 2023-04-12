@@ -1,4 +1,4 @@
-// 有效括号-栈+hash l-20
+// 有效括号-栈 + hash l-20
 #include <bits/stdc++.h>
 using namespace std;
 bool isValid(string s);
