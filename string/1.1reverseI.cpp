@@ -1,4 +1,5 @@
 // reverse string - 原地  l-344
+// 时间复杂度:O(n) 空间复杂度:O(1)
 #include <iostream>
 using namespace std;
 string reverseI(string s);
