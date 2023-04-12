@@ -9,3 +9,7 @@ int main()
 
 }
 
+string reverseII(string s, int k)
+{
+    int n=s.length();
+}
