@@ -12,7 +12,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
     // 输入输出
-	ListNode(int arr[],int n);
+	ListNode(int arr[], int n);
 	~ListNode();
 	void printList();
 };
