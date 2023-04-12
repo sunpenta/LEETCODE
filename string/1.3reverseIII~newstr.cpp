@@ -9,7 +9,7 @@ string reverseWords(string s);
 int main()
 {
     string s="s'teL ekat edoCteeL tsetnoc"; // input
-    cout<<reverseWords(s)<<endl; // output
+    cout<<reverseWords(s)<<endl; // output:"Let's take LeetCode contest"
 }
 
 string reverseWords(string s)

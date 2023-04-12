@@ -7,7 +7,7 @@ string reverseI(string s);
 int main()
 {
     string s="edocteel"; // input
-    cout<<reverseI(s)<<endl; // output
+    cout<<reverseI(s)<<endl; // output:"leetcode"
 }
 
 string reverseI(string s)

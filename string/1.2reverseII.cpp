@@ -9,7 +9,7 @@ string reverseII(string s, int k);
 int main()
 {
     string s="bacdfeg"; int k=2; // input
-    cout<<reverseII(s,k)<<endl; // output
+    cout<<reverseII(s,k)<<endl; // output:"abcdefg"
 }
 
 string reverseII(string s, int k)
