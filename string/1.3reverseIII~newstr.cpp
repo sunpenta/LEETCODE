@@ -1,4 +1,4 @@
-// reverse words in string - stringstream l-557
+// reverse words in string - stringstream + newstr l-557
 // slower than inplace 时间复杂度:
 #include <iostream>
 #include <sstream>
