@@ -1,14 +1,15 @@
 // 两两交换链表中的节点 - 迭代  l-24
 #include <iostream>
-#include <ListNode.h>
+#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
 using namespace std;
-ListNode* removeNthFromEnd(ListNode* head,int n);
+ListNode* swapPairs(ListNode* head);
 
 int main()
 {
     int arr[]={2,1,4,3};
-    ListNode head(arr); int n=2; // input
-    
+    ListNode* head=creatList(arr, 4); // input
+    ListNode* res=swapPairs(head); // output: 1 2 3 4
+    res->print();
 }
 
 ListNode* swapPairs(ListNode* head) 

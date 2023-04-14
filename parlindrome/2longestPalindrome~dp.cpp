@@ -6,9 +6,14 @@ string longestPalindrome(string s);
 
 int main()
 {
+    string s=string(1,'a');
+    cout<<s<<endl;
+
+    /*
     string s = "babad"; // 输入
     cout <<longestPalindrome(s) << endl; // 输出:bab
     system("pause");
+    */
 }
 
 string longestPalindrome(string s)

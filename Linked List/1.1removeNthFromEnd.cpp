@@ -1,15 +1,17 @@
 // 删除链表倒数第N个节点  l-19
-#include <bits/stdc++.h>
+#include <iostream>
+#include "ListNode.cpp"
 using namespace std;
+ListNode* removeNthFromEnd(ListNode* head,int n);
 
-struct ListNode 
+int main()
 {
-    int val;
-    ListNode *next;
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+    int arr[4]={2,1,4,3}; int n=2;
+    ListNode* head=creatList(arr, 4);
+    ListNode* res=removeNthFromEnd(head,n);
+    res->print(); // output: 2 1 3
+}
 
-// 计算链表的长度
 int getLength(ListNode* head)
 {
     int length=0;
@@ -20,7 +22,7 @@ int getLength(ListNode* head)
     }
     return length;
 }
-// 删除链表的第n个节点
+
 ListNode* removeNthFromEnd(ListNode* head,int n)
 {
     ListNode* dummy=new ListNode(0,head); // 因为头节点可能被删除，在头节点之前，新建一个哑节点

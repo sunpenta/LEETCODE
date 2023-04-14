@@ -7,10 +7,12 @@ bool exist(vector<vector<char>>&board,string &word);
 int main()
 {
     vector<vector<char>>board={
-        {'A','B','C','E'},
-        {'S','F','C','S'},
-        {'A','D','E','E'}}; 
-    string word = "ABCCED"; // 输入
+        {'o','a','a','n'},
+        {'e','t','a','e'},
+        {'i','h','k','r'},
+        {'i','f','l','v'}
+    }; 
+    string word = "eat"; // 输入
     cout<<boolalpha<<exist(board,word)<<endl; // 输出:true
     system("pause");
 }
