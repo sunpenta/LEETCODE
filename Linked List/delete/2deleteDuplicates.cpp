@@ -11,6 +11,7 @@ int main()
     ListNode head(arr, n);
     ListNode* res=deleteDuplicates(&head);
     res->print(); // output: 1 2 3
+    return 0;
 }
 
 ListNode* deleteDuplicates(ListNode* head)

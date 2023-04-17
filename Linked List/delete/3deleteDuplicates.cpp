@@ -11,6 +11,7 @@ int main()
     ListNode head(arr, n);
     ListNode* res=deleteDuplicates(&head);
     res->print(); // output: 2
+    return 0;
 }
 
 ListNode* deleteDuplicates(ListNode* head)
@@ -22,7 +23,7 @@ ListNode* deleteDuplicates(ListNode* head)
         if (cur->next->val==cur->next->next->val)
         {
             int tmp=cur->next->val;
-            while (cur->next!=nullptr && cur->next->val==tmp)
+            while (cur->next && cur->next->val==tmp)
                 cur->next=cur->next->next; // 1个不留
         }
         else
