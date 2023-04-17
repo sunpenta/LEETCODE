@@ -19,7 +19,7 @@ int main()
     for (int i=0;i<k;i++)
         nums[i]=ans[i];
 
-    //输出
+    // 输出
     cout<<k<<endl;
     for (auto num:nums) 
         cout<< num <<" ";

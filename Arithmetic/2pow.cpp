@@ -8,7 +8,7 @@ int main()
 {
     double x=4; long n=3; // 输入
     cout<<quickMul(x,n)<<endl; // 输出
-    system("pause");
+    return 0;
 }
 
 double quickMul(double x,long n)

@@ -10,7 +10,7 @@ int main()
     int dividend = INT_MIN, divisor = 3; // 输入：被除数，除数
     int ans=divide(dividend,divisor);  //输出
     cout<<ans<<endl;
-    system("pause");
+    return 0;
 }
 
 int divide(int dividend, int divisor)

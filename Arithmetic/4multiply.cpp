@@ -6,13 +6,13 @@ string multiply(string num1, string num2);
 
 int main()
 {
-    string num1="123"; string num2 = "456"; // 输入
-    cout<<multiply(num1,num2)<<endl; // 输出
-    system("pause");
+    string num1="123", num2 = "456"; // 输入
+    cout<<multiply(num1, num2)<<endl; // 输出
+    return 0;
 }
 
 // 边转换，边乘，边加
-string multiply(string num1,string num2)
+string multiply(string num1, string num2)
 {
     // 特殊情况：0乘任何数为0
     if (num1=="0" || num2=="0") return "0";

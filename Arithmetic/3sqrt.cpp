@@ -8,7 +8,7 @@ int main()
 {
     int x=7; // 输入
     cout<<sqrt(x)<<endl; // 输出
-    system("pause");
+    return 0;
 }
 
 int sqrt(int x)
