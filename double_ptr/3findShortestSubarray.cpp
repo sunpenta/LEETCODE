@@ -1,5 +1,5 @@
 // ɾ������������ʣ����������-˫ָ��  l-1574  -DP/vector/1 | prefixSum
-// nums.length��[1,1e5]
+// nums.length∈[1,1e5]
 #include <bits/stdc++.h>
 using namespace std;
 int findShortestSubarray(vector<int>& nums);
