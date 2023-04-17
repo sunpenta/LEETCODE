@@ -11,7 +11,7 @@ int main()
     int numCourses=4; vector<vector<int>> prerequisites={{1,0},{2,0},{3,1},{3,2}}; // input
     vector<int> res=findOrder(numCourses,prerequisites);
     for (int i:res) cout<<i<<" "; // output:{0,1,2,3} 或 {0,2,1,3}
-    system("pause");
+    return 0;;
 }
 
 vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites)

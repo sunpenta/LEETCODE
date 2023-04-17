@@ -9,7 +9,7 @@ int main()
     vector<int>nums{1,5,1}; //输入
     nextPermutation(nums); //输出
     for (auto num:nums) cout<<num<<" ";
-    system("pause");
+    return 0;
 }
 
 // 下一个典序更大的排列
