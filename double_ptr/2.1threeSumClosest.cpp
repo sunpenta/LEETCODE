@@ -8,7 +8,7 @@ int main()
 {
     vector<int> nums = {-1, 2, 1, -4}; int target = 1; // 输入
     cout<<threeSumClosest(nums,target)<<endl; // 输出:2
-    system("pause");
+    return 0;
 }
 
 // 三数之和最接近目标值

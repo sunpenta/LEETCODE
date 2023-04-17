@@ -8,7 +8,7 @@ int main()
 {
     int m=4, n=5; // 输入：矩阵m * n
     cout<<uniquePaths(m,n)<<endl; // 输出
-    system("pause");
+    return 0;
 }
 // 状态转移方程:dp[i][j]=dp[i-1][j]+dp[i][j-1]; 
 int uniquePaths(int m,int n)

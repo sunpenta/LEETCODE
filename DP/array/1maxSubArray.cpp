@@ -8,7 +8,7 @@ int main()
 {
     vector<int>nums={-2,1,-3,4,-1,2,1,-5,4}; // 输入
     cout<<maxSubArray(nums)<<endl; // 输出:6 {4,-1,2,1}
-    system("pause");
+    return 0;
 }
 
 //  带上你累赘就丢掉

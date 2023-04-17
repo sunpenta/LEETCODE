@@ -12,7 +12,7 @@ int main()
         {1,2,3}
     }; // 输入
     cout<<minPathSum(grid)<<endl; // 输出:11 1->4->1->2->3 
-    system("pause");
+    return 0;
 }
 // 状态转移方程:dp[i][j]=min(min(dp[i-1][j],dp[i][j-1])+grid[i][j]
 int minPathSum(vector<vector<int>>& grid)

@@ -9,7 +9,7 @@ int main()
     vector<int>nums={4,5,2,1}, queries={3,10,21}; // 输入
     vector<int>ans=answerQueries(nums,queries); // 输出:{2,3,4}
     for (int num:ans) cout<<num<<" ";
-    system("pause");
+    return 0;
 }
 
 vector<int>answerQueries(vector<int>& nums,vector<int>& queries)

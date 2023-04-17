@@ -8,7 +8,7 @@ int main()
 {
     vector<int>heights={0,1,0,2,1,0,1,3,2,1,2,1}; // 输入
     cout<<trap(heights)<<endl; // 输出:6
-    system("pause");
+    return 0;
 }
 
 int trap(vector<int>&heights)

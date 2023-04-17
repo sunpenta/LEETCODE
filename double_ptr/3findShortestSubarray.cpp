@@ -1,4 +1,4 @@
-//  移除最短子数组使数组有序 -˫ָ��  l-1574  -DP/vector/1 | prefixSum
+//  移除最短子数组使数组有序 - double ptr  l-1574  -DP/vector/1 | prefixSum
 // nums.length∈[1,1e5]
 #include <iostream>
 #include <vector>
@@ -19,7 +19,7 @@ int findShortestSubarray(vector<int>& nums)
 
     while (right>=0 && nums[right-1]<=nums[right])
         --right;
-    if (right==0) return 0; // 
+    if (right==0) return 0; // 原数组有序
     int ans=right; // [0,right-1]
 
     for (left=0;left==0 || nums[left-1]<=nums[left];left++)

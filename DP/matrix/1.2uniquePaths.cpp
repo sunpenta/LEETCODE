@@ -12,7 +12,7 @@ int main()
         {0,0,0}
     }; // 输入
     cout<<uniquePathsWithObstacles(grid)<<endl; // 输出:1
-    system("pause");
+    return 0;
 }
 
 int uniquePathsWithObstacles(vector<vector<int>>& grid)

@@ -11,7 +11,7 @@ int main()
         {6,5,7}
     }; // 输入
     cout<<minTotal(triangle)<<endl; // 输出:9 1+3+5=9
-    system("pause");
+    return 0;
 }
 
 int minTotal(vector<vector<int>>&triangle)
