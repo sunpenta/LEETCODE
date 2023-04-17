@@ -1,6 +1,7 @@
-// 删除有序数组中的重复项（原地） l-26
+// 删除有序数组中的重复项 - 新数组 l-26  -Linked List/delete/deleteDuplicates
 #include <bits/stdc++.h>
 using namespace std;
+vector<int> deleteDuplicates(vector<int>& nums);
 
 int main()
 { 
@@ -24,4 +25,9 @@ int main()
     for (auto num:nums) 
         cout<< num <<" ";
     system("pause");  
+}
+
+vector<int> deleteDuplicates(vector<int>& nums)
+{
+
 }
