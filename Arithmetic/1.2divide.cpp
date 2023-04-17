@@ -1,5 +1,5 @@
 // 除法-类二分查找  l-29
-// 不能使用乘法、除法、取余运算
+// 不能使用乘法、除法、取余运算; 时间复杂度：O（logN)
 #include <iostream>
 #include <vector>
 #include <limits.h>

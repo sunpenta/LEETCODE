@@ -6,9 +6,10 @@ ListNode* swapPairs(ListNode* head);
 
 int main()
 {
-    int arr[]={2,1,4,3};
-    ListNode* head=creatList(arr, 4); // input
-    ListNode* res=swapPairs(head); // output: 1 2 3 4
+    int arr[]={2,1,4,3}; // input
+    int n=sizeof(arr)/sizeof(arr[0]);
+    ListNode head(arr, n); 
+    ListNode* res=swapPairs(&head); // output: 1 2 3 4
     res->print();
 }
 

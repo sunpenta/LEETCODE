@@ -16,7 +16,7 @@ double quickMul(double x,long n)
     double ans=1.0;
     while (n)
     {
-        if (n%2==1) //n的最低位是1
+        if (n%2==1) // n的最低位是1
             ans*=x;
         x*=x;
         n/=2;       

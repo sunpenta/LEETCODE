@@ -1,4 +1,4 @@
-// 字符串相乘-模拟 l-43
+// 字符串相乘 - 模拟 l-43
 // 不能转换整数；1 <= num1.length, num2.length <= 200; num1 和 num2 只能由数字组成
 #include <bits/stdc++.h>
 using namespace std;

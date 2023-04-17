@@ -1,5 +1,5 @@
 // 除法-二分查找+快速乘  l-29
-// 不能使用乘法、除法、取余运算
+// 不能使用乘法、除法、取余运算；时间复杂度：O（logN)
 #include <iostream>
 #include <limits.h>
 using namespace std;
@@ -32,11 +32,11 @@ int divide(int dividend, int divisor)
     
     /*
     // 特殊情况:
-    //被除数为0
+    // 被除数为0
     if (dividend==0) return 0;
-    //除数等于1,包含被除数为INT_MIN的情况
+    // 除数等于1,包含被除数为INT_MIN的情况
     if (divisor==1) return dividend;
-    //除数等于-1
+    // 除数等于-1
     if (divisor==-1)
     {   
         if (dividend>INT_MIN)
@@ -66,7 +66,7 @@ int divide(int dividend, int divisor)
         // z循环除2
         while (z)
         {   
-            if (z & 1) // z的二进制的最末位1，相当于if(n%2==1)
+            if (z & 1) // 奇数；z的二进制的最末位1，相当于if(n%2==1)
             {  
                 // 保证 result + add >= x，防止溢出，用差来表示
                 if (result < x - add) return false; // y<x

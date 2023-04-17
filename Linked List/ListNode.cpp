@@ -2,20 +2,20 @@
 #include "ListNode.h"
 using namespace std;
 
-ListNode* creatList(int arr[], int n)
+ListNode::ListNode(int arr[], int n)
 {
-    ListNode* head = new ListNode(arr[0]);
-    ListNode* cur = head;
+    this->val=arr[0]; 
+    ListNode* cur=this;
     for (int i=1; i<n; i++) {
         cur->next = new ListNode(arr[i]);
         cur = cur->next;
     }
-    return head;
+    cur->next=nullptr;
 }
 
 void ListNode::print()
 {
-	ListNode *cur = this;
+	ListNode* cur = this;
 	while(cur)
 	{
 		cout<<cur->val<<" ";
@@ -23,3 +23,6 @@ void ListNode::print()
 	}
 	cout<<endl;
 }
+
+
+
