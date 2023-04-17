@@ -8,7 +8,7 @@ int findShortestSubarray(vector<int>& nums);
 int main()
 {
     vector<int>nums={1,2,2,2,3,1,7,5,1,2,2,2,2,5,6}; // input
-    cout<<findShortestSubarray(nums)<<endl; // output:5 ʣ������:{1,2,2,2,2,2,2,2,5,6}
+    cout<<findShortestSubarray(nums)<<endl; // output:5 remove{3,1,7,5,1} -> {1,2,2,2,2,2,2,2,5,6}
     return 0;
 }
 
@@ -19,14 +19,14 @@ int findShortestSubarray(vector<int>& nums)
 
     while (right>=0 && nums[right-1]<=nums[right])
         --right;
-    if (right==0) return 0; // ԭ��������
-    int ans=right; // ɾ��[0,right-1]
+    if (right==0) return 0; // 
+    int ans=right; // [0,right-1]
 
     for (left=0;left==0 || nums[left-1]<=nums[left];left++)
     {
         while (right<n && nums[left]>nums[right]) 
             ++right;
-        ans=min(ans,right-left-1); // ɾ��(left,right)
+        ans=min(ans,right-left-1); // nums(left,right)
     }
     return ans;
 }
