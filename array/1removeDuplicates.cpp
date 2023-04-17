@@ -5,11 +5,11 @@ using namespace std;
 int deleteDuplicates(vector<int>& nums);
 
 int main()
-{ 
+{
     vector<int> nums={0,0,1,1,1,2,2,3,3,4}; // 输入
     cout<<deleteDuplicates(nums)<<endl; // output: 5
     for (int num:nums) // 改变原数组
-        cout<< num <<" "; // 0 1 2 3 4
+        cout<< num << " "; // 0 1 2 3 4
     return 0;  
 }
 
@@ -23,8 +23,6 @@ int deleteDuplicates(vector<int>& nums)
             continue;
         res.emplace_back(nums[i]);
     }
-    int k=res.size();
-
-    for (int i=0;i<k;i++)
-        nums[i]=res[i];
+    nums=res;
+    return res.size();
 }
