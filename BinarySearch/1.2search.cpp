@@ -8,7 +8,7 @@ int main()
 { 
     vector<int>nums{4,5,6,7,0,1,2}; int target=0; // 输入
     cout<<search(nums,target)<<endl; // 输出：4
-    system("pause");
+    return 0;;
 }
 
 int search(vector<int>&nums,int target)

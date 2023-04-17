@@ -10,7 +10,7 @@ int main()
 {
     vector<int> piles={30,11,23,4,20}; int h=5; // input
     cout<<minEatingSpeed(piles,h)<<endl; // output:30
-    system("pause");
+    return 0;
 }
 // speed is k, eat all piles
 bool check(vector<int>& piles, int h, int k)

@@ -14,7 +14,7 @@ int main()
             cout<<num<<" ";
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 vector<vector<int>>combinationSum(vector<int>candidates,int target)

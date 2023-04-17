@@ -8,7 +8,7 @@ int main()
 {
     vector<int>nums={1,2,2,2,3,1,7,5,1,2,2,2,2,5,6}; // ����
     cout<<findShortestSubarray(nums)<<endl; // ���:5 ʣ������:{1,2,2,2,2,2,2,2,5,6}
-    system("pause");
+    return 0;
 }
 
 int findShortestSubarray(vector<int>& nums)

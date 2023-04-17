@@ -8,7 +8,7 @@ int main()
 {
     vector<int>nums={2,2,3,3,1,4,4}; // 输入
     cout<<singleNumber(nums)<<endl; // 输出
-    system("pause");
+    return 0;
 }
 
 // num^0=num; num^num=0

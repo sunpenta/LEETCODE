@@ -9,7 +9,7 @@ int main()
     string beginWord="hit", endWord = "cog";
     vector<string>wordList = {"hot","dot","dog","lot","log","cog"}; // 输入
     cout<<ladderLength(beginWord,endWord,wordList)<<endl; // 输出:5 {}
-    system("pause");
+    return 0;;
 }
 
 unordered_map<string,int>wordId; // <word，id>

@@ -10,7 +10,7 @@ int main()
     vector<int>gray=grayCode(n); // 输出:{0,1,3,2,6,7,5,4}
     for (auto num:gray)
         cout<<num<<" ";
-    system("pause");
+    return 0;
 }
 
 vector<int>grayCode(int n)

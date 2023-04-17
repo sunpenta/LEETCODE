@@ -8,7 +8,7 @@ int main()
 {
     vector<int>nums={2,2,2,1}; // 输入
     cout<<singleNumber(nums)<<endl; // 输出
-    system("pause");
+    return 0;
 }
 
 // ans二进制第i位=所有元素第i位1的个数 mod 3

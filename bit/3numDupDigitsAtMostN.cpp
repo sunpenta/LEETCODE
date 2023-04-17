@@ -7,7 +7,7 @@ int main()
 {
     int n=100; // 输入:[1,...,100]
     cout<<numDupDigitsAtMostN(n)<<endl; // 输出:10
-    system("pause");
+    return 0;
 }
 
 int fact(int val) // 阶乘

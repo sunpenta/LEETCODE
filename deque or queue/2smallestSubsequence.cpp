@@ -9,7 +9,7 @@ int main()
 {
     string s="leetcode"; int k = 4; char letter = 'e'; int repetition = 2; // input
     cout<<smallestSubsequence(s,k,letter,repetition)<<endl; // output:"ecde"
-    system("pause");
+    return 0;
 }
 
 

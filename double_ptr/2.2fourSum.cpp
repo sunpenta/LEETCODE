@@ -14,7 +14,7 @@ int main()
             cout << ans[i][j] << " ";
         cout << endl;
     }  
-    system("pause");
+    return 0;
 }
 
 // 四数之和等于目标值

@@ -14,7 +14,7 @@ int main()
             cout<<num<<" ";
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 void dfs(vector<vector<int>>&allsubsets,vector<int>&subset,vector<int>&nums,int index)

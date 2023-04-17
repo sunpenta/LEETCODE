@@ -8,7 +8,7 @@ int main()
 {
     vector<int> height= {1,8,6,2,5,4,8,3,7}; // 输入
     cout<<maxArea(height)<<endl; // 输出:49 {8,6,2,5,4,8,3,7}
-    system("pause");
+    return 0;
 }
 
 int maxArea(vector<int>&heights)

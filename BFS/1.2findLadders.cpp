@@ -15,7 +15,7 @@ int main()
             cout<<str<<" ";
         cout<<endl;
     }
-    system("pause");
+    return 0;;
 }
 // 从单词s开始搜索，直到找到beginWord
 void dfs(vector<vector<string>>&ans,vector<string>&path,unordered_map<string,int>&dist,string beginWord,string s)

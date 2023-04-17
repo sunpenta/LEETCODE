@@ -14,7 +14,7 @@ int main()
             cout<<num<<" ";
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 // combine:子数组和=target; ans:所有子数组; index:搜索起点candidates[index]

@@ -10,7 +10,7 @@ int main()
     vector<int> nums={1,2,3,3,-1,7,6}; int k=3; // input
     vector<int> res=maxSlidingWindow(nums,k); // ouput
     for (int i:res) cout<<i<<" ";
-    system("pause");
+    return 0;
 }
 
 vector<int> maxSlidingWindow(vector<int>& nums, int k)
