@@ -1,19 +1,26 @@
 // 分隔链表  l-86
 // -100 <= Node.val <= 100; -200 <= x <= 200
-struct ListNode 
-{
-    int val;
-    ListNode *next;
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
+#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+using namespace std;
+ListNode* partition(ListNode*head, int x);
 
-ListNode* partition(ListNode*head,int x)
+int main()
+{
+    int arr[]={1,2,3,4}; 
+    int n=sizeof(arr)/sizeof(arr[0]);
+    ListNode l(arr, n); int x=2;
+    ListNode* res=partition(&l, x);
+    res->print(); // output: 1 2 3
+}
+
+ListNode* partition(ListNode*head, int x)
 {
     // 特殊情况：空链表，或链表只有1个元素
     if (!head || !head->next) return head;
+
     ListNode* tail=head; // 尾节点
     int len=1; // 链表长度
-    while (tail->next)  // 相当于tail->next!=nullptr，注意有无非!
+    while (tail->next)  // 相当于tail->next!=nullptr，注意无 !
     {
         tail=tail->next;
         len++;

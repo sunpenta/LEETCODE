@@ -1,6 +1,7 @@
 // 深拷贝带随机指针的链表-hash  l-138  -Tress/traversal/3
 #include <unordered_map>
 using namespace std;
+
 // Definition for a Node.
 class Node {
 public:
@@ -14,6 +15,7 @@ public:
         random = nullptr;
     }
 };
+
 unordered_map<Node*,Node*>visit;
 Node* copyRandomList(Node* head)
 {

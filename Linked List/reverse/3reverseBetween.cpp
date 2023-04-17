@@ -1,13 +1,16 @@
-// 反转链表  l-92
-struct ListNode 
+// 反转链表- 一次遍历-头插法  l-92
+#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+ListNode* reverseBetween(ListNode*head,int left,int right);
+
+int main()
 {
-    int val;
-    ListNode *next;
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
-/* 输入：head = [1,2,3,4,5], left = 2, right = 4
-   输出：       [1,4,3,2,5]*/
-// 1. 一次遍历-头插法
+    int arr[]={1,2,3,4,5}; 
+    int n=sizeof(arr)/sizeof(arr[0]);
+    ListNode head(arr, n); int left = 2, right = 4; // input
+    ListNode* res=reverseBetween(&head, left, right); // output: 1,4,3,2,5
+    res->print();
+}
+
 ListNode* reverseBetween(ListNode*head,int left,int right)
 {
     ListNode* dummy=new ListNode(0,head); // 在头节点前，新建哑节点

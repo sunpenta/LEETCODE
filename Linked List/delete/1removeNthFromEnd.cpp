@@ -1,14 +1,13 @@
 // 删除链表倒数第N个节点  l-19
-#include <iostream>
-#include "ListNode.cpp"
+#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
 using namespace std;
 ListNode* removeNthFromEnd(ListNode* head,int n);
 
 int main()
 {
-    int arr[4]={2,1,4,3}; int n=2;
-    ListNode* head=creatList(arr, 4);
-    ListNode* res=removeNthFromEnd(head,n);
+    int arr[4]={2,1,4,3}; 
+    ListNode head(arr, 4); int n=2;
+    ListNode* res=removeNthFromEnd(&head,n);
     res->print(); // output: 2 1 3
 }
 
