@@ -15,9 +15,9 @@ int main()
 
 ListNode* deleteDuplicates(ListNode* head)
 {
-    ListNode* dummy=new ListNode(INT_MAX,head); // 在头节点前新建哑节点，值在[-100,100]之外
+    ListNode* dummy=new ListNode(101,head); // 在头节点前新建哑节点，值在[-100,100]之外
     ListNode* cur=dummy;
-    while (cur!=nullptr && cur->next!=nullptr)
+    while (cur && cur->next)
     {
         if (cur->val==cur->next->val)
         {
