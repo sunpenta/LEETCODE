@@ -6,8 +6,8 @@ int findShortestSubarray(vector<int>& nums);
 
 int main()
 {
-    vector<int>nums={1,2,2,2,3,1,7,5,1,2,2,2,2,5,6}; // ����
-    cout<<findShortestSubarray(nums)<<endl; // ���:5 ʣ������:{1,2,2,2,2,2,2,2,5,6}
+    vector<int>nums={1,2,2,2,3,1,7,5,1,2,2,2,2,5,6}; // input
+    cout<<findShortestSubarray(nums)<<endl; // output:5 ʣ������:{1,2,2,2,2,2,2,2,5,6}
     return 0;
 }
 
