@@ -21,9 +21,10 @@ void bubble_sort(int arr[], int n)
         {
             if (arr[j+1]<arr[j])
             {
-                int tmp=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=tmp;
+                swap(arr[j], arr[j+1]);
+                //int tmp=arr[j];
+                //arr[j]=arr[j+1];
+                // arr[j+1]=tmp;
             }
         }
     }
