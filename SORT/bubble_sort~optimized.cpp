@@ -1,4 +1,4 @@
-// 优化的冒泡排序
+// 优化的冒泡排序 - 遇到已排好序的进入下一循环
 // 时间复杂度：最好：O(n), 最坏：O(n²), 平均：O(n²); 空间复杂度：O(1)
 #include <iostream>
 using namespace std;
