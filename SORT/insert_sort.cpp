@@ -15,7 +15,7 @@ int main()
 }
 void insert_sort(int arr[], int n)
 {
-    for (int i=0; i<n; i++)
+    for (int i=1; i<n; ++i)
     {
         int tmp=arr[i], j;
         for (j=i; j>0 && arr[j-1]>tmp; --j)
