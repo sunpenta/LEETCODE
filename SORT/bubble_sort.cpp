@@ -1,5 +1,5 @@
 // 冒泡排序
-// 时间复杂度：最好：O(n), 最坏：O(n²), 平均：O(n²); 空间复杂度：O(1)
+// 时间复杂度：最好：O(n), 最坏：O(n²), 平均：O(n²); 空间复杂度：O(1); 稳定排序：对数组里相等元素，排序后，相对位置不变
 #include <iostream>
 using namespace std;
 void bubble_sort(int arr[], int n);
