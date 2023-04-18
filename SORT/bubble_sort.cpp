@@ -5,7 +5,11 @@ void bubble_sort(int arr[], int n);
 
 int main()
 {
-
+    int arr[]={3,2,5,7,4}; int n=5;
+    bubble_sort(arr, n);
+    for (int num:arr)
+        cout<<num<<" ";
+    return 0;
 }
 
 void bubble_sort(int arr[], int n)
@@ -15,7 +19,7 @@ void bubble_sort(int arr[], int n)
     {
         for (int j=0; j<i; ++j)
         {
-            if (arr[i+1]>arr[i])
+            if (arr[j+1]<arr[j])
             {
                 tmp=arr[j];
                 arr[j]=arr[j+1];
