@@ -11,6 +11,7 @@ int main()
     print(arr,n);
     quick_sort(arr,0,n-1);
     print(arr,n);
+    return 0;
 }
 
 void swap(int arr[], int i, int j)
@@ -19,7 +20,7 @@ void swap(int arr[], int i, int j)
     arr[i]=arr[j];
     arr[j]=arr[i];
 }
-int partition(int arr[], int l, int r)
+int partition(int arr[], int l, int r) // -> correct index of pivot
 {
     int pivot=arr[r];
     int i=l-1;
