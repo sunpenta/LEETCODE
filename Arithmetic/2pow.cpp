@@ -1,5 +1,5 @@
 // 快速幂-迭代
-// x ⋿[-100, 100], n ⋿ [INT_MIN, INT_MAX], xⁿ ⋿ [-1e4, 1e4]
+// x⋿[-100, 100], n∈[INT_MIN, INT_MAX], xⁿ⋿[-1e4, 1e4]
 #include <iostream>
 using namespace std;
 double pow(double x,int n);

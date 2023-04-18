@@ -1,4 +1,4 @@
-// 除法-二分查找+快速乘  l-29
+// 除法 - 二分查找 + 快速乘  l-29
 // 不能使用乘法、除法、取余运算；时间复杂度：O(logN)
 #include <iostream>
 #include <limits.h>

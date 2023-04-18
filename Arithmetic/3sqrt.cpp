@@ -1,5 +1,5 @@
 // x的平方根 - 二分查找 l-69
-// 结果只保留整数部分，小数部分舍去; 时间复杂度：O（logN)
+// 结果只保留整数部分，小数部分舍去; 时间复杂度：O(logN)
 #include <iostream>
 using namespace std;
 int sqrt(int x);
