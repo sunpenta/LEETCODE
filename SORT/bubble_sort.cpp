@@ -9,6 +9,7 @@ int main()
     bubble_sort(arr, n);
     for (int num:arr)
         cout<<num<<" ";
+    cout<<endl;
     return 0;
 }
 
