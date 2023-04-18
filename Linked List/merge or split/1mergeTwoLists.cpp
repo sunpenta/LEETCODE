@@ -8,6 +8,7 @@ int main()
     int arr1[]={1,2,4}, arr2[]={1,3,4}; 
     int n1=sizeof(arr1)/sizeof(arr1[0]), n2=sizeof(arr2)/sizeof(arr2[0]);
     ListNode l1(arr1, n1); ListNode l2(arr2,n2);
+    l1.print(); l2.print();
     ListNode* res=mergeTwoLists(&l1,&l2);
     res->print(); // output: 1,1,2,3,4,4
 }
