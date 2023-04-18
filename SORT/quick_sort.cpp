@@ -24,7 +24,7 @@ int partition(int arr[], int l, int r) // -> correct index of pivot
 {
     int pivot=arr[r];
     int i=l-1;
-    for (int j=0; j<=r-1; ++j) // [l,r-1 | r]
+    for (int j=l; j<=r-1; ++j) // note:j∈[l,r-1 | r]
     {
         if (arr[j]<pivot)
         {
