@@ -7,8 +7,8 @@ int main()
 {
     int arr[]={3,2,5,7,4}; int n=5;
     bubble_sort(arr, n);
-    for (int num:arr)
-        cout<<num<<" ";
+    //for (int num:arr)
+        //cout<<num<<" ";
     return 0;
 }
 
