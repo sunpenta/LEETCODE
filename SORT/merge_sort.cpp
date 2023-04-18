@@ -1,5 +1,5 @@
 // 归并排序
-// 时间复杂度: T(n)=2*T(n/2)+O(n) O(logn); 空间复杂度:O(logn)
+// 时间复杂度: T(n)=2*T(n/2)+O(n) O(nlogn); 空间复杂度:O(n)
 #include <iostream>
 using namespace std;
 void merge_sort(int arr[], int l, int r);
@@ -34,9 +34,9 @@ void merge_sort(int arr[], int l, int r)
 {
    if (l>=r) return;
    int mid=l+(r-l)/2;
-   merge_sort(arr, l, mid);
-   merge_sort(arr,mid+1, r); 
-   merge(arr,l,mid,r);
+   merge_sort(arr, l, mid); // T(n/2)
+   merge_sort(arr,mid+1, r); // T(n/2)
+   merge(arr,l,mid,r); // O(n)
 }
 void print(int arr[], int n)
 {
