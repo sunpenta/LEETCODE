@@ -1,4 +1,4 @@
-// 归并排序
+// 归并排序 - recursion
 // 时间复杂度: T(n)=2*T(n/2)+O(n) O(nlogn); 空间复杂度:O(n)
 #include <iostream>
 using namespace std;
