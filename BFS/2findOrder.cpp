@@ -1,4 +1,4 @@
-// 课程表II-BFS/kahn's  l-210
+// 课程表II - BFS + 拓扑排序  l-210
 // 课程号：0-numCourses-1; prerequisites[i] = [ai, bi], bi->a1
 #include <iostream>
 #include <vector>
