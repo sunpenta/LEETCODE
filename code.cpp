@@ -2,24 +2,27 @@
 #include <vector>
 using namespace std;
 
-int numWays(vector<string>& words, string target) {
-     int n = target.length(), m=words[0].size(), mod = 1e9 + 7;
-     vector<long> res(n + 1); // ways to form i-first characters
-     res[0] = 1;
-     for (int i = 0; i < m; ++i) 
+string mergeAlternately(string word1, string word2) {
+     int n1=word1.length(), n2=word2.length();
+     string s="";
+     for (int i=0, j=0; i<n1 && j<n2; ++i, ++j)
      {
-          vector<int> count(26);
-          for (auto& w : words)
-               count[w[i] - 'a']++;
-          for (int j = n - 1; j >= 0; --j) {
-               res[j + 1] += res[j] * count[target[j] - 'a'] % mod;
+          if (i==n1-1) s+=word2[j];
+          else if (j==n2-1) s+=word1[i];
+          else
+          {
+          if (word1[i]<word2[j])
+               s+=word1[i]+word2[j];
+          else
+               s+=word2[j]+word1[i];
           }
-     }
-     return res[n] % mod;
+     } 
+     return s;     
 }
 int main()
 {    
-     vector<string> words = {"acca","bbbb","caca"}; string target = "aba";
-     cout<<numWays(words, target)<<endl;
+     string word1="abc"; string word2="bcd";
+     string s=mergeAlternately(word1, word2);
+     cout<<s<<endl;
      return 0;
 }
