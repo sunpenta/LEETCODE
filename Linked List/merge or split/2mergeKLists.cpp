@@ -16,7 +16,7 @@ int main()
         ListNode* head=new ListNode(lists_v[i]);
         lists[i]=head;
     }
-    // for (int i=0; i<n; ++i) lists[i]->print();
+    for (int i=0; i<n; ++i) lists[i]->print();
     ListNode* res=mergeKLists(lists);
     res->print(); // output: 0 1 1 2 2 3 3 4 5
     return 0;
