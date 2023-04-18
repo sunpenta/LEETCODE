@@ -10,6 +10,7 @@ int main()
     print(arr,n);
     merge_sort(arr,0,n-1);
     print(arr,n);
+    return 0;
 }
 
 void merge(int arr[], int l, int mid, int r) // [l,mid] [mid+1,r]

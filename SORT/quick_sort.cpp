@@ -38,6 +38,7 @@ int partition(int arr[], int l, int r) // -> correct index of pivot
 
 void quick_sort(int arr[], int l, int r)
 {
+    if (l>=r) return; // note do not forget
     int pi=partition(arr,l,r);
     quick_sort(arr,l,pi-1);
     quick_sort(arr,pi+1,r);
