@@ -3,14 +3,14 @@
 #include <iostream>
 using namespace std;
 void bubble_sort(int arr[], int n);
+void print(int arr[], int n);
 
 int main()
 {
     int arr[]={3,2,5,7,4}; int n=5;
+    print(arr, n);
     bubble_sort(arr, n);
-    for (int num:arr)
-        cout<<num<<" ";
-    cout<<endl;
+    print(arr, n);
     return 0;
 }
 
@@ -32,4 +32,11 @@ void bubble_sort(int arr[], int n)
             if (!flag) break; // 内循环无交换，则进入下个外循环
         }
     }
+}
+
+void print(int arr[], int n)
+{
+    for (int i=0; i<n; ++i)
+        cout<<arr[i]<<" ";
+    cout<<endl;    
 }

@@ -3,14 +3,14 @@
 #include <iostream>
 using namespace std;
 void insert_sort(int arr[], int n);
+void print(int arr[], int n);
 
 int main()
 {
     int arr[]={3,2,5,7,4}; int n=5;
+    print(arr, n);
     insert_sort(arr, n);
-    for (int num:arr)
-        cout<<num<<" ";
-    cout<<endl;
+    print(arr, n);
     return 0;
 }
 void insert_sort(int arr[], int n)
@@ -22,4 +22,11 @@ void insert_sort(int arr[], int n)
             arr[j]=arr[j-1];
         arr[j]=tmp;
     }
+}
+
+void print(int arr[], int n)
+{
+    for (int i=0; i<n; ++i)
+        cout<<arr[i]<<" ";
+    cout<<endl;    
 }
