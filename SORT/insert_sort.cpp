@@ -18,7 +18,7 @@ void insert_sort(int arr[], int n)
     for (int i=0; i<n; i++)
     {
         int tmp=arr[i], j;
-        for (j=i; j<n && arr[j-1]>tmp; ++j)
+        for (j=i+1; j<n && arr[j-1]>tmp; ++j)
             arr[j]=arr[j-1];
         arr[j]=tmp;
     }
