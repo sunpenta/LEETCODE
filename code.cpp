@@ -7,14 +7,16 @@ string mergeAlternately(string word1, string word2) {
      string s="";
      for (int i=0, j=0; i<n1 && j<n2; ++i, ++j)
      {
-          if (i==n1-1) s+=word2[j];
-          else if (j==n2-1) s+=word1[i];
+          if (i==n1-1) 
+               s+=word2[j];
+          else if (j==n2-1) 
+               s+=word1[i];
           else
           {
-          if (word1[i]<word2[j])
-               s+=word1[i]+word2[j];
-          else
-               s+=word2[j]+word1[i];
+               if ((word1[i]-'a')<=(word2[j]-'a'))
+                    s+=(word1[i]+word2[j]);
+               else
+                    s+=(word2[j]+word1[i]);
           }
      } 
      return s;     
