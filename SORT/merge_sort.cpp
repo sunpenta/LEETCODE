@@ -27,8 +27,8 @@ void merge(int arr[], int l, int mid, int r) // [l,mid] [mid+1,r]
         copy[k++]=arr[i++];
     while (j<=r)
         copy[k++]=arr[j++];
-    for (int i=l; i<=r; ++i) // copy[]->arr[]
-        arr[i]=copy[i-l]; // note: copy[i-l]
+    for (int i=l; i<=r; ++i) // copy[]->arr[]; i∈[l,r]
+        arr[i]=copy[i-l]; // note: arr[i] copy[i-l]
 }
 void merge_sort(int arr[], int l, int r)
 {
