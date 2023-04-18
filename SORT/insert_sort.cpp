@@ -1,5 +1,5 @@
 // 插入排序
-// 时间复杂度：最好：O(n) 最坏：O(n²) 平均：O(n²); 空间复杂度：O(1); 稳定排序
+// 时间复杂度: 最好:O(n) 最坏:O(n²) 平均:O(n²); 空间复杂度:O(1); 稳定排序
 #include <iostream>
 using namespace std;
 void insert_sort(int arr[], int n);
