@@ -1,4 +1,4 @@
-// 优化的冒泡排序 - 遇到已排好序的进入下一循环
+// 优化的冒泡排序 
 // 时间复杂度：最好：O(n), 最坏：O(n²), 平均：O(n²); 空间复杂度：O(1)
 #include <iostream>
 using namespace std;
@@ -29,7 +29,7 @@ void bubble_sort(int arr[], int n)
                 arr[j+1]=tmp;
                 flag=true;
             }
-            if (!flag) break;
+            if (!flag) break; // 内循环无交换，则进入下个外循环
         }
     }
 }
