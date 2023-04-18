@@ -14,9 +14,11 @@ string mergeAlternately(string word1, string word2) {
           else
           {
                if ((word1[i]-'a')<=(word2[j]-'a'))
-                    s+=(word1[i]+word2[j]);
+               {
+                    s+=word1[i]; s+=word2[j];
+               }
                else
-                    s+=(word2[j]+word1[i]);
+                    s+=word2[j];s+=word1[i];
           }
      } 
      return s;     
