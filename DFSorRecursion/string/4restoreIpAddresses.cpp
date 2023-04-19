@@ -14,7 +14,7 @@ int main()
 }
 
 // ips:所有ip组合; ip:ip地址,包含4个部分; index:s的搜索下标
-void dfs(vector<vector<string>>& ips,vector<string>& ip,string &s,int index)
+void dfs(vector<vector<string>>& ips, vector<string>& ip, string &s, int index)
 {
     if (ip.size()==4 && index==s.length())
     {
