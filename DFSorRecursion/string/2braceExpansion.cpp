@@ -1,4 +1,4 @@
-// 花括号展开-递归+字符流+set  l-1096
+// 花括号展开 - 字符流+set+递归  l-1096
 // 无重复组合结果；1 <= expression.length <= 60
 #include <bits/stdc++.h>
 using namespace std;
@@ -7,10 +7,10 @@ vector<string>braceExpansion(string expression);
 int main()
 {
     string expression = "{{a,z},a{b,c},{ab,z}}"; // 输入
-    vector<string> res=braceExpansion(expression); // 输出: {"a","z","ab","ac"}
+    vector<string> res=braceExpansion(expression); // 输出: a z ab ac
     for (auto str:res)
         cout<<str<<endl;
-    system("pause");
+    return 0;
 }
 
 // res:存所有花括号展开字符串，set保证无重复
