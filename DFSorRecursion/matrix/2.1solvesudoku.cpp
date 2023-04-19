@@ -15,7 +15,8 @@ int main()
         {'7','.','.','.','2','.','.','.','6'},
         {'.','6','.','.','.','.','2','8','.'},
         {'.','.','.','4','1','9','.','.','5'},
-        {'.','.','.','.','8','.','.','7','9'}};
+        {'.','.','.','.','8','.','.','7','9'}
+    };
     solveSudoku(board); 
     for(int i=0;i<9;i++) // 输出
     {
@@ -32,7 +33,7 @@ bool box[9][9]={false};
 bool valid; // 标记当前查找的结果是否有效
 vector<pair<int,int>>spaces; // 存储空格坐标
 // pos:第pos个空格
-void dfs(vector<vector<char>>&board,int pos)
+void dfs(vector<vector<char>>& board, int pos)
 {
     if(pos==spaces.size()) // 终止条件:遍历完最后一个空格
     {
@@ -48,18 +49,20 @@ void dfs(vector<vector<char>>&board,int pos)
         { 
             board[i][j]=digit+'0'+1; // 转换成1-9 char
             row[i][digit]=col[j][digit]=box[(i/3)*3+j/3][digit]=true;
-            dfs(board,pos+1);// 继续以pos+1为起始坐标进行查找
+            dfs(board,pos+1); // 继续以pos+1为起始坐标进行查找
             row[i][digit]=col[j][digit]=box[(i/3)*3+j/3][digit]=false; // 撤回标记，恢复现场
         }  
     }    
 }
 
-void solveSudoku(vector<vector<char>>&board){
+void solveSudoku(vector<vector<char>>& board){
     valid=false; 
-    // 遍历board
-    for(int i=0;i<9;i++){
-        for(int j=0;j<9;j++){
-            if(board[i][j]=='.'){
+    for(int i=0; i<9; i++)
+    {
+        for(int j=0; j<9; j++)
+        {
+            if(board[i][j]=='.')
+            {
                 spaces.emplace_back(i,j); // 记录空格坐标
             }
             else
@@ -75,7 +78,7 @@ void solveSudoku(vector<vector<char>>&board){
 /*
     bool line[9][9];
     bool column[9][9];
-    bool block[3][3][9];//三维数组
+    bool block[3][3][9]; // 三维数组
     bool valid;
     vector<pair<int, int>> spaces;
 void dfs(vector<vector<char>>& board, int pos) {
