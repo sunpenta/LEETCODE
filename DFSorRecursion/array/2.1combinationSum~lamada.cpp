@@ -25,10 +25,10 @@ vector<vector<int>>combinationSum(vector<int>& candidates, int target)
     // sum=target; lamada表达式:[&]：捕获所有引用，函数参数:int back; function<返回类型(参数类型)> 函数名
     function<void(int)> dfs=[&] (int back)
     {
-        if (sum==target) // 满足条件
-            ans.emplace_back(begin(combine),end(combine));
-        else if(sum>target) // 不满足条件，返回
+        if (sum>target) // 不满足条件，返回
             return;
+        else if (sum==target) // 满足条件
+            ans.emplace_back(begin(combine),end(combine));          
         else
         {
             for (int i=back;i<n;i++)
