@@ -1,8 +1,8 @@
-// 单词搜索-dfs l-79
+// 单词搜索 - dfs l-79
 // 1 <= m, n <= 6; 1 <= word.length <= 15
 #include <bits/stdc++.h>
 using namespace std;
-bool exist(vector<vector<char>>&board,string &word);
+bool exist(vector<vector<char>>& board, string& word);
 
 int main()
 {
