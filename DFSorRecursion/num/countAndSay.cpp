@@ -1,4 +1,4 @@
-// 外观数列 - 递归   l-38  -YangHuiTriangle
+// 外观数列 - Recursion   l-38  -YangHuiTriangle
 #include <iostream>
 using namespace std;
 string countAndSay(int n);
@@ -6,7 +6,7 @@ string countAndSay(int n);
 int main()
 {  
     int n=5; // 输入
-    cout<<countAndSay(n)<<endl; // 输出: 111221
+    cout<<countAndSay(n)<<endl; // 输出: 111221  1 11 21 1211 111221
     return 0;
 }
 
