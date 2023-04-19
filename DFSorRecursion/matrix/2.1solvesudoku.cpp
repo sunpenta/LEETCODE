@@ -18,9 +18,11 @@ int main()
         {'.','.','.','.','8','.','.','7','9'}
     };
     solveSudoku(board); 
-    for(int i=0; i<9; i++) // 输出
+    for(int i=0; i<9; ++i) // 输出
     {
-        cout<<board[i][0]<<" "<<board[i][1]<<endl;
+        for (int j=0; j<9; ++j)
+            cout<<board[i][j]<<" ";
+        cout<<endl;
     }
     return 0;
 }
@@ -40,7 +42,7 @@ void dfs(vector<vector<char>>& board, int pos)
     }
     auto [i,j]=spaces[pos];
     // 遍历1-9 9个数字
-    for(int digit=0; digit<9 && !valid; digit++) // 变量不能设i,与行i重复
+    for(int digit=0; digit<9 && !valid; digit++) // 变量不能设为i,与行i重复
     { 
         // 如果digit没在第i行，第j列和第(i/3)*3+j/3个九宫格里出现，添加到board
         if(!row[i][digit] && !col[j][digit] && !box[(i/3)*3+j/3][digit]) // 崩溃定位:digit写成i
@@ -65,7 +67,7 @@ void solveSudoku(vector<vector<char>>& board){
             }
             else
             {
-                int digit=board[i][j]-'0'-1; // '1'-'9' -> 0-8
+                int digit=board[i][j]-'0'-1; // '1'-'9'-> 0-8
                 row[i][digit]=col[j][digit]=box[(i/3)*3+j/3][digit]=true; 
             }
         }
