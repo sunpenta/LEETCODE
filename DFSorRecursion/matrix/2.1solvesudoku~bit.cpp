@@ -22,9 +22,11 @@ int main()
     }; // 输入
 
     solveSudoku(board); // 输出
-    for (int i=0; i<9; i++)
+    for(int i=0; i<9; ++i) // 输出
     {
-        cout<<board[i][0]<<" "<<board[i][1]<<endl;
+        for (int j=0; j<9; ++j)
+            cout<<board[i][j]<<" ";
+        cout<<endl;
     }
     return 0;
 }
