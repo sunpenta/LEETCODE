@@ -7,8 +7,8 @@ vector<vector<string>>Paths(int m, int n);
 int main()
 {
     int m=4; int n=4; // 输入
-    vector<vector<string>>ans=Paths(m,n); // 输出
-    for (int i=0;i<ans.size();i++)
+    vector<vector<string>> ans=Paths(m,n); // 输出
+    for (int i=0; i<ans.size(); i++)
     {
         for (auto map:ans[i])
         {
@@ -18,7 +18,7 @@ int main()
         }
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 void dfs(vector<vector<string>>&maps,vector<string>map,int m,int n,int row,int col)

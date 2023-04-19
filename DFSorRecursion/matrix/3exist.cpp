@@ -29,10 +29,8 @@ bool dfs(vector<vector<char>>&board,int row,int col,string &word,int index)
         return false;
     if (index==len) // 满足条件
         return true;
-
-
-
     board[row][col]=' '; // 标记已搜索过；在原矩阵修改，不用visit[][]
+
     if (dfs(board,row+1,col,word,index+1) // 向下 不能用index++或++index
     ||  dfs(board,row,col+1,word,index+1) // 向右
     ||  dfs(board,row-1,col,word,index+1) // 向上
@@ -53,7 +51,7 @@ bool exist(vector<vector<char>>&board,string &word)
             if (board[i][j]==word[0])
             {
                 if (dfs(board,i,j,word,0))
-                return true;
+                    return true;
             }
         }
     }
