@@ -17,7 +17,7 @@ int main()
 void dfs(set<string>&res,string expression)
 {
     int n=expression.length();
-    int j=expression.find('}'); // '}'的第1个下标
+    int j=expression.find('}'); // '}'的第1个下标; .find():string类内find(), ->pos
     if (j==string::npos) // 找不到'}',即已找完最后1个'}'
     {
         res.emplace(expression);
@@ -33,9 +33,10 @@ void dfs(set<string>&res,string expression)
         dfs(res,s1+s2+s3);
     }
 }
+
 vector<string>braceExpansion(string expression)
 {
-    set<string>res;
+    set<string> res;
     dfs(res,expression);
     return vector<string>(res.begin(),res.end());
 }
