@@ -1,4 +1,4 @@
-// 解N皇后-回溯  l-51   
+// 解N皇后 - 回溯  l-51   
 // 同一行，同一列，同一对角线不能有俩皇后
 #include <bits/stdc++.h>
 using namespace std;
@@ -14,14 +14,14 @@ int main()
             cout<<s<<endl;         //   "..Q."},     ".Q.."}
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 // 判断当前行列的棋局符合规则
 bool isValid(vector<string>& board,int n,int row,int col)
 {
     // 向上,同一列(dfs按列循环，同一行符合规则)
-    for (int i=0;i<row;i++)
+    for (int i=0; i<row; i++)
     {
         if (board[i][col]=='Q') return false;
     }
@@ -31,7 +31,7 @@ bool isValid(vector<string>& board,int n,int row,int col)
         if (board[i][j] == 'Q') return false;
     }
     // 右上斜对角
-    for (int i=row,j=col;i>=0 && j<n;i--,j++)
+    for (int i=row, j=col; i>=0 && j<n; i--, j++)
     {
         if (board[i][j]=='Q') return false;           
     }
