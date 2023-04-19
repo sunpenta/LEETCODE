@@ -1,5 +1,5 @@
 // 解数独 - 回溯  l-37
-// 初始值设位置不同，leco和此处输出不同
+// 初始值设位置不同，leco和此处输出不同; '.': space
 #include <bits/stdc++.h>
 using namespace std;
 void solveSudoku(vector<vector<char>>&board);
@@ -40,14 +40,14 @@ void dfs(vector<vector<char>>& board, int pos)
     }
     auto [i,j]=spaces[pos];
     // 遍历1-9 9个数字
-    for(int digit=0;digit<9 && !valid;digit++) // 变量不能设为i,与行i重复
+    for(int digit=0; digit<9 && !valid; digit++) // 变量不能设为i,与行i重复
     { 
         // 如果digit没在第i行，第j列和第(i/3)*3+j/3个九宫格里出现，添加到board
         if(!row[i][digit] && !col[j][digit] && !box[(i/3)*3+j/3][digit]) // 崩溃定位:digit写成i
         { 
-            board[i][j]=digit+'0'+1; // 转换成1-9 char
+            board[i][j]=digit+'0'+1; // 0-8 转换成 '1'-'9'
             row[i][digit]=col[j][digit]=box[(i/3)*3+j/3][digit]=true;
-            dfs(board,pos+1); // 继续以pos+1为起始坐标进行查找
+            dfs(board,pos+1); // 继续以pos+1为起始坐标查找
             row[i][digit]=col[j][digit]=box[(i/3)*3+j/3][digit]=false; // 撤回标记，恢复现场
         }  
     }    

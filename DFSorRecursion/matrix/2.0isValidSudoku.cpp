@@ -1,5 +1,5 @@
 // 有效的数独 - 哈希  l-36
-// 同一行，同一列，同一小九宫格，1个数字只出现1次
+// 同一行，同一列，同一小九宫格，1个数字只出现1次; '.':space
 #include <bits/stdc++.h>
 using namespace std;
 bool isValidSudoku(vector<vector<char>>& board);
