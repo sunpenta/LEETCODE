@@ -14,21 +14,24 @@ int main()
     }; 
     string word = "eat"; // 输入
     cout<<boolalpha<<exist(board,word)<<endl; // 输出:true
-    system("pause");
+    return 0;
 }
 
 // 从board[row][col]开始搜索，是否可以搜到字符串word
 bool dfs(vector<vector<char>>&board,int row,int col,string &word,int index)
 {
     int m=board.size(), n=board[0].size(), len=word.length();
-    if (index==len) // 满足条件
-        return true;
     if (row>=m || row<0 || col>=n || col<0) // 越界
-        return false;
-    if (board[row][col]!=word[index]) // 与当前字符不相等
         return false;
     if (board[row][col]==' ') // 已搜索过
         return false;
+    if (board[row][col]!=word[index]) // 与当前字符不相等
+        return false;
+    if (index==len) // 满足条件
+        return true;
+
+
+
     board[row][col]=' '; // 标记已搜索过；在原矩阵修改，不用visit[][]
     if (dfs(board,row+1,col,word,index+1) // 向下 不能用index++或++index
     ||  dfs(board,row,col+1,word,index+1) // 向右
