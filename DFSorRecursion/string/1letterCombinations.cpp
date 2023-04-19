@@ -6,10 +6,10 @@ vector<string>letterCombinations(string digits);
 int main()
 {
     string digits = "23"; // 输入
-    vector<string> ans=letterCombinations(digits); // 输出所有数字组合
+    vector<string> ans=letterCombinations(digits); // output
     for (string nums:ans)
         cout << nums << " ";
-    system("pause");
+    return 0;
 }
 // 建立哈希表，存储电话表
 const unordered_map<char, string> phonemap = {
@@ -22,10 +22,10 @@ const unordered_map<char, string> phonemap = {
     {'8', "tuv"},
     {'9', "wxyz"},
 };
-// 回溯法-无需剪枝
-void backtrack(vector<string>&ans,string &str,const string &digits, int index)
-{   // 终止条件
-    if (index == digits.size()) 
+
+void backtrack(vector<string>& ans,string& str,const string& digits, int index)
+{   
+    if (index == digits.size()) // 终止条件 
     {
         ans.push_back(str);
         return;
