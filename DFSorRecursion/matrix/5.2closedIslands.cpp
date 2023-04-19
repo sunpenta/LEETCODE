@@ -1,4 +1,4 @@
-// 被包围区域数-dfs l-1254
+// 被包围区域数 - dfs l-1254
 // 0:land, 1:water; 0的上下左右被1包围
 #include <bits/stdc++.h>
 using namespace std;
@@ -14,10 +14,10 @@ int main()
         { 1, 1, 1, 1, 1, 1, 1, 0 }
     }; // input
     cout<<closedIslands(grid)<<endl; // output:2
-    system("pause");
+    return 0;
 }
-// mark not closed
-void dfs(vector<vector<int>> &grid, int i, int j)
+// mark not closed的land:0
+void dfs(vector<vector<int>>& grid, int i, int j)
 {
     int m = grid.size(), n = grid[0].size();
     if (i<0 || i>=m || j<0 || j>=n || grid[i][j]!=0)

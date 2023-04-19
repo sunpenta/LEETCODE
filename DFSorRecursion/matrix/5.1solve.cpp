@@ -22,7 +22,7 @@ int main()
     } // output:2
     system("pause");
 }
-// 
+// 标记未被包围的'O'
 void dfs(vector<vector<char>> &grid, int i, int j)
 {
     int m = grid.size(), n = grid[0].size();
@@ -31,7 +31,7 @@ void dfs(vector<vector<char>> &grid, int i, int j)
     grid[i][j]='#';
     int dx[4]={1,-1,0,0};
     int dy[4]={0,0,1,-1};
-    for (int k=0;k<4;k++)
+    for (int k=0; k<4; k++)
     {
         int nx=i+dx[k], ny=j+dy[k];
         dfs(grid,nx,ny);
