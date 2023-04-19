@@ -18,13 +18,14 @@ int main()
 }
 
 // 从candidates[index]开始搜索，找target-sum(combine)=0
-void dfs(vector<int>&candidates,vector<vector<int>>&ans,vector<int>&combine,int n,int target,int index)
+void dfs(vector<int>& candidates, vector<vector<int>>& ans, vector<int>& combine,int n, int target, int index)
 {
-    if (target==0)
+    if (target==0) // 终止条件
     {
         ans.emplace_back(combine);
         return;
-    }  
+    }
+
     for (int i=index;i<n;i++)
     {
         if (target<candidates[i]) break; 
@@ -35,10 +36,10 @@ void dfs(vector<int>&candidates,vector<vector<int>>&ans,vector<int>&combine,int 
     }
 }
 // 数组和=target
-vector<vector<int>>combinationSum2(vector<int>&candidates,int target)
+vector<vector<int>>combinationSum2(vector<int>& candidates, int target)
 {
     int n=candidates.size();
-    vector<vector<int>>ans; vector<int>combine;
+    vector<vector<int>> ans; vector<int> combine;
     sort(candidates.begin(),candidates.end()); // 必须排序 {1,1,2,5,6,7,10} 8
     dfs(candidates,ans,combine,n,target,0);
     return ans;
