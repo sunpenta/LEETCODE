@@ -17,7 +17,7 @@ int main()
     {
         cout<<"{";
         for (char col:row)
-            cout<<"\""<<col<<"\","; // '在终端显示太agly
+            cout<<"\""<<col<<"\","; // '在终端显示太ugly
         cout<<"}\n";
     } // output:2
     system("pause");
@@ -38,7 +38,8 @@ void dfs(vector<vector<char>> &grid,int i, int j)
     }
 
 }
-void slove(vector<vector<char>> &grid)
+
+void slove(vector<vector<char>>& grid)
 {
     int m=grid.size(), n=grid[0].size();
     // board cell
