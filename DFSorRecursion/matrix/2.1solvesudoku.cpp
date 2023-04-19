@@ -1,4 +1,4 @@
-// 解数独 - 回溯  l-37
+// 解数独 - hash+回溯  l-37
 // 初始值设位置不同，leco和此处输出不同; '.': space
 #include <bits/stdc++.h>
 using namespace std;

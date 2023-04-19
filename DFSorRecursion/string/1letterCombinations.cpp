@@ -1,4 +1,4 @@
-// 电话号码的字母组合 - 回溯  l-17
+// 电话号码的字母组合 - hash+回溯  l-17
 #include <bits/stdc++.h>
 using namespace std;
 vector<string>letterCombinations(string digits);
@@ -7,8 +7,8 @@ int main()
 {
     string digits = "23"; // 输入
     vector<string> ans=letterCombinations(digits); // 输出所有数字组合
-    for (auto num:ans)
-        cout << num << " ";
+    for (string nums:ans)
+        cout << nums << " ";
     system("pause");
 }
 // 建立哈希表，存储电话表
