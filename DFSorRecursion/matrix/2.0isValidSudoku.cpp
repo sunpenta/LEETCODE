@@ -27,9 +27,9 @@ bool isValidSudoku(vector<vector<char>>& board)
     int box[9][10]={0}; // (i/3)*3+j/3转换成九宫格编号
 
     // 遍历board
-    for(int i=0;i<board.size();i++)
+    for(int i=0; i<board.size(); i++)
     {
-        for(int j=0;j<board.size();j++)
+        for(int j=0; j<board.size(); j++)
         {
             if(board[i][j]!='.') // !='.'比isdigit()更快
             {  
