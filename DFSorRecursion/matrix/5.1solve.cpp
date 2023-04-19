@@ -22,8 +22,8 @@ int main()
     } // output:2
     system("pause");
 }
-
-void dfs(vector<vector<char>> &grid,int i, int j)
+// 
+void dfs(vector<vector<char>> &grid, int i, int j)
 {
     int m = grid.size(), n = grid[0].size();
     if (i<0 || i>=m || j<0 || j>=n || grid[i][j]!='O')
@@ -36,30 +36,30 @@ void dfs(vector<vector<char>> &grid,int i, int j)
         int nx=i+dx[k], ny=j+dy[k];
         dfs(grid,nx,ny);
     }
-
 }
 
 void slove(vector<vector<char>>& grid)
 {
     int m=grid.size(), n=grid[0].size();
     // board cell
-    for (int i=0;i<m;i++)
+    for (int i=0; i<m; i++)
     {
-        dfs(grid,i,0);
-        dfs(grid,i,n-1);
+        dfs(grid,i,0); // 左边
+        dfs(grid,i,n-1); // 右边
     }
-    for (int i=0;i<n;i++)
+    for (int i=0; i<n; i++)
     {
-        dfs(grid,0,i);
-        dfs(grid,m-1,i);
+        dfs(grid,0,i); // 上边
+        dfs(grid,m-1,i); // 下边
     }
-    for (int i=0;i<m;i++)
+
+    for (int i=0; i<m; i++)
     {
         for (int j=0;j<n;j++)
         {
             if (grid[i][j]=='#')
                 grid[i][j]='O';
-            else 
+            else
                 grid[i][j]='X';
         }
     }
