@@ -13,7 +13,8 @@ int main()
 }
 
 // 回溯+剪枝; left:当前字符串左括号数；right:当前字符串右括号数
-void backtrack(vector<string> &ans,string &cur,int n,int left,int right){
+void backtrack(vector<string>& ans, string& cur, int n, int left, int right)
+{
     if (cur.size()==2*n) // 终止条件
     {
         ans.push_back(cur);
@@ -37,7 +38,7 @@ void backtrack(vector<string> &ans,string &cur,int n,int left,int right){
 
 vector<string>generateParenthesis(int n)
 {
-    vector<string>ans; 
+    vector<string> ans; 
     string cur; // 当前字符串
     backtrack(ans,cur,n,0,0); // 回溯
     return ans;
