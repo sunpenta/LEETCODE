@@ -35,7 +35,7 @@ void dfs(vector<int>& candidates, vector<vector<int>>& ans, vector<int>& combine
         combine.pop_back();
     }
 }
-// 数组和=target
+
 vector<vector<int>>combinationSum2(vector<int>& candidates, int target)
 {
     int n=candidates.size();
