@@ -32,8 +32,8 @@ void backtrack(vector<string>& ans,string& str,const string& digits, int index)
     }
 
     char digit = digits[index];
-    // const string &letters = phonemap[digit]; // key不存在，添加key，不抛出异常
-    const string &letters = phonemap.at(digit); //取出map中digit对应的值;检查key，key不存在抛出异常
+    // 同const string &letters = phonemap[digit]; // key不存在，添加key，不抛出异常
+    const string &letters = phonemap.at(digit); // 取出map中digit对应的值;.at 检查key，key不存在抛出异常
     for (auto &letter : letters) // auto是const char
     {
         str.push_back(letter);
@@ -44,7 +44,7 @@ void backtrack(vector<string>& ans,string& str,const string& digits, int index)
 
 vector<string>letterCombinations(string digits)
 {
-    vector<string>ans; string str;
+    vector<string> ans; string str;
     // 特殊情况：空字符串
     if (digits.size()==0) return ans;
     backtrack(ans,str,digits, 0); // 回溯
