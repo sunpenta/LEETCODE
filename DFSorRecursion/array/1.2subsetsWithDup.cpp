@@ -1,4 +1,4 @@
-// 子数组大小为k的组合-回溯  l-78+90
+// 子数组大小为k的组合 - 回溯  l-78+90
 // 输入数组元素有重复；不可重复使用元素；无重复子集组合
 #include <bits/stdc++.h>
 using namespace std;
@@ -19,13 +19,13 @@ int main()
 
 void dfs(vector<vector<int>>&subsets,vector<int>subset,vector<int>&nums,int k,int index)
 {
+    if (index==nums.size()) return; // 越界
     if (subset.size()==k) // 终止条件
     {
         subsets.emplace_back(subset);
         return;
     }
-    if (index==nums.size()) return;
-
+    
     for (int i=index;i<nums.size();i++)
     {
         if (i>index && nums[i]==nums[i-1]) continue; // 去重

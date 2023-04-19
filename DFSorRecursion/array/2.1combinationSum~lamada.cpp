@@ -1,4 +1,4 @@
-// 组合之和-回溯+lamada表达式  l-39
+// 组合之和 - 回溯+lamada表达式  l-39
 // 元素可重复使用；组合无重复
 #include <bits/stdc++.h>
 using namespace std;
