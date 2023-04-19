@@ -1,4 +1,4 @@
-// 解数独-回溯  l-37
+// 解数独 - 回溯  l-37
 // 初始值设位置不同，leco和此处输出不同
 #include <bits/stdc++.h>
 using namespace std;
@@ -18,20 +18,18 @@ int main()
         {'.','.','.','.','8','.','.','7','9'}
     };
     solveSudoku(board); 
-    for(int i=0;i<9;i++) // 输出
+    for(int i=0; i<9; i++) // 输出
     {
-        for(int j=0;j<9;j++)
-            cout<<board[i][j]<<" ";
-        cout<<endl;
+        cout<<board[i][0]<<" "<<board[i][1]<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 bool row[9][9]={false}; // 数组声明时能初始化，后不能
 bool col[9][9]={false};
 bool box[9][9]={false};
 bool valid; // 标记当前查找的结果是否有效
-vector<pair<int,int>>spaces; // 存储空格坐标
+vector<pair<int,int>> spaces; // 存储空格坐标
 // pos:第pos个空格
 void dfs(vector<vector<char>>& board, int pos)
 {
@@ -41,7 +39,7 @@ void dfs(vector<vector<char>>& board, int pos)
         return;
     }
     auto [i,j]=spaces[pos];
-    // 遍历1-9  9个数字
+    // 遍历1-9 9个数字
     for(int digit=0;digit<9 && !valid;digit++) // 变量不能设为i,与行i重复
     { 
         // 如果digit没在第i行，第j列和第(i/3)*3+j/3个九宫格里出现，添加到board
