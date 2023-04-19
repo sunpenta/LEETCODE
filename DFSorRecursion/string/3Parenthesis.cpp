@@ -1,7 +1,7 @@
-// 有效的括号组合-回溯  l-22
+// 有效的括号组合 - 回溯  l-22
 #include<bits/stdc++.h>
 using namespace std;
-vector<string>generateParenthesis(int n); //子函数在主函数后时，声明，否则报错
+vector<string> generateParenthesis(int n);
 
 int main()
 {
@@ -9,10 +9,10 @@ int main()
     vector<string>ans=generateParenthesis(n); // 输出
     for (auto str:ans)
         cout<<str<<endl;
-    system("pause");
+    return;
 }
 
-// 回溯法+剪枝; left:当前字符串左括号数；right:当前字符串右括号数
+// 回溯+剪枝; left:当前字符串左括号数；right:当前字符串右括号数
 void backtrack(vector<string> &ans,string &cur,int n,int left,int right){
     if (cur.size()==2*n) // 终止条件
     {

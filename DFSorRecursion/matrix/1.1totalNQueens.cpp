@@ -1,6 +1,7 @@
 // N皇后 - 回溯  l-51
 // 同一行，同一列，同一对角线不能有俩皇后; 'Q':皇后，'.':空格; 1<=n<= 9
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 int totalNQueens(int n);
 
