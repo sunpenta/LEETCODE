@@ -18,7 +18,7 @@ int main()
 }
 
 // 从candidates[index]开始搜索，找target-sum(combine)=0
-void dfs(vector<int>& candidates, vector<vector<int>>& ans, vector<int>& combine,int n, int target, int index)
+void dfs(vector<vector<int>>& ans, vector<int>& combine, vector<int>& candidates, int target, int index)
 {
     if (target==0) // 终止条件
     {
@@ -26,12 +26,12 @@ void dfs(vector<int>& candidates, vector<vector<int>>& ans, vector<int>& combine
         return;
     }
 
-    for (int i=index;i<n;i++)
+    for (int i=index; i<candidates.size(); i++)
     {
         if (target<candidates[i]) break; 
         if (i>index && candidates[i]==candidates[i-1]) continue; // *横向去重*
         combine.emplace_back(candidates[i]);
-        dfs(candidates,ans,combine,n,target-candidates[i],i+1); // dfs(...,i+1):combine里无重复,纵向
+        dfs(ans,combine,candidates,target-candidates[i],i+1); // dfs(...,i+1):combine里无重复,纵向
         combine.pop_back();
     }
 }
@@ -41,6 +41,6 @@ vector<vector<int>>combinationSum2(vector<int>& candidates, int target)
     int n=candidates.size();
     vector<vector<int>> ans; vector<int> combine;
     sort(candidates.begin(),candidates.end()); // 必须排序 {1,1,2,5,6,7,10} 8
-    dfs(candidates,ans,combine,n,target,0);
+    dfs(ans,combine,candidates,target,0);
     return ans;
 }

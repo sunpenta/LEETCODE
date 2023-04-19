@@ -1,14 +1,14 @@
-// N皇后-回溯  l-51
-// 同一行，同一列，同一对角线不能有俩皇后; 'Q':皇后，'.':空格; 1 <= n <= 9
+// N皇后 - 回溯  l-51
+// 同一行，同一列，同一对角线不能有俩皇后; 'Q':皇后，'.':空格; 1<=n<= 9
 #include <bits/stdc++.h>
 using namespace std;
 int totalNQueens(int n);
 
 int main()
 {
-    int n=4; // 输入：矩阵行=列=n
+    int n=4; // 输入：n*n
     cout<<totalNQueens(n)<<endl; // 输出:2
-    system("pause");
+    return 0;
 }
 
 // 是否符合N皇后规则
