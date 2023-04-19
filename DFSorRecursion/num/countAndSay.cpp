@@ -1,13 +1,13 @@
-// 外观数列-递归   l-38  -YangHuiTriangle
-#include <bits/stdc++.h>
+// 外观数列 - 递归   l-38  -YangHuiTriangle
+#include <iostream>
 using namespace std;
 string countAndSay(int n);
 
 int main()
 {  
     int n=5; // 输入
-    cout<<countAndSay(n)<<endl; // 输出
-    system("pause");
+    cout<<countAndSay(n)<<endl; // 输出: 
+    return 0;
 }
 
 string countAndSay(int n) 
