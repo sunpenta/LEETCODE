@@ -18,9 +18,9 @@ int main()
 }
 
 vector<vector<int>>combinationSum(vector<int>& candidates, int target)
-{
-    vector<vector<int>>ans;vector<int>combine;
+{  
     int n=candidates.size();
+    vector<vector<int>>ans; vector<int>combine;
     int sum=0; // 子数组和
     // sum=target; lamada表达式:[&]：捕获所有引用，函数参数:int back; function<返回类型(参数类型)> 函数名
     function<void(int)> dfs=[&] (int back)
@@ -31,7 +31,7 @@ vector<vector<int>>combinationSum(vector<int>& candidates, int target)
             ans.emplace_back(begin(combine),end(combine));          
         else
         {
-            for (int i=back;i<n;i++)
+            for (int i=back; i<n; i++)
             {
                 sum+=candidates[i];
                 combine.emplace_back(candidates[i]);
