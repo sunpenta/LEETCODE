@@ -1,5 +1,5 @@
 // 不同路径-dfs(dp)  l-62 -DP/matrix/1.1
-// 从左上角到右下角；只能向右或向下（即，只能进不能退）
+// 从左上角到右下角；只能向右或向下（即，只能进不能退); -> 2d array
 #include <bits/stdc++.h>
 using namespace std;
 vector<vector<string>>Paths(int m, int n);
@@ -21,7 +21,7 @@ int main()
     return 0;
 }
 
-void dfs(vector<vector<string>>&maps,vector<string>map,int m,int n,int row,int col)
+void dfs(vector<vector<string>>&maps, vector<string>map, int m, int n, int row, int col)
 {
     if (row>=m || col>=n) return; // 超过界限
     
@@ -43,6 +43,6 @@ vector<vector<string>> Paths(int m, int n)
 {
     vector<vector<string>> maps; 
     vector<string> map(m,string(n,'0'));
-    dfs(maps,map,m,n,0,0); // 从行开始
+    dfs(maps,map,m,n,0,0); // [0,0]
     return maps;
 }
