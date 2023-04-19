@@ -23,11 +23,11 @@ const unordered_map<char, string> phonemap = {
     {'9', "wxyz"},
 };
 
-void backtrack(vector<string>& ans,string& str,const string& digits, int index)
+void backtrack(vector<string>& ans,string& s,const string& digits, int index)
 {   
     if (index == digits.size()) // 终止条件 
     {
-        ans.push_back(str);
+        ans.push_back(s);
         return;
     }
 
@@ -36,17 +36,17 @@ void backtrack(vector<string>& ans,string& str,const string& digits, int index)
     const string& letters = phonemap.at(digit); // .at 检查key，若key不存在，抛出异常
     for (const char& letter : letters) // auto是const char
     {
-        str.push_back(letter);
-        backtrack(ans,str,digits, index + 1); 
-        str.pop_back(); // 恢复原状
+        s+=letter;
+        backtrack(ans,s,digits, index + 1); 
+        s.pop_back(); // 恢复原状
     }
 }
 
 vector<string>letterCombinations(string digits)
 {
-    vector<string> ans; string str;
+    vector<string> ans; string s;
     // 特殊情况：空字符串
     if (digits.size()==0) return ans;
-    backtrack(ans,str,digits, 0); // 回溯
+    backtrack(ans,s,digits, 0); // 回溯
     return ans;
 }
