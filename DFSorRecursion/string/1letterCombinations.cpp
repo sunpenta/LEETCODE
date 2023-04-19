@@ -32,9 +32,9 @@ void backtrack(vector<string>& ans,string& str,const string& digits, int index)
     }
 
     char digit = digits[index];
-    // 同const string &letters = phonemap[digit]; // [], 若key不存在，添加key，不抛出异常
-    const string &letters = phonemap.at(digit); // .at 检查key，若key不存在，抛出异常
-    for (auto &letter : letters) // auto是const char
+    // 同const string &letters = phonemap[digit]; // [], 若key不存在，则添加key，不抛出异常
+    const string& letters = phonemap.at(digit); // .at 检查key，若key不存在，抛出异常
+    for (const char& letter : letters) // auto是const char
     {
         str.push_back(letter);
         backtrack(ans,str,digits, index + 1); 
