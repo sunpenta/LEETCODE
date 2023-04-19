@@ -12,7 +12,7 @@ int main()
 }
 
 // 是否符合N皇后规则
-bool isValid(vector<string>&board,int n,int row,int col)
+bool isValid(vector<string>& board, int n, int row, int col)
 {
     // 检查同一列，同一行已在dfs()中检查过
     for (int i=0;i<row;i++)
@@ -38,13 +38,13 @@ int dfs(vector<string> &board, int n, int row)
     if (row==n) ++ways;
 
     // 遍历第row行的所有列
-    for (int i=0;i<n;i++)
+    for (int i=0; i<n; i++)
     {
         if (isValid(board,n,row,i))
         {
             board[row][i]='Q';
-            dfs(board,n,row+1);
-            board[row][i]='.';
+            dfs(board,n,row+1); // 下一行
+            board[row][i]='.'; // 回溯到上一步
         }
     }
     return ways;
