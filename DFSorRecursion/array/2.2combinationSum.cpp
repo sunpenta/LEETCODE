@@ -2,7 +2,7 @@
 // 输入数组有重复元素；元素不可重复使用; 组合无重复
 #include <bits/stdc++.h>
 using namespace std;
-vector<vector<int>>combinationSum2(vector<int>&candidates,int target);//声明子函数
+vector<vector<int>>combinationSum2(vector<int>& candidates, int target);//声明子函数
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
     return 0;
 }
 
-// 从candidates[index]开始搜索，找子数组(combine)和=target，ans:所有组合
+// 从candidates[index]开始搜索，找target-sum(combine)=0
 void dfs(vector<int>&candidates,vector<vector<int>>&ans,vector<int>&combine,int n,int target,int index)
 {
     if (target==0)
