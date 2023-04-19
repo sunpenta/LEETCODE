@@ -6,7 +6,7 @@ vector<string>letterCombinations(string digits);
 int main()
 {
     string digits = "23"; // 输入
-    vector<string> ans=letterCombinations(digits); // output
+    vector<string> ans=letterCombinations(digits); // output: ad ae af bd be bf cd ce cf
     for (string nums:ans)
         cout << nums << " ";
     return 0;
