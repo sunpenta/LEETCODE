@@ -51,6 +51,6 @@ int dfs(vector<string> &board, int n, int row)
 }
 int totalNQueens(int n)
 {
-    vector<string>board(n,string(n,'.')); // 初始化为全是'.'
+    vector<string>board(n,string(n,'.')); // 矩阵每个格子初始化为'.'
     return dfs(board,n,0);
 }
