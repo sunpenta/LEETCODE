@@ -41,6 +41,5 @@ vector<vector<int>>combinationSum(vector<int>&candidates,int target)
     vector<vector<int>> ans; vector<int> combine; // 子数组集；子数组
     int n=candidates.size();
     dfs(candidates,target,ans,combine,n,0);
-
     return ans;  
 }

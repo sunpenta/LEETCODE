@@ -28,7 +28,7 @@ vector<vector<int>>combinationSum(vector<int>& candidates, int target)
         if (sum>target) // 不满足条件，返回
             return;
         else if (sum==target) // 满足条件
-            ans.emplace_back(begin(combine),end(combine));          
+            ans.emplace_back(combine);          
         else
         {
             for (int i=back; i<n; i++)
