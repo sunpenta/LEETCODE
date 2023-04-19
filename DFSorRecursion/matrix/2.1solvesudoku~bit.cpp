@@ -1,4 +1,4 @@
-// 解数独 -dfs+按位运算（状态压缩）  l-37
+// 解数独 - 回溯+按位运算（状态压缩）  l-37
 #include <bits/stdc++.h>
 using namespace std;
     /* ~1000 & 0xf(1111)       // 1变0、0变1
