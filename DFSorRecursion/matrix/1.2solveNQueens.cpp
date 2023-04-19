@@ -20,7 +20,7 @@ int main()
 // 判断当前行列的棋局符合规则
 bool isValid(vector<string>& board,int n,int row,int col)
 {
-    // 向上,同一列(dfs按列循环，同一行符合规则)
+    // 向上, 同一列(dfs按列循环，同一行符合规则)
     for (int i=0; i<row; i++)
     {
         if (board[i][col]=='Q') return false;
@@ -47,12 +47,12 @@ void dfs(vector<vector<string>>& ans,vector<string>& board,int n,int row)
         return;
     }
 
-    for (int col=0;col<n;col++) // 遍历row行
+    for (int col=0; col<n; col++) // 遍历row行的所有列
     {
-        if (isValid(board,n,row,col)) //如果当前布局符合N皇后规则
+        if (isValid(board,n,row,col))
         {
             board[row][col]='Q'; // 放置皇后
-            dfs(ans,board,n,row+1);
+            dfs(ans,board,n,row+1); // 下一行
             board[row][col]='.'; // 回溯
         }
     }
@@ -60,8 +60,8 @@ void dfs(vector<vector<string>>& ans,vector<string>& board,int n,int row)
 
 vector<vector<string>>solveNQueens(int n)
 {
-    vector<vector<string>>ans;
-    vector<string>board(n,string(n,'.')); // 棋盘初始化为'.'
+    vector<vector<string>> ans;
+    vector<string> board(n,string(n,'.')); // 棋盘初始化为'.'
     dfs(ans,board,n,0);
     return ans;
 }
