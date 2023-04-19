@@ -31,7 +31,7 @@ bool isValid(vector<string>& board, int n, int row, int col)
     }
     return true;
 }
-// 从第row行开始搜索，按规则放'Q';board:棋盘,count:放置方案数，一定用&
+// 从第row行开始搜索，按规则放'Q'; board:棋盘, ways:放置方案数，board一定用&
 int ways=0;
 int dfs(vector<string> &board, int n, int row)
 {
@@ -44,7 +44,7 @@ int dfs(vector<string> &board, int n, int row)
         {
             board[row][i]='Q';
             dfs(board,n,row+1); // 下一行
-            board[row][i]='.'; // 回溯到上一步
+            board[row][i]='.'; // 回溯
         }
     }
     return ways;

@@ -26,7 +26,7 @@ void dfs(vector<vector<int>>&subsets,vector<int>subset,vector<int>&nums,int k,in
         return;
     }
     
-    for (int i=index;i<nums.size();i++)
+    for (int i=index; i<nums.size(); i++)
     {
         if (i>index && nums[i]==nums[i-1]) continue; // 去重
         subset.emplace_back(nums[i]);

@@ -40,6 +40,6 @@ vector<vector<int>>combinationSum(vector<int>&candidates,int target)
     sort(candidates.begin(),candidates.end()); // *排序*
     vector<vector<int>> ans; vector<int> combine; // 子数组集；子数组
     int n=candidates.size();
-    dfs(candidates,target,ans,combine,0);
+    dfs(ans,combine,candidates,target,0);
     return ans;  
 }
