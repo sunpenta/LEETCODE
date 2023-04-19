@@ -28,8 +28,8 @@ void dfs(vector<string>& ips, string ip, string& s, int count, int index)
     {
         if (s[index]=='0' && len>1) break; // 无前导0
         if (len==3 && s.substr(index,len)>"255") break; // [0,255]
-        dfs(ips,ip+s.substr(index,len)+'.',s,count+1,index+len); // ip不可是&; 无需撤销，更快
-    /*  ip+=(s.substr(index,len)+'.'); // '.'+ [index,index+len)
+        dfs(ips,ip+s.substr(index,len)+'.',s,count+1,index+len); // ip不能是&; 无需撤销，更快
+    /*同ip+=(s.substr(index,len)+'.'); // '.'+ [index,index+len)
         dfs(ips,ip,s,count+1,index+len);
         ip=ip.substr(0,index+count);  // ip可是&*/
     }
