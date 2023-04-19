@@ -10,9 +10,9 @@ int main()
     vector<vector<string>> ans=Paths(m,n); // 输出
     for (int i=0; i<ans.size(); i++)
     {
-        for (auto map:ans[i])
+        for (auto row:ans[i])
         {
-            for (auto i:map)
+            for (int i:row)
                 cout<<i<<" ";
             cout<<endl;
         }
@@ -36,13 +36,13 @@ void dfs(vector<vector<string>>&maps,vector<string>map,int m,int n,int row,int c
         map[row][col]='1';
     }
     dfs(maps,map,m,n,row+1,col);
-    dfs(maps,map,m,n,row,col+1); // 无撤销
+    dfs(maps,map,m,n,row,col+1);
 }
 
 vector<vector<string>> Paths(int m, int n) 
 {
-    vector<vector<string>>maps; 
-    vector<string>map(m,string(n,'0'));
+    vector<vector<string>> maps; 
+    vector<string> map(m,string(n,'0'));
     dfs(maps,map,m,n,0,0); // 从行开始
     return maps;
 }
