@@ -21,14 +21,12 @@ int main()
         {'.','.','.','.','8','.','.','7','9'}
     }; // 输入
 
-    Solution().solveSudoku(board); // 输出
+    solveSudoku(board); // 输出
     for (int i=0;i<9;i++)
     {
-        for (int j=0;j<9;j++)
-            cout<<board[i][j]<<" ";
-        cout<<endl;
+        cout<<board[i][0]<<" "<<board[i][1]<<endl;
     }
-    system("pause");
+    return 0;
 }
 
 int row[9];
