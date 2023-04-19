@@ -2,15 +2,15 @@
 // 有效IP地址由4个整数组成，每个整数∈[0,255]，且无前导0，整数之间用 '.' 分隔；1 <= s.length <= 20
 #include<bits/stdc++.h>
 using namespace std;
-vector<string>restoreIpAddresses(string s);
+vector<string> restoreIpAddresses(string s);
 
 int main()
 {
     string s="101023"; // 输入
-    vector<string>ips=restoreIpAddresses(s); // 输出:
+    vector<string> ips=restoreIpAddresses(s); // 输出:
     for (auto ip:ips) // {"1.0.10.2.3","1.0.102.3",10.1.0.23","10.10.2.3","101.0.2.3"}
         cout<<ip<<endl;
-    system("pause");
+    return 0;
 }
 
 // ips:所有ip组合；ip:1个ip地址; count:ip的第？个部分；index:s的搜索下标
