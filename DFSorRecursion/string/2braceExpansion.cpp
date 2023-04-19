@@ -2,7 +2,7 @@
 // 无重复组合结果；1 <= expression.length <= 60
 #include <bits/stdc++.h>
 using namespace std;
-vector<string>braceExpansion(string expression);
+vector<string> braceExpansion(string expression);
 
 int main()
 {
@@ -14,7 +14,7 @@ int main()
 }
 
 // res:存所有花括号展开字符串，set保证无重复
-void dfs(set<string>&res,string expression)
+void dfs(set<string>& res, string expression)
 {
     int n=expression.length();
     int j=expression.find('}'); // '}'的第1个下标; .find():string类内find(), ->pos

@@ -1,4 +1,4 @@
-// 复原ip地址-回溯  l-93 -DP\numDecodings
+// 复原ip地址 - 回溯  l-93 -DP\numDecodings
 // 有效IP地址由4个整数组成，每个整数∈[0,255]，且无前导0，整数之间用 '.' 分隔；1 <= s.length <= 20
 #include<bits/stdc++.h>
 using namespace std;
@@ -22,7 +22,7 @@ void dfs(vector<vector<string>>& ips, vector<string>& ip, string &s, int index)
         return;
     }
 
-    for (int i=index;i<s.length();i++)
+    for (int i=index; i<s.length(); i++)
     {
         if (s[index]=='0' && i-index>=1) break; // 无前导0
         if (stoi(s.substr(index,i-index+1))>255) break; // [0,255]
@@ -34,13 +34,13 @@ void dfs(vector<vector<string>>& ips, vector<string>& ip, string &s, int index)
 // 更好理解
 vector<string>restoreIpAddresses(string s) 
 {
-    vector<vector<string>>ips; vector<string>ip;
+    vector<vector<string>> ips; vector<string> ip;
     int n=s.length();
     if (n<4 || n>16) return ip;
     dfs(ips,ip,s,0);
     // 用'.'把ip里的4部分拼起来
-    vector<string>res;
-    for (int i=0;i<ips.size();i++)
+    vector<string> res;
+    for (int i=0; i<ips.size(); i++)
     {
         string t=ips[i][0]; // ip的第1part
         for (int j=1;j<4;j++)
