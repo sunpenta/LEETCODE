@@ -6,7 +6,7 @@ vector<vector<int>>combinationSum(vector<int>& candidates, int target);
 
 int main()
 {
-    vector<int>candidates{2,3,6,7}; int target=7; // 输入
+    vector<int> candidates{2,3,6,7}; int target=7; // 输入
     vector<vector<int>>ans=combinationSum(candidates,target); // 输出:
     for (int i=0;i<ans.size();i++) // {{2,2,3},{7}}
     {
@@ -25,7 +25,7 @@ void dfs(vector<int>& candidates, int target, vector<vector<int>>& ans, vector<i
         ans.emplace_back(combine);
         return;
     }
-    for (int i=index;i<n;i++) // 循环
+    for (int i=index; i<n; i++) // 循环
     {
         if (target<candidates[i]) // 剪枝
             break;
@@ -34,12 +34,12 @@ void dfs(vector<int>& candidates, int target, vector<vector<int>>& ans, vector<i
         combine.pop_back();
     }
 }
-// 子数组和=target
+
 vector<vector<int>>combinationSum(vector<int>&candidates,int target)
 {
-    vector<vector<int>>ans; vector<int>combine; // 组合集；子数组
+    sort(candidates.begin(),candidates.end()); // *排序*
+    vector<vector<int>> ans; vector<int> combine; // 子数组集；子数组
     int n=candidates.size();
-    sort(candidates.begin(),candidates.end()); // 排序
     dfs(candidates,target,ans,combine,n,0);
 
     return ans;  
