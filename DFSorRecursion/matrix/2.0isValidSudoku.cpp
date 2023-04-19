@@ -1,7 +1,7 @@
 // 有效的数独  l-36
 #include <bits/stdc++.h>
 using namespace std;
-bool isValidSudoku(vector<vector<char>> &board);
+bool isValidSudoku(vector<vector<char>>& board);
 
 int main()
 {
@@ -20,7 +20,7 @@ int main()
     system("pause");
 }
 
-bool isValidSudoku(vector<vector<char>> &board)
+bool isValidSudoku(vector<vector<char>>& board)
 {
     int row[9][10]={0}; // 将数组所有元素赋值为0
     int col[9][10]={0}; // 列坐标代表0-9 10个数字，只使用1-9
