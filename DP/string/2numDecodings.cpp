@@ -9,14 +9,13 @@ int main()
 {
     string s="120303113"; // 输入
     cout<<numDecodings(s)<<endl; // 输出：0
-    system("pause");
+    return 0;
 }
 
 int numDecodings(string s)
 {
-    if (s[0]=='0') return 0; // 无前导0
     int n=s.length();
-    vector<int>dp(n); // dp[i]:[0,i]字符串的编码方法
+    vector<int> dp(n); // dp[i]:[0,i]字符串的编码方法
     dp[0]=1; // 边界
     for (int i=1;i<n;i++)
     {
