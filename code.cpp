@@ -1,10 +1,18 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-bool reach(vector<vector<int>>& maze, int rowStart, int colStart, int endStart, int colEnd);
+bool reach(vector<vector<int>>& maze, int rowStart, int colStart, int rowEnd, int colEnd);
 int main()
-{    
-     cout<<endl;
+{
+     vector<vector<int>> maze={
+          {0,0,1,0,0},
+          {0,0,0,0,0},
+          {0,0,0,1,0},
+          {1,1,0,1,1},
+          {0,0,0,0,0}
+     };
+     int rowStart=0, colStart=4, rowEnd=4, colEnd=4;
+     cout<<boolalpha<<reach(maze,rowStart,colStart,rowEnd,colEnd)<<endl;
      return 0;
 }
 
