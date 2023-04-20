@@ -1,4 +1,4 @@
-// 编码方法-动态规划+分类  l-91 -dfs\restoreAddresses
+// 解码方法 - 动态规划+分类  l-91 -dfs\restoreAddresses
 // 'A'->'1' ... 'Z'->'26'
 #include <bits/stdc++.h>
 using namespace std;

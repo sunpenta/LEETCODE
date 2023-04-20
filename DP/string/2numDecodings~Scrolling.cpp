@@ -1,4 +1,4 @@
-// 编码方法-动态规划+分类+滚动数组  l-91
+// 解码方法-动态规划+分类+滚动数组  l-91
 #include <bits/stdc++.h>
 using namespace std;
 int numDecodings(string s);
