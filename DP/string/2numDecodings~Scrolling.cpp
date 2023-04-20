@@ -1,5 +1,6 @@
-// 解码方法-动态规划+分类+滚动数组  l-91
-#include <bits/stdc++.h>
+// 解码方法 - 动态规划+分类+滚动数组  l-91
+#include <iostream>
+#include <vector>
 using namespace std;
 int numDecodings(string s);
 

@@ -23,8 +23,8 @@ int numDecodings(string s)
             dp[i+1]=dp[i];
         if (s[i-1]=='1' || (s[i-1]=='2' && s[i]<='6')) // 两位整数'1'-'26'
         {
-            dp[i]+=dp[i-2];
+            dp[i+1]+=dp[i-1];
         }
     }
-    return dp[n-1];
+    return dp[n];
 }
