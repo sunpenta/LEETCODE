@@ -15,7 +15,7 @@ int main()
 int numDecodings(string s)
 {
     int n=s.length();
-    vector<int> dp(n+1); // dp[i]: 前i个数[0,i-1]的解码方法
+    vector<int> dp(n+1); // dp[i]: 前i个数即[0,i-1]的解码方法
     dp[0]=1; dp[1]=(s[0]!='0');
     for (int i=1; i<n; i++)
     {
