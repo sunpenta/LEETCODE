@@ -1,6 +1,7 @@
-// 解码方法 - 动态规划+分类  l-91 -dfs\restoreAddresses
-// 'A'->'1' ... 'Z'->'26'
-#include <bits/stdc++.h>
+// 解码方法 - 动态规划+分类  l-91   -DfsorRecursion\string\restoreAddresses
+// 'A'->'1', ... ,'Z'->'26'
+#include <iostream>
+#include <vector>
 using namespace std;
 int numDecodings(string s);
 
