@@ -8,14 +8,13 @@ int main()
 {
     string s="120303113"; // 输入
     cout<<numDecodings(s)<<endl; // 输出：0
-    system("pause");
+    return 0;
 }
 
 int numDecodings(string s)
 {
-    if (s[0]=='0') return 0; // 无前导0
     int pre=1, cur=1; // dp[-1]=dp[0]=1
-    for (int i=1;i<s.length();i++)
+    for (int i=1; i<s.length(); i++)
     {
         int tmp=cur;
         if (s[i]=='0') // 当前值'0'
