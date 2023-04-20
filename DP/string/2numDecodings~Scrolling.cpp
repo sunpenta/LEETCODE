@@ -13,8 +13,9 @@ int main()
 
 int numDecodings(string s)
 {
+    int n=s.length();
     int pre=1, cur=1; // dp[-1]=dp[0]=1
-    for (int i=1; i<s.length(); i++)
+    for (int i=1; i<n; i++)
     {
         int tmp=cur;
         if (s[i]=='0') // 当前值'0'
@@ -24,7 +25,7 @@ int numDecodings(string s)
             else
                 return 0;
         }
-        else if (s[i-1]!='0' && (10*(s[i-1]-'0')+(s[i]-'0'))<=26)
+        else if (s[i-1]=='1' || (s[i-1]=='2' && s[i]<='6'))
             cur+=pre;
         pre=tmp;
     }
