@@ -15,18 +15,15 @@ int main()
 int numDecodings(string s)
 {
     int n=s.length();
-    vector<int> dp(n); // dp[i]:[0,i]字符串的编码方法
+    vector<int> dp(n+1); // dp[i]:[0,i]字符串的编码方法
     dp[0]=1; // 边界
-    for (int i=1;i<n;i++)
+    for (int i=1; i<n; i++)
     {
         if (s[i]!='0')
-            dp[i]=dp[i-1];
-        if (s[i-1]!='0' && stoi(s.substr(i-1,2))<=26) // 前1位不为0(无前导0)；且该两位整数<=26(可解码为字母)
+            dp[i+1]=dp[i];
+        if (s[i-1]=='1' || (s[i-1]=='2' && s[i]<='6')) // 前1位不为0(无前导0)；且该两位整数<=26(可解码为字母)
         {
-            if (i>1) 
-                dp[i]+=dp[i-2];
-            else // i=1
-                dp[i]+=1;
+            dp[i]+=dp[i-2];
         }
     }
     return dp[n-1];
