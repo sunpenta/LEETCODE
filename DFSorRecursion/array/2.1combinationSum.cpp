@@ -17,7 +17,7 @@ int main()
     return 0;
 }
 
-// combine:target-子数组和=0; ans:所有子数组; index:搜索起点candidates[index]
+// target-子数组和=0; ans:所有子数组; index:搜索起点candidates[index]
 void dfs(vector<vector<int>>& ans, vector<int>& combine, vector<int>& candidates, int target, int index)
 {
     if (target==0) // 终止条件
