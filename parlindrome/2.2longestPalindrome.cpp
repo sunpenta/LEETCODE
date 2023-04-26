@@ -5,12 +5,14 @@ int longestPalindrome(string s);
 
 int main()
 {
-
+    string s="aaaaAa"; // input
+    cout<<longestPalindrome(s)<<endl; // output:5
+    return 0;
 }
 
 int longestPalindrome(string s)
 {
-    int dict[256];
+    int dict[256]={0};
     for (char ch:s)
         dict[ch-'A']++;
     int maxlen=0;
