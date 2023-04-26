@@ -7,7 +7,7 @@ string longestPalindrome(string s);
 int main()
 {
     string s = "babad"; // 输入
-    cout<<longestPalindrome(s)<<endl; // 输出:bab aba
+    cout<<longestPalindrome(s)<<endl; // 输出:bab
     return 0;
 }
 
@@ -18,7 +18,7 @@ string longestPalindrome(string s)
     if (n==1) return s; 
 
     int begin=0; // 最长回文串的起始下标
-    int maxlen = 1; // 最大长度
+    int maxlen = 1; // 长度
     vector<vector<int>> dp(n, vector<int>(n,true)); // dp[i][j]:s[i,j]是否为回文串 
     for (int j=0; j<n; j++) // [i,j]
     {

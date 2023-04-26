@@ -1,24 +1,24 @@
-// �ָ���Ĵ�-dp+dfs  l-131  -DP/string/1.2
-// s.length��[1,16] 
-#include <bits/stdc++.h>
+// 分割回文串-dp+dfs  l-131  -DP/string/1.2
+// s.length⋿[1,16] 
+#include <iostream>
 using namespace std;
-vector<vector<string>>partition(string s);
+vector<vector<string>> partition(string s);
 
 int main()
 {
-    string s="aab"; // ����
-    vector<vector<string>>res=partition(s); // ���:{{"a","a","b"},{"aa","b"}}
+    string s="aab"; // input
+    vector<vector<string>> res=partition(s); // output:{{"a","a","b"},{"aa","b"}}
     for (auto strs:res)
     {
         for (string str:strs)
             cout<<str<<" ";
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
-// �ָ���Ĵ�
-void dfs(vector<vector<string>>& res,vector<string>& split,vector<vector<int>>&dp,string s,int index)
+// 
+void dfs(vector<vector<string>>& res, vector<string>& split, vector<vector<int>>&dp, string s, int index)
 {
     if (index==s.length())
     {
