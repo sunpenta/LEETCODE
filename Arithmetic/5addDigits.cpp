@@ -1,4 +1,4 @@
-// 数字的各位之和 - 计算数字各位  l-258
+// 数字的各位之和 - 计算数字个位  l-258
 // 把数字的各位累加，直到和为1位数字
 #include <iostream>
 using namespace std;
