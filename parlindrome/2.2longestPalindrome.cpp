@@ -12,7 +12,7 @@ int main()
 
 int longestPalindrome(string s)
 {
-    int dict[256]={0};
+    int dict[256]={0}; // note:initialize
     for (char ch:s)
         dict[ch-'A']++;
     int maxlen=0;
