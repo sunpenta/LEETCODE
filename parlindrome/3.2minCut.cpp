@@ -1,29 +1,29 @@
-// ×îÉÙ·Ö¸î´ÎÊý-dp+dp  l-132  -dfs/string/5
-// s.length¡Ê[1,2000]
+// åˆ†å‰²å›žæ–‡ä¸² - dp+dp  l-132  -dfs/string/5
+// s.lengthâ‹¿[1,2000]
 #include <bits/stdc++.h>
 using namespace std;
 int minCut(string s);
 
 int main()
 {
-    string s="cbccccbc"; // ÊäÈë
-    cout<<minCut(s)<<endl; // Êä³ö:1
+    string s="cbccccbc"; // input
+    cout<<minCut(s)<<endl; // output:1
     system("pause");
 }
 
 int minCut(string s)
 {
     int n=s.length();
-    vector<vector<int>>dp(n,vector<int>(n,true));
-    for (int i=n-1;i>=0;i--)
+    vector<vector<int>> dp(n,vector<int>(n,true));
+    for (int i=n-1; i>=0; i--)
     {
-        for (int j=i+1;j<n;j++)
+        for (int j=i+1; j<n; j++)
         {
             dp[i][j]=(s[i]==s[j]) && dp[i+1][j-1];
         }
     }
 
-    vector<int>f(n,INT_MAX); // f[i]:s[0,i]µÄ×îÐ¡·Ö¸î´ÎÊý
+    vector<int> f(n,INT_MAX); // f[i]:s[0,i]çš„åˆ†å‰²æ–¹æ¡ˆæ•°
     for (int i=0;i<n;i++)
     {
         if (dp[0][i]) 
@@ -35,8 +35,7 @@ int minCut(string s)
                 if (dp[j+1][i])
                     f[i]=min(f[i],f[i-1]+1);
             }
-        }
-        cout<<i<<" "<<f[i]<<endl;    
+        }    
     }
     return f[n-1];
 }
