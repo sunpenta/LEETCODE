@@ -1,6 +1,7 @@
 // 分割回文串 - dp+dp  l-132  -dfs/string/5
-// s.length⋿[1,2000]
-#include <bits/stdc++.h>
+// s.length⋿[1,2000]; 最少分割次数
+#include <iostream>
+#include <vector>
 using namespace std;
 int minCut(string s);
 
@@ -8,7 +9,7 @@ int main()
 {
     string s="cbccccbc"; // input
     cout<<minCut(s)<<endl; // output:1
-    system("pause");
+    return 0;
 }
 
 int minCut(string s)

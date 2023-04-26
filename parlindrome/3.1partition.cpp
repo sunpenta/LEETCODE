@@ -1,5 +1,5 @@
-// 分割回文串-dp+dfs  l-131  -DP/string/1.2
-// s.length⋿[1,16] 
+// 分割回文串 - dp+dfs  l-131  -DP/string/1.2
+// s.length⋿[1,16]; 所有分割方案
 #include <iostream>
 #include <vector>
 using namespace std;
