@@ -1,13 +1,13 @@
-// ·Ö¸î»ØÎÄ´®-dp+dfs  l-131  -DP/string/1.2
-// s.length¡Ê[1,16] 
+// ï¿½Ö¸ï¿½ï¿½ï¿½Ä´ï¿½-dp+dfs  l-131  -DP/string/1.2
+// s.lengthï¿½ï¿½[1,16] 
 #include <bits/stdc++.h>
 using namespace std;
 vector<vector<string>>partition(string s);
 
 int main()
 {
-    string s="aab"; // ÊäÈë
-    vector<vector<string>>res=partition(s); // Êä³ö:{{"a","a","b"},{"aa","b"}}
+    string s="aab"; // ï¿½ï¿½ï¿½ï¿½
+    vector<vector<string>>res=partition(s); // ï¿½ï¿½ï¿½:{{"a","a","b"},{"aa","b"}}
     for (auto strs:res)
     {
         for (string str:strs)
@@ -17,7 +17,7 @@ int main()
     system("pause");
 }
 
-// ·Ö¸î»ØÎÄ´®
+// ï¿½Ö¸ï¿½ï¿½ï¿½Ä´ï¿½
 void dfs(vector<vector<string>>& res,vector<string>& split,vector<vector<int>>&dp,string s,int index)
 {
     if (index==s.length())
@@ -39,13 +39,13 @@ void dfs(vector<vector<string>>& res,vector<string>& split,vector<vector<int>>&d
 vector<vector<string>>partition(string s)
 {
     int n=s.length();
-    // dpÔ¤´¦Àí
-    vector<vector<int>>dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]ÊÇ·ñÎª»ØÎÄ´®;dp[i][i],dp[i][j](i>j)true
-    for (int i=n-1;i>=0;i--) // µ¹×Å±éÀú
+    // dpÔ¤ï¿½ï¿½ï¿½ï¿½
+    vector<vector<int>>dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]ï¿½Ç·ï¿½Îªï¿½ï¿½ï¿½Ä´ï¿½;dp[i][i],dp[i][j](i>j)true
+    for (int i=n-1;i>=0;i--) // ï¿½ï¿½ï¿½Å±ï¿½ï¿½ï¿½
     {
         for (int j=i+1;j<n;j++)
         {
-            dp[i][j]=(s[i]==s[j]) && dp[i+1][j-1]; // ×´Ì¬×ªÒÆ·½³Ì
+            dp[i][j]=(s[i]==s[j]) && dp[i+1][j-1]; // ×´Ì¬×ªï¿½Æ·ï¿½ï¿½ï¿½
         }
     }
 
