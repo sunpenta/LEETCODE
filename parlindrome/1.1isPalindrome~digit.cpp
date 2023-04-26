@@ -13,8 +13,10 @@ int main()
 bool isPalindrome(int x)
 {
     // 特殊情况：不是回文数：负数，或10的倍数（除0）
-    if (x < 0 || (x%10==0 && x!=0)) return false;
-    if (x < 10)  return true; // 个位数
+    if (x < 0 || (x%10==0 && x!=0)) 
+        return false;
+    if (x < 10) // 个位数
+        return true; 
 
     int reversed = 0;
     while (x>reversed)
@@ -22,5 +24,5 @@ bool isPalindrome(int x)
         reversed = reversed* 10 + x % 10;
         x/=10;
     }
-    return x==reversed || x==reversed/10;
+    return x==reversed || x==reversed/10; // 偶位数，奇位数
 }
