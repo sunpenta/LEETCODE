@@ -15,7 +15,7 @@ int main()
 int minCut(string s)
 {
     int n=s.length();
-    vector<vector<int>> dp(n,vector<int>(n,true));
+    vector<vector<int>> dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]是回文串
     for (int i=n-1; i>=0; i--)
     {
         for (int j=i+1; j<n; j++)
