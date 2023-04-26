@@ -17,7 +17,7 @@ int main()
     return 0;
 }
 
-// 
+// 压入1个[index,?]回文串
 void dfs(vector<vector<string>>& res, vector<string>& split, vector<vector<int>>&dp, string s, int index)
 {
     if (index==s.length())
@@ -39,7 +39,7 @@ void dfs(vector<vector<string>>& res, vector<string>& split, vector<vector<int>>
 vector<vector<string>>partition(string s)
 {
     int n=s.length();
-    // dpԤ����
+    // dp预处理
     vector<vector<int>> dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]�Ƿ�Ϊ���Ĵ�;dp[i][i],dp[i][j](i>j)true
     for (int i=n-1;i>=0;i--) // ���ű���
     {
