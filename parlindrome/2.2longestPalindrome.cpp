@@ -1,4 +1,5 @@
 // 最长回文串 - hash  l-409
+// 给定字符串的字母（包括大小写），组成的最长回文串
 #include <iostream>
 using namespace std;
 int longestPalindrome(string s);
