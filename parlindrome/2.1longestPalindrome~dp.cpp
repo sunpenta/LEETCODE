@@ -24,7 +24,12 @@ string longestPalindrome(string s)
     {
         for (int i = 0; i < j; i++)
         {                      
-                dp[i][j] = (s[i]==s[j]) && dp[i + 1][j - 1];
+            if (s[i]!=s[j])
+                dp[i][j] = false;
+            else if (j-i<3) // [i+1,j-1]没有字符，或有1个字符，(j-1)-(i+1)+1=j-i-1<=1, 即j-i<=2，
+                dp[i][j] = true;
+            else
+                dp[i][j] = dp[i + 1][j - 1];
                    
             if (dp[i][j] && (j-i+1)>maxlen) // 更新
             {
