@@ -12,10 +12,10 @@ int main()
 
 bool isPalindrome(int x)
 {
-    // 特殊情况：不是回文数：负数，或10的倍数（除0）
-    if (x < 0 || (x%10==0 && x!=0)) 
+    // 特殊情况： 
+    if (x < 0 || (x%10==0 && x!=0)) // 不是回文数:负数，或10的倍数（除0）
         return false;
-    if (x < 10) // 个位数
+    if (x < 10) // 是回文数:个位数
         return true; 
 
     int reversed = 0;
