@@ -6,14 +6,9 @@ string longestPalindrome(string s);
 
 int main()
 {
-    string s=string(1,'a');
-    cout<<s<<endl;
-
-    /*
     string s = "babad"; // 输入
-    cout <<longestPalindrome(s) << endl; // 输出:bab
-    system("pause");
-    */
+    cout<<longestPalindrome(s)<<endl; // 输出:bab
+    return 0;
 }
 
 string longestPalindrome(string s)
@@ -29,9 +24,9 @@ string longestPalindrome(string s)
     {
         for (int i = 0; i < j; i++) // i:左边界
         {                      
-            if (s[i] != s[j])
+            if (s[i]!=s[j])
                 dp[i][j] = false;
-            else if (j-i<3) // (j-1)-(i+1)+1<2表示dp[i][j]的最大字串长度为1
+            else if (j-i<3) // [i+1,j-1]没有字符，或有1个字符，(j-1)-(i+1)+1=j-i-1<=1, 即j-i<=2，
                 dp[i][j] = true;
             else
                 dp[i][j] = dp[i + 1][j - 1];
