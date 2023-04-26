@@ -22,5 +22,5 @@ bool isPalindrome(int x)
         reversed = reversed* 10 + x % 10;
         x/=10;
     }
-    return x == reversed;
+    return x==reversed || x==reversed/10;
 }
