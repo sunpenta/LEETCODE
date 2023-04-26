@@ -1,4 +1,4 @@
-// 验证回文数-分类  l-9
+// 回文数 - 分类  l-9
 #include <bits/stdc++.h>
 using namespace std;
 bool isPalindrome(int x);
@@ -7,7 +7,7 @@ int main()
 {
     int x = 121; // 输入
     cout<<boolalpha<<isPalindrome(x)<<endl; // 输出:true
-    system("pause");
+    return 0;
 }
 
 bool isPalindrome(int x)
