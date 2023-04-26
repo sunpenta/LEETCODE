@@ -1,6 +1,7 @@
 // 分割回文串-dp+dfs  l-131  -DP/string/1.2
 // s.length⋿[1,16] 
 #include <iostream>
+#include <vector>
 using namespace std;
 vector<vector<string>> partition(string s);
 
@@ -49,7 +50,7 @@ vector<vector<string>>partition(string s)
         }
     }
 
-    vector<vector<string>>res; vector<string>split;
+    vector<vector<string>> res; vector<string> split;
     dfs(res,split,dp,s,0);
     return res;
 }
