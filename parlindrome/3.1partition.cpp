@@ -40,12 +40,12 @@ vector<vector<string>>partition(string s)
 {
     int n=s.length();
     // dp预处理
-    vector<vector<int>> dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]是回文串
-    for (int i=n-1;i>=0;i--) // ���ű���
+    vector<vector<int>> dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]是回文串; 默认[i,i]true
+    for (int i=n-1;i>=0;i--) // [i,j]
     {
         for (int j=i+1;j<n;j++)
         {
-            dp[i][j]=(s[i]==s[j]) && dp[i+1][j-1]; // ״̬ת�Ʒ���
+            dp[i][j]=(s[i]==s[j]) && dp[i+1][j-1];
         }
     }
 
