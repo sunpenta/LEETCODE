@@ -40,7 +40,7 @@ vector<vector<string>>partition(string s)
 {
     int n=s.length();
     // dp预处理
-    vector<vector<int>> dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]�Ƿ�Ϊ���Ĵ�;dp[i][i],dp[i][j](i>j)true
+    vector<vector<int>> dp(n,vector<int>(n,true)); // dp[i][j]:s[i,j]是回文串
     for (int i=n-1;i>=0;i--) // ���ű���
     {
         for (int j=i+1;j<n;j++)
