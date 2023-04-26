@@ -1,4 +1,4 @@
-// 回文数 - 分类  l-9
+// 回文数 - 计算数字各位  l-9   -Arithmetic/addDigit
 #include <bits/stdc++.h>
 using namespace std;
 bool isPalindrome(int x);
