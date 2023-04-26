@@ -8,7 +8,7 @@ int minCut(string s);
 int main()
 {
     string s="cbccccbc"; // input
-    cout<<minCut(s)<<endl; // output:1
+    cout<<minCut(s)<<endl; // output:0
     return 0;
 }
 
