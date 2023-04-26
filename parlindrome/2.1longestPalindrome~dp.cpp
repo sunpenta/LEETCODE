@@ -19,7 +19,7 @@ string longestPalindrome(string s)
 
     int begin=0; // 最长回文串的起始下标
     int maxlen = 1; // 最大长度
-    vector<vector<int>>dp(n, vector<int>(n,false)); // dp[i][j]:s[i,j]是否为回文串 
+    vector<vector<int>> dp(n, vector<int>(n,false)); // dp[i][j]:s[i,j]是否为回文串 
     for (int j=0; j<n; j++) // [i,j]
     {
         for (int i = 0; i < j; i++)
