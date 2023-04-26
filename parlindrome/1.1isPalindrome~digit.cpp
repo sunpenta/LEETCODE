@@ -18,7 +18,7 @@ bool isPalindrome(int x)
     if (x < 10) // 是回文数:个位数
         return true; 
 
-    int reversed = 0; // x的后面一半(偶数)，或后半+1(奇数)
+    int reversed = 0; // x的后面一半(偶数)，或后半+1(奇数) 翻转
     while (x>reversed)
     {   
         reversed = reversed* 10 + x % 10;
