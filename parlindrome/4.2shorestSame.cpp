@@ -1,5 +1,5 @@
 // 最短same - kmp  l-214
-// 在string前加字母，使它成为最短回文串；length⋿[0,5e4]
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -9,7 +9,7 @@ string shortestPalindrome(string s);
 int main()
 {
     string s="aabba"; // input
-    cout<<shortestPalindrome(s)<<endl; // output:"abbaabba"
+    cout<<shortestPalindrome(s)<<endl; // output:"aabbabbaa"
     return 0;
 }
 
@@ -30,10 +30,11 @@ int KMP(string s)
 }
 string shortestPalindrome(string s)
 {
+    int n=s.length();
     string rs(s.rbegin(),s.rend());
     string t=rs+'#'+s;
     int l=KMP(t);
-    string tmp=s.substr(0,l);
+    string tmp=s.substr(0,n-l); // remove last l-elements
     reverse(tmp.begin(),tmp.end());
     return s+tmp;
 }
