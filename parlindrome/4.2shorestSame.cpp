@@ -8,8 +8,8 @@ string shortestPalindrome(string s);
 
 int main()
 {
-    string s="aabba"; // input
-    cout<<shortestPalindrome(s)<<endl; // output:"aabbabbaa"
+    string s="abcd"; // input
+    cout<<shortestPalindrome(s)<<endl; // output:"aabbaa"
     return 0;
 }
 
