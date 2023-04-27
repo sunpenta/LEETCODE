@@ -7,7 +7,9 @@ string shortestPalindrome(string s);
 
 int main()
 {
-
+    string s="aabba"; // input
+    cout<<shortestPalindrome(s)<<endl; // output:"abbaabba"
+    return 0;
 }
 
 string shortestPalindrome(string s)
@@ -19,5 +21,7 @@ string shortestPalindrome(string s)
         if (s[i]==s[j])
             ++i;
     }
-    
+    string t=s.substr(i);
+    reverse(t.begin(),t.end());
+    return t+shortestPalindrome(s.substr(0,i))+s.substr(i);
 }
