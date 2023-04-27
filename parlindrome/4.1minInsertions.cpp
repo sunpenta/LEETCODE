@@ -1,4 +1,4 @@
-// 使字符串成为palindrome的最小步骤 - dp  l-1312
+// 使字符串成为palindrome的最少步骤 - dp  l-1312
 // 每一步，可在字符串的任一位置插入任一字母; length⋿[1,500]
 #include <iostream>
 #include <vector>
