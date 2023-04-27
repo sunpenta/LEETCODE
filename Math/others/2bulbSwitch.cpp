@@ -8,7 +8,7 @@ int bulbSwitch(int n);
 int main()
 {
     int n=5; // input;
-    cout<<bulbSwitch(n)<<endl; // output
+    cout<<bulbSwitch(n)<<endl; // output:2
     return 0;
 }
 int bulbSwitch(int n)
