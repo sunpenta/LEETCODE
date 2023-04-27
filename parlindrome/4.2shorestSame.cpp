@@ -9,7 +9,7 @@ string shortestPalindrome(string s);
 int main()
 {
     string s="abcd"; // input
-    cout<<shortestPalindrome(s)<<endl; // output:"aabbaa"
+    cout<<shortestPalindrome(s)<<endl; // output:"abcdcba"
     return 0;
 }
 
