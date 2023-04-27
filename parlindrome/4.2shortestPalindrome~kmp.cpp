@@ -21,7 +21,7 @@ int KMP(string s)
     int i=0, j=-1;
     while (i<n)
     {
-        while (j!=-1 && s[i]==s[j])
+        while (j!=-1 && s[i]!=s[j])
             j=kmp[j];
         ++i, ++j;
         kmp[i]=j;
