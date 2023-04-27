@@ -21,6 +21,7 @@ string shortestPalindrome(string s)
         if (s[i]==s[j])
             ++i;
     }
+    if (i==n) return s; // note
     string t=s.substr(i);
     reverse(t.begin(),t.end());
     return t+shortestPalindrome(s.substr(0,i))+s.substr(i);
