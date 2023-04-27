@@ -27,11 +27,11 @@ int minCut(string s)
     vector<int> f(n,INT_MAX); // f[i]:s[0,i]的分割方案数
     for (int i=0;i<n;i++)
     {
-        if (dp[0][i]) 
+        if (dp[0][i]) // [0,i]
             f[i]=0;
         else
         {
-            for (int j=0;j<i;j++)
+            for (int j=0;j<i;j++) // [0,j] [j+1,i]
             {
                 if (dp[j+1][i])
                     f[i]=min(f[i],f[i-1]+1);
