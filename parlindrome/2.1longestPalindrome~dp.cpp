@@ -1,4 +1,4 @@
-// 最长回文子串-动态规划+分类 l-5
+// 最长回文子串 - 动态规划+分类 l-5
 // 1 <= s.length <= 1000; s仅由数字和英文字母组成
 #include <bits/stdc++.h>
 using namespace std;
