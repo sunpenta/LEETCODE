@@ -14,11 +14,9 @@ int main()
 string longestPalindrome(string s)
 {
     int n = s.length();
-    // 特殊情况：输入字符串只有一个字母
-    if (n==1) return s; 
+    if (n==0 || n==1) return s; 
 
-    int begin=0; // 最长回文串的起始下标
-    int maxlen = 1; // 长度
+    int begin=0, maxlen = 1; // 最长回文串的起始下标, 长度
     vector<vector<int>> dp(n, vector<int>(n,true)); // dp[i][j]:s[i,j]是否为回文串 
     for (int j=0; j<n; j++) // [i,j]
     {
