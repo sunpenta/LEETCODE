@@ -6,7 +6,7 @@ int main()
 {
      vector<string> strs ={"tars","rats","arts","star"};
      cout<<checkSimilar(strs[2],strs[3])<<" ";
-     //cout<<numSimilarGroups(strs)<<endl;
+     cout<<numSimilarGroups(strs)<<endl;
      return 0;
 }
 
