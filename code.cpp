@@ -1,40 +1,53 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-bool reach(vector<vector<int>>& maze, int rowStart, int colStart, int rowEnd, int colEnd);
+int numSimilarGroups(vector<string>& strs);
 int main()
 {
-     vector<vector<int>> maze={
-          {0,0,1,0,0},
-          {0,0,0,0,0},
-          {0,0,0,1,0},
-          {1,1,0,1,1},
-          {0,0,0,0,0}
-     };
-     int rowStart=0, colStart=4, rowEnd=4, colEnd=4;
-     cout<<boolalpha<<reach(maze,rowStart,colStart,rowEnd,colEnd)<<endl;
+     vector<string> strs ={"tars","rats","arts","star"};
+     cout<<numSimilarGroups(strs)<<endl;
      return 0;
 }
 
-bool dfs(vector<vector<int>>& maze, int rowEnd, int colEnd, int i, int j)
-{
-     int m=maze.size(), n=maze[0].size();
-     if (i<0 || i>=m || j<0 || j>=n) return false; // 越界
-     if (i==rowEnd && j==colEnd) return true;
-     if (maze[i][j]==-1) return false; // 已访问
-     maze[i][j]=-1; // 标记
-     if (maze[i][j]==1) return false;
-     int dx[4]={1,-1,0,0};
-     int dy[4]={0,0,1,-1};
-     for (int d=0; d<4; ++d)
-     {
-          int nx=i+dx[d], ny=j+dy[d];
-          if (dfs(maze,rowEnd,colEnd,nx,ny))
-               return true;
-     }
-     return false;
-}
-bool reach(vector<vector<int>>& maze, int rowStart, int colStart, int rowEnd, int colEnd)
-{
-     return dfs(maze,rowEnd,colEnd,rowStart,colStart);
-}
+    bool checkSimilar(string s, string t)
+    {
+        int n=s.length();
+        for (int i=0; i<n-1; ++i) // [i,j] C(n,2)
+        {
+            for (int j=i+1; j<n; ++j)
+            {
+                if (s[i]==t[j] && s[j]==t[i])
+                    return true;
+            }
+        }
+        return false;
+    }
+    int numSimilarGroups(vector<string>& strs) {
+        int groups=0;
+        queue<string> q;
+        q.push(strs[0]);
+        int n=strs.size();
+        vector<int> visited(n,0);
+        for (int i=0; i<n; ++i)
+        {
+            if (visited[i]==0)
+            {
+                q.push(strs[i]);  
+                visited[i]=1;
+                groups++;
+            }    
+            while (!q.empty())
+            {
+                string word=q.front(); q.pop();
+                for (int j=0; j<n; ++j)
+                {   
+                    string str=strs[j];
+                    if (visited[j]==0 && checkSimilar(word,str))
+                    {
+                        q.push(str);
+                        visited[j]=1;
+                    }
+                }
+            }
+        }
+        return groups;
+    }
