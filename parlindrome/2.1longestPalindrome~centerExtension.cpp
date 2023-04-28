@@ -1,5 +1,5 @@
 // 最长回文子串 - 中心扩展法(更快) l-5
-// s.length⋿[1,1000]
+// s.length⋿[1,1000]; 时间复杂度:O(n²)
 #include <bits/stdc++.h>
 using namespace std;
 string longestPalindrome(string s);
