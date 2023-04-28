@@ -18,6 +18,7 @@ int longestPalindromicSubsequence(string s)
     vector<vector<int>> dp(n,vector<int>(n)); // dp[i][j]:s[i,j] longestPalindromic subsequence
     for (int i=n-1; i>=0; --i) // [i,j]
     {
+        dp[i][i]=1;
         for (int j=i+1; j<n; ++j)
         {
             if (s[i]==s[j])
