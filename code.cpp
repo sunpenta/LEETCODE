@@ -24,7 +24,6 @@ int main()
     int numSimilarGroups(vector<string>& strs) {
         int groups=0;
         queue<string> q;
-        q.push(strs[0]);
         int n=strs.size();
         vector<int> visited(n,0);
         for (int i=0; i<n; ++i)
