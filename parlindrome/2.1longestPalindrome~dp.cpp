@@ -1,5 +1,5 @@
-// 最长回文子串 - 动态规划+分类 l-5
-// 1 <= s.length <= 1000; s仅由数字和英文字母组成
+// 最长回文子串 - dp l-5
+// s.length⋿[1,1000]
 #include <bits/stdc++.h>
 using namespace std;
 string longestPalindrome(string s);
@@ -14,7 +14,7 @@ int main()
 string longestPalindrome(string s)
 {
     int n = s.length();
-    if (n==0 || n==1) return s; 
+    if (n<2>) return s; 
 
     int begin=0, maxlen = 1; // 最长回文串的起始下标, 长度
     vector<vector<int>> dp(n, vector<int>(n,true)); // dp[i][j]:s[i,j]是否为回文串 
@@ -24,7 +24,7 @@ string longestPalindrome(string s)
         {                      
             if (s[i]!=s[j])
                 dp[i][j] = false;
-            else if (j-i<3) // [i+1,j-1]没有字符，或有1个字符，(j-1)-(i+1)+1=j-i-1<=1, 即j-i<=2，
+            else if (j-i<3) // [i+1,j-1]没有字符，或有1个字符
                 dp[i][j] = true;
             else
                 dp[i][j] = dp[i + 1][j - 1];

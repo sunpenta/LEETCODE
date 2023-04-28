@@ -1,5 +1,5 @@
 // 最长回文子串 - 中心扩展法(更快) l-5
-// 1 <= s.length <= 1000; s仅由数字和英文字母组成
+// s.length⋿[1,1000]
 #include <bits/stdc++.h>
 using namespace std;
 string longestPalindrome(string s);
@@ -14,8 +14,8 @@ int main()
 string longestPalindrome(string s)
 {
     int n = s.size();
-    //输入字符串只有一个字母
     if (n < 2) return s;
+
     // begin:最长回文子串的起始位置；len:当前回文子串长度; maxlen:当前最长 bias:从中心向两侧扩展的长度
     int begin=0,len=0,maxlen=0,bias=0;
     for (int i=0;i<n;i++)//i?
