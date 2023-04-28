@@ -1,4 +1,4 @@
-// 最长回文子序列 - dp  l-516
+// 最长回文子序列(subsequence) - dp  l-516
 // s.length⋿[1,1000]
 #include <iostream>
 #include <vector>

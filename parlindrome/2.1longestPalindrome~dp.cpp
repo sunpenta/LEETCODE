@@ -1,4 +1,4 @@
-// 最长回文子串 - dp l-5
+// 最长回文子串(substring) - dp l-5
 // s.length⋿[1,1000]
 #include <iostream>
 #include <vector>
