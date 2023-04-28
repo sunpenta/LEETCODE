@@ -1,5 +1,5 @@
-// Valid Palindrome - double pointer  l-680
-// s.length⋿[]
+// Valid Palindrome II - double pointer  l-680
+// s.length⋿[1,1e5]; 最多移除1个字母，剩余string是回文串？ 
 #include <iostream>
 using namespace std;
 bool validPalindrome(string s);
