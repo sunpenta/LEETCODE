@@ -19,6 +19,7 @@ long long minTotalDiatance(vector<int>& robot, vector<vector<int>>& factory)
     sort(robot.begin(),robot.end());
     sort(factory.begin(),factory.end());
     vector<long long> dp(n+1,1e15); // dp[i]:repair i robot min总距离; note:<long long>
+    dp[0]=0; // 0 robot travel 0
     for (int i=0; i<m; ++i)
     {
         for (int k=0; k<factory[i][1]; ++k)
