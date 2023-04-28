@@ -17,8 +17,11 @@ int main()
         {
             for (int j=i+1; j<n; ++j)
             {
-                if (s[i]==t[j] && s[j]==t[i])
+               string tmp=s;
+               swap(s[i],s[j]);
+               if (s==t)
                     return true;
+               s=tmp;
             }
         }
         return false;
