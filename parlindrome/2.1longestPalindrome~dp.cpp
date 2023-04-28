@@ -19,9 +19,9 @@ string longestPalindrome(string s)
 
     int begin=0, maxlen = 1; // 最长回文串的起始下标, 长度
     vector<vector<int>> dp(n, vector<int>(n,true)); // dp[i][j]:s[i,j]是否为回文串 
-    for (int j=0; j<n; j++) // [i,j]
+    for (int j=0; j<n; j++) // [i,j];  also:for (int i=n-1; i>=0; --i) // [i,j]
     {
-        for (int i = 0; i < j; i++)
+        for (int i = 0; i < j; i++)   //    for (int j=i+1; j<n; ++j)
         {                      
             if (s[i]!=s[j])
                 dp[i][j] = false;
