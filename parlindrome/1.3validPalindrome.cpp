@@ -27,7 +27,7 @@ bool isPalindrome(string s, int i, int j)
 bool validPalindrome(string s)
 {
     int n=s.length();
-    if (n==0 || n==1 || n==2) return s;
+    if (n==0 || n==1 || n==2) return true;
 
     for (int i=0,j=n-1; i<j; ++i,--j)
     {
