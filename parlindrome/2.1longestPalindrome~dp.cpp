@@ -1,6 +1,7 @@
 // 最长回文子串 - dp l-5
 // s.length⋿[1,1000]
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 string longestPalindrome(string s);
 

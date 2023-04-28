@@ -16,34 +16,7 @@ string longestPalindrome(string s)
     int n = s.size();
     if (n < 2) return s;
 
-    // begin:最长回文子串的起始位置；len:当前回文子串长度; maxlen:当前最长 bias:从中心向两侧扩展的长度
-    int begin=0,len=0,maxlen=0,bias=0;
-    for (int i=0;i<n;i++)//i?
-    {
-        if (i>0 && s[i]==s[i-1]) continue;
-        // 从当前位置向后找相同字符，作为回文串中心
-        for (int j=i;j<n-1;j++)
-        {
-            if (s[j]==s[j+1])
-                ++bias;
-            else
-                break;
-        }
-        // 第i轮循环可能找到的最长回文子串若不大于此前的最大值，则结束循环
-        if (2*(n-i)-bias-1<=maxlen) break;
+    int begin=0, maxlen=0;
 
-        // 从回文串的中心向两侧寻找
-        for (len=1;len<i+1 && len<n-i-bias;len++)
-        {
-            if (s[len-i]!=s[len+i+bias])
-                break;
-        }
-
-        if (2*len-bias-1>maxlen)
-        {
-            maxlen=2*len-bias-1;
-            begin=i;
-        }        
-    }
     return s.substr(begin,maxlen);
 }
