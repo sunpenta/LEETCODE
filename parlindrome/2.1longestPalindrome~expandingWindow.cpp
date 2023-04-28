@@ -8,15 +8,31 @@ int main()
 {
     string s = "babad"; // 输入
     cout <<longestPalindrome(s)<< endl; // 输出:bab
-    system("pause");
+    return 0;
 }
-// 假设s[i,j]都是连续相同字符,向两边扩展，直到s[i-k]!=s[i+k],那么s[i-k+1,i+k-1]是回文子串，此时长度len=j-i+2k-1
+
 string longestPalindrome(string s)
 {
     int n = s.size();
     if (n < 2) return s;
 
     int begin=0, maxlen=0;
-
+    for (int i=0; i<n;)
+    {
+        if (n-i<=maxlen/2) break;
+        int l=i, r=i; // [l,r]
+        while (r<n-1 && s[r]==s[r+1])
+            ++r; // 跳过重复元素
+        i=r+1;
+        while (r<n-1 && l>0 && s[l-1]==s[r+1])
+        {
+            --l; ++r;
+        }
+        if ((r-l+1)>maxlen)
+        {
+            begin=l;
+            maxlen=r-l+1;
+        }
+    }
     return s.substr(begin,maxlen);
 }
