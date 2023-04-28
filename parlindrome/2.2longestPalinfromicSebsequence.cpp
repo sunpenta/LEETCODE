@@ -7,7 +7,7 @@ int longestPalindromicSubsequence(string s);
 
 int main()
 {
-    string s="cbbbb"; // input
+    string s="bcbbb"; // input
     cout<<longestPalindromicSubsequence(s)<<endl; // output:4 "bbbb"
     return 0;
 }
