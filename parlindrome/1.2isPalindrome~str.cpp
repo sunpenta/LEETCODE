@@ -8,7 +8,7 @@ int main()
 {
     string s="0P:"; // 输入
     cout<<boolalpha<<isPalindrome(s)<<endl; // 输出:false
-    system("pause");
+    return 0;
 }
 
 bool isPalindrome(string s)
