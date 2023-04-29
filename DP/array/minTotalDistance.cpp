@@ -26,7 +26,7 @@ long long minTotalDiatance(vector<int>& robot, vector<vector<int>>& factory)
         {
             for (int j=n-1; j>=0; --j)
             {
-                dp[j+1]=min(dp[i+1],dp[i]+abs(factory[i][0]-robot[j]));
+                dp[j+1]=min(dp[j+1],dp[j]+abs(factory[i][0]-robot[j]));
             }
         }
     }
