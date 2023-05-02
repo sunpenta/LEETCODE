@@ -1,10 +1,10 @@
 ## minTotalDistacnce
 robot 
-|🤖| 1 | 2 | 3 |🤖| 5 |🤖|
+|<div style="width:20pt">🤖</div>| <div style="width:20pt">1</div> | <div style="width:20pt">2</div>|<div style="width:20pt">3</div>|<div style="width:20pt">🤖</div>|<div style="width:20pt">5</div>|<div style="width:20pt">🤖</div>|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 
 factory
-| 0 | 1 |🏭| 3 | 4 | 5 |🏭|
+|<div style="width:20pt">0</div>|<div style="width:20pt"></div>1| <div style="width:20pt">🏭</div>|<div style="width:20pt">3</div>|<div style="width:20pt">4</div>|<div style="width:20pt">5</div>|<div style="width:20pt">🏭</div>|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 
 robot->factory:
