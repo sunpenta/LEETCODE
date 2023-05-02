@@ -2,16 +2,16 @@
 // 非降序排列，数组有重复元素; -1e4 <= nums[i] <= 1e4
 #include <bits/stdc++.h>
 using namespace std;
-bool search(vector<int>&nums,int target);
+bool search(vector<int>&nums, int target);
 
 int main()
 {
     vector<int>nums={1,1,2,1,1,1,1}; int target=2; // 输入
-    cout<<search(nums,target)<<endl; // 输出:true
+    cout<<boolalpha<<search(nums,target)<<endl; // 输出:true
     return 0;
 }
 
-bool search(vector<int>&nums,int target)
+bool search(vector<int>& nums, int target)
 {
     int n=nums.size();
     if (n==1) return nums[0]==target;
