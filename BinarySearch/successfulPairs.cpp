@@ -9,7 +9,7 @@ vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, int succe
 int main()
 {
     vector<int> spells={3,1,2}; vector<int> potions={8,5,8}; int success=16; // input
-    vector<int> res=successfulPairs(spells,potions,success); // output
+    vector<int> res=successfulPairs(spells,potions,success); // output: 2 0 2
     for (int i:res)
         cout<<i<<" ";
     cout<<endl;
@@ -24,7 +24,7 @@ vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, int succe
     for (int i=0; i<n; ++i)
     {
         int potion=(success-1)/spells[i]+1; // ceil
-        auto it=lower_bound(potions.begin(),potions.end(),potion)-1; // last spell*potions[j]<success, 即 potions[i]<success/spell
+        auto it=lower_bound(potions.begin(),potions.end(),potion); // last spell*potions[j]<success, 即 potions[i]<success/spell
         res[i]=potions.end()-it;
     }
     return res;
