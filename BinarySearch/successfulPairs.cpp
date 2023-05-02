@@ -16,14 +16,14 @@ int main()
     return 0;
 }
 
-vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, int success)
+vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, long long success)
 {
     sort(potions.begin(),potions.end());
     int n=spells.size();
     vector<int> res(n);
     for (int i=0; i<n; ++i)
     {
-        int potion=(success-1)/spells[i]+1; // ceil
+        long long potion=(success-1)/spells[i]+1; // ceil
         auto it=lower_bound(potions.begin(),potions.end(),potion); // last spell*potions[j]<success, 即 potions[i]<success/spell
         res[i]=potions.end()-it;
     }
