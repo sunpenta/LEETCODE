@@ -23,8 +23,8 @@ vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, int succe
     vector<int> res(n);
     for (int i=0; i<n; ++i)
     {
-        int potion=(success+1)/spells[i]-1; // floor
-        auto it=lower_bound(potions.begin(),potions.end(),potion); // first spell*potions[j]<success, 即 potions[i]<success/spell
+        int potion=(success-1)/spells[i]+1; // ceil
+        auto it=lower_bound(potions.begin(),potions.end(),potion)-1; // last spell*potions[j]<success, 即 potions[i]<success/spell
         res[i]=potions.end()-it;
     }
     return res;
