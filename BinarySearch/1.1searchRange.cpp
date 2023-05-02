@@ -1,4 +1,4 @@
-// 在排序数组(非递减)中查找元素的第一个和最后一个位置-二分查找 l-34
+// 在排序数组(非递减)中查找元素的第一个和最后一个位置 - 二分查找 l-34
 // 有重复元素; 时间复杂度：O(logn)
 #include<bits/stdc++.h>
 using namespace std;
@@ -12,7 +12,7 @@ int main()
     return 0;;
 }
 
-// 大于等于target的第一个元素下标
+// 大于等于target的第一个元素下标,即lower_bound()
 int binary_search(vector<int>&nums, int target)
 {
     int left=0,right=nums.size();

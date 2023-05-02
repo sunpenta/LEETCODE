@@ -1,4 +1,4 @@
-// 搜索旋转数组-二分查找 l-33
+// 搜索旋转数组 - 二分查找 l-33
 // 按升序排列，元素互不相同; 时间复杂度：O(logn)
 #include<bits/stdc++.h>
 using namespace std;
@@ -8,7 +8,7 @@ int main()
 { 
     vector<int>nums{4,5,6,7,0,1,2}; int target=0; // 输入
     cout<<search(nums,target)<<endl; // 输出：4
-    return 0;;
+    return 0;
 }
 
 int search(vector<int>&nums,int target)
