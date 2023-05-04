@@ -44,8 +44,8 @@ bool checkSimilar(string s, string t);
 
             for (; i<n && j<n; ++i,++j)
             {
-            while (!vote[i] && i<n) ++i;
-            while (!vote[j] && j<n) ++j;
+            while ((!vote[i] || senate[i]!=c1) && i<n) ++i;
+            while ((!vote[j] || senate[j]!=c2) && j<n) ++j;
 
                 vote[j]=false;
                 if (senate[j]=='R') --count_R;
