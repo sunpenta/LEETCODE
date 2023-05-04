@@ -15,7 +15,7 @@ int main()
 int minHours(int initialEnergy,int initialExperience,vector<int>&energy,vector<int>& experience)
 {
     int hours=0;
-    for (int i=0;i<energy.size();i++)
+    for (int i=0; i<energy.size(); i++)
     {
         if (initialEnergy<=energy[i])
         {
@@ -25,7 +25,7 @@ int minHours(int initialEnergy,int initialExperience,vector<int>&energy,vector<i
         initialEnergy-=energy[i];
     }
 
-    for (int i=0;i<experience[i];i++)
+    for (int i=0; i<experience[i]; i++)
     {
         if (initialExperience<=experience[i])
         {
