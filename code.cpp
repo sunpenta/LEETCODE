@@ -14,20 +14,18 @@ bool checkSimilar(string s, string t);
         while (count_R>0 && count_D>0)
         {
             int i=0,j=1;
-            //for (; i<n && j<n; ++i,++j)
-            //{
-                while (!vote[i] && i<n) ++i;
-                while (!vote[j] && i<n) ++j;
-                while (senate[i]==senate[j]) ++j;
-                while (vote[i] && senate[i]!=senate[j] && vote[j] && i<n && j<n)
-                {
-                    vote[j]=false;
-                    if (senate[j]=='R') --count_R;
-                    else --count_D;
-                    ++i, ++j;
-                }
-            //}
-            if (j>=n-1 && vote[j])
+
+            while (!vote[i] && i<n) ++i;
+            while (!vote[j] && i<n) ++j;
+            while (senate[i]==senate[j]) ++j;
+            while (vote[i] && senate[i]!=senate[j] && vote[j] && i<n && j<n)
+            {
+                vote[j]=false;
+                if (senate[j]=='R') --count_R;
+                else --count_D;
+                ++i, ++j;
+            }
+            if (j>=n-1 && vote[n-1])
             {
                 j=n-1;
                 while (!vote[i]){--i;}
@@ -43,7 +41,7 @@ bool checkSimilar(string s, string t);
     }
 int main()
 {
-     string senate="DDRRR";
+     string senate="DDRRRR";
      cout<<predictPartyVictory(senate)<<endl;
      return 0;
 }
