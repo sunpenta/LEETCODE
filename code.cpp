@@ -29,11 +29,11 @@ bool checkSimilar(string s, string t);
             if (j>n && vote[j])
             {
                 j=n-1;
-                while (!vote[--j]){}
-                if (j!=n-1) 
+                while (!vote[i]){--i;}
+                if (i!=n-1) 
                 {
-                    vote[j]=false;
-                    if (senate[j]=='R') --count_R;
+                    vote[i]=false;
+                    if (senate[i]=='R') --count_R;
                     else --count_D;
                 }
             }
