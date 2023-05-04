@@ -41,10 +41,21 @@ bool checkSimilar(string s, string t);
         }  
         while (count_R>0 && count_D>0)
         {
-
+            i=min(R,D), j=max(R,D);
             for (; i<n && j<n; ++i,++j)
             {
             while ((!vote[i] || senate[i]!=c1) && i<n) ++i;
+            if (i=n)  
+            {
+                i=min(R,D);
+                while (j<n)
+                {
+                    if (vote[i] && vote[j])
+                        vote[i]=false;
+                if (senate[i]=='R') --count_R;
+                else --count_D;                       
+                }
+            }
             while ((!vote[j] || senate[j]!=c2) && j<n) ++j;
 
                 vote[j]=false;
