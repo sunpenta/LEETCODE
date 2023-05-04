@@ -11,25 +11,40 @@ bool checkSimilar(string s, string t);
             if (ch=='R') ++count_R;
             else ++count_D;
         }
+        int R=0,D=0;
+        for (int k=0; k<n; ++k) // first R
+        {
+            if (senate[k]=='R') 
+            {
+                R=k;
+                break;
+            }
+        }
+        for (int k=0; k<n; ++k) // first D
+        {
+            if (senate[k]=='D') 
+            {
+                D=k;
+                break;
+            }
+        }        
         while (count_R>0 && count_D>0)
         {
-            int i=0,j=1;
-
-            while (!vote[i] && i<n) ++i;
-            while (!vote[j] && i<n) ++j;
-            while (senate[i]==senate[j]) ++j;
-            while (vote[i] && senate[i]!=senate[j] && vote[j] && i<n && j<n)
+            int i=R , j=D;
+            for (; i<n && j<n; ++i,++j)
             {
+            while (!vote[i] || senate[i]!='R' && i<n) ++i;
+            while (!vote[j] || senate[j]!='D' && j<n) ++j;
+
                 vote[j]=false;
+                if (senate[j]=='R') --count_R;
+                else --count_D;               
                 if (j==n-1 && vote[j]) 
                 {
                     vote[i]=false;
                 if (senate[i]=='R') --count_R;
                 else --count_D;
-                }
-                if (senate[j]=='R') --count_R;
-                else --count_D;
-                ++i, ++j;
+                }              
             }
             //if (count_D==0) return "Radiant";
             //else if (count_R==0) return "Dire";
