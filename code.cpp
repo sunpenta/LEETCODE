@@ -14,18 +14,19 @@ bool checkSimilar(string s, string t);
         while (count_R>0 && count_D>0)
         {
             int i=0,j=1;
-            for (; i<n && j<n; ++i,++j)
-            {
-                while (!vote[i]) ++i;
-                while (!vote[j]) ++j;
+            //for (; i<n && j<n; ++i,++j)
+            //{
+                while (!vote[i] && i<n) ++i;
+                while (!vote[j] && i<n) ++j;
                 while (senate[i]==senate[j]) ++j;
-                if (vote[i] && senate[i]!=senate[j] && vote[j])
+                while (vote[i] && senate[i]!=senate[j] && vote[j])
                 {
                     vote[j]=false;
                     if (senate[j]=='R') --count_R;
                     else --count_D;
+                    ++i, ++j;
                 }
-            }
+            //}
             if (j>n && vote[j])
             {
                 j=n-1;
