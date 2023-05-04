@@ -38,7 +38,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
         {
             sk.push(c);
             if (c==letter)
-                repetition-=1;
+                repetition=max(0,repetition-1); // 避免-1
         }
         if (c==letter)
             cnt-=1;
