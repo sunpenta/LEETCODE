@@ -7,8 +7,8 @@ string smallestSubsequence(string s, int k, char letter, int repetition);
 
 int main()
 {
-    string s="leetcode"; int k=4, repetition=2; char letter='e'; // input
-    cout<<smallestSubsequence(s,k,letter,repetition)<<endl; // "ecde"
+    string s="leet"; int k=3, repetition=1; char letter='e'; // input
+    cout<<smallestSubsequence(s,k,letter,repetition)<<endl; // 
     return 0;
 }
 
@@ -33,6 +33,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
             if (cur==letter)
                 repetition+=1;
         }
+
         if (sk.size()<k)
         {
             sk.push(c);
@@ -42,6 +43,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
         if (c==letter)
             cnt-=1;
     }
+
     string res="";
     while (!sk.empty())
     {
