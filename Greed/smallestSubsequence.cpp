@@ -21,7 +21,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
             ++cnt;
     }
     int n=s.length();
-    stack<char> sk;
+    string sk;
     for (int i=0; i<n; ++i)
     {
         char c=s[i];
