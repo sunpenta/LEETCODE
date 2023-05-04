@@ -37,7 +37,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
 
         if (sk.size()<k)
         {
-            if (c==letter || k-(int)sk.size()>repetition) // // sk.size() - unsigned int, 不能直接比较
+            if (c==letter || k-(int)sk.size()>repetition) // sk.size()-unsigned int, 不能直接比较，1>-1 false
             {
                 sk.push(c);
                 if (c==letter)
