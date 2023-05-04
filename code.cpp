@@ -21,7 +21,12 @@ bool checkSimilar(string s, string t);
             while (vote[i] && senate[i]!=senate[j] && vote[j] && i<n && j<n)
             {
                 vote[j]=false;
-                if (j==n-1 && vote[j]) vote[i]=false;
+                if (j==n-1 && vote[j]) 
+                {
+                    vote[i]=false;
+                if (senate[i]=='R') --count_R;
+                else --count_D;
+                }
                 if (senate[j]=='R') --count_R;
                 else --count_D;
                 ++i, ++j;
