@@ -27,10 +27,12 @@ bool checkSimilar(string s, string t);
                 D=k;
                 break;
             }
-        }        
+        }    
+        int i=0,j=0;    
         while (count_R>0 && count_D>0)
         {
-            int i=R , j=D;
+            if (R<D) i=R, j=D;
+            else i=D, j=R;
             for (; i<n && j<n; ++i,++j)
             {
             while (!vote[i] || senate[i]!='R' && i<n) ++i;
