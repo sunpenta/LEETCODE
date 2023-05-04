@@ -7,7 +7,7 @@ vector<int> findClosestElements(vector<int>& nums, int k, int x);
 
 int main()
 {
-    vector<int> nums={1,2,3,4,5}; int k=4, x=-1; // input;
+    vector<int> nums={1,2,3,4,5}; int k=4, x=-1; // input
     vector<int> res=findClosestElements(nums,k,x);
     for (int i:res) cout<<i<<" "; // output: {1,2,3,4}
     return 0;
@@ -18,7 +18,7 @@ vector<int> findClosestElements(vector<int>& nums, int k, int x)
     int left=0, right=nums.size()-k;
     while (left<right)
     {
-        int mid=(left+right)/2;
+        int mid=(left+right)/2;         //       x
         if (x-nums[mid]>nums[mid+k]-x) // [mid,mid+k)
             left=mid+1;
         else

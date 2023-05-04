@@ -12,7 +12,7 @@ int main()
     cout<<minEatingSpeed(piles,h)<<endl; // output:30
     return 0;
 }
-// speed is k, eat all piles
+// speed is k, can eat all piles?
 bool check(vector<int>& piles, int h, int k)
 {
     int time=0;
