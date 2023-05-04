@@ -21,7 +21,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
             ++cnt;
     }
     int n=s.length();
-    string sk;
+    string sk="";
     for (int i=0; i<n; ++i)
     {
         char c=s[i];
@@ -39,7 +39,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
         {
             if (c==letter || k-(int)sk.size()>repetition) // sk.size()-unsigned int, 不能直接比较，1>-1 false
             {
-                sk.push(c);
+                sk.push_back(c);
                 if (c==letter)
                     --repetition; // -1
             }
@@ -47,12 +47,5 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
         if (c==letter)
             --cnt;
     }
-
-    string res="";
-    while (!sk.empty())
-    {
-        res=sk.back()+res;
-        sk.pop();
-    }
-    return res;
+    return sk;
 }
