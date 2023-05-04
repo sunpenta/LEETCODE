@@ -17,6 +17,7 @@ bool checkSimilar(string s, string t);
             for (; i<n && j<n; ++i,++j)
             {
                 while (!senate[i]) ++i;
+                while (!senate[j]) ++j;
                 while (senate[i]==senate[j]) ++j;
                 if (vote[i] && senate[i]!=senate[j] && vote[j])
                 {
