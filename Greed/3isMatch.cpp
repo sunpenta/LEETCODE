@@ -1,17 +1,17 @@
-// 正则表达式匹配 -贪心算法+分类 l-44
+// 正则表达式匹配 - 贪心+分类 l-44
 // '?' 可以匹配任何单个字符,'*' 可以匹配任意字符串（包括空字符串）
 #include <bits/stdc++.h>
 using namespace std;
-bool isMatch(string s,string p);
+bool isMatch(string s, string p);
 
 int main()
 {
     string s = "mississippi", p = "mis*is*p*?"; // 输入
     cout<<boolalpha<<isMatch(s,p)<<endl; // 输出:true
-    system("pause");
+    return 0;
 }
 
-bool isMatch(string s,string p)
+bool isMatch(string s, string p)
 {
     int i=0,j=0; // 字符串s和p遍历的当前下标
     int istar=-1,jstar=-1; // *的下标

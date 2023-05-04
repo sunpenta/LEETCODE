@@ -1,15 +1,15 @@
-// 赢比赛所需最少时间-贪心  l-2383   -jump/1 & 2
+// 赢比赛所需最少时间 - 贪心  l-2383   -jump/1 & 2
 // energy和experience严格大于才可击败对手；每击败1个对手，energy减，experience加
 #include <bits/stdc++.h>
 using namespace std;
-int minHours(int initialEnergy,int initialExperience,vector<int>&energy,vector<int>& experience);
+int minHours(int initialEnergy, int initialExperience, vector<int>& energy, vector<int>& experience);
 
 int main()
 {
     int initialEnergy = 5, initialExperience = 3;
     vector<int>energy={1,4,3,2}, experience={2,6,3,1}; // 输入
     cout<<minHours(initialEnergy,initialExperience,energy,experience)<<endl; // 输出:8
-    system("pause");
+    return 0;
 }
 
 int minHours(int initialEnergy,int initialExperience,vector<int>&energy,vector<int>& experience)

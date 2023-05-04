@@ -1,7 +1,7 @@
 // 给定行和、列和求可行矩阵-贪心  l-1605
 # include <bits/stdc++.h>
 using namespace std;
-vector<vector<int>>retoreMatrix(vector<int>&rowSum,vector<int>&colSum);
+vector<vector<int>> retoreMatrix(vector<int>& rowSum, vector<int>& colSum);
 
 int main()
 {
@@ -13,10 +13,10 @@ int main()
             cout<<num<<" ";
         cout<<endl;
     }
-    system("pause");
+    return 0;
 }
 
-vector<vector<int>>retoreMatrix(vector<int>&rowSum,vector<int>&colSum)
+vector<vector<int>> retoreMatrix(vector<int>& rowSum, vector<int>& colSum)
 {
     int m=rowSum.size(), n=colSum.size();
     vector<vector<int>>matrix(m,vector<int>(n)); // *设定空间大小*
