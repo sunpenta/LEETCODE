@@ -1,5 +1,5 @@
 // 字典序最小,固定长度,包含某重复字母的子序列 - greedy+stack  l-2030
-// 时间复杂度:O(n), 空间复杂度:O(n); s.length⋿[1,5e4], stack TLE, 用string模拟stack
+// 时间复杂度:O(n), 空间复杂度:O(n); s.length⋿[1,5e4], stack<char> TLE, 用string模拟stack
 #include <iostream>
 #include <stack>
 using namespace std;
