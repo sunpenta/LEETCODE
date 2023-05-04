@@ -22,7 +22,6 @@ bool checkSimilar(string s, string t);
                 if (vote[i] && senate[i]!=senate[j] && vote[j])
                 {
                     vote[j]=false;
-                    // ++j;
                     if (senate[j]=='R') --count_R;
                     else --count_D;
                 }
@@ -44,7 +43,6 @@ bool checkSimilar(string s, string t);
 int main()
 {
      string senate="DDRRR";
-     
      cout<<predictPartyVictory(senate)<<endl;
      return 0;
 }
