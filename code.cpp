@@ -16,8 +16,8 @@ bool checkSimilar(string s, string t);
             int i=0,j=1;
             for (; i<n && j<n; ++i,++j)
             {
-                while (!senate[i]) ++i;
-                while (!senate[j]) ++j;
+                while (!vote[i]) ++i;
+                while (!vote[j]) ++j;
                 while (senate[i]==senate[j]) ++j;
                 if (vote[i] && senate[i]!=senate[j] && vote[j])
                 {
@@ -26,7 +26,7 @@ bool checkSimilar(string s, string t);
                     else --count_D;
                 }
             }
-            if (j>=n && vote[j])
+            if (j>n && vote[j])
             {
                 j=n-1;
                 while (!vote[--j]){}
