@@ -25,6 +25,8 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     for (int i=0; i<n; ++i)
     {
         char c=s[i];
+        bool flag1=(c<sk.top() && sk.size()+n-i>k && (sk.top()!=letter || sk.top()==letter && cnt>repetition));
+        bool flag2=k-sk.size()<repetition;
         while (!sk.empty() && ((c<sk.top() && sk.size()+n-i>k && (sk.top()!=letter || sk.top()==letter && cnt>repetition)) 
         || k-sk.size()<repetition))
         {
