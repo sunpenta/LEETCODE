@@ -2,11 +2,48 @@
 using namespace std;
 int numSimilarGroups(vector<string>& strs);
 bool checkSimilar(string s, string t);
+    string predictPartyVictory(string senate) {
+        int n=senate.length();
+        vector<bool> vote(n,true);
+        int count_R=0, count_D=0;
+        for (char ch:senate)
+        {
+            if (ch=='R') ++count_R;
+            else ++count_D;
+        }
+        while (count_R>0 || count_D>0)
+        {
+            int i=0,j=1;
+            for (; i<n && j<n; ++i,++j)
+            {
+                if (senate[i]==senate[j]) ++j;
+                if (vote[i] && senate[i]!=senate[j] && vote[j])
+                {
+                    vote[j]=false;
+                    // ++j;
+                    if (senate[j]=='R') --count_R;
+                    else --count_D;
+                }
+            }
+            if (i==n-1 && vote[i])
+            {
+                j=n-1;
+                while (!vote[--j]){}
+                if (j!=n-1) 
+                {
+                    vote[j]=false;
+                    if (senate[j]=='R') --count_R;
+                    else --count_D;
+                }
+            }
+        }
+        return count_D==0? "Radiant":"Dire";
+    }
 int main()
 {
-     vector<string> strs ={"tars","rats","arts","star"};
-     //cout<<checkSimilar(strs[2],strs[3])<<" ";
-     cout<<numSimilarGroups(strs)<<endl;
+     string senate="DDR";
+     
+     cout<<predictPartyVictory(senate)<<endl;
      return 0;
 }
 

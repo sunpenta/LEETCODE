@@ -1,4 +1,4 @@
-// 搜索旋转数组 - 二分查找 l-33
+// 搜索旋转升序数组 - 二分查找 l-33
 // 按升序排列，元素互不相同; 时间复杂度：O(logn)
 #include<bits/stdc++.h>
 using namespace std;
