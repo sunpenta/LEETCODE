@@ -28,11 +28,20 @@ bool checkSimilar(string s, string t);
                 break;
             }
         }    
-        int i=0,j=0;    
+        int i=0,j=0; char c1, c2;
+        if (R<D) 
+        {
+            i=R, j=D;
+            c1='R', c2='D';
+        }
+        else 
+        {
+            i=D, j=R;
+            c1='D', c2='R';
+        }  
         while (count_R>0 && count_D>0)
         {
-            if (R<D) i=R, j=D;
-            else i=D, j=R;
+
             for (; i<n && j<n; ++i,++j)
             {
             while (!vote[i] && i<n) ++i;
