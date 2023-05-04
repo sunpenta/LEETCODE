@@ -7,7 +7,9 @@ string smallestSubsequence(string s, int k, char letter, int repetition);
 
 int main()
 {
-
+    string s="leetcode"; int k=4, repetition=2; char letter='e'; // input
+    cout<<smallestSubsequence(s,k,letter,repetition)<<endl;
+    return 0;
 }
 
 string smallestSubsequence(string s, int k, char letter, int repetition)
