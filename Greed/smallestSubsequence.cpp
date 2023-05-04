@@ -12,5 +12,39 @@ int main()
 
 string smallestSubsequence(string s, int k, char letter, int repetition)
 {
-    
+    int cnt=0;
+    for (char ch:s)
+    {
+        if (ch==letter)
+            ++cnt;
+    }
+    int n=s.length();
+    stack<char> sk;
+    sk.push(s[0]);
+    for (int i=0; i<n; ++i)
+    {
+        char c=s[i];
+        while (!sk.empty() && ((c<sk.top() && sk.size()+n-i>k && c!=letter || c==letter && cnt>repetition) 
+        || k-sk.size()<repetition))
+        {
+            sk.pop();
+            if (c==letter)
+                repetition+=1;
+        }
+        while (sk.size()<k)
+        {
+            sk.push(c);
+            if (c==letter)
+                repetition-=1;
+        }
+        if (c==letter)
+            cnt-=1;
+    }
+    string res="";
+    while (!sk.empty())
+    {
+        res=sk.top()+res;
+        sk.pop();
+    }
+    return res;
 }
