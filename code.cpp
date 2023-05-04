@@ -19,7 +19,7 @@ bool checkSimilar(string s, string t);
                 while (!vote[i] && i<n) ++i;
                 while (!vote[j] && i<n) ++j;
                 while (senate[i]==senate[j]) ++j;
-                while (vote[i] && senate[i]!=senate[j] && vote[j])
+                while (vote[i] && senate[i]!=senate[j] && vote[j] && i<n && j<n)
                 {
                     vote[j]=false;
                     if (senate[j]=='R') --count_R;
@@ -27,7 +27,7 @@ bool checkSimilar(string s, string t);
                     ++i, ++j;
                 }
             //}
-            if (j>n && vote[j])
+            if (j>=n-1 && vote[j])
             {
                 j=n-1;
                 while (!vote[i]){--i;}
