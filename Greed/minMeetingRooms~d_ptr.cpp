@@ -1,6 +1,8 @@
 // 最少会议室 - greedy  l-253(会员)
 // intervals[i]:[si,ei]:si:start time, ei:end time;length⋿[1,1e4]; 时间复杂度:O(nlogn), 空间复杂度:O(n)
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 int minMeetingroomss(vector<vector<int>>& intervals);
 
@@ -22,7 +24,7 @@ int minMeetingroomss(vector<vector<int>>& intervals)
     }
     sort(start.begin(),start.end());
     sort(end.begin(),end.end());
-    
+
     int i=1, j=0, rooms=1, res=1;
     while (i<n && j<n)
     {
