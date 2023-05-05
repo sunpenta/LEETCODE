@@ -39,7 +39,10 @@ int maxPathValue(string color, vector<vector<int>>& edges)
         q.pop();
         ++visit;
 
-        for ()
+        for (neighbor:graph[node])
+        {
+            
+        }
     }
 
 }
