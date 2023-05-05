@@ -19,5 +19,14 @@ int maxPathValue(string color, vector<vector<int>>& edges)
         graph[edge[0]].emplace(edge[1]);
         ++indeg[edge[1]];
     }
+    queue<int> q; // indeg[]=0
+    int n=color.length();
+    for (int i=0; i<n; ++i)
+    {
+        if (indeg[i]==0)
+            q.push(i);
+    }
+
+    int visit=0;
     
 }
