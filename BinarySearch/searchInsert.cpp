@@ -20,10 +20,10 @@ int searchInsert(vector<int>& nums, int target)
         int mid=(left+right)/2;
         if (nums[mid]==target)
             return mid;
-        else if (nums[mid]>target)
+        else if (nums[mid]<target) // [left,mid,target,right]
             left=mid+1;
         else
-            right=mid-1;
+            right=mid-1; // [left,target,mid,right]
     }
     return left;
 }
