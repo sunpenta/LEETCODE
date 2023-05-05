@@ -19,7 +19,7 @@ int binary_search(vector<int>&nums, int target)
     while (left<right)
     {
         int mid=(left+right)/2;
-        if (nums[mid]>=target) 
+        if (nums[mid]>=target) // [left,target,mid,right] 
             right=mid;
         else 
             left=mid+1;
