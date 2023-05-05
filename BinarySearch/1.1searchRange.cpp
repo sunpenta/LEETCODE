@@ -10,8 +10,6 @@ int main()
     vector<int> nums{5,7,7,8,8}; int target=8; // 输入
     vector<int> ans=searchRange(nums,target); // 输出:{3,4}
     cout<<"("<<ans[0]<<", "<<ans[1]<<")"<<endl;
-    int index=lower_bound(nums.begin(),nums.end(),target)-nums.begin();
-    cout<<index<<endl;
     return 0;;
 }
 
