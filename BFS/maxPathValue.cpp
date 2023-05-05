@@ -13,5 +13,11 @@ int main()
 
 int maxPathValue(string color, vector<vector<int>>& edges)
 {
-    vector<vector<int>> graph
+    vector<vector<int>> graph; vector<int> indeg;
+    for (auto edge:edges)
+    {
+        graph[edge[0]].emplace(edge[1]);
+        ++indeg[edge[1]];
+    }
+    
 }
