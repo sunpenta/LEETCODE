@@ -32,7 +32,7 @@ vector<int> searchRange(vector<int>& nums, int target)
     int n=nums.size();
     if (n==1 && nums[0]==target)  return {0,0};
 
-    vector<int>ans(2);
+    vector<int> ans(2);
     ans[0]=binary_search(nums,target); // 第1个
     ans[1]=binary_search(nums,target+1)-1; // 最后1个
     if (ans[0]<n && nums[ans[0]]==target) 
