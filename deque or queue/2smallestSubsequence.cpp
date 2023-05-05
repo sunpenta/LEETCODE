@@ -1,4 +1,5 @@
 // 字典序最小的 k-length subsequence with Occurrences of a Letter
+// 时间复杂度:O(n), 空间复杂度:O(n)
 #include <iostream>
 #include <vector>
 #include <deque>
