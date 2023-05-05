@@ -18,15 +18,14 @@ int minMeetingRooms(vector<vector<int>>& intervals)
 {
     int n=intervals.size();
     int minRooms=1;
-    sort(intervals.begin(),intervals.end());
+    sort(intervals.begin(),intervals.end()); // by start-time
 
-    priority_queue<int, vector<int>, greater<>> pq;
+    priority_queue<int, vector<int>, greater<>> pq; // by end-time
     for (auto interval:intervals)
     {
-        if (interval[0])
-            continue;
-        else
-            ++minRooms;
+        if (!pq.empty() && interval[0]>=pq.top())
+            pq.pop();
+        pq.push(interval[1]);
     }
     return minRooms;
 }
