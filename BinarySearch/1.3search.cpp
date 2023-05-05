@@ -1,5 +1,5 @@
-// 搜索旋转排序数组 - 二分查找  l-81
-// 非降序排列，数组有重复元素; -1e4 <= nums[i] <= 1e4
+// 搜索旋转排序数组 - binary search  l-81
+// 有重复元素，非降序排列; -1e4 <= nums[i] <= 1e4
 #include <bits/stdc++.h>
 using namespace std;
 bool search(vector<int>&nums, int target);
