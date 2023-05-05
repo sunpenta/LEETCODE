@@ -26,40 +26,32 @@ int largestPathValue(string colors, vector<vector<int>>& edges)
     }
     
     queue<int> q; // indeg[]=0
-    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i最多有?j+'a'颜色
     for (int i=0; i<n; ++i)
     {
         if (indeg[i]==0)
         {
             q.push(i);
-            colored[i][colors[i]-'a']=1;
         }
     }
-
-    int visit=0,res; // nodes number visited
+    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i最多有?j+'a'颜色
+    int visit=0, res=0; // nodes number visited
     while (!q.empty())
     {
         int node=q.front();
         q.pop();
         ++visit;
-        res=max(res,);
+        ++colored[node][colors[node]-'a'];
+        res=max(res,colored[node][colors[node]-'a']);
         for (int neighbor:graph[node])
         {
             for (int i=0; i<26; ++i)
             {
-                colored[neighbor][i]=max(colored[node][i]+(colors[neighbor]==i+'a'),colored[neighbor][i]);
+                colored[neighbor][i]=max(colored[node][i],colored[neighbor][i]);
             }
             --indeg[neighbor];
             if (indeg[neighbor]==0)
                 q.push(neighbor);
         }
     }
-    if (visit<n) return -1;
-    int res=0;
-    for (int i=0; i<n; ++i)
-    {
-        for (int j=0; j<26; ++j)
-            res=max(res,colored[i][j]);
-    }
-    return res;
+    return visit==n?res:-1;
 }
