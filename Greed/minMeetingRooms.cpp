@@ -12,10 +12,16 @@ int main()
     return 0;
 }
 
+bool cmp(const vector<vector<int>>& a, const vector<vector<int>>& b)
+{
+    
+}
 int minMeetingRooms(vector<vector<int>>& intervals)
 {
     int minRooms=1;
     int n=intervals.size();
+
+    sort(intervals.begin(),intervals.end(),cmp);
     for (int i=1; i<n; ++i)
     {
         if (intervals[i][0]>intervals[i-1][1])
