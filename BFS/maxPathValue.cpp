@@ -22,11 +22,14 @@ int maxPathValue(string color, vector<vector<int>>& edges)
     
     queue<int> q; // indeg[]=0
     int n=color.length();
-    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:end with 
+    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i have color j+'a'
     for (int i=0; i<n; ++i)
     {
         if (indeg[i]==0)
+        {
             q.push(i);
+            colored[i][color[i]-'a']=1;
+        }
     }
 
     int visit=0; // nodes number visited
