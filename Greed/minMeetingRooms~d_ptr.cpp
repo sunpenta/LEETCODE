@@ -13,5 +13,16 @@ int main()
 
 int minMeetingRooms(vector<vector<int>>& intervals)
 {
+    vector<int> start, end;
+    int n=intervals.size();
+    for (int i=0; i<n; ++i)
+    {
+        start.emplace_back(internals[i][0]);
+    }
+     for (int i=0; i<n; ++i)
+    {
+        end.emplace_back(internals[i][1]);
+    }
     
+    while
 }
