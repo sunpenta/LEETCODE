@@ -3,12 +3,14 @@
 #include <iostream>
 #include <vector>
 #include <queue>
-using namespace;
+using namespace std;
 int maxPathValue(string color, vector<vector<int>>& edges);
 
 int main()
 {
-
+    string color="abaca"; vector<vector<int>>edges = {{0,1},{0,2},{2,3},{3,4}}; // input
+    cout<<maxPathValue(color,edges)<<endl; // ouput:3
+    return 0;
 }
 
 int maxPathValue(string color, vector<vector<int>>& edges)
@@ -16,7 +18,7 @@ int maxPathValue(string color, vector<vector<int>>& edges)
     vector<vector<int>> graph; vector<int> indeg;
     for (auto edge:edges)
     {
-        graph[edge[0]].emplace(edge[1]);
+        graph[edge[0]].emplace_back(edge[1]);
         ++indeg[edge[1]];
     }
     
@@ -39,11 +41,11 @@ int maxPathValue(string color, vector<vector<int>>& edges)
         q.pop();
         ++visit;
 
-        for (neighbor:graph[node])
+        for (int neighbor:graph[node])
         {
             for (int i=0; i<26; ++i)
             {
-                colored[node][i]=max(colored[node][i]+(colored[neighbor]==i+'a'),colored[neighbor][i]);
+                colored[neighbor][i]=max(colored[node][i]+(color[neighbor-'a']==i+'a'),colored[neighbor][i]);
             }
             --indeg[neighbor];
             if (indeg[neighbor]==0)
