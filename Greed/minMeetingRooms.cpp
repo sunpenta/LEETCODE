@@ -16,9 +16,7 @@ int main()
 
 int minMeetingRooms(vector<vector<int>>& intervals)
 {
-    int n=intervals.size();
-    int minRooms=1;
-    sort(intervals.begin(),intervals.end()); // by start-time
+    sort(intervals.begin(), intervals.end()); // by start-time
 
     priority_queue<int, vector<int>, greater<>> pq; // by end-time
     for (auto interval:intervals)
@@ -27,5 +25,5 @@ int minMeetingRooms(vector<vector<int>>& intervals)
             pq.pop();
         pq.push(interval[1]);
     }
-    return minRooms;
+    return pq.size();
 }
