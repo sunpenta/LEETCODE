@@ -32,7 +32,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     {
         for (int ch=0; ch<26; ch++)
         {
-            auto& dq=ind[ch];           
+            auto& dq=ind[ch]; // 必须是&, 对dq修改           
             while (!dq.empty() && dq.front()<=lastInd) // remove invalid index
                 dq.pop_front();
             if (dq.empty()) continue;
@@ -45,7 +45,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
                     x--;
                 lastInd=index;
                 dq.pop_front();
-                break; // 退出循环
+                break; // 退出for (26)循环
             }            
         }
     }
