@@ -45,7 +45,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
                     x--;
                 lastInd=index;
                 dq.pop_front();
-                break; // ?
+                break; // 退出循环
             }            
         }
     }
