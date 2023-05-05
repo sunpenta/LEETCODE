@@ -1,8 +1,2 @@
-```mermaid
-    graph LR
-    D((0)) --> D((2))
-    D((2)) -->D ((3))
-    D((3)) -->D ((4))  
-    
-```
-
+![l-1857](file:// C:\Users\Auly\Pictures\Saved Pictures\l-1857.jpg)
+<img src="file://C:\Users\Auly\Pictures\Saved Pictures\l-1857.jpg">
