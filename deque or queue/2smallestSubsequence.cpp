@@ -30,14 +30,14 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     string ans="";
     for (int i=0; i<k; i++)
     {
-        for (int ch=0; ch<26; ch++)
+        for (int ch=0; ch<26; ch++) // satisfy smallest
         {
             auto& dq=ind[ch]; // 必须是&, 对dq修改           
             while (!dq.empty() && dq.front()<=lastInd) // remove invalid index
                 dq.pop_front();
             if (dq.empty()) continue;
-            // satisfy k,rep
             int index=dq.front();
+            // satisfy k,rep
             if (ans.length()+n-index>=k && cnt[index]>=x && x-(ch+'a'==letter)+i+1<=k)
             {
                 ans+= ch+'a'; // update ans, x, dq,lastInd
