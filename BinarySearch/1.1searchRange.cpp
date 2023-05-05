@@ -16,8 +16,8 @@ int main()
 // 大于等于target的第一个元素下标,即lower_bound()
 int binary_search(vector<int>& nums, int target)
 {
-    int left=0, right=nums.size(); // right≠n-1
-    while (left<right)
+    int left=0, right=nums.size(); // right≠n-1,[0,n]
+    while (left<right) // [left,right]
     {
         int mid=(left+right)/2;
         if (nums[mid]>=target) // [left,target,mid,right] 
