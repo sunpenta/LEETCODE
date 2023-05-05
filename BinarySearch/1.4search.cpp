@@ -27,9 +27,9 @@ bool search(vector<int>& nums, int target)
             left++;
             right--; 
         }
-        else if (nums[mid]>=nums[left]) // mid在左半段
+        else if (nums[mid]>=nums[left]) // mid在左半段[0,mid,|]
         {
-            if (target>=nums[left] && target<=nums[mid]) // 前半升序段[left,mid]
+            if (target>=nums[left] && target<=nums[mid]) // 前半升序段[0,target,mid,|]
             {
                 right=mid-1;      
             }
@@ -38,7 +38,7 @@ bool search(vector<int>& nums, int target)
                 left=mid+1;
             }
         }
-        else
+        else // [|,mid,n-1]
         {
             if (target>=nums[mid] && target<=nums[right]) // 后半升序段[mid,right]
             {

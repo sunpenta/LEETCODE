@@ -23,14 +23,14 @@ int search(vector<int>& nums, int target) // [0,|,n-1]
             return mid; 
         else if (nums[mid]>=nums[0]) // [0,mid,|]
         {   
-            if (target>=nums[0] && target<=nums[mid]) // 在前半升序段[0,target,mid,|]
+            if (target>=nums[0] && target<=nums[mid]) // 前半升序段[0,target,mid,|]
                 right=mid-1; 
             else 
                 left=mid+1;
         }
         else // [|,mid,n-1]
         {         
-            if (target>=nums[mid] && target<=nums[n-1]) // target在后半升序段[|,mid,target,n-1]
+            if (target>=nums[mid] && target<=nums[n-1]) // 后半升序段[|,mid,target,n-1]
                 left=mid+1;
             else 
                 right=mid-1; 
