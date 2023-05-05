@@ -7,12 +7,12 @@ int search(vector<int>& nums, int target);
 
 int main()
 { 
-    vector<int> nums{4,5,6,7,0,1,2}; int target=0; // 输入
+    vector<int> nums{4,5,6,7,0,1,2}; int target=0; // 输入:{4,5,6,7,|0,1,2}
     cout<<search(nums,target)<<endl; // 输出：4
     return 0;
 }
 
-int search(vector<int>&nums,int target)
+int search(vector<int>& nums, int target) // [0,|,n-1]
 {
     int n=nums.size();
     int left=0, right=n-1;
@@ -28,7 +28,7 @@ int search(vector<int>&nums,int target)
             else 
                 left=mid+1;
         }
-        else // mid在右半段[|,mid,n-1]
+        else // [|,mid,n-1]
         {         
             if (target>=nums[mid] && target<=nums[n-1]) // target在后半升序段[|,mid,target,n-1]
                 left=mid+1;
