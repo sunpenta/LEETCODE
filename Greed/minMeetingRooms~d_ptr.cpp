@@ -23,6 +23,22 @@ int minMeetingRooms(vector<vector<int>>& intervals)
     {
         end.emplace_back(internals[i][1]);
     }
-    
-    while
+    sort(start.begin(),start.end());
+    sort(end.begin(),end.end());
+    int i=0, j=0, rooms=1, res=INT_MAX; 
+    while (i<n && j<n)
+    {
+        if (start[i]<end[j])
+        {
+            ++room;
+            ++i;
+        }
+        else
+        {
+            --room;
+            ++j;
+        }
+        res=max(res,room);
+    }
+    return res;
 }
