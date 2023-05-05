@@ -12,5 +12,6 @@ int main()
 
 int minMeetingRooms(vector<vector<int>>& intervals)
 {
-
+    int minRooms=0;
+    
 }
