@@ -18,10 +18,12 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     int n=s.length();
     int cnt[n]; // number of letter in s[i,n-1]
     cnt[n-1]=(s[n-1]==letter);
-    for (int i=n-2;i>=0;--i) cnt[i]=cnt[i+1]+(s[i]==letter);
+    for (int i=n-2;i>=0;--i) 
+        cnt[i]=cnt[i+1]+(s[i]==letter);
     
     vector<deque<int>> ind(26);
-    for (int i=0;i<n;i++) ind[s[i]-'a'].push_back(i);
+    for (int i=0;i<n;i++) 
+        ind[s[i]-'a'].push_back(i);
     
     int countr=repetition, lastInd=-1;
     string ans="";
