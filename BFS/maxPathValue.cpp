@@ -27,6 +27,13 @@ int maxPathValue(string color, vector<vector<int>>& edges)
             q.push(i);
     }
 
-    int visit=0;
-    
+    int visit=0; // nodes number visited
+    while (!q.empty())
+    {
+        int node=q.front();
+        q.pop();
+        ++visit;
+        
+    }
+
 }
