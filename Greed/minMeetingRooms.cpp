@@ -7,11 +7,21 @@ int minMeetingRooms(vector<vector<int>>& intervals);
 
 int main()
 {
-
+    vector<vector<int>> intervals={{0, 30},{5, 10},{15, 20}}; // input
+    cout<<minMeetingRooms(intervals)<<endl; // output:2
+    return 0;
 }
 
 int minMeetingRooms(vector<vector<int>>& intervals)
 {
-    int minRooms=0;
-    
+    int minRooms=1;
+    int n=intervals.size();
+    for (int i=1; i<n; ++i)
+    {
+        if (intervals[i+1][0]>intervals[i][1])
+            continue;
+        else
+            ++minRooms;
+    }
+    return minRooms;
 }
