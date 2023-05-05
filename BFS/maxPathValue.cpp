@@ -15,7 +15,8 @@ int main()
 
 int maxPathValue(string color, vector<vector<int>>& edges)
 {
-    vector<vector<int>> graph; vector<int> indeg;
+    int n=color.length();
+    vector<vector<int>> graph(n); vector<int> indeg(n); // 初始化size
     for (auto edge:edges)
     {
         graph[edge[0]].emplace_back(edge[1]);
@@ -23,7 +24,6 @@ int maxPathValue(string color, vector<vector<int>>& edges)
     }
     
     queue<int> q; // indeg[]=0
-    int n=color.length();
     vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i have color j+'a'
     for (int i=0; i<n; ++i)
     {
