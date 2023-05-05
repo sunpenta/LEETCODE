@@ -27,7 +27,7 @@ int search(vector<int>&nums,int target)
         if (nums[mid]==target) return mid;
         
         // mid在左半段
-        if (nums[mid]>=nums[0]) // 注意不等号方向
+        if (nums[mid]>=nums[0])
         {   
             if (target>=nums[0] && target<=nums[mid]) // target在前半升序段[0,mid]
                 right=mid-1; 
