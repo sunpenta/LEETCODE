@@ -19,6 +19,8 @@ int largestPathValue(string colors, vector<vector<int>>& edges)
     vector<vector<int>> graph(n); vector<int> indeg(n); // 初始化size
     for (auto edge:edges)
     {
+        if (edge[0]==edge[1])
+            return -1;
         graph[edge[0]].emplace_back(edge[1]);
         ++indeg[edge[1]];
     }
@@ -34,7 +36,7 @@ int largestPathValue(string colors, vector<vector<int>>& edges)
         }
     }
 
-    int visit=0; // nodes number visited
+    int visit=0,res; // nodes number visited
     while (!q.empty())
     {
         int node=q.front();
