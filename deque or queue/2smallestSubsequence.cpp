@@ -24,7 +24,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     
     vector<deque<int>> ind(26); // 26个字母的下标
     for (int i=0;i<n;i++) 
-        ind[s[i]-'a'].push_back(i);
+        ind[s[i]-'a'].emplace_back(i);
     
     int x=repetition, lastInd=-1;
     string ans="";
