@@ -40,7 +40,8 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
             if (ans.length()+n-index>=k && cnt[index]>=countr && countr-(ch+'a'==letter)+i+1<=k)
             {
                 ans+= ch+'a'; // update ans, countr, dq,lastInd
-                if (ch+'a'==letter) countr--;
+                if (ch+'a'==letter) 
+                    countr--;
                 lastInd=index;
                 dq.pop_front();
                 break; // ?
