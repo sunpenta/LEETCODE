@@ -23,9 +23,9 @@ bool search(vector<int>& nums, int target)
         int mid=left+(right-left)/2;
         if (nums[mid]==target) 
             return true; 
-        if (nums[mid]==nums[left] && nums[mid]==nums[right]) // 不确定mid在左半段还是右半段,不能连续等于
-        {
-            left++;
+        if (nums[mid]==nums[left] && nums[mid]==nums[right]) // 不确定mid在左半段还是右半段, 不能连续等于
+        {                                                    // 1, 1, 2, 1 , 1, 1, 1
+            left++;                                          // 0       mid        6
             right--; 
         }
         else if (nums[mid]>=nums[left]) // mid在左半段[0,mid,|]
