@@ -1,5 +1,5 @@
 // 在排序数组(非递减)中查找元素的第一个和最后一个位置 - Binary Search  l-34
-// 有重复元素; 若未找到target,返回{-1,-1}; 时间复杂度：O(logn)
+// 有重复元素; 若未找到target,返回{-1,-1}; length⋿[1,1e4] 时间复杂度：O(logn)
 #include<iostream>
 #include <vector>
 using namespace std;
@@ -19,7 +19,7 @@ int binary_search(vector<int>& nums, int target)
     int left=0, right=nums.size(); // right≠n-1,[0,n]
     while (left<right) // [left,right]
     {
-        int mid=left+(right-left)/2;
+        int mid=(left+right)/2;
         if (nums[mid]>=target) // [left,target,mid,right] 
             right=mid;
         else 
