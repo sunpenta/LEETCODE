@@ -26,7 +26,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     for (int i=0;i<n;i++) 
         ind[s[i]-'a'].push_back(i);
     
-    int countr=repetition, lastInd=-1;
+    int x=repetition, lastInd=-1;
     string ans="";
     for (int i=0; i<k; i++)
     {
@@ -38,11 +38,11 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
             if (dq.empty()) continue;
             // satisfy k,rep
             int index=dq.front();
-            if (ans.length()+n-index>=k && cnt[index]>=countr && countr-(ch+'a'==letter)+i+1<=k)
+            if (ans.length()+n-index>=k && cnt[index]>=x && x-(ch+'a'==letter)+i+1<=k)
             {
-                ans+= ch+'a'; // update ans, countr, dq,lastInd
+                ans+= ch+'a'; // update ans, x, dq,lastInd
                 if (ch+'a'==letter) 
-                    countr--;
+                    x--;
                 lastInd=index;
                 dq.pop_front();
                 break; // ?
