@@ -18,7 +18,7 @@ int minMeetingRooms(vector<vector<int>>& intervals)
     int n=intervals.size();
     for (int i=1; i<n; ++i)
     {
-        if (intervals[i+1][0]>intervals[i][1])
+        if (intervals[i][0]>intervals[i-1][1])
             continue;
         else
             ++minRooms;
