@@ -15,8 +15,8 @@ int main()
 
 int minMeetingRooms(vector<vector<int>>& intervals)
 {
-    int minRooms=1;
     int n=intervals.size();
+    int minRooms=1;
     sort(intervals.begin(),intervals.end(),[](const vector<int>& a, const vector<int>& b){return a[1]<b[1];});
     for (int i=1; i<n; ++i)
     {
