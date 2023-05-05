@@ -21,7 +21,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     for (int i=n-2;i>=0;--i) 
         cnt[i]=cnt[i+1]+(s[i]==letter);
     
-    vector<deque<int>> ind(26); // 
+    vector<deque<int>> ind(26);
     for (int i=0;i<n;i++) 
         ind[s[i]-'a'].push_back(i);
     
@@ -31,11 +31,11 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     {
         for (int ch=0; ch<26; ch++)
         {
-            auto& dq=ind[ch];
-            // remove invalid index
-            while (!dq.empty() && dq.front()<=lastInd) dq.pop_front();
+            auto& dq=ind[ch];           
+            while (!dq.empty() && dq.front()<=lastInd) // remove invalid index
+                dq.pop_front();
             if (dq.empty()) continue;
-            // satisfy k rep
+            // satisfy k,rep
             int index=dq.front();
             if (ans.length()+n-index>=k && cnt[index]>=countr && countr-(ch+'a'==letter)+i+1<=k)
             {
