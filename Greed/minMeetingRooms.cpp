@@ -1,5 +1,5 @@
 // 最少会议室 - greedy  l-253
-// intervals[i]:[si,ei]:si:start time, ei:end time; 时间复杂度:
+// intervals[i]:[si,ei]:si:start time, ei:end time;length⋿[1,1e4]; 时间复杂度:O(n)
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -8,7 +8,7 @@ int minMeetingRooms(vector<vector<int>>& intervals);
 
 int main()
 {
-    vector<vector<int>> intervals={{0, 30},{5, 10},{15, 20}}; // input
+    vector<vector<int>> intervals={{1, 3}, {2, 6}, {8, 10}, {9, 15}, {12, 14}}; // input
     cout<<minMeetingRooms(intervals)<<endl; // output:2
     return 0;
 }
