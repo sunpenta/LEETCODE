@@ -1,6 +1,7 @@
-// 在排序数组(非递减)中查找元素的第一个和最后一个位置 - 二分查找 l-34
-// 有重复元素; 时间复杂度：O(logn)
-#include<bits/stdc++.h>
+// 在排序数组(非递减)中查找元素的第一个和最后一个位置 - Binary Search  l-34
+// 有重复元素; 若未找到target,返回{-1,-1}; 时间复杂度：O(logn)
+#include<iostream>
+#include <vector>
 using namespace std;
 vector<int> searchRange(vector<int>& nums, int target);
 
@@ -37,5 +38,5 @@ vector<int> searchRange(vector<int>& nums, int target)
     ans[1]=binary_search(nums,target+1)-1; // 最后1个
     if (ans[0]<n && nums[ans[0]]==target) 
         return ans;
-    return {-1,-1}; // 找到最后未找到，或找到元素不等于target
+    return {-1,-1};
 }

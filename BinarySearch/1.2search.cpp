@@ -1,4 +1,4 @@
-// 搜索旋转升序数组 - 二分查找 l-33
+// 搜索旋转升序数组 - Binary Search l-33
 // 按升序排列，元素互不相同; 若未找到元素target,返回-1,否则返回下标；时间复杂度：O(logn)
 #include<iostream>
 #include <vector>
