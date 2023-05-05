@@ -26,7 +26,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     for (int i=0;i<n;i++) 
         ind[s[i]-'a'].emplace_back(i);
     
-    int x=repetition, lastInd=-1;
+    int x=repetition, lastInd=-1; // x:need letters
     string ans="";
     for (int i=0; i<k; i++)
     {
