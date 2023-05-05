@@ -50,5 +50,11 @@ int maxPathValue(string color, vector<vector<int>>& edges)
                 q.push(neighbor);
         }
     }
-
+    int res=0;
+    for (int i=0; i<n; ++i)
+    {
+        for (int j=0; j<26; ++j)
+            res=max(res,colored[i][j]);
+    }
+    return res;
 }
