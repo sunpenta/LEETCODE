@@ -1,5 +1,5 @@
 // 搜索旋转升序数组 - 二分查找 l-33
-// 按升序排列，元素互不相同; 时间复杂度：O(logn)
+// 按升序排列，元素互不相同; 若未找到元素target,返回-1,否则返回下标；时间复杂度：O(logn)
 #include<iostream>
 #include <vector>
 using namespace std;
@@ -18,25 +18,24 @@ int search(vector<int>&nums,int target)
     int left=0, right=n-1;
     while (left<=right) // <=
     { 
-        int mid=(left+right)/2;
-        if (nums[mid]==target) return mid;
-        
-        // mid在左半段
-        if (nums[mid]>=nums[0])
+        int mid=left+(right-left)/2;
+        if (nums[mid]==target) 
+            return mid; 
+        else if (nums[mid]>=nums[0]) // [0,mid,|]
         {   
-            if (target>=nums[0] && target<=nums[mid]) // target在前半升序段[0,mid]
+            if (target>=nums[0] && target<=nums[mid]) // 在前半升序段[0,target,mid,|]
                 right=mid-1; 
             else 
                 left=mid+1;
         }
-        else // mid在右半段
+        else // mid在右半段[|,mid,n-1]
         {         
-            if (target>=nums[mid] && target<=nums[n-1]) // target在后半升序段[mid,n-1]
+            if (target>=nums[mid] && target<=nums[n-1]) // target在后半升序段[|,mid,target,n-1]
                 left=mid+1;
             else 
                 right=mid-1; 
         }
     }
-    return -1; // 没找到target
+    return -1;
 }
 
