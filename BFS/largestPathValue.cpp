@@ -17,7 +17,7 @@ int largestPathValue(string colors, vector<vector<int>>& edges)
 {
     int n=colors.length();
     vector<vector<int>> graph(n); vector<int> indeg(n); // 初始化size
-    for (auto edge:edges)
+    for (auto& edge:edges)
     {
         if (edge[0]==edge[1]) // self cycle
             return -1;
