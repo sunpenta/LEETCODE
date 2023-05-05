@@ -41,7 +41,10 @@ int maxPathValue(string color, vector<vector<int>>& edges)
 
         for (neighbor:graph[node])
         {
-            for ()
+            for (int i=0; i<26; ++i)
+            {
+                colored[node][i]=max(colored[node][i]+(colored[neighbor]==i+'a'),colored[neighbor][i]);
+            }
             --indeg[neighbor];
             if (indeg[neighbor]==0)
                 q.push(neighbor);
