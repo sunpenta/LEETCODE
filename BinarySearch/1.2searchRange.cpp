@@ -1,5 +1,5 @@
 // 在排序数组(非递减)中查找元素的第一个和最后一个位置 - Binary Search  l-34
-// 有重复元素, 非降序; 若未找到target,返回{-1,-1}; length⋿[1,1e4]; 时间复杂度：O(logn)
+// 含重复元素, 非降序; 若未找到target,返回{-1,-1}; length⋿[1,1e4]; 时间复杂度：O(logn)
 #include<iostream>
 #include <vector>
 using namespace std;
