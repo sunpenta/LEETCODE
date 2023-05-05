@@ -24,7 +24,7 @@ int maxPathValue(string colors, vector<vector<int>>& edges)
     }
     
     queue<int> q; // indeg[]=0
-    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i have colors j+'a'
+    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i最多有?j+'a'颜色
     for (int i=0; i<n; ++i)
     {
         if (indeg[i]==0)
