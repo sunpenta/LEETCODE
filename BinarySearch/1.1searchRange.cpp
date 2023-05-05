@@ -7,16 +7,16 @@ vector<int> searchRange(vector<int>& nums, int target);
 
 int main()
 {
-    vector<int>nums{5,7,7,8,8,10}; int target=8; // 输入
+    vector<int>nums{5,7,7,8,8}; int target=8; // 输入
     vector<int>ans=searchRange(nums,target); // 输出:{3,4}
     cout<<"("<<ans[0]<<", "<<ans[1]<<")"<<endl;
     return 0;;
 }
 
 // 大于等于target的第一个元素下标,即lower_bound()
-int binary_search(vector<int>&nums, int target)
+int binary_search(vector<int>& nums, int target)
 {
-    int left=0,right=nums.size();
+    int left=0, right=nums.size();
     while (left<right)
     {
         int mid=(left+right)/2;
