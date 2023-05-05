@@ -13,7 +13,7 @@ int main()
     return 0;;
 }
 
-// 大于等于target的第一个元素下标,即lower_bound()
+// 大于等于target的第一个元素下标(nums包含重复元素),即lower_bound()
 int binary_search(vector<int>& nums, int target)
 {
     int left=0, right=nums.size(); // right≠n-1,[0,n]
