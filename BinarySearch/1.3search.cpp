@@ -19,7 +19,7 @@ bool search(vector<int>& nums, int target)
     int left=0; int right=n-1; // 左右下标
     while (left<=right) // =
     {
-        int mid=(left+right)/2;
+        int mid=left+(right-left)/2;
         if (nums[mid]==target) return true;
         // 不能确定mid在左半段还是右半段
         if (nums[mid]==nums[left] && nums[mid]==nums[right]) // 不能连续等于

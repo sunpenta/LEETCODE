@@ -19,7 +19,7 @@ int binary_search(vector<int>& nums, int target)
     int left=0, right=nums.size(); // right≠n-1,[0,n]
     while (left<right) // [left,right]
     {
-        int mid=(left+right)/2;
+        int mid=left+(right-left)/2;
         if (nums[mid]>=target) // [left,target,mid,right] 
             right=mid;
         else 
