@@ -27,7 +27,7 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
     
     int countr=repetition, lastInd=-1;
     string ans="";
-    for (int i=0;i<k;i++)
+    for (int i=0; i<k; i++)
     {
         for (int ch=0;ch<26;ch++)
         {
