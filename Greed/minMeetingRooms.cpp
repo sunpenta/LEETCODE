@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <queue>
 using namespace std;
 int minMeetingRooms(vector<vector<int>>& intervals);
 
@@ -18,9 +19,11 @@ int minMeetingRooms(vector<vector<int>>& intervals)
     int n=intervals.size();
     int minRooms=1;
     sort(intervals.begin(),intervals.end());
-    for (int i=1; i<n; ++i)
+
+    priority_queue<int, vector<int>, greater<>> pq;
+    for (auto interval:intervals)
     {
-        if (intervals[i][0]>intervals[i-1][1])
+        if (interval[0])
             continue;
         else
             ++minRooms;
