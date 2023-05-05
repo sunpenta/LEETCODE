@@ -19,8 +19,10 @@ int maxPathValue(string color, vector<vector<int>>& edges)
         graph[edge[0]].emplace(edge[1]);
         ++indeg[edge[1]];
     }
+    
     queue<int> q; // indeg[]=0
     int n=color.length();
+    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:end with 
     for (int i=0; i<n; ++i)
     {
         if (indeg[i]==0)
@@ -33,7 +35,8 @@ int maxPathValue(string color, vector<vector<int>>& edges)
         int node=q.front();
         q.pop();
         ++visit;
-        
+
+        for ()
     }
 
 }
