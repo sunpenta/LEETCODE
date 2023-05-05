@@ -4,18 +4,18 @@
 #include <vector>
 #include <queue>
 using namespace std;
-int maxPathValue(string color, vector<vector<int>>& edges);
+int maxPathValue(string colors, vector<vector<int>>& edges);
 
 int main()
 {
-    string color="abaca"; vector<vector<int>>edges = {{0,1},{0,2},{2,3},{3,4}}; // input
-    cout<<maxPathValue(color,edges)<<endl; // ouput:3
+    string colors="abaca"; vector<vector<int>>edges = {{0,1},{0,2},{2,3},{3,4}}; // input
+    cout<<maxPathValue(colors,edges)<<endl; // ouput:3
     return 0;
 }
 
-int maxPathValue(string color, vector<vector<int>>& edges)
+int maxPathValue(string colors, vector<vector<int>>& edges)
 {
-    int n=color.length();
+    int n=colors.length();
     vector<vector<int>> graph(n); vector<int> indeg(n); // 初始化size
     for (auto edge:edges)
     {
@@ -24,13 +24,13 @@ int maxPathValue(string color, vector<vector<int>>& edges)
     }
     
     queue<int> q; // indeg[]=0
-    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i have color j+'a'
+    vector<vector<int>> colored(n,vector<int>(26)); // colored[i][j]:path end with node i have colors j+'a'
     for (int i=0; i<n; ++i)
     {
         if (indeg[i]==0)
         {
             q.push(i);
-            colored[i][color[i]-'a']=1;
+            colored[i][colors[i]-'a']=1;
         }
     }
 
@@ -45,7 +45,7 @@ int maxPathValue(string color, vector<vector<int>>& edges)
         {
             for (int i=0; i<26; ++i)
             {
-                colored[neighbor][i]=max(colored[node][i]+(color[neighbor-'a']==i+'a'),colored[neighbor][i]);
+                colored[neighbor][i]=max(colored[node][i]+(colors[neighbor]==i+'a'),colored[neighbor][i]);
             }
             --indeg[neighbor];
             if (indeg[neighbor]==0)
