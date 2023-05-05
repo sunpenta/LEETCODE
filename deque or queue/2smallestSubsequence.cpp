@@ -37,8 +37,8 @@ string smallestSubsequence(string s, int k, char letter, int repetition)
                 dq.pop_front();
             if (dq.empty()) continue;
             int index=dq.front();
-            // satisfy k,                       rep
-            if (ans.length()+n-index>=k && cnt[index]>=x && x-(ch+'a'==letter)+i+1<=k)
+            // satisfy k,                       rep               
+            if (ans.length()+n-index>=k && cnt[index]>=x && x-(ch+'a'==letter)<=k-i-1)
             {
                 ans+= ch+'a'; // update ans, x, dq,lastInd
                 if (ch+'a'==letter) 
