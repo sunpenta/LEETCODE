@@ -1,4 +1,4 @@
-// 杨辉三角-dp  l-118
+// 杨辉三角 - dp  l-118
 #include <bits/stdc++.h>
 using namespace std;
 vector<vector<int>>generate(int numRows); // 生成前numRows行
