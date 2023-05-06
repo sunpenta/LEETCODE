@@ -8,8 +8,8 @@ int mod=1e9+7;
     }
     long C(int a, int b)
     {
-        int res=fact(a)/fact(b)/fact(a-b);
-        return res;
+        if (a<b) return 0;
+        return fact(a)/fact(b)/fact(a-b);
     }
     int all(int a)
     {
