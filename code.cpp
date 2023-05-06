@@ -39,7 +39,7 @@ int mod=1e9+7;
     
 int main()
 {
-    cout<<fact(3)<<endl;
+    cout<<fact(0)<<endl;
     vector<int> nums = {3,5,6,7}; int target = 9;
     cout<<numSubseq(nums,target)<<endl;
     return 0;
