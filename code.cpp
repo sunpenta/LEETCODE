@@ -6,10 +6,17 @@ int mod=1e9+7;
         if (a==0 || a==1) return 1;
         return a*fact(a-1);
     }
-    int C(int a, int b)
+    int C(int n, int m)
     {
-        long res=fact(a)/fact(b)/fact(a-b);
+/*         long res=fact(a)/fact(b)/fact(a-b);
         return res%mod;
+        const int M = 10007; */
+        int ans = 1;
+        for(int i=n; i>=(n-m+1); --i)
+        ans *= i;
+        while(m)
+        ans /= m--;
+        return ans ;
     }
     int all(int a)
     {
@@ -39,7 +46,7 @@ int mod=1e9+7;
     
 int main()
 {
-    cout<<fact(0)<<endl;
+    cout<<C(3,2)<<endl;
     vector<int> nums = {3,5,6,7}; int target = 9;
     cout<<numSubseq(nums,target)<<endl;
     return 0;
