@@ -6,7 +6,7 @@ using namespace std;
         int n=nums.size();long long count=0;
         if (nums[0]>target) return 0;
         int j=n-1;
-        for (int i=0; i<n; ++i)
+        for (int i=0; i<=j; ++i)
         {
             while (i<=j && nums[i]+nums[j]>target)
             {
