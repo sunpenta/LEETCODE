@@ -1,4 +1,4 @@
-// 至少有1位重复数字-dp+位运算  l-1012
+// 至少有1位重复数字 - dp + 位运算  l-1012
 #include <bits/stdc++.h>
 using namespace std;
 int numDupDigitsAtMostN(int n);
@@ -16,7 +16,7 @@ int fact(int val) // 阶乘
     return val*fact(val-1);
 }
 
-int A(int n,int m) // 排列数
+int A(int n, int m) // 排列数
 {
     return fact(n)/fact(n-m);
 }
