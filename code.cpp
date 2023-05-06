@@ -1,25 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
-    int num=0, mod=1e9+7;
-    void dfs(vector<int>& nums, int target, int index)
+int mod=1e9+7;
+    int fact(int a)
     {
-        if (target>=0)
+        if (a==0 || a==1) return 1;
+        return a*fact(a-1);
+    }
+    int C(int a, int b)
+    {
+        return fact(a)/(fact(b)*fact(a-b));
+    }
+    int all(int a)
+    {
+        int count=0;
+        for (int i=1; i<=a; i++)
         {
-            ++num;
-            num%=mod;
-            // return;
+            count=(count+C(a,i)%mod)%mod;
         }
-        for (int i=index; i<nums.size(); ++i)
-        {
-            if (target<nums[i]) break;
-            if (i>index && nums[i]==nums[i-1]) continue;
-            dfs(nums,target-nums[i],i+1);
-        }
+        return count%mod;
     }
     int numSubseq(vector<int>& nums, int target) {
         sort(nums.begin(),nums.end());
-        dfs(nums,target,0);
-        return num;
+        int n=nums.size(), count=0;
+        int  i=0,j;
+        if (nums[0]>target) return 0;
+        for (int j=n-1; j>=i; --j)
+        {
+            if (nums[i]+nums[j]<=target)
+            {
+                break;
+            }
+        }
+        if (j-i>=1)
+        count=all(j-i)%mod+1;        
+        return count%mod;
     }
     
 int main()
