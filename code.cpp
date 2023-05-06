@@ -11,13 +11,12 @@ using namespace std;
         int res=fact(a)/fact(b)/fact(a-b);
         return res%mod;
     }
-    /*
     int all(int a)
     {
         int count=0;
         for (int i=1; i<=a; i++)
         {
-            count=(count+C(a,i)%mod)%mod;
+            count=(count%mod+C(a,i)%mod)%mod;
         }
         return count%mod;
     }
@@ -36,11 +35,11 @@ using namespace std;
         if (j-i>=1)
         count=all(j-i)%mod+1;        
         return count%mod;
-    }*/
+    }
     
 int main()
 {
-    cout<<C(5,2)<<endl;
+    cout<<all(3)<<endl;
     vector<int> nums = {3,5,6,7}; int target = 9;
     // cout<<numSubseq(nums,target)<<endl;
     return 0;
