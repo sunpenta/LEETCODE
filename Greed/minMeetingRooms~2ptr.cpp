@@ -1,4 +1,4 @@
-// 最少会议室 - greedy  l-253(会员)
+// 最少会议室 - greedy+双指针  l-253(会员)
 // intervals[i]:[si,ei]:si:start time, ei:end time;length⋿[1,1e4]; 时间复杂度:O(nlogn), 空间复杂度:O(n)
 #include <iostream>
 #include <vector>
