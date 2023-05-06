@@ -13,7 +13,7 @@ using namespace std;
                 --j;
             }
             if (j>=i)
-                count+=(long long)(pow(2,j-i)-1) % mod;
+                count+=(long long)(pow(2,j-i)) % mod;
         }        
         return count%mod;
     }
