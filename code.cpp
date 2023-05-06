@@ -28,7 +28,7 @@ using namespace std;
 int main()
 {
     // ***
-    long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; 
+    long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
     // ***
     long long b=(long long) (pow(2,54))%mod;
     cout<<a<<" "<<b<<endl;
