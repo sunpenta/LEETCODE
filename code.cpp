@@ -6,7 +6,7 @@ int mod=1e9+7;
         if (a==0 || a==1) return 1;
         return a*fact(a-1);
     }
-    int C(int a, int b)
+    long C(int a, int b)
     {
         int res=fact(a)/fact(b)/fact(a-b);
         return res;
