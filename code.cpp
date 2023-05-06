@@ -7,7 +7,7 @@ using namespace std;
         {
             ++num;
             num%=mod;
-            return;
+            // return;
         }
         for (int i=index; i<nums.size(); ++i)
         {
