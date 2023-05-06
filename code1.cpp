@@ -13,7 +13,7 @@ using namespace std;
                 --j;
             }
             if (j>=i)
-                count+=(long long)(pow(2,j-i)) % mod;
+                count+=(long long)(pow(2,j-i)) % mod; // 注意类型转换； (power()-1)和不-1结果相同
         }        
         return count%mod;
     }
