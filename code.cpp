@@ -6,14 +6,18 @@ using namespace std;
         int n=nums.size();long long count=0;
         if (nums[0]>target) return 0;
 
-        for (int i=0,j=n-1; i<=j; ++i)
+        for (int i=0,j=n-1; i<n; ++i)
         {
-            while (i<=j && nums[i]+nums[j]>target)
+            if (nums[i]+nums[i]<=target)
+                ++count;
+            else
+                break;
+            while (nums[i]+nums[j]>target)
             {
                 --j;
             }
-            if (j>=i)
-                count+=(long long)(pow(2,j-i)) % mod;
+            if (j>i)
+                count+=(long long)(pow(2,j-i)-1) % mod;
         }        
         return count%mod;
     }
