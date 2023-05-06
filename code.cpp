@@ -10,6 +10,8 @@ using namespace std;
         {
             if (nums[i]+nums[i]<=target)
                 ++count;
+            else
+                break;
             
             while (nums[i]+nums[j]>target)
             {
