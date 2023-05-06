@@ -8,15 +8,11 @@ using namespace std;
         int j=n-1;
         for (int i=0; i<n; ++i)
         {
-            if (nums[i]+nums[i]<=target) // 
-                ++count;
-            else
-                break;
-            while (nums[i]+nums[j]>target)
+            while (i<=j && nums[i]+nums[j]>target)
             {
                 --j;
             }
-            if (j>i)
+            if (j>=i)
                 count+=(long long)(pow(2,j-i)-1) % mod;
         }        
         return count%mod;
