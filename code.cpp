@@ -1,127 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
-int numSimilarGroups(vector<string>& strs);
-bool checkSimilar(string s, string t);
-    string predictPartyVictory(string senate) {
-        int n=senate.length();
-        vector<bool> vote(n,true);
-        int count_R=0, count_D=0;
-        for (char ch:senate)
+    int num=0, mod=1e9+7;
+    void dfs(vector<int>& nums, int target, int index)
+    {
+        if (target>=0)
         {
-            if (ch=='R') ++count_R;
-            else ++count_D;
+            ++num;
+            num%=mod;
+            return;
         }
-        int R=0,D=0;
-        for (int k=0; k<n; ++k) // first R
+        for (int i=index; i<nums.size(); ++i)
         {
-            if (senate[k]=='R') 
-            {
-                R=k;
-                break;
-            }
+            if (target<nums[i]) break;
+            if (i>index && nums[i]==nums[i-1]) continue;
+            dfs(nums,target-nums[i],i+1);
         }
-        for (int k=0; k<n; ++k) // first D
-        {
-            if (senate[k]=='D') 
-            {
-                D=k;
-                break;
-            }
-        }    
-        int i=0,j=0; char c1, c2;
-        if (R<D) 
-        {
-            i=R, j=D;
-            c1='R', c2='D';
-        }
-        else 
-        {
-            i=D, j=R;
-            c1='D', c2='R';
-        }  
-        while (count_R>0 && count_D>0)
-        {
-            i=min(R,D), j=max(R,D);
-            for (; i<n && j<n; ++i,++j)
-            {
-            while ((!vote[i] || senate[i]!=c1) && i<n) ++i;
-            if (i=n)  
-            {
-                i=min(R,D);
-                while (j<n)
-                {
-                    if (vote[i] && vote[j])
-                        vote[i]=false;
-                if (senate[i]=='R') --count_R;
-                else --count_D;                       
-                }
-            }
-            while ((!vote[j] || senate[j]!=c2) && j<n) ++j;
-
-                vote[j]=false;
-                if (senate[j]=='R') --count_R;
-                else --count_D;               
-                if (j==n-1 && vote[j]) 
-                {
-                    vote[i]=false;
-                if (senate[i]=='R') --count_R;
-                else --count_D;
-                }              
-            }
-            //if (count_D==0) return "Radiant";
-            //else if (count_R==0) return "Dire";
-        }
-        return count_D==0? "Radiant":"Dire";
     }
+    int numSubseq(vector<int>& nums, int target) {
+        sort(nums.begin(),nums.end());
+        dfs(nums,target,0);
+        return num;
+    }
+    
 int main()
 {
-     string senate="DDRRRR";
-     cout<<predictPartyVictory(senate)<<endl;
-     return 0;
+    vector<int> nums = {3,5,6,7}; int target = 9;
+    cout<<numSubseq(nums,target)<<endl;
+    return 0;
 }
-
-    bool checkSimilar(string s, string t)
-    {
-        int n=s.length();
-        for (int i=0; i<n-1; ++i) // [i,j] C(n,2)
-        {
-            for (int j=i+1; j<n; ++j)
-            {
-               string tmp=s;
-               swap(s[i],s[j]);
-               if (s==t)
-                    return true;
-               s=tmp;
-            }
-        }
-        return false;
-    }
-    int numSimilarGroups(vector<string>& strs) {
-        int groups=0;
-        queue<string> q;
-        int n=strs.size();
-        vector<int> visited(n,0);
-        for (int i=0; i<n; ++i)
-        {
-            if (visited[i]==0)
-            {
-                q.push(strs[i]);  
-                visited[i]=1;
-                groups++;
-            }    
-            while (!q.empty())
-            {
-                string word=q.front(); q.pop();
-                for (int j=0; j<n; ++j)
-                {   
-                    string str=strs[j];
-                    if (visited[j]==0 && checkSimilar(word,str))
-                    {
-                        q.push(str);
-                        visited[j]=1;
-                    }
-                }
-            }
-        }
-        return groups;
-    }
