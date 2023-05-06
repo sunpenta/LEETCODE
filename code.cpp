@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-    int mod=1e9+7;
+    long long mod=1e9+7;
     int numSubseq(vector<int>& nums, int target) {
         sort(nums.begin(),nums.end());  
         int n=nums.size();long long count=0;
