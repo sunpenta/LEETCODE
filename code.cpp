@@ -5,8 +5,8 @@ using namespace std;
         sort(nums.begin(),nums.end());  
         int n=nums.size();long long count=0;
         if (nums[0]>target) return 0;
-        int j=n-1;
-        for (int i=0; i<=j; ++i)
+
+        for (int i=0,j=n-1; i<=j; ++i)
         {
             while (i<=j && nums[i]+nums[j]>target)
             {
