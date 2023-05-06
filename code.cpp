@@ -1,23 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
-int mod=1e9+7;
+    const int mod=1e9+7;
     int fact(int a)
     {
         if (a==0 || a==1) return 1;
         return a*fact(a-1);
     }
-    int C(int n, int m)
+    int C(int a, int b)
     {
-/*         long res=fact(a)/fact(b)/fact(a-b);
+        int res=fact(a)/fact(b)/fact(a-b);
         return res%mod;
-        const int M = 10007; */
-        int ans = 1;
-        for(int i=n; i>=(n-m+1); --i)
-        ans *= i;
-        while(m)
-        ans /= m--;
-        return ans ;
     }
+    /*
     int all(int a)
     {
         int count=0;
@@ -42,12 +36,12 @@ int mod=1e9+7;
         if (j-i>=1)
         count=all(j-i)%mod+1;        
         return count%mod;
-    }
+    }*/
     
 int main()
 {
-    cout<<C(3,2)<<endl;
+    cout<<C(5,2)<<endl;
     vector<int> nums = {3,5,6,7}; int target = 9;
-    cout<<numSubseq(nums,target)<<endl;
+    // cout<<numSubseq(nums,target)<<endl;
     return 0;
 }
