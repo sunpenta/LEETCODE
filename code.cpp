@@ -1,40 +1,39 @@
 #include <bits/stdc++.h>
 using namespace std;
-vector<int> colorTheArray(int n, vector<vector<int>>& queries) {
-    int m=queries.size(), count=0;
-    vector<int> res(m), nums(n,0);
-    for (int i=0; i<m; ++i)
-    {
-        int j=queries[i][0];
-        int pre=nums[j];
-        nums[j]=queries[i][1];
-        if (j<n-1 && nums[j]==nums[j+1] && nums[j]!=pre)
+    int smallestChair(vector<vector<int>>& times, int targetFriend) {
+        vector<int> in, out;
+        for (auto time:times)
         {
-            ++count;
-            
+            in.emplace_back(time[0]);
+            out.emplace_back(time[1]);
         }
-        if ( j>0 && nums[j]==nums[j-1] && nums[j]!=pre)
+        sort(in.begin(),in.end());
+        sort(out.begin(),out.end());
+        int idx=find(in.begin(),in.end(),times[targetFriend][0])-in.begin();
+        cout<<idx;
+        int i=0, j=0, res=0;
+        while (idx--)
         {
-            ++count;
+            if (in[i]<=out[i])
+            {
+                res++;
+                ++i;
+            }
+            else
+            {
+                --res;
+                ++j;
+            }
         }
-        if (pre!=0 && nums[j]!=pre && j<n-1 && pre==nums[j+1])
-        {
-            count=max(0,--count);
-        }
-        if (pre!=0 && nums[j]!=pre && j>0 && pre==nums[j-1])
-        {
-            count=max(0,--count);
-        }
-        res[i]=count;
+        return res;    
     }
-    return res;
-}
     
 int main()
 {
-    int n = 4; vector<vector<int>> queries = {{0,2},{1,2},{3,1},{1,1},{2,1}};
-    vector<int> res=colorTheArray(n,queries);
-    cout<<endl;
+    vector<vector<int>> times =
+{{33889,98676},{80071,89737},{44118,52565},{52992,84310},{78492,88209},{21695,67063},{84622,95452},{98048,98856},{98411,99433},{55333,56548},{65375,88566},{55011,62821},{48548,48656},{87396,94825},{55273,81868},{75629,91467}};
+    int targetFriend =6;
+    cout<<smallestChair(times,targetFriend)<<endl;
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
     // ***
