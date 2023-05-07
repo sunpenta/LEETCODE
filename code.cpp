@@ -14,7 +14,7 @@ using namespace std;
         int i=0, j=0, res=0;
         while (idx--)
         {
-            if (in[i]<=out[i])
+            if (in[i]<out[j])
             {
                 res++;
                 ++i;
