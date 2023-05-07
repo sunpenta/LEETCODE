@@ -12,20 +12,25 @@ using namespace std;
         int idx=find(in.begin(),in.end(),times[targetFriend][0])-in.begin();
         cout<<idx;
         int i=0, j=0, res=0;
-        while (idx--)
+        while (i<=idx)
         {
             if (in[i]<out[j])
             {
                 res++;
                 ++i;
             }
-            else
+            else if (in[i]>out[j])
             {
                 --res;
                 ++j;
             }
+            else
+            {
+                ++i;
+                ++j;
+            }
         }
-        return res;    
+        return res;
     }
     
 int main()
