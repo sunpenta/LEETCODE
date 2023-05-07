@@ -1,28 +1,28 @@
 #include <bits/stdc++.h>
 using namespace std;
-    long long mod=1e9+7;
-    int numSubseq(vector<int>& nums, int target) {
-        sort(nums.begin(),nums.end());  
-        int n=nums.size();long long count=0;
-        if (nums[0]>target) return 0;
-
-        for (int i=0,j=n-1; i<n; ++i)
+    vector<int> colorTheArray(int n, vector<vector<int>>& queries) {
+        int m=queries.size(), count=0;
+        vector<int> res(m), nums(n,0);
+        for (int i=0; i<m; ++i)
         {
-            if (nums[i]+nums[i]<=target)
+            int j=queries[i][0];
+            int pre=nums[j];
+            cout<< pre<<" ";
+            nums[j]=queries[i][1];
+            if ((j<n-1 && nums[j]==nums[j+1] || j>0 && nums[j]==nums[j-1]) && nums[j]!=pre)
+            {
                 ++count;
-            else
-                break;
-            while (nums[i]+nums[j]>target)
-            {
-                --j;
+                res[i]=count;
             }
-            if (j>i)
+            else if (pre!=0 && nums[j]!=pre && (j<n-1 && pre==nums[j+1] || j>0 && pre==nums[j-1]))
             {
-                int cur=(long long) (pow(2,j-i)-1) % mod;
-                count+=cur;
+                count=max(0,--count);
+                res[i]=count;
             }
-        }        
-        return count%mod;
+            else                   
+                res[i]=count;   
+        }
+        return res;
     }
     
 int main()
