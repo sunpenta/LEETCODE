@@ -8,18 +8,24 @@ vector<int> colorTheArray(int n, vector<vector<int>>& queries) {
         int j=queries[i][0];
         int pre=nums[j];
         nums[j]=queries[i][1];
-        if ((j<n-1 && nums[j]==nums[j+1] || j>0 && nums[j]==nums[j-1]) && nums[j]!=pre)
+        if (j<n-1 && nums[j]==nums[j+1] && nums[j]!=pre)
         {
             ++count;
-            res[i]=count;
+            
         }
-        else if (pre!=0 && nums[j]!=pre && (j<n-1 && pre==nums[j+1] || j>0 && pre==nums[j-1]))
+        if ( j>0 && nums[j]==nums[j-1] && nums[j]!=pre)
+        {
+            ++count;
+        }
+        if (pre!=0 && nums[j]!=pre && j<n-1 && pre==nums[j+1])
         {
             count=max(0,--count);
-            res[i]=count;
         }
-        else                   
-            res[i]=count;   
+        if (pre!=0 && nums[j]!=pre && j>0 && pre==nums[j-1])
+        {
+            count=max(0,--count);
+        }
+        res[i]=count;
     }
     return res;
 }
