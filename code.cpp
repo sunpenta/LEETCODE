@@ -28,10 +28,15 @@ using namespace std;
                 chairs.pop();
                 ++i;
             }
-            else if (arrive[i]>=leave[j])
+            else if (arrive[i]>leave[j])
             {
                 chairs.push(seat[leave[j].second]); // j leave
                 ++j;
+            }
+            else
+            {
+                seat[i]=seat[leave[j].second];
+                ++i, ++j;
             }
         }
         return seat[targetFriend];    
