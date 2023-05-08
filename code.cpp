@@ -27,8 +27,8 @@ using namespace std;
             {
                 ans[i]=server.top().second;
                 server.pop();
+                times.push({end,ans[i]});
             }
-            times.push({end,ans[i]});
         }
         return ans;
     }
