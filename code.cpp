@@ -11,7 +11,11 @@ using namespace std;
         vector<int> ans(m);
         for (int i=0; i<m; ++i)
         {
-            int start=i, end=start+tasks[i]; 
+            int start=i, end=start+tasks[i];
+            if (server.empty())
+            {
+                start=times.top().first, end=start+tasks[i];
+            } 
             while (!times.empty() && times.top().first<=start)
             {
                 int s=times.top().second;
