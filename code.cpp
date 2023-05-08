@@ -18,18 +18,19 @@ using namespace std;
         sort(leave.begin(),leave.end());
         pair<int,int> target={_times[targetFriend][0],targetFriend};
         int idx=find(arrive.begin(),arrive.end(),target)-arrive.begin();
-        int res=0, i=0, j=0;
+        int i=0, j=0;
+        vector<int> seat(n);
         while (i<=idx)
         {
             if (arrive[i]<leave[j])
             {               
-                res=chairs.top();
+                seat[i]=chairs.top();
                 chairs.pop();
                 ++i;
             }
             else if (arrive[i]<leave[j])
             {
-                chairs.push(res);
+                chairs.push(seat[j]); // j leave
                 ++j;
             }
             else
@@ -37,7 +38,7 @@ using namespace std;
                 ++i, ++j;
             }
         }
-        return res;    
+        return seat[idx];    
     }
     
 int main()
