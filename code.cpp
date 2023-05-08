@@ -12,16 +12,15 @@ using namespace std;
         {
             if (nums[i]>=maxnum)
             {
-                res[i-k]=nums[i];
+                maxnum=nums[i]; 
             }
             else if (nums[i]<maxnum && nums[i-k]<maxnum)
-            {
-                res[i-k]=maxnum;
-            }
+            {}
             else
             {
-                res[i-k]=*max_element(nums.begin()+i-k+1,nums.begin()+i);
+                maxnum=*max_element(nums.begin()+i-k+1,nums.begin()+i);
             }
+            res[i-k]=maxnum;
         }
         return res;
     }
