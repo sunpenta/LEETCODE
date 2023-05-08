@@ -24,13 +24,13 @@ using namespace std;
         {
             if (arrive[i]<leave[j])
             {               
-                seat[i]=chairs.top();
+                seat[arrive[i].second]=chairs.top();
                 chairs.pop();
                 ++i;
             }
-            else if (arrive[i]<leave[j])
+            else if (arrive[i]>leave[j])
             {
-                chairs.push(seat[j]); // j leave
+                chairs.push(seat[leave[j].second]); // j leave
                 ++j;
             }
             else
@@ -38,7 +38,7 @@ using namespace std;
                 ++i, ++j;
             }
         }
-        return seat[idx];    
+        return seat[targetFriend];    
     }
     
 int main()
