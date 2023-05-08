@@ -2,34 +2,33 @@
 using namespace std;
     vector<int> assignTasks(vector<int>& servers, vector<int>& tasks) {
         int n=servers.size(), m=tasks.size();
-        vector<pair<int,int>> start; // <time,index==start time>
-        vector<pair<int,int>> end;
-        for (int i=0; i<m; ++i)
-        {
-            start.push_back({i,i});
-            end.push_back({i+tasks[i],i});
-        }
-        sort(start.begin(),start.end());
-        sort(end.begin(),end.end());
-        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>> > pq; // servers
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>> > times; // <end,server>
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>> > server; // servers
         for (int i=0; i<n; ++i)
         {
-            pq.push({servers[i],i});
+            server.push({servers[i],i});
         }
-        vector<int> ans(m); 
-        int i=0, j=0;
-        while (i<m && j<m)
+        vector<int> ans(m);
+        for (int i=0; i<m; ++i)
         {
-            int idx=start[i].second;
-            if (!pq.empty() && start[i].first<end[j].first)
+            int start=i, end=i+tasks[i]; 
+            while (!times.empty() && times.top().first<=start)
             {
-                ans[idx]=pq.top().second;
-                pq.pop();
+                int s=times.top().second;
+                server.push({servers[s],s});
+                times.pop();
+            }
+            
+            if (server.empty())
+            {
+                start++, end++;
             }
             else
             {
-                pq.push({servers[ans[idx]],ans[idx]});
+                ans[i]=server.top().second;
+                server.pop();
             }
+            times.push({end,ans[i]});
         }
         return ans;
     }
