@@ -21,7 +21,7 @@ using namespace std;
         while (i<m && j<m)
         {
             int idx=start[i].second;
-            if (start[i].first<start[j].first)
+            if (!pq.empty() && start[i].first<end[j].first)
             {
                 ans[idx]=pq.top().second;
                 pq.pop();
