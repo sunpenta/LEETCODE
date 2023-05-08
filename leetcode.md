@@ -1,6 +1,6 @@
 ### sum
 * 1-D array:
-1 Two Sum
+1 Two Sum (brute force, vector<pii>+2pointers)
 * 2-D array:
 1572 Matrix Diagonal Sum
 ### 优先队列
