@@ -2,26 +2,19 @@
 using namespace std;
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         int n=nums.size();
-        int maxnum=0;
+        priority_queue<int> pq; // less<>
         for (int i=0; i<k; ++i)
-        {
-            maxnum=max(maxnum,nums[i]);
-        }
+            pq.push(nums[i]);
         vector<int> res(n-k+1);
-        res[0]=maxnum;
+        res[0]=pq.top();
         for (int i=k; i<n; ++i)
         {
-            if (nums[i]>=maxnum)
+            while (!pq.empty() && pq.top()>=res[i-k])
             {
-                maxnum=nums[i]; 
+                pq.pop();
             }
-            else if (nums[i]<maxnum && nums[i-k]<maxnum)
-            {}
-            else
-            {
-                maxnum=*max_element(nums.begin()+i-k+1, nums.begin()+i+1);
-            }
-            res[i-k+1]=maxnum;
+            pq.push(nums[i]);
+            res[i-k+1]=pq.top();
         }
         return res;
     }
@@ -29,8 +22,8 @@ using namespace std;
 int main()
 {
     vector<int> nums =
-    {7,2,4};
-    int k=2;
+    {1,3,1,2,0,5};
+    int k=3;
     vector<int> res=maxSlidingWindow(nums, k);
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
