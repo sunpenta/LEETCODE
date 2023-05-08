@@ -22,11 +22,12 @@ using namespace std;
 int main()
 {
     vector<int> nums =
-    {-7,-8,7,5,7,1,6,0};
-    int k=4;
+    {9,10,9,-7,-4,-8,2,-6};
+    int k=5;
     vector<int> res=maxSlidingWindow(nums, k);
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
     // ***
+    // -7,-8,7,5,7,1,6,0
     return 0;
 }
