@@ -44,7 +44,7 @@ using namespace std;
     
 int main()
 {
-    vector<vector<int>> times ={{1,5},{2,3},{3,9},{4,7},{5,8}}; int targetFriend =4;
+    vector<vector<int>> times ={{1,5},{2,3},{3,9},{4,7},{5,8}}; int targetFriend =3;
     cout<<smallestChair(times,targetFriend)<<endl;
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
