@@ -8,6 +8,7 @@ using namespace std;
             maxnum=max(maxnum,nums[i]);
         }
         vector<int> res(n-k+1);
+        res[0]=maxnum;
         for (int i=k; i<n; ++i)
         {
             if (nums[i]>=maxnum)
@@ -20,7 +21,7 @@ using namespace std;
             {
                 maxnum=*max_element(nums.begin()+i-k+1,nums.begin()+i);
             }
-            res[i-k]=maxnum;
+            res[i-k+1]=maxnum;
         }
         return res;
     }
