@@ -19,7 +19,7 @@ using namespace std;
             {}
             else
             {
-                maxnum=*max_element(nums.begin()+i-k+1,nums.begin()+i);
+                maxnum=*max_element(nums.begin()+i-k+1, nums.begin()+i+1);
             }
             res[i-k+1]=maxnum;
         }
