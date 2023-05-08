@@ -22,13 +22,13 @@ using namespace std;
         vector<int> seat(n);
         while (i<=idx)
         {
-            if (arrive[i]<leave[j])
+            if (arrive[i].first<leave[j].first)
             {               
                 seat[arrive[i].second]=chairs.top();
                 chairs.pop();
                 ++i;
             }
-            else if (arrive[i]>leave[j])
+            else if (arrive[i].first>leave[j].first)
             {
                 chairs.push(seat[leave[j].second]); // j leave
                 ++j;
