@@ -9,7 +9,7 @@ using namespace std;
         res[0]=pq.top();
         for (int i=k; i<n; ++i)
         {
-            while (!pq.empty() && pq.top()>=res[i-k])
+            while (!pq.empty() && nums[i]>pq.top())
             {
                 pq.pop();
             }
