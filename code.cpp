@@ -27,11 +27,8 @@ using namespace std;
             room[k]++;
             meeting.push({start+interval,k});
         }
-        int res=0;
-        for (int i=0; i<n; ++i)
-        {
-            res=max(res,room[i]);
-        }
+        
+        int res=max_element(room.begin(),room.end())-room.begin();
         return res;
     }
     
