@@ -19,7 +19,7 @@ using namespace std;
             {
                 start=min(start,meetings[i][0]);
             }
-            while (!meeting.empty() && start<=meeting.top().first)
+            while (!meeting.empty() && start>=meeting.top().first)
             {
                 int idx=meeting.top().second;
                 free.push(idx);
