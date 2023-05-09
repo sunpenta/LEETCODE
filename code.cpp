@@ -1,42 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
-    int mostBooked(int n, vector<vector<int>>& meetings) {
-       vector<int> room(n); // room[i] have meetting number
-        priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>> > meeting;
-        priority_queue<int,vector<int>,greater<int>> free;
-        for (int i=0; i<n; ++i)
-            free.push(i);
-        sort(meetings.begin(),meetings.end());
-        int start=0, interval;
-        for (int i=0; i<meetings.size(); ++i)
+ string smallestBeautifulString(string s, int k) {
+    auto valid = [&](int i) {
+        return (i < 1 || s[i] != s[i - 1]) && (i < 2 || s[i] != s[i - 2]);
+    };
+    for (int i = s.size() - 1; i >= 0; --i) {
+        ++s[i];
+        while (!valid(i))
+            ++s[i];
+        if (s[i] < 'a' + k) 
         {
-            start=max(start,meetings[i][0]); // change
-            interval=meetings[i][1]-meetings[i][0];
-            if (free.empty() && start<meeting.top().first)
-            {
-                start=meeting.top().first; // delay
-            }
-            while (!meeting.empty() && start>=meeting.top().first)
-            {
-                int idx=meeting.top().second;
-                free.push(idx);
-                meeting.pop();
-            }
-            int k=free.top();
-            free.pop();
-            room[k]++;
-            meeting.push({start+interval,k});
+            for (i = i + 1; i < s.size(); ++i)
+                for (s[i] = 'a'; !valid(i); ++s[i]) ;
+            return s;            
         }
-        
-        int res=max_element(room.begin(),room.end())-room.begin();
-        return res;
     }
+    return "";
+}
     
 int main()
 {
+    string s ="abcz"; int k=26;
+    cout<<smallestBeautifulString(s,k);
     int n = 2; vector<vector<int>> meetings = {{0,10},{1,2},{12,14},{13,15}};
-    int res=mostBooked(n, meetings); // {{0,10},{1,5},{2,7},{3,4}}  n=2
-    cout<<res; // (72/82)runtime error: signed integer overflow: 2147400001 + 300000 cannot be represented in type 'int'
+    // int res=mostBooked(n, meetings); // {{0,10},{1,5},{2,7},{3,4}}  n=2
+     // (72/82)runtime error: signed integer overflow: 2147400001 + 300000 cannot be represented in type 'int'
    // vector<int> res=maxSlidingWindow(nums, k);
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
