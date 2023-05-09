@@ -25,10 +25,13 @@ using namespace std;
     
 int main()
 {
+    priority_queue<int> free;
+    for (int i=0; i<2; ++i)
+    free.push(i);
     vector<int> nums =
     {9,10,9,-7,-4,-8,2,-6};
     int k=5;
-    vector<int> res=maxSlidingWindow(nums, k);
+   // vector<int> res=maxSlidingWindow(nums, k);
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
     // ***
