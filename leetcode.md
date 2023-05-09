@@ -4,6 +4,10 @@
 2660 Determine the Winner of a Bowling Game
 * 2-D array:
 1572 Matrix Diagonal Sum
+### 双指针
+* 数组
+11 盛水最多的容器
+
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
