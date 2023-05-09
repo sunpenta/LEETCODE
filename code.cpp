@@ -40,8 +40,8 @@ using namespace std;
     
 int main()
 {
-    int n = 2; vector<vector<int>> meetings = {{0,10},{1,5},{2,7},{3,4}};
-    int res=mostBooked(n, meetings);
+    int n = 2; vector<vector<int>> meetings = {{0,10},{1,2},{12,14},{13,15}};
+    int res=mostBooked(n, meetings); // {{0,10},{1,5},{2,7},{3,4}}  n=2
    // vector<int> res=maxSlidingWindow(nums, k);
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
