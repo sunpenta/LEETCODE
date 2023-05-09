@@ -1,36 +1,47 @@
 #include <bits/stdc++.h>
 using namespace std;
-    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
-        int n=nums.size();
-        priority_queue<int> pq; // less<>
-        for (int i=0; i<k; ++i)
-            pq.push(nums[i]);
-        vector<int> res(n-k+1);
-        res[0]=pq.top();
-        for (int i=k; i<n; ++i)
+    int mostBooked(int n, vector<vector<int>>& meetings) {
+       vector<int> room(n); // room[i] have meetting number
+        priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>> > meeting;
+        priority_queue<int,vector<int>,greater<int>> free;
+        for (int i=0; i<n; ++i)
+            free.push(i);
+        sort(meetings.begin(),meetings.end());
+        int start=0, interval;
+        for (int i=0; i<meetings.size(); ++i)
         {
-            if (!pq.empty() && (nums[i]>pq.top() || pq.top()==nums[i-k]))
+            interval=meetings[i][1]-meetings[i][0];
+            if (free.empty())
             {
-                pq.pop();
+                start=meeting.top().first; // delay
             }
-            while (!pq.empty() && pq.top()==nums[i-k])
+            else // early ?
             {
-                pq.pop();
+                start=min(start,meetings[i][0]);
             }
-            pq.push(nums[i]);
-            res[i-k+1]=pq.top();
+            while (!meeting.empty() && start<=meeting.top().first)
+            {
+                int idx=meeting.top().second;
+                free.push(idx);
+                meeting.pop();
+            }
+            int k=free.top();
+            free.pop();
+            room[k]++;
+            meeting.push({start+interval,k});
+        }
+        int res=0;
+        for (int i=0; i<n; ++i)
+        {
+            res=max(res,room[i]);
         }
         return res;
     }
     
 int main()
 {
-    priority_queue<int> free;
-    for (int i=0; i<2; ++i)
-    free.push(i);
-    vector<int> nums =
-    {9,10,9,-7,-4,-8,2,-6};
-    int k=5;
+    int n = 2; vector<vector<int>> meetings = {{0,10},{1,5},{2,7},{3,4}};
+    int res=mostBooked(n, meetings);
    // vector<int> res=maxSlidingWindow(nums, k);
     // ***
     // long long a = (static_cast<int64_t>(pow(2, 54)) - 1) % mod; // int64_t is long long
