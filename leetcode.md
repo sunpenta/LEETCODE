@@ -16,6 +16,6 @@
 2661 First Completely Painted Row or Column
 ### 路径
 * 二叉树路径
-
+2673 Make Costs of Paths Equal in a Binary Tree
 * 图路径
 2662 Minimum Cost of a Path With Special Roads
