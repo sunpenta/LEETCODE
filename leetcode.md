@@ -10,6 +10,8 @@
 * 占据对象有限:
 1882 Process Tasks Using Servers
 2402 Meeting Rooms III
+### string
+2663 Lexicographically Smallest Beautiful String
 ### 矩阵模拟
 54 Spiral Matrix
 ### hash set或map
