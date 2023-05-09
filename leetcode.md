@@ -11,3 +11,6 @@
 1882 Process Tasks Using Servers
 ### 矩阵模拟
 54 Spiral Matrix
+### hash set或map
+* hash map
+2661 First Completely Painted Row or Column
