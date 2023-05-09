@@ -10,7 +10,7 @@ using namespace std;
         int start=0, interval;
         for (int i=0; i<meetings.size(); ++i)
         {
-            interval=meetings[i][1]-meetings[i][0];
+            start=start=meetings[i][0]; interval=meetings[i][1]-meetings[i][0];
             if (free.empty() && start<meeting.top().first)
             {
                 start=meeting.top().first; // delay
