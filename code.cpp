@@ -17,7 +17,7 @@ using namespace std;
             }
             else // early ?
             {
-                start=min(start,meetings[i][0]);
+                start=meetings[i][0];
             }
             while (!meeting.empty() && start>=meeting.top().first)
             {
