@@ -8,3 +8,5 @@
 1942 The Number of the Smallest Unoccupied Chair
 * 占据对象有限:
 1882 Process Tasks Using Servers
+### 矩阵模拟
+54 Spiral Matrix

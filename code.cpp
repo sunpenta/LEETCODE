@@ -13,6 +13,10 @@ using namespace std;
             {
                 pq.pop();
             }
+            while (!pq.empty() && pq.top()==nums[i-k])
+            {
+                pq.pop();
+            }
             pq.push(nums[i]);
             res[i-k+1]=pq.top();
         }
