@@ -1,22 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
- string smallestBeautifulString(string s, int k) {
-    auto valid = [&](int i) {
-        return (i < 1 || s[i] != s[i - 1]) && (i < 2 || s[i] != s[i - 2]);
-    };
-    for (int i = s.size() - 1; i >= 0; --i) {
-        ++s[i];
-        while (!valid(i))
-            ++s[i];
-        if (s[i] < 'a' + k) 
-        {
-            for (i = i + 1; i < s.size(); ++i)
-                for (s[i] = 'a'; !valid(i); ++s[i]) ;
-            return s;            
-        }
+    bool ispal(string s, int i)
+    {
+        return (i>0 && s[i]==s[i-1] || i>1 && s[i]==s[i-2]);
     }
-    return "";
-}
+    string smallestBeautifulString(string s, int k) {
+        int n=s.length();
+        for (int i=n-1; i>=0; --i)
+        {
+            ++s[i];
+            while (ispal(s,i))
+            {
+                ++s[i];
+            }
+
+            if (s[i] < 'a'+k)
+            {
+                for (int i=i+1; i<n; ++i)
+                    for (s[i]='a'; ispal(s,i); ++s[i]) ;    
+                
+                return s;
+            }
+        }
+        return "";
+    }
     
 int main()
 {
