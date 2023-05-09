@@ -19,3 +19,7 @@
 2673 Make Costs of Paths Equal in a Binary Tree
 * 图路径
 2662 Minimum Cost of a Path With Special Roads
+### 设计类
+232 Implement Queue using Stacks
+641 Design Circular Deque
+2671 Frequency Tracker
