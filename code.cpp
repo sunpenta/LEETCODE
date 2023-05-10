@@ -17,7 +17,7 @@ using namespace std;
     
 int main()
 {
-    vector<int>nums ={0,1,2,2,3,0,4,2}; int val=2;
+    vector<int>nums ={3,2,2,3}; int val=3;
     removeElement(nums,val);
     string s ="abcz"; int k=26;
     // cout<<smallestBeautifulString(s,k);
