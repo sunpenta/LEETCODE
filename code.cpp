@@ -8,7 +8,7 @@ using namespace std;
             {
                 while (nums[j]==val)
                     --j;
-                swap(nums[i],nums[j--]);
+                swap(nums[i],nums[j]);
             }
             ++i;
         }
