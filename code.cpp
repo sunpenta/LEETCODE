@@ -52,7 +52,7 @@ using namespace std;
                 res=min(res,j-i+1);
                 begin=i;               
                 if (--mps[s[i]]==0)
-                    mps.erase(mps[s[i]]);
+                    mps.erase(s[i]);
                 ++i;
             }
  
