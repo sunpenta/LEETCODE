@@ -55,20 +55,21 @@ using namespace std;
             }
             while (mps==mpt)
             {
-                if (j-i+1<res)
+                if (mps==mpt && j-i+1<res)
+                {
                     res=min(res,j-i+1);
-                begin=i; 
+                    begin=i; 
+                }
                 if (mps.count(s[i]) && --mps[s[i]]==0)
                     mps.erase(s[i]);
                 ++i;
             }         
- 
         }
         return res==1e5+1?"":s.substr(begin,res);  
     }
 int main()
 {
-    string s="ADOBECODEBANC", t="ABC";
+    string s="cabwefgewcwaefgcf", t="cae"; //   s="ADOBECODEBANC", t="ABC"
     cout<< minWindow(s,t);
     //vector<int> nums = {1,0,1,4,1,4,1,2,3}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}  0,1,6,6,4,4,6 {1,2,3,2,2} {3,3,3,1,2,1,1,2,3,3,4}
     //totalFruit(nums);
