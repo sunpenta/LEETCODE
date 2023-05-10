@@ -26,13 +26,12 @@ using namespace std;
                 if (mp.begin()->first!=fruits[i-1])
                 {
                     mp.erase(mp.begin());
-                    cur-=mp.begin()->second;
                 } 
                 else if (mp.rbegin()->first!=fruits[i-1])
                 {
                     mp.erase(++mp.begin());
-                    cur-=mp.rbegin()->second;
                 }
+                cur=mp[fruits[i-1]];
             }
             cur++;
             mp[fruits[i]]++;
