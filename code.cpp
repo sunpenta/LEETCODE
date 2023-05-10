@@ -53,10 +53,13 @@ using namespace std;
                     mps.erase(s[i]);
                 ++i;
             }
-            if (mps==mpt && j-i+1<res)
+            while (mps==mpt && j-i+1<res)
             {
                 res=min(res,j-i+1);
-                begin=i;  
+                begin=i; 
+                if (mps.count(s[i]) && --mps[s[i]]==0)
+                    mps.erase(s[i]);
+                ++i;
             }         
  
         }
