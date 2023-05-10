@@ -2,7 +2,7 @@
 using namespace std;
     int removeElement(vector<int>& nums, int val) {
         int repeat=0, n=nums.size(), i=0, j=n-1;
-        while (i<=j)
+        while (i<j)
         {
             if (nums[i]==val)
             {
