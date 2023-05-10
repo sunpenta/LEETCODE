@@ -17,14 +17,15 @@ using namespace std;
     }*/
     int totalFruit(vector<int>& fruits) {
         int res=1, cur=1;
-        unordered_map<int,int> mp;
+        map<int,int> mp;
         mp[fruits[0]]++;
         for (int i=1; i<fruits.size(); ++i)
         {           
             if (i>1 && mp.size()==2 && !mp.count(fruits[i]))
             {
-                cur-=mp[fruits[i-2]];
-                mp.erase(mp.find(fruits[i-2]));
+
+                cur-=mp.begin()->second;
+                mp.erase(mp.begin()); // 
             }
             cur++;
             mp[fruits[i]]++;
