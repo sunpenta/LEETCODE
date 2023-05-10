@@ -15,29 +15,28 @@ using namespace std;
         }
         return i;
     }*/
-    int minSubArrayLen(int target, vector<int>& nums) {
-        int res=1e5, begin=0, sum=0;
-        for (int i=0; i<nums.size(); ++i) // [begin,i]
+    int totalFruit(vector<int>& fruits) {
+        map<int,int> mp; // <fruit_type,number>
+        for (int i=0; i<fruits.size(); ++i)
         {
-            sum+=nums[i];
-            while (sum>=target)
-            {
-                res=min(res,i-begin+1);
-                /*if (sum-nums[begin+1]>=target)
-                {
-                    sum-=nums[begin];
-                    begin++;
-                }*/
-                sum-=nums[begin];
-                begin++;                
-            }
+            mp[fruits[i]]++;
         }
+        vector<int> type;
+        for (auto it:mp)
+        {
+            type.push_back(it.second);
+        }
+        sort(type.begin(),type.end());
+        int n=type.size();
+        int res=type[n-1]+type[n-2];
         return res;
     }
 int main()
 {
-    vector<int> nums = {2,3,1,2,4,3}; int target=7;
-    minSubArrayLen(target, nums);
+
+    vector<int> nums = {3,3,3,1,2,1,1,2,3,3,4}; int target=7;
+    totalFruit(nums);
+    //minSubArrayLen(target, nums);
     //string s ="xywrrmp", t="xywrrmu#p";
     //backspaceCompare(s,t);
     //vector<int>nums ={1}; int val=1;
