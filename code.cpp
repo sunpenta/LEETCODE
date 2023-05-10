@@ -6,8 +6,9 @@ using namespace std;
         {
             if (nums[i]==val)
             {
-                while (nums[j]==val)
+                while (i<=j && nums[j]==val)
                     --j;
+                if (i<j) // in case n==1
                 swap(nums[i],nums[j--]);
             }
             ++i;
@@ -17,7 +18,7 @@ using namespace std;
     
 int main()
 {
-    vector<int>nums ={0,1,2,2,3,0,4,2}; int val=2;
+    vector<int>nums ={1}; int val=1;
     removeElement(nums,val);
     string s ="abcz"; int k=26;
     // cout<<smallestBeautifulString(s,k);
