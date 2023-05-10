@@ -40,7 +40,7 @@ using namespace std;
 int main()
 {
 
-    vector<int> nums = {3,3,3,1,2,1,1,2,3,3,4}; int target=7;
+    vector<int> nums = {1,0,3,4,3}; int target=7;
     totalFruit(nums);
     //minSubArrayLen(target, nums);
     //string s ="xywrrmp", t="xywrrmu#p";
