@@ -53,7 +53,7 @@ using namespace std;
                     mps.erase(s[i]);
                 ++i;
             }
-            if (mps==mpt)
+            if (mps==mpt && j-i+1<res)
             {
                 res=min(res,j-i+1);
                 begin=i;  
