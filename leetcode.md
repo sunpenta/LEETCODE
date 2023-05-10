@@ -12,6 +12,12 @@
 19 删除链表倒数第N个节点
 中位数
 判断环的节点处
+### 二分查找
+704 Binary Search
+35 Search Insert Position
+34 Find First and Last Position of Element in Sorted Array
+69 Sqrt(x)
+367 Valid Perfect Square
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
