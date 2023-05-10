@@ -22,9 +22,12 @@ using namespace std;
             sum+=nums[i];
             while (sum>=target)
             {
-                sum-=nums[begin];
-                begin++;
                 res=min(res,i-begin+1);
+                if (sum-nums[begin+1]>=target)
+                {
+                    sum-=nums[begin];
+                    begin++;
+                }
             }
         }
         return res;
