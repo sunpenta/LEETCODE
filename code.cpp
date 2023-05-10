@@ -49,7 +49,7 @@ using namespace std;
                 mps[s[j]]++;
             while (mpt.count(s[j]) && mps[s[j]]>mpt[s[j]])
             {               
-                if (s[j]==s[i] && --mps[s[i]]==0)
+                if (mps.count(s[i]) && --mps[s[i]]==0)
                     mps.erase(s[i]);
                 ++i;
             }
