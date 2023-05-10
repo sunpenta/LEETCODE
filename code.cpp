@@ -47,7 +47,7 @@ using namespace std;
         {
             if (mpt.count(s[j]))
                 mps[s[j]]++;
-            while (mps==mpt)
+            while (mps==mpt || mps[s[i]]>mpt[s[i]])
             {
                 res=min(res,j-i+1);
                 begin=i;               
