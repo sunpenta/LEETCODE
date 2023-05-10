@@ -17,7 +17,7 @@ using namespace std;
     }*/
     int totalFruit(vector<int>& fruits) {
         int res=0, cur=0;
-        cur=fruits[0];
+        cur=1;
         unordered_map<int,int> mp;
         mp[fruits[0]]++;
         for (int i=1; i<fruits.size(); ++i)
