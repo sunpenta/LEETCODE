@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-    int removeElement(vector<int>& nums, int val) {
+    /*int removeElement(vector<int>& nums, int val) {
         int repeat=0, n=nums.size(), i=0, j=n-1;
         while (i<=j)
         {
@@ -14,8 +14,26 @@ using namespace std;
             ++i;
         }
         return i;
+    }*/
+       int removeElement(vector<int>& nums, int val) {
+        int leftIndex = 0;
+        int rightIndex = nums.size() - 1;
+        while (leftIndex <= rightIndex) {
+            // 找左边等于val的元素
+            while (leftIndex <= rightIndex && nums[leftIndex] != val){
+                ++leftIndex;
+            }
+            // 找右边不等于val的元素
+            while (leftIndex <= rightIndex && nums[rightIndex] == val) {
+                -- rightIndex;
+            }
+            // 将右边不等于val的元素覆盖左边等于val的元素
+            if (leftIndex < rightIndex) {
+                nums[leftIndex++] = nums[rightIndex--];
+            }
+        }
+        return leftIndex;   // leftIndex一定指向了最终数组末尾的下一个元素
     }
-    
 int main()
 {
     vector<int>nums ={1}; int val=1;
