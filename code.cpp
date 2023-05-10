@@ -23,7 +23,6 @@ using namespace std;
         {           
             if (i>1 && mp.size()==2 && !mp.count(fruits[i]))
             {
-                cur-=mp[fruits[i-2]];
                 if (mp.begin()->first!=fruits[i-1])
                     mp.erase(mp.begin()); 
                 else if (mp.rbegin()->first!=fruits[i-1])
@@ -38,7 +37,7 @@ using namespace std;
 int main()
 {
 
-    vector<int> nums = {0,1,6,6,4,4,6}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}
+    vector<int> nums = {1,2,3,2,2}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}  0,1,6,6,4,4,6
     totalFruit(nums);
     //minSubArrayLen(target, nums);
     //string s ="xywrrmp", t="xywrrmu#p";
