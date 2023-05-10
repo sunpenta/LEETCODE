@@ -21,7 +21,7 @@ using namespace std;
         mp[fruits[0]]++;
         for (int i=1; i<fruits.size(); ++i)
         {           
-            if (i>1 && !mp.count(fruits[i]))
+            if (i>1 && mp.size()==2 && !mp.count(fruits[i]))
             {
                 cur-=mp[fruits[i-2]];
                 mp.erase(mp.find(fruits[i-2]));
