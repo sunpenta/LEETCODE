@@ -26,7 +26,7 @@ using namespace std;
                 cur-=mp[fruits[i-2]];
                 if (mp.begin()->first!=fruits[i-1])
                     mp.erase(mp.begin()); 
-                if (mp.rbegin()->first!=fruits[i-1])
+                else if (mp.rbegin()->first!=fruits[i-1])
                     mp.erase(++mp.begin());
             }
             cur++;
