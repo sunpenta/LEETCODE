@@ -23,11 +23,13 @@ using namespace std;
             while (sum>=target)
             {
                 res=min(res,i-begin+1);
-                if (sum-nums[begin+1]>=target)
+                /*if (sum-nums[begin+1]>=target)
                 {
                     sum-=nums[begin];
                     begin++;
-                }
+                }*/
+                sum-=nums[begin];
+                begin++;                
             }
         }
         return res;
