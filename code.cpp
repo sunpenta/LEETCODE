@@ -16,28 +16,23 @@ using namespace std;
         return i;
     }*/
     int totalFruit(vector<int>& fruits) {
-        int res=1, cur=1;
-        map<int,int> mp;
-        mp[fruits[0]]++;
-        for (int i=1; i<fruits.size(); ++i)
-        {           
-            if (i>1 && mp.size()==2 && !mp.count(fruits[i]))
+        int n=fruits.size();
+        unordered_map<int,int> mp;
+        int i=0, j=0; // [i,j]
+        for (; j<n; ++j)
+        {
+            mp[fruits[j]]++;
+            if (mp.size()>2)
             {
-                if (mp.begin()->first!=fruits[i-1])
+                --mp[fruits[i]];       
+                if (mp[fruits[i]]==0)
                 {
-                    mp.erase(mp.begin());
-                } 
-                else if (mp.rbegin()->first!=fruits[i-1])
-                {
-                    mp.erase(++mp.begin());
+                    mp.erase(fruits[i]);
                 }
-                cur=mp[fruits[i-1]];
+                i++;
             }
-            cur++;
-            mp[fruits[i]]++;
-            res=max(res,cur);
         }
-        return res;
+        return j-i;
     }
 int main()
 {
