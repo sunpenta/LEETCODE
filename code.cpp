@@ -42,30 +42,37 @@ using namespace std;
             mpt[ch]++;
         }
         unordered_map<char,int> mps; // [i,j]
-        int i=0, j=0, res=1e5+1,begin=0;
-        for (;j<m; ++j)
+        int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
+        for (; j<m; ++j)
         {
-            if (mpt.count(s[j]))
-                mps[s[j]]++;
-            while (mpt.count(s[j]) && mps[s[j]]>mpt[s[j]])
-            {               
-                if (mps.count(s[i]) && --mps[s[i]]==0)
-                    mps.erase(s[i]);
-                ++i;
-            }
-            while (mps==mpt)
+            if (needlen>0)
             {
-                if (mps==mpt && j-i+1<res)
+                if (mpt.count(s[j]) && mpt[s[j]]>0)
                 {
-                    res=min(res,j-i+1);
-                    begin=i; 
+                    if (--mpt[s[j]]==0)
+                        mpt.erase(s[j]);
+                    --needlen; 
+                }        
+            }
+            else
+            {
+                while (needlen==0)
+                {
+                    if (j-i+1<minlen)
+                    {
+                        minlen=min(minlen,j-i+1);
+                        begin=i;
+                    }  
+                    if (mpt.count(s[i]) && mpt[s[i]]>0)
+                    {
+                        if (--mpt[s[i]]==0)
+                        mps.erase(s[i]);
+                    }  
+                    ++i;                 
                 }
-                if (mps.count(s[i]) && --mps[s[i]]==0)
-                    mps.erase(s[i]);
-                ++i;
             }         
         }
-        return res==1e5+1?"":s.substr(begin,res);  
+        return minlen==1e5+1?"":s.substr(begin,minlen);  
     }
 int main()
 {
