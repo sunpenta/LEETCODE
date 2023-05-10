@@ -49,13 +49,13 @@ using namespace std;
                 mps[s[j]]++;
             while (mps==mpt)
             {
-                res=min(res,j-i+1);
-                begin=i;          
-                mps[s[i]]--;
-                if (mps[s[i]]==0)
+       
+                if (--mps[s[i]]==0)
                     mps.erase(mps[s[i]]);
                 ++i;
             }
+            res=min(res,j-i);
+            begin=i; 
         }
         return res==1e5+1?"":s.substr(begin,res);  
     }
