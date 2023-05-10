@@ -21,17 +21,14 @@ using namespace std;
         unordered_map<int,int> mp;
         mp[fruits[0]]++;
         for (int i=1; i<fruits.size(); ++i)
-        {
-            
-            
-            cur++;
-            mp[fruits[i]]++;
+        {           
             if (i>1 && (mp.size()==2 || !mp.count(fruits[i])))
             {
                 cur-=mp[fruits[i-2]];
-                cur++;
                 mp.erase(mp.find(fruits[i-2]));
             }
+            cur++;
+            mp[fruits[i]]++;
             res=max(res,cur);
         }
         return res;
