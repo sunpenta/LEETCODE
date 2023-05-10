@@ -26,8 +26,9 @@ using namespace std;
             else
             {
                 res=min(res,i-begin+1);
-                begin=i;
-                sum=0;
+                sum-=nums[begin];
+                begin++;
+                
             }
         }
         return res;
