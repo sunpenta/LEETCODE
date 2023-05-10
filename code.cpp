@@ -16,8 +16,7 @@ using namespace std;
         return i;
     }*/
     int totalFruit(vector<int>& fruits) {
-        int res=0, cur=0;
-        cur=1;
+        int res=1, cur=1;
         unordered_map<int,int> mp;
         mp[fruits[0]]++;
         for (int i=1; i<fruits.size(); ++i)
@@ -36,7 +35,7 @@ using namespace std;
 int main()
 {
 
-    vector<int> nums = {1,0,3,4,3}; int target=7;
+    vector<int> nums = {1}; int target=7; // 1,0,3,4,3
     totalFruit(nums);
     //minSubArrayLen(target, nums);
     //string s ="xywrrmp", t="xywrrmu#p";
