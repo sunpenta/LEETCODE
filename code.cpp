@@ -15,26 +15,30 @@ using namespace std;
         }
         return i;
     }*/
-    bool backspaceCompare(string s, string t) {
-        string s1="", t1="";
-        for (int i=0,j=0; i<s.length() && j<t.length(); ++i, ++j)
+    int minSubArrayLen(int target, vector<int>& nums) {
+        int res=1e5, begin=0, sum=0;
+        for (int i=0; i<nums.size(); ++i)
         {
-            if (s[i]!='#')
-                s1+=s[i];
-            else if (s[i]=='#' && s1.length()>0)
-                s1.pop_back();
-            if (t[j]!='#')
-                t1+=t[j];
-            else if (t[j]=='#' && t1.length()>0) // why do not not include add  t[j]=='#' &&
-                t1.pop_back();
+            if (sum<target)
+            {
+                sum+=nums[i];
+            }
+            else
+            {
+                res=min(res,i-begin+1);
+                begin=i;
+                sum=0;
+            }
         }
-        return s1==t1;
+        return res;
     }
 int main()
 {
-    string s ="xywrrmp", t="xywrrmu#p";
-    backspaceCompare(s,t);
-    vector<int>nums ={1}; int val=1;
+    vector<int> nums = {2,3,1,2,4,3}; int target=7;
+    minSubArrayLen(target, nums);
+    //string s ="xywrrmp", t="xywrrmu#p";
+    //backspaceCompare(s,t);
+    //vector<int>nums ={1}; int val=1;
     // removeElement(nums,val);
     // string s ="abcz"; int k=26;
     // cout<<smallestBeautifulString(s,k);
