@@ -30,6 +30,7 @@ using namespace std;
             else if (i>1)
             {
                 cur-=mp[fruits[i-2]];
+                cur++;
                 mp.erase(mp.find(fruits[i-2]));
             }
             res=max(res,cur);
