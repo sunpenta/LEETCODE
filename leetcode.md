@@ -7,7 +7,11 @@
 ### 双指针
 * 数组
 11 盛水最多的容器
-
+42 接雨水
+* 链表
+19 删除链表倒数第N个节点
+中位数
+判断环的节点处
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
