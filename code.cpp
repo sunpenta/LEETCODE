@@ -46,28 +46,22 @@ using namespace std;
         {
             if (needlen) // needlen<0 needlen>0 
             {
-                if (mpt.count(s[j]) && mpt[s[j]]>0)
-                {
-                    if (--mpt[s[j]]==0)
-                        mpt.erase(s[j]);
-                    --needlen; 
-                }        
+                --mpt[s[j]]==0;
+                if (mpt[s[j]]>=0)
+                    --needlen;         
             }
             else
             {
                 while (needlen==0)
                 {
-                    if (j-i+1<minlen)
+                    if (j-i<minlen)
                     {
-                        minlen=min(minlen,j-i+1);
+                        minlen=min(minlen,j-i);
                         begin=i;
                     }  
-                    if (mpt.count(s[i]) && mpt[s[i]]>0)
-                    {
-                        if (--mpt[s[i]]==0)
-                            mpt.erase(s[i]);
+                    mpt[s[i]]++;
+                    if (mpt[s[i]]>0)
                         ++needlen;
-                    }  
                     ++i;                 
                 }
             }         
