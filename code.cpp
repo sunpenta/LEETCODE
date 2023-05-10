@@ -34,11 +34,36 @@ using namespace std;
         }
         return j-i;
     }
+        string minWindow(string s, string t) {
+        int m=s.length(), n=t.length();
+        unordered_map<char,int> mpt; // <t's ch, number>
+        for (char ch:t)
+        {
+            mpt[ch]++;
+        }
+        unordered_map<char,int> mps; // [i,j]
+        int i=0, j=0, res=1e5+1,begin=0;
+        for (;j<m; ++j)
+        {
+            mps[s[j]]++;
+            while (mps==mpt)
+            {
+                res=min(res,j-i+1);
+                begin=i;          
+                mps[s[i]]--;
+                if (mps[s[i]]==0)
+                    mps.erase(mps[s[i]]);
+                ++i;
+            }
+        }
+        return res==1e5+1?"":s.substr(begin,res);  
+    }
 int main()
 {
-
-    vector<int> nums = {1,0,1,4,1,4,1,2,3}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}  0,1,6,6,4,4,6 {1,2,3,2,2} {3,3,3,1,2,1,1,2,3,3,4}
-    totalFruit(nums);
+    string s="ADOBECODEBANC", t="ABC";
+    cout<< minWindow(s,t);
+    //vector<int> nums = {1,0,1,4,1,4,1,2,3}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}  0,1,6,6,4,4,6 {1,2,3,2,2} {3,3,3,1,2,1,1,2,3,3,4}
+    //totalFruit(nums);
     //minSubArrayLen(target, nums);
     //string s ="xywrrmp", t="xywrrmu#p";
     //backspaceCompare(s,t);
