@@ -23,9 +23,11 @@ using namespace std;
         {           
             if (i>1 && mp.size()==2 && !mp.count(fruits[i]))
             {
-
-                cur-=mp.begin()->second;
-                mp.erase(mp.begin()); // 
+                cur-=mp[fruits[i-2]];
+                if (mp.begin()->first!=fruits[i-1])
+                    mp.erase(mp.begin()); 
+                if (mp.rbegin()->first!=fruits[i-1])
+                    mp.erase(++mp.begin());
             }
             cur++;
             mp[fruits[i]]++;
