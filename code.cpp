@@ -45,7 +45,8 @@ using namespace std;
         int i=0, j=0, res=1e5+1,begin=0;
         for (;j<m; ++j)
         {
-            mps[s[j]]++;
+            if (mpt.count(s[j]))
+                mps[s[j]]++;
             while (mps==mpt)
             {
                 res=min(res,j-i+1);
