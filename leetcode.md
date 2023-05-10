@@ -9,7 +9,8 @@
 27 Remove Element
 26 Remove Duplicates from Sorted Array
 283 Move Zeroes
-
+* 字符串
+844 Backspace String Compare
 ### 双指针
 * 数组
 11 盛水最多的容器
