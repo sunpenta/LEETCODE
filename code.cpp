@@ -1,34 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
-    bool ispal(string s, int i)
-    {
-        return (i>0 && s[i]==s[i-1] || i>1 && s[i]==s[i-2]);
-    }
-    string smallestBeautifulString(string s, int k) {
-        int n=s.length();
-        for (int i=n-1; i>=0; --i)
+    int removeElement(vector<int>& nums, int val) {
+        int repeat=0, n=nums.size(), i=0, j=n-1;
+        while (i<j)
         {
-            ++s[i];
-            while (ispal(s,i))
+            if (nums[i]==val)
             {
-                ++s[i];
+                while (nums[j]==val)
+                    --j;
+                swap(nums[i],nums[j--]);
             }
-
-            if (s[i] < 'a'+k)
-            {
-                for (int i=i+1; i<n; ++i)
-                    for (s[i]='a'; ispal(s,i); ++s[i]) ;    
-                
-                return s;
-            }
+            ++i;
         }
-        return "";
+        return n-j-1;
     }
     
 int main()
 {
+    vector<int>nums ={0,1,2,2,3,0,4,2}; int val=2;
+    removeElement(nums,val);
     string s ="abcz"; int k=26;
-    cout<<smallestBeautifulString(s,k);
+    // cout<<smallestBeautifulString(s,k);
     int n = 2; vector<vector<int>> meetings = {{0,10},{1,2},{12,14},{13,15}};
     // int res=mostBooked(n, meetings); // {{0,10},{1,5},{2,7},{3,4}}  n=2
      // (72/82)runtime error: signed integer overflow: 2147400001 + 300000 cannot be represented in type 'int'
