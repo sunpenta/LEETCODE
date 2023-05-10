@@ -17,18 +17,14 @@ using namespace std;
     }*/
     int minSubArrayLen(int target, vector<int>& nums) {
         int res=1e5, begin=0, sum=0;
-        for (int i=0; i<nums.size(); ++i)
+        for (int i=0; i<nums.size(); ++i) // [begin,i]
         {
-           
-
             sum+=nums[i];
-            
-             if (sum>=target)
+            while (sum>=target)
             {
-                res=min(res,i-begin+1);
                 sum-=nums[begin];
                 begin++;
-                
+                res=min(res,i-begin+1);
             }
         }
         return res;
