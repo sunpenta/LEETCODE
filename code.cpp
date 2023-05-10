@@ -44,7 +44,7 @@ using namespace std;
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
         for (; j<m; ++j)
         {
-            if (needlen>0)
+            if (needlen) // needlen<0 needlen>0 
             {
                 if (mpt.count(s[j]) && mpt[s[j]]>0)
                 {
@@ -65,7 +65,7 @@ using namespace std;
                     if (mpt.count(s[i]) && mpt[s[i]]>0)
                     {
                         if (--mpt[s[i]]==0)
-                        mps.erase(s[i]);
+                            mpt.erase(s[i]);
                         ++needlen;
                     }  
                     ++i;                 
