@@ -47,14 +47,17 @@ using namespace std;
         {
             if (mpt.count(s[j]))
                 mps[s[j]]++;
-            while (mps==mpt || mps[s[i]]>mpt[s[i]])
-            {
-                res=min(res,j-i+1);
-                begin=i;               
+            while (mpt.count(s[j]) && mps[s[i]]>mpt[s[i]])
+            {               
                 if (--mps[s[i]]==0)
                     mps.erase(s[i]);
                 ++i;
             }
+            if (mps==mpt)
+            {
+                res=min(res,j-i+1);
+                begin=i;  
+            }         
  
         }
         return res==1e5+1?"":s.substr(begin,res);  
