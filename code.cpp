@@ -19,11 +19,11 @@ using namespace std;
         int res=1e5, begin=0, sum=0;
         for (int i=0; i<nums.size(); ++i)
         {
-            if (sum<target)
-            {
-                sum+=nums[i];
-            }
-            else
+           
+
+            sum+=nums[i];
+            
+             if (sum>=target)
             {
                 res=min(res,i-begin+1);
                 sum-=nums[begin];
