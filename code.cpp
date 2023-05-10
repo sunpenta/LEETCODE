@@ -41,7 +41,6 @@ using namespace std;
         {
             mpt[ch]++;
         }
-        unordered_map<char,int> mps; // [i,j]
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
         for (; j<m; ++j)
         {
@@ -67,6 +66,7 @@ using namespace std;
                     {
                         if (--mpt[s[i]]==0)
                         mps.erase(s[i]);
+                        ++needlen;
                     }  
                     ++i;                 
                 }
