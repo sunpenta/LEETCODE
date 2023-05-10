@@ -29,9 +29,12 @@
 34 Find First and Last Position of Element in Sorted Array
 69 Sqrt(x)
 367 Valid Perfect Square
-### 滑动窗口子数组
+### 滑动窗口
+* 子数组
 209 Minimum Size Subarray Sum
 904 Fruit Into Baskets
+* 子字符串
+76 Minimum Window Substring
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
