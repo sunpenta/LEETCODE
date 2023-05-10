@@ -7,6 +7,7 @@
 ### 移除元素
 * 数组
 27 Remove Element
+26 Remove Duplicates from Sorted Array
 
 ### 双指针
 * 数组
