@@ -22,12 +22,11 @@ using namespace std;
         mp[fruits[0]]++;
         for (int i=1; i<fruits.size(); ++i)
         {
-            if (mp.size()<2 || mp.count(fruits[i]))
-            {
-                cur++;
-                mp[fruits[i]]++;
-            }
-            else if (i>1)
+            
+            
+            cur++;
+            mp[fruits[i]]++;
+            if (i>1 && (mp.size()==2 || !mp.count(fruits[i])))
             {
                 cur-=mp[fruits[i-2]];
                 cur++;
