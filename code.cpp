@@ -72,7 +72,7 @@ int main()
     // removeElement(nums,val);
     // string s ="abcz"; int k=26;
     // cout<<smallestBeautifulString(s,k);
-    int n = 2; vector<vector<int>> meetings = {{0,10},{1,2},{12,14},{13,15}};
+    // int n = 2; vector<vector<int>> meetings = {{0,10},{1,2},{12,14},{13,15}};
     // int res=mostBooked(n, meetings); // {{0,10},{1,5},{2,7},{3,4}}  n=2
      // (72/82)runtime error: signed integer overflow: 2147400001 + 300000 cannot be represented in type 'int'
    // vector<int> res=maxSlidingWindow(nums, k);
