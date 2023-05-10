@@ -4,6 +4,9 @@
 2660 Determine the Winner of a Bowling Game
 * 2-D array:
 1572 Matrix Diagonal Sum
+### 移除元素
+* 数组
+27 Remove Element
 ### 双指针
 * 数组
 11 盛水最多的容器
