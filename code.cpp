@@ -71,7 +71,7 @@ using namespace std;
         int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
         int m=nums1.size(), n=nums2.size();
         vector<vector<int>> dp(m,vector<int>(n));
-        for (int i=0; i<m; ++i)
+        for (int i=0; i<n; ++i)
         {
             if (nums2[i]==nums1[0])
                 dp[0][i]=1;
@@ -102,7 +102,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int>nums1 ={1,4,2}, nums2={1,2,4}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1}
+    vector<int>nums1 ={2,5,1,2,5}, nums2={2,5,1,2,5}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1} nums1 ={1,4,2}, nums2={1,2,4}
     maxUncrossedLines(nums1,nums2);
     //string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
     //cout<< minWindow(s,t)<<endl;
