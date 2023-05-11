@@ -78,11 +78,11 @@ using namespace std;
             if (i>0) 
                 dp[0][i]=dp[0][i-1];
         }
-        for (int i=0; i<m; ++i)
+        for (int i=1; i<m; ++i)
         {
             for (int j=1; j<n; ++j)
             {
-                if (i>0 && nums1[i]==nums2[j])
+                if (nums1[i]==nums2[j])
                     dp[i][j]=dp[i-1][j-1]+1;
                 else
                 {
