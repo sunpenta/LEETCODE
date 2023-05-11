@@ -79,20 +79,22 @@ using namespace std;
             if (nums1[i]==nums2[j])
             {
                 maxlen++;
-                i++, j++;    
+                mp2[nums2[j]]--;
+                i++, j++;  
             }
             else
             {
                 if (mp2.count(nums1[i]) && mp2[nums1[i]]>0)
                 {
-                    j++;
+                    mp2[nums2[j]]--;
+                    j++;     
                 }
                 else
                 {
                     i++;
                 }
             }
-            mp2[nums2[j]]--;
+            
         }
         return maxlen;
     }
