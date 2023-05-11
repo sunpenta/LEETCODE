@@ -71,7 +71,13 @@ using namespace std;
         int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
         int m=nums1.size(), n=nums2.size();
         vector<vector<int>> dp(m,vector<int>(n));
-        dp[0][0]=(nums1[0]==nums2[0]);
+        for (int i=0; i<m; ++i)
+        {
+            if (nums2[i]==nums1[0])
+                dp[0][i]=1;
+            if (i>0) 
+                dp[0][i]=dp[0][i-1];
+        }
         for (int i=0; i<m; ++i)
         {
             for (int j=1; j<n; ++j)
