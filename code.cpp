@@ -42,10 +42,11 @@ using namespace std;
             mpt[ch]++;
         }
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
-        for (; j<m; ++j)
+        for (; j<=m; ++j)
         {
             if (needlen) // needlen<0 needlen>0 
             {
+                if (j==m) break;
                 --mpt[s[j]]==0;
                 if (mpt[s[j]]>=0)
                     --needlen;         
@@ -54,7 +55,7 @@ using namespace std;
             {
                 while (needlen==0)
                 {
-                    if (j-i<minlen)
+                    if (j-i<minlen) // [i,j)
                     {
                         minlen=min(minlen,j-i);
                         begin=i;
