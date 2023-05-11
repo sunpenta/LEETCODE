@@ -123,7 +123,7 @@ using namespace std;
         {
             set.erase(nums[i-k]);
             set.insert(nums[i]);
-            res[i-k+1]=get(set,x);
+            res[i-k+1]=min(0,get(set,x));
         }
         return res;
     }
