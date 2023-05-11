@@ -47,7 +47,7 @@ using namespace std;
             if (needlen) // needlen<0 needlen>0 
             {
                 if (j==m) break;
-                --mpt[s[j]]==0;
+                --mpt[s[j]];
                 if (mpt[s[j]]>=0)
                     --needlen;         
             }
@@ -71,7 +71,7 @@ using namespace std;
     }
 int main()
 {
-    string s="aaaaaaaaaaaabbbbbcdd", t="abcdd"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae"
+    string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
     cout<< minWindow(s,t)<<endl;
     //vector<int> nums = {1,0,1,4,1,4,1,2,3}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}  0,1,6,6,4,4,6 {1,2,3,2,2} {3,3,3,1,2,1,1,2,3,3,4}
     //totalFruit(nums);
