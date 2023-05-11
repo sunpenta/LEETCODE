@@ -30,10 +30,10 @@
 69 Sqrt(x)
 367 Valid Perfect Square
 ### 滑动窗口
-* 子数组
+* subarray
 209 Minimum Size Subarray Sum
 904 Fruit Into Baskets
-* 子字符串
+* substring
 76 Minimum Window Substring
 ### 优先队列
 * 占据对象无限：
