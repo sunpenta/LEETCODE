@@ -100,7 +100,7 @@ using namespace std;
         }
         return dp[m-1][n-1];
     }
-    int get(set<int>& set, int x)
+    int get(multiset<int>& set, int x)
     {
         int res=0;
         auto it=set.begin();
@@ -113,12 +113,12 @@ using namespace std;
     vector<int> getSubarrayBeauty(vector<int>& nums, int k, int x) {
         int n=nums.size();
         vector<int> res(n-k+1);
-        set<int> set;
+        multiset<int> set;
         for (int i=0; i<k; ++i)
         {
             set.insert(nums[i]);
         }
-        res[0]=get(set,x);
+        res[0]=min(0,get(set,x));
         for (int i=k; i<n; ++i)
         {
             set.erase(nums[i-k]);
@@ -129,7 +129,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int>nums={-3,1,2,-3,0,-3}; int k=2, x=1; // nums={1,-1,-3,-2,3}; int k=3, x=2
+    vector<int>nums={-46,-34,-46}; int k=3, x=3; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1
     getSubarrayBeauty(nums,k,x);
     //vector<int>nums1 ={2,1}, nums2={1,2,1,3,3,2}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1} nums1 ={1,4,2}, nums2={1,2,4} {2,5,1,2,5}, nums2={2,5,1,2,5}
     //maxUncrossedLines(nums1,nums2);
