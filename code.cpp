@@ -43,7 +43,7 @@ using namespace std;
             mpt[ch]++;
         }
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
-        while (i<=m && j<m)
+        while (j<=m && i<m)
         {
             if (needlen) 
             {
@@ -54,18 +54,16 @@ using namespace std;
                 ++j;         
             }
             else
-            {
-                
-                    if (j-i<minlen) // [i,j)
-                    {
-                        minlen=min(minlen,j-i);
-                        begin=i;
-                    }  
-                    mpt[s[i]]++;
-                    if (mpt[s[i]]>0)
-                        ++needlen;
-                    ++i;                 
-                
+            {   
+                if (j-i<minlen) // [i,j)
+                {
+                    minlen=min(minlen,j-i);
+                    begin=i;
+                }  
+                mpt[s[i]]++;
+                if (mpt[s[i]]>0)
+                    ++needlen;
+                ++i;                 
             }         
         }
         return minlen==1e5+1?"":s.substr(begin,minlen);  
