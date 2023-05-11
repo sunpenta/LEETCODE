@@ -89,7 +89,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int>nums1 ={1,4,2}, nums2={1,4,2}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1}
+    vector<int>nums1 ={1,4,2}, nums2={1,2,4}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1}
     maxUncrossedLines(nums1,nums2);
     //string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
     //cout<< minWindow(s,t)<<endl;
