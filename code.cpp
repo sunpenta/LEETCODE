@@ -70,37 +70,26 @@ using namespace std;
     }
         int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
         int m=nums1.size(), n=nums2.size();
-        int i=0, j=0, maxlen=0;
-        unordered_map<int,int> mp2;
-        for (int i=0; i<n; ++i)
-            mp2[nums2[i]]++;
-        while (i<m && j<n)
+        vector<vector<int>> dp(m,vector<int>(n));
+        dp[0][0]=(nums1[0]==nums2[0]);
+        for (int i=0; i<m; ++i)
         {
-            if (nums1[i]==nums2[j])
+            for (int j=1; j<n; ++j)
             {
-                maxlen++;
-                mp2[nums2[j]]--;
-                i++, j++;  
-            }
-            else
-            {
-                if (mp2.count(nums1[i]) && mp2[nums1[i]]>0)
-                {
-                    mp2[nums2[j]]--;
-                    j++;     
-                }
+                if (i>0 && nums1[i]==nums2[j])
+                    dp[i][j]=dp[i-1][j-1]+1;
                 else
                 {
-                    i++;
+                    dp[i][j]=dp[i][j-1];
                 }
+                
             }
-            
         }
-        return maxlen;
+        return dp[m-1][n-1];
     }
 int main()
 {
-    vector<int>nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1}; // nums1 ={3,3}, nums2={3}
+    vector<int>nums1 ={1,4,2}, nums2={1,4,2}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1}
     maxUncrossedLines(nums1,nums2);
     //string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
     //cout<< minWindow(s,t)<<endl;
