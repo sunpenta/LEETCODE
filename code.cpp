@@ -121,7 +121,7 @@ using namespace std;
         res[0]=min(0,get(set,x));
         for (int i=k; i<n; ++i)
         {
-            set.erase(nums[i-k]);
+            set.erase(set.find(nums[i-k])); // 若有多个重复元素，只删除1个
             set.insert(nums[i]);
             res[i-k+1]=min(0,get(set,x));
         }
@@ -129,7 +129,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int>nums={-46,-34,-46}; int k=3, x=3; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1
+    vector<int>nums={-6,40,-38,-36,-36,-4,-38,-43,8}; int k=2, x=2; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1 {-46,-34,-46}; int k=3, x=3
     getSubarrayBeauty(nums,k,x);
     //vector<int>nums1 ={2,1}, nums2={1,2,1,3,3,2}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1} nums1 ={1,4,2}, nums2={1,2,4} {2,5,1,2,5}, nums2={2,5,1,2,5}
     //maxUncrossedLines(nums1,nums2);
