@@ -45,7 +45,7 @@ using namespace std;
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
         while (i<=m && j<m)
         {
-            if (needlen) // needlen<0 needlen>0 
+            if (needlen) 
             {
                 if (j==m) break;
                 --mpt[s[j]];
@@ -55,8 +55,7 @@ using namespace std;
             }
             else
             {
-                if (needlen==0)
-                {
+                
                     if (j-i<minlen) // [i,j)
                     {
                         minlen=min(minlen,j-i);
@@ -66,7 +65,7 @@ using namespace std;
                     if (mpt[s[i]]>0)
                         ++needlen;
                     ++i;                 
-                }
+                
             }         
         }
         return minlen==1e5+1?"":s.substr(begin,minlen);  
