@@ -43,7 +43,7 @@ using namespace std;
             mpt[ch]++;
         }
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
-        while (j<=m && i<j)
+        while (j<=m && i<m)
         {
             if (needlen) 
             {
@@ -68,10 +68,40 @@ using namespace std;
         }
         return minlen==1e5+1?"":s.substr(begin,minlen);  
     }
+        int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
+        int m=nums1.size(), n=nums2.size();
+        int i=0, j=0, maxlen=0;
+        unordered_map<int,int> mp2;
+        for (int i=0; i<n; ++i)
+            mp2[nums2[i]]++;
+        while (i<m && j<n)
+        {
+            if (nums1[i]==nums2[j])
+            {
+                maxlen++;
+                i++, j++;    
+            }
+            else
+            {
+                if (mp2.count(nums1[i]) && mp2[nums1[i]]>0)
+                {
+                    j++;
+                }
+                else
+                {
+                    i++;
+                }
+            }
+            mp2[nums2[j]]--;
+        }
+        return maxlen;
+    }
 int main()
 {
-    string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
-    cout<< minWindow(s,t)<<endl;
+    vector<int>nums1 ={3,3}, nums2={3};
+    maxUncrossedLines(nums1,nums2);
+    //string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
+    //cout<< minWindow(s,t)<<endl;
     //vector<int> nums = {1,0,1,4,1,4,1,2,3}; int target=7; // 1,0,3,4,3  {1} {0,0,1,1}  0,1,6,6,4,4,6 {1,2,3,2,2} {3,3,3,1,2,1,1,2,3,3,4}
     //totalFruit(nums);
     //minSubArrayLen(target, nums);
