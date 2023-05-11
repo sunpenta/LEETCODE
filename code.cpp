@@ -43,18 +43,19 @@ using namespace std;
             mpt[ch]++;
         }
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
-        for (; j<=m && i<m; ++j)
+        while (i<=m && j<m)
         {
             if (needlen) // needlen<0 needlen>0 
             {
                 if (j==m) break;
                 --mpt[s[j]];
                 if (mpt[s[j]]>=0)
-                    --needlen;         
+                    --needlen;
+                ++j;         
             }
             else
             {
-                while (needlen==0)
+                if (needlen==0)
                 {
                     if (j-i<minlen) // [i,j)
                     {
