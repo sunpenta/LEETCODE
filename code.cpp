@@ -36,6 +36,7 @@ using namespace std;
     }
         string minWindow(string s, string t) {
         int m=s.length(), n=t.length();
+        if (m==0 || n==0) return "";
         unordered_map<char,int> mpt; // <t's ch, number>
         for (char ch:t)
         {
