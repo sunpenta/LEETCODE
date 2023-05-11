@@ -100,37 +100,40 @@ using namespace std;
         }
         return dp[m-1][n-1];
     }
-    int get(multiset<int>& set, int x)
+    int get(map<int,int>& mp, int x)
     {
-        int res=0;
-        auto it=set.begin();
-        for (int i=0; i<x; ++i)
+        int res=0, count=0;
+        auto it=mp.begin();
+        while (count<x)
         {
-            res=*(it++);
+            count+=it->second;
+            res=it->first;
+            ++it;
         }
         return res;
     }
     vector<int> getSubarrayBeauty(vector<int>& nums, int k, int x) {
         int n=nums.size();
         vector<int> res(n-k+1);
-        multiset<int> set;
+        map<int,int> mp;
         for (int i=0; i<k; ++i)
         {
-            set.insert(nums[i]);
+            mp[nums[i]]++;
         }
-        res[0]=min(0,get(set,x));
+        res[0]=min(0,get(mp,x));
         for (int i=k; i<n; ++i)
         {
-            set.erase(set.find(nums[i-k])); // 若有多个重复元素，只删除1个
-            set.insert(nums[i]);
-            res[i-k+1]=min(0,get(set,x));
+            if (--mp[nums[i-k]]==0)
+                mp.erase(nums[i-k]);
+            ++mp[nums[i]];
+            res[i-k+1]=min(0,get(mp,x));
         }
         return res;
     }
 int main()
 {
     vector<int>nums={-6,40,-38,-36,-36,-4,-38,-43,8}; int k=2, x=2; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1 {-46,-34,-46}; int k=3, x=3
-    getSubarrayBeauty(nums,k,x);
+    getSubarrayBeauty(nums,k,x); // 重复元素太多，TLE, use map
     //vector<int>nums1 ={2,1}, nums2={1,2,1,3,3,2}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1} nums1 ={1,4,2}, nums2={1,2,4} {2,5,1,2,5}, nums2={2,5,1,2,5}
     //maxUncrossedLines(nums1,nums2);
     //string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
