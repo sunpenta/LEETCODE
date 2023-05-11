@@ -42,7 +42,7 @@ using namespace std;
             mpt[ch]++;
         }
         int i=0, j=0, minlen=1e5+1, begin=0, needlen=n;
-        for (; j<=m; ++j)
+        for (; j<=m && i<m; ++j)
         {
             if (needlen) // needlen<0 needlen>0 
             {
