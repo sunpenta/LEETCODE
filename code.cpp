@@ -135,7 +135,7 @@ using namespace std;
         vector<long long> dp(n);
         priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>> pq; // <next index,cur index>
         dp[0]=questions[0][0];
-        pq.push({questions[0][0],0});
+        pq.push({questions[0][1],0});
         for (int i=1; i<n; ++i)
         {
             dp[i]=max(dp[i],dp[i-1]); // unsolve
