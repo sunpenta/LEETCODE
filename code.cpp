@@ -139,14 +139,14 @@ using namespace std;
         for (int i=1; i<n; ++i)
         {
             dp[i]=max(dp[i],dp[i-1]); // unsolve
-            if (i<=mp.begin()->first)
+            if (i<=mp.begin()->first) // solve
             {
                 dp[i]=max(dp[i], (long long)questions[i][0]);
             }
             else
             {
                 auto it=mp.begin();
-                while (i > it->first) // solve
+                while (i > it->first) 
                 {
                     int id=it->second;
                     dp[i]=max(dp[i],dp[id]+questions[i][0]);
