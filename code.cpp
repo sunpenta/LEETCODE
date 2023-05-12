@@ -130,10 +130,31 @@ using namespace std;
         }
         return res;
     }
+    long long mostPoints(vector<vector<int>>& questions) {
+        int n=questions.size();
+        vector<long long> dp(n);
+        priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>> pq; // <next index,cur index>
+        dp[0]=questions[0][0];
+        pq.push({questions[0][0],0});
+        for (int i=1; i<n; ++i)
+        {
+            dp[i]=max(dp[i],dp[i-1]); // unsolve
+            while (!pq.empty() && i>pq.top().first) // solve
+            {
+                int id=pq.top().second;
+                pq.pop();
+                dp[i]=max(dp[i],dp[id]+questions[i][0]);
+            } 
+            pq.push({questions[i][1],i});
+        }
+        return dp[n-1];
+    }
 int main()
 {
-    vector<int>nums={-6,40,-38,-36,-36,-4,-38,-43,8}; int k=2, x=2; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1 {-46,-34,-46}; int k=3, x=3
-    getSubarrayBeauty(nums,k,x); // 重复元素太多，TLE, use map
+    vector<vector<int>> questions={{3,2},{4,3},{4,4},{2,5}};
+    mostPoints(questions);
+    //vector<int>nums={-6,40,-38,-36,-36,-4,-38,-43,8}; int k=2, x=2; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1 {-46,-34,-46}; int k=3, x=3
+    //getSubarrayBeauty(nums,k,x); // 重复元素太多，TLE, use map
     //vector<int>nums1 ={2,1}, nums2={1,2,1,3,3,2}; // nums1 ={3,3}, nums2={3} nums1 ={1,1,2,1,2}, nums2={1,3,2,3,1} nums1 ={1,4,2}, nums2={1,2,4} {2,5,1,2,5}, nums2={2,5,1,2,5}
     //maxUncrossedLines(nums1,nums2);
     //string s="ADOBECODEBANC", t="ABC"; //   s="ADOBECODEBANC", t="ABC" s="cabwefgewcwaefgcf", t="cae" s="aaaaaaaaaaaabbbbbcdd", t="abcdd"
