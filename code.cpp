@@ -133,26 +133,27 @@ using namespace std;
     long long mostPoints(vector<vector<int>>& questions) {
         int n=questions.size();
         vector<long long> dp(n);
-        priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>> pq; // <next index,cur index>
+        multimap<int,int> mp; // <next index,cur index>
         dp[0]=questions[0][0];
-        pq.push({questions[0][1],0});
+        mp.insert({questions[0][1],0});
         for (int i=1; i<n; ++i)
         {
             dp[i]=max(dp[i],dp[i-1]); // unsolve
-            if (i<=pq.top().first)
+            if (i<=mp.begin()->first)
             {
                 dp[i]=max(dp[i], (long long)questions[i][0]);
             }
             else
             {
-                while (!pq.empty() && i>pq.top().first) // solve
+                auto it=mp.begin();
+                while (i > it->first) // solve
                 {
-                    int id=pq.top().second;
-                    pq.pop();
+                    int id=it->second;
                     dp[i]=max(dp[i],dp[id]+questions[i][0]);
+                    it++;
                 }
             }
-            pq.push({i+questions[i][1],i});
+            mp.insert({i+questions[i][1],i});
         }
         return dp[n-1];
     }
