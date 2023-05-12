@@ -139,12 +139,19 @@ using namespace std;
         for (int i=1; i<n; ++i)
         {
             dp[i]=max(dp[i],dp[i-1]); // unsolve
-            while (!pq.empty() && i>pq.top().first) // solve
+            if (i<=pq.top().first)
             {
-                int id=pq.top().second;
-                pq.pop();
-                dp[i]=max(dp[i],dp[id]+questions[i][0]);
-            } 
+                dp[i]=max(dp[i], (long long)questions[i][0]);
+            }
+            else
+            {
+                while (!pq.empty() && i>pq.top().first) // solve
+                {
+                    int id=pq.top().second;
+                    pq.pop();
+                    dp[i]=max(dp[i],dp[id]+questions[i][0]);
+                }
+            }
             pq.push({questions[i][1],i});
         }
         return dp[n-1];
