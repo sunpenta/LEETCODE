@@ -152,7 +152,7 @@ using namespace std;
                     dp[i]=max(dp[i],dp[id]+questions[i][0]);
                 }
             }
-            pq.push({questions[i][1],i});
+            pq.push({i+questions[i][1],i});
         }
         return dp[n-1];
     }
