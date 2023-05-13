@@ -133,60 +133,23 @@ using namespace std;
     long long mostPoints(vector<vector<int>>& questions) {
         int n=questions.size();
         vector<long long> dp(n);
-        priority_queue<pair<int,int>,vector<pair<int,int>>, greater<pair<int,int>>> pq; // <next index,cur index>
         dp[0]=questions[0][0];
-        pq.push({questions[0][1],0});
+        int id=questions[0][1]+1;
+        if (id<n)
+            dp[id]=dp[0]+questions[id][0];
         for (int i=1; i<n; ++i)
         {
-            dp[i]=max(dp[i],dp[i-1]); // unsolve
-            if (i<=pq.top().first) // solve
-            {
-                dp[i]=max(dp[i], (long long)questions[i][0]);
-            }
-            else
-            {
-                while (!pq.empty() && i>pq.top().first) 
-                {
-                    int id=pq.top().second;
-                    pq.pop();
-                    dp[i]=max(dp[i],dp[id]+questions[i][0]);
-                }
-            }
-            pq.push({i+questions[i][1],i});
+            dp[i]=max(dp[i], (long long)questions[i][0]);
+            dp[i]=max(dp[i-1], dp[i]);
+            id=i+questions[i][1]+1; // next
+            if (id<n)
+                dp[id]=max(dp[id],dp[i]+questions[id][0]);
         }
         return dp[n-1];
     }
 int main()
 {
-        vector<int> nums1 ={0,1,-1}, nums2 ={-1,1,0},nums3 ={0,0,1},nums4 ={-1,1,1};
-        int n=nums1.size(), count=0;
-        sort(nums1.begin(),nums1.end());
-        sort(nums2.begin(),nums2.end());
-        sort(nums3.begin(),nums3.end());
-        sort(nums4.begin(),nums4.end());
-        for (int i=0; i<n; i++)
-        {
-            if (nums1[i]+nums2[n-1]+nums3[n-1]+nums4[n-1]<0)
-                continue;
-            for (int j=0; j<n; j++)
-            {
-                if (nums1[i]+nums2[j]+nums3[n-1]+nums4[n-1]<0)
-                    continue;
-                int target=-(nums1[i]+nums2[j]), k=0, l=n-1;
-                while (k<n && l>=0) // not in same array, condition is not k<l
-                {
-                    if (nums3[k]+nums4[l]==target)
-                    {
-                        ++count;
-                        ++k, --l;
-                    }
-                    else if (nums3[k]+nums4[l]<target)
-                        ++k;
-                    else
-                        --l;
-                }
-            }
-        }
+    
     // vector<vector<int>> questions={{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1}}; // {{3,2},{4,3},{4,4},{2,5}} {{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1},{85,1},{84,2},{27,2},{47,5},{48,4},{3,2},{44,3},{60,5},{19,2},{9,4},{29,5},{15,3},{1,3},{60,2},{63,3},{79,3},{19,1},{7,1},{35,1},{55,4},{1,4},{41,1},{58,5}}
     //cout<<mostPoints(questions)<<endl;
     //vector<int>nums={-6,40,-38,-36,-36,-4,-38,-43,8}; int k=2, x=2; // nums={1,-1,-3,-2,3}; int k=3, x=2  {5} 1 1 nums={-3,1,2,-3,0,-3}; int k=2, x=1 {-46,-34,-46}; int k=3, x=3
