@@ -158,26 +158,34 @@ using namespace std;
     }
 int main()
 {
-        vector<int> nums={-1,0,1,2,-1,-4,-2,-3,3,0,4};
-        int n=nums.size();
-        sort(nums.begin(),nums.end());
-         // repeat number?
-        set<vector<int>> res1; // unique
-        for (int i=0; i<n-2; ++i)
+        vector<int> nums1 ={0,1,-1}, nums2 ={-1,1,0},nums3 ={0,0,1},nums4 ={-1,1,1};
+        int n=nums1.size(), count=0;
+        sort(nums1.begin(),nums1.end());
+        sort(nums2.begin(),nums2.end());
+        sort(nums3.begin(),nums3.end());
+        sort(nums4.begin(),nums4.end());
+        for (int i=0; i<n; i++)
         {
-            
-            if (nums[i]+nums[n-2]+nums[n-1]<0) 
+            if (nums1[i]+nums2[n-1]+nums3[n-1]+nums4[n-1]<0)
                 continue;
-            int target=-nums[i], j=i+1, k=n-1;
-            while (j<k)
+            for (int j=0; j<n; j++)
             {
-                if (nums[j]+nums[k]==target)
-                    res1.insert({nums[i],nums[j],nums[k]});
-                else if (nums[j]+nums[k]<target)
-                    j++;
-                else
-                    k--;
-            }    
+                if (nums1[i]+nums2[j]+nums3[n-1]+nums4[n-1]<0)
+                    continue;
+                int target=-(nums1[i]+nums2[j]), k=0, l=n-1;
+                while (k<n && l>=0) // not in same array, condition is not k<l
+                {
+                    if (nums3[k]+nums4[l]==target)
+                    {
+                        ++count;
+                        ++k, --l;
+                    }
+                    else if (nums3[k]+nums4[l]<target)
+                        ++k;
+                    else
+                        --l;
+                }
+            }
         }
     // vector<vector<int>> questions={{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1}}; // {{3,2},{4,3},{4,4},{2,5}} {{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1},{85,1},{84,2},{27,2},{47,5},{48,4},{3,2},{44,3},{60,5},{19,2},{9,4},{29,5},{15,3},{1,3},{60,2},{63,3},{79,3},{19,1},{7,1},{35,1},{55,4},{1,4},{41,1},{58,5}}
     //cout<<mostPoints(questions)<<endl;
