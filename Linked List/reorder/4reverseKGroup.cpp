@@ -14,18 +14,16 @@ int main()
 // 翻转长度为k的子链表
 ListNode* reverse(ListNode* head)
 {
-    ListNode* pre = nullptr; // 定义反转节点的前指针
-    ListNode* cur = head;    // 定义待反转节点的当前指针
-    
-    while (cur != nullptr)
+    ListNode* pre = nullptr, *cur=head;     
+    while (cur)
     {
-        ListNode* next = cur->next; // 保存cur指向下一个节点的指针
-        cur->next = pre;            // 断链重连，翻转
-        // 调整辅助指针
+        ListNode* next = cur->next; // 暂存
+        cur->next = pre;            // 翻转
+        // update
         pre = cur;
         cur = next;
     }
-    return pre; // 翻转链表的头节点
+    return pre;
 }
 
 // 每K组翻转一次链表，不足K组的子链表保持原状

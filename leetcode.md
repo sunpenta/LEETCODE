@@ -48,6 +48,9 @@
 ### hash set或map
 * hash map
 2661 First Completely Painted Row or Column
+### dp
+选或不选：
+2140 Solving Questions With Brainpower
 ### 路径
 * 二叉树路径
 2673 Make Costs of Paths Equal in a Binary Tree
