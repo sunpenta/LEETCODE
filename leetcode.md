@@ -45,6 +45,9 @@
 2663 Lexicographically Smallest Beautiful String
 ### 矩阵模拟
 54 Spiral Matrix
+59 Spiral Matrix II
+2326 Spiral Matrix IV
+885 Spiral Matrix III
 ### hash set或map
 * hash map
 2661 First Completely Painted Row or Column
