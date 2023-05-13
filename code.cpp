@@ -166,7 +166,7 @@ int main()
         for (int i=0; i<n-2; ++i)
         {
             
-            if (nums[i]+nums[i+1]+nums[n-1]<0) 
+            if (nums[i]+nums[n-2]+nums[n-1]<0) 
                 continue;
             int target=-nums[i], j=i+1, k=n-1;
             while (j<k)
