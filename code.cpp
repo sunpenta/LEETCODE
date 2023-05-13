@@ -168,7 +168,7 @@ int main()
             for (int j=i+1; j<n-1; ++j) // j=i+1, write wrong j=1
             {
                 if (nums[i]+nums[j]+nums[n-1]<0)
-                    break;
+                    continue;
                 int k=n;
                 while (--k>j) // note condition --k, but k--
                 {
