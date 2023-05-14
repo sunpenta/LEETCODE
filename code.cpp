@@ -200,10 +200,11 @@ int main()
         vector<int> nums={697035,181412,384958,575458};  // gcd(181412,384958)
         sort(nums.begin(),nums.end()); 
         int score=0, turn=nums.size()/2;
-        while (turn-->0)
+        while (!nums.empty())
         {
             int gd=getMaxgcd(nums);
             score+=turn*gd;
+            turn--;
         }
         cout<<score;
         return 0;   
