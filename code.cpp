@@ -172,28 +172,38 @@ using namespace std;
         }
         return res;
     }
+    int getMaxgcd(vector<int>& nums)
+    {
+
+        int maxgd=0, max_x, max_y;
+        for (int i=nums.size()-1; i>=0; ++i) // cur max gcd 
+        {
+            int x=nums[i]; // {nums[i], ?} max gcd pair
+            nums.erase(find(nums.begin(),nums.end(),x));      
+            int y=get(nums,x);
+            nums.erase(find(nums.begin(),nums.end(),y)); // 重复数字
+            int gd=gcd(x,y); 
+            if (gd>maxgd)
+            {   
+                max_x=x, max_y=y;                       
+                
+            }
+            nums.push_back(y);
+            nums.push_back(x);  
+        }
+        nums.erase(find(nums.begin(),nums.end(),max_x));
+        nums.erase(find(nums.begin(),nums.end(),max_x));
+        return maxgd;
+    }
 int main()
 {
-        vector<int> nums={697035,181412,384958,575458}; 
-        cout<<gcd(181412,384958)<<endl;
-        sort(nums.begin(),nums.end());       
-        int i=nums.size()-1;
-        map<int,int> mp;
-        while (!nums.empty())
+        vector<int> nums={697035,181412,384958,575458};  // gcd(181412,384958)
+        sort(nums.begin(),nums.end()); 
+        int score=0, turn=nums.size()/2;
+        while (turn--)
         {
-            i=nums.size()-1;
-            int y=nums[i];
-            nums.erase(find(nums.begin(),nums.end(),y)); // 重复数字
-            int x=get(nums,y);
-            int gd=gcd(x,y);                           
-            mp[x]=gd; // 顺序
-            nums.erase(find(nums.begin(),nums.end(),x));
-        }
-        int score=0, turn=1;
-        for (auto it:mp)
-        {
-            score+=turn*it.second;
-            turn++;
+            int gd=getMaxgcd(nums);
+            score+=turn*gd;
         }
         return 0;   
     }
