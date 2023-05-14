@@ -16,11 +16,17 @@ int main()
 void moveZeros(vector<int>& nums)
 {
     int i=0, j=nums.size()-1;
-    for (; i<j; i++)
+    while (i<j)
     {
         if (nums[i]==0 && nums[j]!=0)
-            swap(nums[i],nums[j--]);
+        {
+            swap(nums[i++],nums[j--]);
+        }
         else if (nums[i]==0 && nums[j]==0)
             j--;
+        else
+        {
+            i++, j--;
+        }
     }
 }
