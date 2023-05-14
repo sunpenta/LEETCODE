@@ -14,7 +14,7 @@
 844 Backspace String Compare
 ### 数组排序
 977 Squares of a Sorted Array
-
+31 Next Permutation
 ### 双指针
 * 数组
 11 盛水最多的容器
