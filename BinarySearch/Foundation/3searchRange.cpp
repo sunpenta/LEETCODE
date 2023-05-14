@@ -8,8 +8,8 @@ vector<int> searchRange(vector<int>& nums, int target);
 
 int main()
 {
-    vector<int> nums{5,7,7,8,8}; int target=8; // 输入
-    vector<int> ans=searchRange(nums,target); // 输出:{3,4}
+    vector<int> nums{1}; int target=1; // 输入
+    vector<int> ans=searchRange(nums,target); // 输出:{0,0}
     cout<<ans[0]<<" "<<ans[1]<<endl;
     return 0;;
 }
@@ -32,8 +32,8 @@ int search(vector<int>& nums, int target)
 vector<int> searchRange(vector<int>& nums, int target)
 {  
     int n=nums.size();
-    if (n==1 && nums[0]==target)  
-        return {0,0};
+    //if (n==1 && nums[0]==target)  
+        //return {0,0};
 
     vector<int> ans(2);
     ans[0]=search(nums,target);
