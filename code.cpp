@@ -165,6 +165,7 @@ int main()
                     int num=it.first;
                     if (num!=nums[0] && num%nums[0]==0) // nums[i-1]
                     {
+                        score+=i*nums[0];
                         cout<<i<<" " <<nums[0]<<" "<<num<<endl;
                         if (--mp[num]==0)
                             mp.erase(num);
@@ -172,8 +173,7 @@ int main()
                             mp.erase(nums[0]);
                         
                         nums.erase(find(nums.begin(),nums.end(),num));
-                        nums.erase(find(nums.begin(),nums.end(),nums[0]));
-                        score+=i*nums[0];
+                        nums.erase(find(nums.begin(),nums.end(),nums[0]));                       
                         break;
                     }
                 }
