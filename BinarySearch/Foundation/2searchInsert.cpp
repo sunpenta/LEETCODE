@@ -9,14 +9,15 @@ int searchInsert(vector<int>& nums, int target);
 int main()
 {
     vector<int> nums={2,3,5,7,8,9}; int target=6; // input
-    cout<<searchInsert(nums,target)<<endl; // output:3
+    int res=searchInsert(nums,target);
+    cout<<res<<endl; // output:3
     return 0;
 }
 
 int searchInsert(vector<int>& nums, int target)
 {
     int left=0, right=nums.size()-1;
-    while (left<=right)
+    while (left<=right) // [left,right]
     {
         int mid=(left+right)/2;
         if (nums[mid]==target)
