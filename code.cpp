@@ -178,6 +178,7 @@ using namespace std;
         int maxgd=0, max_x, max_y;
         for (int i=nums.size()-1; i>=0 && !nums.empty(); ++i) // cur max gcd 
         {
+            sort(nums.begin(),nums.end());
             int x=nums[i]; // {nums[i], ?} max gcd pair
             nums.erase(find(nums.begin(),nums.end(),x));      
             int y=get(nums,x);
@@ -185,14 +186,13 @@ using namespace std;
             int gd=gcd(x,y); 
             if (gd>maxgd)
             {   
-                max_x=x, max_y=y;                       
-                
+                max_x=x, max_y=y;
             }
             nums.push_back(y);
             nums.push_back(x);  
         }
         nums.erase(find(nums.begin(),nums.end(),max_x));
-        nums.erase(find(nums.begin(),nums.end(),max_x));
+        nums.erase(find(nums.begin(),nums.end(),max_y));
         return maxgd;
     }
 int main()
