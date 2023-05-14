@@ -7,8 +7,8 @@ vector<int> sortedSquares(vector<int>& nums);
 
 int main()
 {
-    vector<int> nums={-3,-2,0,1,4}; // input
-    vector<int> res=sortedSquares(nums); // output
+    vector<int> nums={-3,-2,0,2,4}; // input
+    vector<int> res=sortedSquares(nums); // output {16，9，4，1，0}
     return 0;
 }
 
