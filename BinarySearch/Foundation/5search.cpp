@@ -1,5 +1,5 @@
 // 搜索旋转排序数组 - binary search  l-81
-// 含重复元素，非降序排列; length⋿[1,1e4]; 
+// -> true(找到)/false(未找到); 含重复元素，升序排列
 // 时间复杂度:O(logn) 空间复杂度:O(1)
 #include <iostream>
 #include <vector>

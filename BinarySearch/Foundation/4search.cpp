@@ -1,5 +1,5 @@
 // 搜索旋转升序数组 - Binary Search l-33
-// 不含重复元素，升序排列; 若未找到元素target,返回-1,否则返回下标；
+// -> 目标元素位置/-1(未找到); 不含重复元素，升序排列
 // 时间复杂度：O(logn) 空间复杂度:O(1)
 #include<iostream>
 #include <vector>
