@@ -1,5 +1,5 @@
 // 移动零元素到数组尾端 - 快慢双指针  l-283
-// 前面零与后面非零交换，原数组元素相对顺序不变
+// 要求：原数组非零元素相对顺序不变
 // 时间复杂度：O(n) 空间复杂度:O(1)
 #include <iostream>
 #include <vector>
@@ -15,19 +15,12 @@ int main()
 
 void moveZeros(vector<int>& nums)
 {
-    int i=0, j=nums.size()-1;
-    while (i<j)
+    int i=0, j=0;
+    for (; j<nums.size(); ++j)
     {
-        if (nums[i]==0)
-        {
-            if (nums[j]!=0)
-                swap(nums[i++],nums[j--]);
-            else
-                j--;
-        }         
-        else
-        {
-            i++, j--;
-        }
+        if (nums[j]!=0)
+            nums[i++]=nums[j];
     }
+    for (int k=i; k<nums.size(); k++)
+        nums[k]=0;
 }
