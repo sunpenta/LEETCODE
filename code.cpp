@@ -174,7 +174,7 @@ using namespace std;
 }
 int main()
 {
-        vector<int> nums={3,4,6,8};
+        vector<int> nums={1,2,3,4,5,6};
         
         sort(nums.begin(),nums.end());
         int score=0, turn=nums.size()/2;
