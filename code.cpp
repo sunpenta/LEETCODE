@@ -161,7 +161,7 @@ using namespace std;
     }
     int get(vector<int> nums, int x)
     {
-        int res=0, gd=1;
+        int res, gd=0;
         for (int num:nums)
         {
             if (num!=x && gcd(num,x)>gd)
