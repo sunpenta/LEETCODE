@@ -177,23 +177,27 @@ int main()
         vector<int> nums={1,2,3,4,5,6};
         
         sort(nums.begin(),nums.end());
-        int score=0, turn=nums.size()/2;
+        
         int i=nums.size()-1;
+        map<int,int> mp;
         while (!nums.empty())
         {
             i=nums.size()-1;
             for (int j=nums.size()-2; j>=0; j--)
             {
                 int y=nums[i], x=get(nums,y);
-                int gd=gcd(x,y);               
-                {
-                    score+=turn*gd;
-                    nums.erase(find(nums.begin(),nums.end(),x));
-                    nums.erase(find(nums.begin(),nums.end(),y));
-                    turn--;
-                    break;
-                }               
+                int gd=gcd(x,y);                           
+                mp[x]=gd; // 顺序
+                nums.erase(find(nums.begin(),nums.end(),x));
+                nums.erase(find(nums.begin(),nums.end(),y));
+                break;                 
             }
+        }
+        int score=0, turn=1;
+        for (auto it:mp)
+        {
+            score+=turn*it.second;
+            turn++;
         }
         return 0;   
     }
