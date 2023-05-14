@@ -1,5 +1,6 @@
 // 搜索旋转升序数组 - Binary Search l-33
-// 不含重复元素，升序排列; 若未找到元素target,返回-1,否则返回下标；时间复杂度：O(logn)
+// 不含重复元素，升序排列; 若未找到元素target,返回-1,否则返回下标；
+// 时间复杂度：O(logn) 空间复杂度:O(1)
 #include<iostream>
 #include <vector>
 using namespace std;
@@ -8,7 +9,8 @@ int search(vector<int>& nums, int target);
 int main()
 { 
     vector<int> nums{4,5,6,7,0,1,2}; int target=0; // 输入:{4,5,6,7,|0,1,2}
-    cout<<search(nums,target)<<endl; // 输出：4
+    int res=search(nums,target); // 输出：4
+    cout<<res<<endl;
     return 0;
 }
 

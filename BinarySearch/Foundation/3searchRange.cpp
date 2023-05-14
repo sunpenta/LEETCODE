@@ -32,7 +32,7 @@ int search(vector<int>& nums, int target)
 vector<int> searchRange(vector<int>& nums, int target)
 {  
     int n=nums.size();
-    if (n==1 && nums[0]==target) // 仅能提速
+    if (n==1 && nums[0]==target) // 仅为提速
         return {0,0};
 
     vector<int> ans(2);
