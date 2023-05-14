@@ -21,6 +21,6 @@ void moveZeros(vector<int>& nums)
         if (nums[j]!=0)
             nums[i++]=nums[j];
     }
-    for (int k=i; k<nums.size(); k++)
-        nums[k]=0;
+    for (; i<nums.size(); i++)
+        nums[i]=0;
 }
