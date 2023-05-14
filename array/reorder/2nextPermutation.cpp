@@ -19,10 +19,10 @@ int main()
 void nextPermutation(vector<int>& nums)
 {
     int n=nums.size(), i=n-2, j=n-1;
-    for (; i>=0 && nums[i]>=nums[i+1]; i--) {} // 找第1个较小数位置
-    if (i>=) // 
+    for (; i>=0 && nums[i]>=nums[i+1]; i--) {} // 从后往前找第1个较小数位置i
+    if (i>=0) // 若[3,2,1],i=-1
     {
-        for (; j>=0 && nums[j]<=nums[i]; j--) {}
+        for (; j>=0 && nums[j]<=nums[i]; j--) {} // 从后往前找第1个比nums[i]大的位置j,交换
         swap(nums[i],nums[j]);
     }
     reverse(nums.begin()+i+1,nums.end());
