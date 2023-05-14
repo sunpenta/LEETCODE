@@ -176,7 +176,7 @@ using namespace std;
     {
 
         int maxgd=0, max_x, max_y;
-        for (int i=nums.size()-1; i>=0; ++i) // cur max gcd 
+        for (int i=nums.size()-1; i>=0 && !nums.empty(); ++i) // cur max gcd 
         {
             int x=nums[i]; // {nums[i], ?} max gcd pair
             nums.erase(find(nums.begin(),nums.end(),x));      
