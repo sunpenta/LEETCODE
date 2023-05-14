@@ -1,5 +1,5 @@
-// 移动零元素到数组尾端 - 快慢双指针  l-283
-// 要求：原数组非零元素相对顺序不变
+// 移动0元素到数组尾端 - 快慢双指针  l-283
+// 要求：原数组非0元素相对顺序不变
 // 时间复杂度：O(n) 空间复杂度:O(1)
 #include <iostream>
 #include <vector>
@@ -12,7 +12,7 @@ int main()
     moveZeros(nums); // output {12,1,3,0,0}
     return 0;
 }
-
+// 先把非0元素放到数组前端；再在非零元素后填充0
 void moveZeros(vector<int>& nums)
 {
     int i=0, j=0;
