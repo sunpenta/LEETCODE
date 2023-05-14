@@ -1,5 +1,6 @@
 // 移除元素 - 快慢指针  l-27
 // ->移除val后的元素数k；原数组前k个是非val元素(原顺序不变)
+// 时间复杂度：O(n) 空间复杂度:O(1)
 # include<iostream>
 # include<vector>
 using namespace std;
