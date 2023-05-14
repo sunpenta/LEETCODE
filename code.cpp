@@ -149,7 +149,7 @@ using namespace std;
     }
 int main()
 {
-        vector<int> nums={3,4,6,8};
+        vector<int> nums={1,2,3,4,5,6};
         int n=nums.size()/2;
         sort(nums.begin(),nums.end());
         map<int,int> mp;
@@ -165,7 +165,7 @@ int main()
                     int num=it.first;
                     if (num!=nums[0] && num%nums[0]==0) // nums[i-1]
                     {
-                        score+=i*nums[0];
+                        score+=i*nums[0]; // score放这
                         cout<<i<<" " <<nums[0]<<" "<<num<<endl;
                         if (--mp[num]==0)
                             mp.erase(num);
