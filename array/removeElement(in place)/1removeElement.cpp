@@ -1,5 +1,5 @@
 // 移除元素 - 快慢指针  l-27
-// ->移除val后的元素数k, nums原数组前k位是移除后元素
+// ->移除val后的元素数k, nums原数组前k位是非val元素(原顺序不变)
 # include<iostream>
 # include<vector>
 using namespace std;

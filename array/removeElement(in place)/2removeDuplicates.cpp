@@ -1,5 +1,5 @@
-// 删除有序数组中的重复元素 - 原地 l-26
-// -> 无重复数组个数k；nums[0,k-1] 是非重复数组
+// 删除有序数组的重复元素 -  l-26
+// -> 无重复元素个数k，原数组改变，前k个是无重复元素(原顺序不变)
 #include <bits/stdc++.h>
 using namespace std;
 int deleteDuplicates(vector<int>& nums);
