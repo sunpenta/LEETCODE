@@ -164,7 +164,7 @@ using namespace std;
         int res, gd=0;
         for (int num:nums)
         {
-            if (num!=x && gcd(num,x)>gd)
+            if (gcd(num,x)>gd) // 不用num!=x
             {
                 gd=gcd(num,x);
                 res=num;
@@ -174,7 +174,7 @@ using namespace std;
     }
 int main()
 {
-        vector<int> nums={9,2};
+        vector<int> nums={5,5}; 
         
         sort(nums.begin(),nums.end());
         
@@ -183,15 +183,17 @@ int main()
         while (!nums.empty())
         {
             i=nums.size()-1;
-            for (int j=nums.size()-2; j>=0; j--)
-            {
-                int y=nums[i], x=get(nums,y);
+            int y=nums[i];
+            nums.erase(find(nums.begin(),nums.end(),y)); // 重复数字
+            int x=get(nums,y);
+
+                
                 int gd=gcd(x,y);                           
                 mp[x]=gd; // 顺序
                 nums.erase(find(nums.begin(),nums.end(),x));
-                nums.erase(find(nums.begin(),nums.end(),y));
-                break;                 
-            }
+                
+                                
+            
         }
         int score=0, turn=1;
         for (auto it:mp)
