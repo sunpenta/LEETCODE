@@ -8,7 +8,7 @@ int deleteDuplicates(vector<int>& nums);
 int main()
 {
     vector<int> nums={0,0,1,1,1,2,2,3,3,4}; // 输入
-    cout<<deleteDuplicates(nums)<<endl; // output: 5
+    cout<<deleteDuplicates(nums)<<endl; // output: 5 {}
     for (int num:nums) // 改变原数组
         cout<< num << " "; // 0 1 2 3 4
     return 0;  
@@ -16,8 +16,8 @@ int main()
 
 int deleteDuplicates(vector<int>& nums)
 {
-    int n=nums.size(), index=1;
-    for (int i=1; i<n; i++)
+    int i=1;
+    for (int i=1; i<nums.size(); i++)
     {
         if (nums[i]!=nums[i-1]) 
             nums[index++]=nums[i];
