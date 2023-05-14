@@ -1,5 +1,6 @@
-// 搜索插入位置 - binary search  l-35
-// 不含重复元素，升序排列；length⋿[1,1e4]; 时间复杂度:O(logn)
+// 搜索插入位置  l-35
+// 不含重复元素，升序排列； 
+// 时间复杂度:O(logn) 空间复杂度:O(1)
 #include <iostream>
 #include <vector>
 using namespace std;
