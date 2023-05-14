@@ -8,7 +8,7 @@ int removeElement(vector<int>& nums, int val);
 int main()
 {
     vector<int> nums={0,1,2,3,3,0,4,2}; int val=2; // input;
-    int res=removeElement(nums,val); // output:6 {0,1,3,3,0,0,4,2}
+    int res=removeElement(nums,val); // output:6 {0,1,3,3,0,4,4,2}
     cout<<res<<endl;
     return 0; 
 }
