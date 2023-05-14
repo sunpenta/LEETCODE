@@ -1,6 +1,7 @@
 // 删除有序数组的重复元素 -  l-26
 // -> 无重复元素个数k，原数组改变，前k个是无重复元素(原顺序不变)
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 int deleteDuplicates(vector<int>& nums);
 
