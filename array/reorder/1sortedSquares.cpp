@@ -21,7 +21,7 @@ vector<int> sortedSquares(vector<int>& nums)
     {
         if (abs(nums[i])<abs(nums[j])) // 比较绝对值，左右绝对值都加
         {
-            sorted[--n]=nums[j]*nums[j];
+            sorted[--n]=nums[j]*nums[j]; // 写成前缀减，因为下标从n-1开始
             --j;
         }
         else
