@@ -3,3 +3,13 @@
 # include<iostream>
 # include<vector>
 using namespace std;
+
+int main()
+{
+
+}
+
+int search(vector<int>& nums, int target)
+{
+    
+}
