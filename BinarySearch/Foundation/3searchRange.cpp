@@ -21,7 +21,7 @@ int search(vector<int>& nums, int target)
     while (left<right) // [left,right）
     {
         int mid=(left+right)/2;
-        if (nums[mid]>=target) // [left,target,mid,right）
+        if (nums[mid]>=target)
             right=mid;
         else 
             left=mid+1;
@@ -32,8 +32,8 @@ int search(vector<int>& nums, int target)
 vector<int> searchRange(vector<int>& nums, int target)
 {  
     int n=nums.size();
-    //if (n==1 && nums[0]==target)  
-        //return {0,0};
+    if (n==1 && nums[0]==target) // 仅能提速
+        return {0,0};
 
     vector<int> ans(2);
     ans[0]=search(nums,target);
