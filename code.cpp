@@ -174,10 +174,9 @@ using namespace std;
     }
 int main()
 {
-        vector<int> nums={5,5}; 
+        vector<int> nums={697035,181412,384958,575458}; 
         
-        sort(nums.begin(),nums.end());
-        
+        sort(nums.begin(),nums.end());       
         int i=nums.size()-1;
         map<int,int> mp;
         while (!nums.empty())
@@ -186,14 +185,9 @@ int main()
             int y=nums[i];
             nums.erase(find(nums.begin(),nums.end(),y)); // 重复数字
             int x=get(nums,y);
-
-                
-                int gd=gcd(x,y);                           
-                mp[x]=gd; // 顺序
-                nums.erase(find(nums.begin(),nums.end(),x));
-                
-                                
-            
+            int gd=gcd(x,y);                           
+            mp[x]=gd; // 顺序
+            nums.erase(find(nums.begin(),nums.end(),x));
         }
         int score=0, turn=1;
         for (auto it:mp)
