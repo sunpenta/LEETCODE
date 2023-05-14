@@ -147,15 +147,37 @@ using namespace std;
         }
         return dp[n-1];
     }
+    int gcd(int x,int y)
+    {
+        int res=1;
+        for (int i=2; i<=x; ++i)
+        {
+            if (x%i==0 && y%i==0)
+            {
+                res=i;
+            }
+        }
+        return res;
+    }
+    int get(vector<int> nums, int x)
+{
+    int res=1, gd=1;
+    for (int num:nums)
+    {
+        if (num!=x && gcd(num,x)>gd)
+        {
+            gd=gcd(num,x);
+            res=num;
+        }
+    }
+    return res;
+}
 int main()
 {
         vector<int> nums={3,4,6,8};
         
         int n=nums.size()/2;
         sort(nums.begin(),nums.end());
-        map<int,int> mp;
-        for (int num:nums)
-            mp[num]++;
         int score=0, turn=1;
         int i=nums.size()-1;
         while (!nums.empty())
@@ -163,9 +185,8 @@ int main()
             i=nums.size()-1;
             for (int j=nums.size()-2; j>=0; j--)
             {
-                int x=nums[j], y=nums[i];
-                int gd=gcd(x,y);
-                if (gd>1 || gd==1 && j==0)
+                int x=nums[j], y=get(nums,x);
+                int gd=gcd(x,y);               
                 {
                     score+=turn*gd;
                     nums.erase(find(nums.begin(),nums.end(),x));
