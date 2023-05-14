@@ -1,4 +1,4 @@
-// 删除有序数组中的重复项 - 原地 l-26
+// 删除有序数组中的重复元素 - 原地 l-26
 // -> 无重复数组个数k；nums[0,k-1] 是非重复数组
 #include <bits/stdc++.h>
 using namespace std;
