@@ -34,6 +34,8 @@
 #### 应用
 69 Sqrt(x)
 367 Valid Perfect Square
+658 find k elements closest to x
+
 ### 滑动窗口
 * subarray
 209 Minimum Size Subarray Sum
