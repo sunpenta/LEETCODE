@@ -14,7 +14,7 @@ int main()
 }
 
 // 大于等于target的第一个元素下标(nums包含重复元素),即lower_bound()
-int binary_search(vector<int>& nums, int target)
+int search(vector<int>& nums, int target)
 {
     int left=0, right=nums.size(); // right≠n-1,[0,n]
     while (left<right) // [left,right]
@@ -34,8 +34,8 @@ vector<int> searchRange(vector<int>& nums, int target)
     if (n==1 && nums[0]==target)  return {0,0};
 
     vector<int> ans(2);
-    ans[0]=binary_search(nums,target); // 第1个
-    ans[1]=binary_search(nums,target+1)-1; // 最后1个
+    ans[0]=search(nums,target); // 第1个
+    ans[1]=search(nums,target+1)-1; // 最后1个
     if (ans[0]<n && nums[ans[0]]==target) 
         return ans;
     return {-1,-1};
