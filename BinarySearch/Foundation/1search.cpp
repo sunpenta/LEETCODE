@@ -17,7 +17,7 @@ int main()
 int search(vector<int>& nums, int target)
 {
     int left=0, right=nums.size()-1;
-    while (left<=right)
+    while (left<=right) // 统一left,right,不要i和left混杂
     {
         int mid=(left+right)/2;
         if (nums[mid]==target)
