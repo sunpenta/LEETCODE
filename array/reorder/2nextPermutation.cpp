@@ -19,8 +19,8 @@ int main()
 void nextPermutation(vector<int>& nums)
 {
     int n=nums.size(), i=n-2, j=n-1;
-    for (; i>=0 && nums[i]>=nums[i+1]; i--) {}
-    if (1) // ?
+    for (; i>=0 && nums[i]>=nums[i+1]; i--) {} // 找第1个较小数位置
+    if (i>=) // 
     {
         for (; j>=0 && nums[j]<=nums[i]; j--) {}
         swap(nums[i],nums[j]);
