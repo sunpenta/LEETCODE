@@ -149,36 +149,31 @@ using namespace std;
     }
 int main()
 {
-        vector<int> nums={1,2,3,4,5,6};
+        vector<int> nums={3,4,6,8};
+        
         int n=nums.size()/2;
         sort(nums.begin(),nums.end());
         map<int,int> mp;
         for (int num:nums)
             mp[num]++;
-        int score=0;
-        for (int i=1; i<=n && !nums.empty(); i++) // ith operation i<=n
+        int score=0, turn=1;
+        int i=nums.size()-1;
+        while (!nums.empty())
         {
-            if (!mp.empty())
+            i=nums.size()-1;
+            for (int j=nums.size()-2; j>=0; j--)
             {
-                for (auto it:mp)
+                int x=nums[j], y=nums[i];
+                if (gcd(x,y)>1 || gcd(x,y)==1 && j==0)
                 {
-                    int num=it.first;
-                    if (num!=nums[0] && num%nums[0]==0) // nums[i-1]
-                    {
-                        score+=i*nums[0]; // score放这
-                        cout<<i<<" " <<nums[0]<<" "<<num<<endl;
-                        if (--mp[num]==0)
-                            mp.erase(num);
-                        if (--mp[nums[0]]==0)
-                            mp.erase(nums[0]);
-                        
-                        nums.erase(find(nums.begin(),nums.end(),num));
-                        nums.erase(find(nums.begin(),nums.end(),nums[0]));                       
-                        break;
-                    }
-                }
+                    score+=turn*gcd(x,y);
+                    nums.erase(find(nums.begin(),nums.end(),x));
+                    nums.erase(find(nums.begin(),nums.end(),y));
+                    turn++;
+                    break;
+                }               
             }
-        } 
+        }
         return 0;   
     }
     // vector<vector<int>> questions={{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1}}; // {{3,2},{4,3},{4,4},{2,5}} {{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1},{85,1},{84,2},{27,2},{47,5},{48,4},{3,2},{44,3},{60,5},{19,2},{9,4},{29,5},{15,3},{1,3},{60,2},{63,3},{79,3},{19,1},{7,1},{35,1},{55,4},{1,4},{41,1},{58,5}}
