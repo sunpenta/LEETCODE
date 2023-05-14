@@ -175,7 +175,7 @@ using namespace std;
 int main()
 {
         vector<int> nums={697035,181412,384958,575458}; 
-        
+        cout<<gcd(181412,384958)<<endl;
         sort(nums.begin(),nums.end());       
         int i=nums.size()-1;
         map<int,int> mp;
