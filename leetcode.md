@@ -25,10 +25,13 @@
 中位数
 判断环的节点处
 ### 二分查找
+#### 基础
 704 Binary Search
 35 Search Insert Position
 34 Find First and Last Position of Element in Sorted Array
-
+33 Search in Rotated Sorted Array
+81 Search in Rotated Sorted Array II
+#### 应用
 69 Sqrt(x)
 367 Valid Perfect Square
 ### 滑动窗口
