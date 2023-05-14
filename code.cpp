@@ -177,7 +177,7 @@ int main()
         vector<int> nums={3,4,6,8};
         
         sort(nums.begin(),nums.end());
-        int score=0, turn=1;
+        int score=0, turn=nums.size()/2;
         int i=nums.size()-1;
         while (!nums.empty())
         {
@@ -190,7 +190,7 @@ int main()
                     score+=turn*gd;
                     nums.erase(find(nums.begin(),nums.end(),x));
                     nums.erase(find(nums.begin(),nums.end(),y));
-                    turn++;
+                    turn--;
                     break;
                 }               
             }
