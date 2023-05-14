@@ -160,21 +160,21 @@ using namespace std;
         return res;
     }
     int get(vector<int> nums, int x)
-{
-    int res=1, gd=1;
-    for (int num:nums)
     {
-        if (num!=x && gcd(num,x)>gd)
+        int res=1, gd=1;
+        for (int num:nums)
         {
-            gd=gcd(num,x);
-            res=num;
+            if (num!=x && gcd(num,x)>gd)
+            {
+                gd=gcd(num,x);
+                res=num;
+            }
         }
+        return res;
     }
-    return res;
-}
 int main()
 {
-        vector<int> nums={3,4,6,8};
+        vector<int> nums={9,2};
         
         sort(nums.begin(),nums.end());
         
