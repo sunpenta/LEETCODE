@@ -43,19 +43,19 @@
 904 Fruit Into Baskets
 * substring
 76 Minimum Window Substring
+### 矩阵模拟
+54 Spiral Matrix
+59 Spiral Matrix II
+2326 Spiral Matrix IV
+885 Spiral Matrix III
+### string
+2663 Lexicographically Smallest Beautiful String
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
 * 占据对象有限:
 1882 Process Tasks Using Servers
 2402 Meeting Rooms III
-### string
-2663 Lexicographically Smallest Beautiful String
-### 矩阵模拟
-54 Spiral Matrix
-59 Spiral Matrix II
-2326 Spiral Matrix IV
-885 Spiral Matrix III
 ### hash set或map
 * hash map
 2661 First Completely Painted Row or Column
