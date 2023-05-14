@@ -12,7 +12,7 @@
 283 Move Zeroes
 * 字符串
 844 Backspace String Compare
-### 数组排序
+### 数组重排序
 977 Squares of a Sorted Array
 31 Next Permutation
 ### 双指针
