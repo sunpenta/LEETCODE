@@ -163,17 +163,17 @@ int main()
                 for (auto it:mp)
                 {
                     int num=it.first;
-                    if (num!=nums[i-1] && num%nums[i-1]==0) // nums[i-1]
+                    if (num!=nums[i-1] && num%nums[0]==0) // nums[i-1]
                     {
-                        cout<<i<<" " <<nums[i-1]<<" "<<num<<endl;
+                        cout<<i<<" " <<nums[0]<<" "<<num<<endl;
                         if (--mp[num]==0)
                             mp.erase(num);
-                        if (--mp[nums[i-1]]==0)
-                            mp.erase(nums[i-1]);
+                        if (--mp[nums[0]]==0)
+                            mp.erase(nums[0]);
                         
                         nums.erase(find(nums.begin(),nums.end(),num));
-                        nums.erase(find(nums.begin(),nums.end(),nums[i-1]));
-                        score+=i*nums[i-1];
+                        nums.erase(find(nums.begin(),nums.end(),nums[0]));
+                        score+=i*nums[0];
                         break;
                     }
                 }
