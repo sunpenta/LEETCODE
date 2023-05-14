@@ -164,9 +164,10 @@ int main()
             for (int j=nums.size()-2; j>=0; j--)
             {
                 int x=nums[j], y=nums[i];
-                if (gcd(x,y)>1 || gcd(x,y)==1 && j==0)
+                int gd=gcd(x,y);
+                if (gd>1 || gd==1 && j==0)
                 {
-                    score+=turn*gcd(x,y);
+                    score+=turn*gd;
                     nums.erase(find(nums.begin(),nums.end(),x));
                     nums.erase(find(nums.begin(),nums.end(),y));
                     turn++;
