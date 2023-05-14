@@ -1,5 +1,6 @@
 // 在升序数组中查找元素的第一个和最后一个位置 - Binary Search  l-34
-// 含重复元素, 非降序; 若未找到target,返回{-1,-1}; length⋿[1,1e4]; 时间复杂度：O(logn)
+// -> 返回{第1个位置，第二个位置}/{-1,-1}(未找到); 含重复元素, 非降序排列
+// 时间复杂度：O(logn) 空间复杂度:O(1)
 #include<iostream>
 #include <vector>
 using namespace std;
@@ -9,7 +10,7 @@ int main()
 {
     vector<int> nums{5,7,7,8,8}; int target=8; // 输入
     vector<int> ans=searchRange(nums,target); // 输出:{3,4}
-    cout<<"("<<ans[0]<<", "<<ans[1]<<")"<<endl;
+    cout<<ans[0]<<" "<<ans[1]<<endl;
     return 0;;
 }
 
@@ -17,10 +18,10 @@ int main()
 int search(vector<int>& nums, int target)
 {
     int left=0, right=nums.size(); // right≠n-1,[0,n]
-    while (left<right) // [left,right]
+    while (left<right) // [left,right）
     {
         int mid=(left+right)/2;
-        if (nums[mid]>=target) // [left,target,mid,right] 
+        if (nums[mid]>=target) // [left,target,mid,right）
             right=mid;
         else 
             left=mid+1;
@@ -31,11 +32,12 @@ int search(vector<int>& nums, int target)
 vector<int> searchRange(vector<int>& nums, int target)
 {  
     int n=nums.size();
-    if (n==1 && nums[0]==target)  return {0,0};
+    if (n==1 && nums[0]==target)  
+        return {0,0};
 
     vector<int> ans(2);
-    ans[0]=search(nums,target); // 第1个
-    ans[1]=search(nums,target+1)-1; // 最后1个
+    ans[0]=search(nums,target);
+    ans[1]=search(nums,target+1)-1;
     if (ans[0]<n && nums[ans[0]]==target) 
         return ans;
     return {-1,-1};
