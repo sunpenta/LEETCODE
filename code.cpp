@@ -176,7 +176,7 @@ using namespace std;
     {
 
         int maxgd=0, max_x, max_y;
-        for (int i=nums.size()-1; i>=0 && !nums.empty(); ++i) // cur max gcd 
+        for (int i=nums.size()-1; i>=0 && !nums.empty(); --i) // cur max gcd 
         {
             sort(nums.begin(),nums.end());
             int x=nums[i]; // {nums[i], ?} max gcd pair
@@ -200,7 +200,7 @@ int main()
         vector<int> nums={697035,181412,384958,575458};  // gcd(181412,384958)
         sort(nums.begin(),nums.end()); 
         int score=0, turn=nums.size()/2;
-        while (turn--)
+        while (turn-->0)
         {
             int gd=getMaxgcd(nums);
             score+=turn*gd;
