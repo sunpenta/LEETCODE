@@ -1,4 +1,4 @@
-// 移除元素  l-27
+// 移除元素 - 快慢指针  l-27
 // ->移除val后的元素数k, nums原数组前k位是移除后元素
 # include<iostream>
 # include<vector>
