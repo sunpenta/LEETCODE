@@ -7,7 +7,7 @@ vector<int> sortedSquares(vector<int>& nums);
 
 int main()
 {
-    vector<int> nums={-3,-2,0,1,2,4}; // input
+    vector<int> nums={-3,-2,0,1,4}; // input
     vector<int> res=sortedSquares(nums); // output
     return 0;
 }
@@ -17,9 +17,9 @@ vector<int> sortedSquares(vector<int>& nums)
     int n=nums.size();
     vector<int> sorted(n);
     int i=0, j=n-1;
-    while (i<j)
+    while (i<=j) // 忘记等号
     {
-        if (abs(nums[i])<abs(nums[j])) // 比较绝对值
+        if (abs(nums[i])<abs(nums[j])) // 比较绝对值，左右绝对值都加
         {
             sorted[n--]=nums[j]*nums[j];
             --j;
