@@ -8,7 +8,7 @@ void moveZeros(vector<int>& nums);
 int main()
 {
     vector<int> nums={0,1,0,3,12}; // input
-    moveZeros(nums); // output
+    moveZeros(nums); // output {12,1,3,0,0}
     return 0;
 }
 
@@ -18,7 +18,7 @@ void moveZeros(vector<int>& nums)
     for (; i<j; i++)
     {
         if (nums[i]==0 && nums[j]!=0)
-            swap(nums[i],nums[j]);
+            swap(nums[i],nums[j--]);
         else if (nums[i]==0 && nums[j]==0)
             j--;
     }
