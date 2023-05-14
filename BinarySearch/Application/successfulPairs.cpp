@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
-vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, int success);
+vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, long long success);
 
 int main()
 {
