@@ -176,7 +176,6 @@ int main()
 {
         vector<int> nums={3,4,6,8};
         
-        int n=nums.size()/2;
         sort(nums.begin(),nums.end());
         int score=0, turn=1;
         int i=nums.size()-1;
@@ -185,7 +184,7 @@ int main()
             i=nums.size()-1;
             for (int j=nums.size()-2; j>=0; j--)
             {
-                int x=nums[j], y=get(nums,x);
+                int y=nums[i], x=get(nums,y);
                 int gd=gcd(x,y);               
                 {
                     score+=turn*gd;
