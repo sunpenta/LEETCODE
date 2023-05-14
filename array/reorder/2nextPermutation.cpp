@@ -1,5 +1,5 @@
-// 下一个典序更大的排列（包含重复元素） l-31
-// 认识典序
+// nextPermutation l-31
+// 包含重复元素
 #include<bits/stdc++.h>
 using namespace std;
 void nextPermutation(vector<int>&nums);
