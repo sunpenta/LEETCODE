@@ -35,7 +35,8 @@
 69 Sqrt(x)
 367 Valid Perfect Square
 658 find k elements closest to x
-
+875 Koko Eating Bananas
+2300 Successful Pairs of Spells and Potions
 ### 滑动窗口
 * subarray
 209 Minimum Size Subarray Sum
