@@ -8,7 +8,9 @@ int search(vector<int>& nums, int target);
 int main()
 {
     vector<int> nums={-1,0,3,5,9,12}; int target=9; // input
-    
+    int res=search(nums,target); // output:4
+    cout<<res<<endl;
+    return 0;
 }
 
 int search(vector<int>& nums, int target)
