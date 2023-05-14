@@ -17,5 +17,6 @@ int main()
 
 void nextPermutation(vector<int>& nums)
 {
-
+    int n=nums.size(), i=n-2, j=n-1;
+    for (; i>=0 && nums[i]>nums[i+1]; i--)
 }
