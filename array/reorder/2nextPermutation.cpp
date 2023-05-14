@@ -1,4 +1,5 @@
 // nextPermutation l-31
+// 
 // 时间复杂度:O(n) 空间复杂度：O(1)
 # include<iostream>
 # include<vector>
@@ -25,5 +26,5 @@ void nextPermutation(vector<int>& nums)
         for (; j>=0 && nums[j]<=nums[i]; j--) {} // 从后往前找第1个比nums[i]大的位置j,交换
         swap(nums[i],nums[j]);
     }
-    reverse(nums.begin()+i+1,nums.end());
+    reverse(nums.begin()+i+1,nums.end()); // 反转[i+1,n-1]
 }
