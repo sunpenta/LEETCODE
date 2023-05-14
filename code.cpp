@@ -163,7 +163,7 @@ int main()
                 for (auto it:mp)
                 {
                     int num=it.first;
-                    if (num!=nums[i-1] && num%nums[0]==0) // nums[i-1]
+                    if (num!=nums[0] && num%nums[0]==0) // nums[i-1]
                     {
                         cout<<i<<" " <<nums[0]<<" "<<num<<endl;
                         if (--mp[num]==0)
