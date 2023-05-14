@@ -12,7 +12,6 @@ int main()
     return 0;
 }
 
-// 下一个典序更大的排列
 void nextPermutation(vector<int>&nums)
 {
     int i=nums.size()-2;//倒数第二个
