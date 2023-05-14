@@ -12,9 +12,18 @@ int main()
 
 vector<int> sortedSquares(vector<int>& nums)
 {
-    int i=0, j=nums.size()-1;
+    int n=nums.size();
+    vector<int> sorted(n);
+    int i=0, j=n-1;
     while (i<j)
     {
-        
+        if (abs(nums[i]<nums[j]))
+        {
+            sorted[n--]=nums[j--];
+        }
+        else
+        {
+            sorted[n--]=nums[i++];
+        }
     }
 }
