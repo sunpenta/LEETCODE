@@ -219,16 +219,17 @@ using namespace std;
             {
                 --it;
             }
+            int left=it->first, right=it->second;
             intervals.erase(it);
-            int cursum=lefts[it->first];
-            lefts.erase(lefts.find(it->first));
+            int cursum=lefts[left];
+            lefts.erase(lefts.find(left));
             if (--sum[cursum]==0)
                 sum.erase(cursum);
 
             long long sum1=0, sum2=0;
             if (n>it->first)
             {
-                int left1=it->first, right1=n-1;
+                int left1=left, right1=n-1;
                 intervals.insert({left1,right1});
                 for (int i=left1; i<=right1; i++)
                     sum1+=nums[i];
@@ -237,7 +238,7 @@ using namespace std;
             }
             if (n<it->second)
             {
-                int left2=n+1, right2=it->second;
+                int left2=n+1, right2=right;
                 intervals.insert({left2,right2});
                 for (int i=left2; i<=right2; i++)
                     sum2+=nums[i];
