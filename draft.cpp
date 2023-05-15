@@ -227,7 +227,7 @@ using namespace std;
                 sum.erase(cursum);
 
             long long sum1=0, sum2=0;
-            if (n>it->first)
+            if (n>left)
             {
                 int left1=left, right1=n-1;
                 intervals.insert({left1,right1});
@@ -236,7 +236,7 @@ using namespace std;
                 sum[sum1]++;
                 lefts[left1]=sum1;   
             }
-            if (n<it->second)
+            if (n<right)
             {
                 int left2=n+1, right2=right;
                 intervals.insert({left2,right2});
