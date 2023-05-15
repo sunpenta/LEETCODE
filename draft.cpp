@@ -199,7 +199,8 @@ using namespace std;
     {
         public:
         set<pair<int,int>> intervals; // [left,right]
-        map<long long,int> sum; // <sum,left>
+        map<long long,int> sum; // <sum,times>
+        map<int, long long> lefts; // <left,sum>
         
         const int INF=1e9+1;
         segement(vector<int>& nums)
@@ -208,7 +209,8 @@ using namespace std;
             for (int num:nums)
                 sum1+=num;
             intervals.insert({0,nums.size()-1});
-            sum[sum1]=0;
+            sum[sum1]++;
+            lefts[0]=sum1;
         }
         void remove(vector<int>& nums,int n)
         {
@@ -222,13 +224,18 @@ using namespace std;
             int left1=it->first, right1=max(0,n-1);
             int left2=min((int)nums.size()-1,n+1); int right2=it->second;
             intervals.erase(it);
+            int cursum=lefts[left1];
+            lefts.erase(lefts.find(left1));
+            sum[cursum]--;
             long long sum1=0, sum2=0;
             for (int i=left1; i<=right1; i++)
                 sum1+=nums[i];
             for (int i=left2; i<=right2; i++)
                 sum2+=nums[i];
-            sum[sum1]=left1;
-            sum[sum2]=left2;          
+            sum[sum1]++;
+            sum[sum2]++;  
+            lefts[left1]=sum1;
+            lefts[left2]=sum2;        
             intervals.insert({left1,right1});
             intervals.insert({left2,right2});
             }  
