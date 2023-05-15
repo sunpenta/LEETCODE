@@ -255,9 +255,9 @@ using namespace std;
 
     vector<long long> maximumSegmentSum(vector<int>& nums, vector<int>& removeQueries) {
         int n=removeQueries.size();
-        vector<long long> presum(n);
-        presum[0]=nums[0];
-        for (int i=1; i<nums.size(); i++)
+        vector<long long> presum(n+1);
+        
+        for (int i=0; i<nums.size(); i++)
         {
             presum[i]=presum[i-1]+nums[i];
         }
