@@ -217,7 +217,7 @@ using namespace std;
             }
             if (n>=it->first && n<=it->second)
             {
-            int left1=it->first, right1=n-1;
+            int left1=it->first, right1=max(0,n-1);
             int left2=n+1, right2=it->second;
             intervals.erase(it);
             long long sum1=0, sum2=0;
