@@ -226,7 +226,8 @@ using namespace std;
             intervals.erase(it);
             int cursum=lefts[left1];
             lefts.erase(lefts.find(left1));
-            sum[cursum]--;
+            if (--sum[cursum]==0)
+                sum.erase(cursum);
             long long sum1=0, sum2=0;
             for (int i=left1; i<=right1; i++)
                 sum1+=nums[i];
