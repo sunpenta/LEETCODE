@@ -207,7 +207,7 @@ using namespace std;
         {
             
             long long sum1=presum[presum.size()-1];
-            intervals.insert({0,presum.size()-1});
+            intervals.insert({0,presum.size()-2});
             sum[sum1]++;
             lefts[0]=sum1;
         }
@@ -232,7 +232,7 @@ using namespace std;
             {
                 int left1=left, right1=n-1;
                 intervals.insert({left1,right1});
-                sum1=presum[right1]-presum[left1-1];
+                sum1=presum[right1+1]-presum[left1];
                 sum[sum1]++;
                 lefts[left1]=sum1;   
             }
@@ -240,7 +240,7 @@ using namespace std;
             {
                 int left2=n+1, right2=right;
                 intervals.insert({left2,right2});
-                sum2=presum[right2]-presum[left2-1];
+                sum2=presum[right2+1]-presum[left2];
                 sum[sum2]++;                 
                 lefts[left2]=sum2;             
             }  
@@ -259,7 +259,7 @@ using namespace std;
         
         for (int i=0; i<nums.size(); i++)
         {
-            presum[i]=presum[i-1]+nums[i];
+            presum[i+1]=presum[i]+nums[i];
         }
         vector<long long> res(n);
         segement s(presum);
