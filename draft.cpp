@@ -219,26 +219,30 @@ using namespace std;
             {
                 --it;
             }
-            if (n>=it->first && n<=it->second)
-            {
-            int left1=it->first, right1=max(0,n-1);
-            int left2=min((int)nums.size()-1,n+1); int right2=it->second;
             intervals.erase(it);
-            int cursum=lefts[left1];
-            lefts.erase(lefts.find(left1));
+            int cursum=lefts[it->first];
+            lefts.erase(lefts.find(it->first));
             if (--sum[cursum]==0)
                 sum.erase(cursum);
+
             long long sum1=0, sum2=0;
-            for (int i=left1; i<=right1; i++)
-                sum1+=nums[i];
-            for (int i=left2; i<=right2; i++)
-                sum2+=nums[i];
-            sum[sum1]++;
-            sum[sum2]++;  
-            lefts[left1]=sum1;
-            lefts[left2]=sum2;        
-            intervals.insert({left1,right1});
-            intervals.insert({left2,right2});
+            if (n>it->first)
+            {
+                int left1=it->first, right1=n-1;
+                intervals.insert({left1,right1});
+                for (int i=left1; i<=right1; i++)
+                    sum1+=nums[i];
+                sum[sum1]++;
+                lefts[left1]=sum1;   
+            }
+            if (n<it->second)
+            {
+                int left2=n+1, right2=it->second;
+                intervals.insert({left2,right2});
+                for (int i=left2; i<=right2; i++)
+                    sum2+=nums[i];
+                sum[sum2]++;                 
+                lefts[left2]=sum2;             
             }  
         }
         int get()
