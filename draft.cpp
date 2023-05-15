@@ -197,9 +197,10 @@ using namespace std;
     }
     class segement
     {
+        public:
         set<pair<int,int>> intervals; // [left,right]
         map<long long,int> sum; // <sum,left>
-        public:
+        
         const int INF=1e9+1;
         segement(vector<int>& nums)
         {
@@ -218,7 +219,7 @@ using namespace std;
             if (n>=it->first && n<=it->second)
             {
             int left1=it->first, right1=max(0,n-1);
-            int left2=n+1, right2=it->second;
+            int left2=min((int)nums.size()-1,n+1); int right2=it->second;
             intervals.erase(it);
             long long sum1=0, sum2=0;
             for (int i=left1; i<=right1; i++)
