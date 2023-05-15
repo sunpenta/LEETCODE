@@ -207,6 +207,7 @@ using namespace std;
             long long sum1=0;
             for (int num:nums)
                 sum1+=num;
+            intervals.insert({0,nums.size()-1});
             sum[sum1]=0;
         }
         void remove(vector<int>& nums,int n)
