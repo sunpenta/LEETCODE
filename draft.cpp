@@ -195,9 +195,64 @@ using namespace std;
         nums.erase(find(nums.begin(),nums.end(),max_y));
         return maxgd;
     }
+    class segement
+    {
+        set<pair<int,int>> intervals; // [left,right]
+        map<long long,int> sum; // <sum,left>
+        public:
+        const int INF=1e9+1;
+        segement(vector<int>& nums)
+        {
+            long long sum1=0;
+            for (int num:nums)
+                sum1+=num;
+            sum[sum1]=0;
+        }
+        void remove(vector<int>& nums,int n)
+        {
+            auto it=intervals.upper_bound({n,INF});
+            if (it!=intervals.begin())
+            {
+                --it;
+            }
+            if (n>=it->first && n<=it->second)
+            {
+            int left1=it->first, right1=n-1;
+            int left2=n+1, right2=it->second;
+            intervals.erase(it);
+            long long sum1=0, sum2=0;
+            for (int i=left1; i<=right1; i++)
+                sum1+=nums[i];
+            for (int i=left2; i<=right2; i++)
+                sum2+=nums[i];
+            sum[sum1]=left1;
+            sum[sum2]=left2;          
+            intervals.insert({left1,right1});
+            intervals.insert({left2,right2});
+            }  
+        }
+        int get()
+        {
+            return sum.rbegin()->first;
+        }
+    };
+    vector<long long> maximumSegmentSum(vector<int>& nums, vector<int>& removeQueries) {
+        int n=removeQueries.size();
+        vector<long long> res(n);
+        segement s(nums);
+        for (int i=0; i<n; i++)
+        {
+            int k=removeQueries[i];
+            s.remove(nums,k);
+            res[i]=s.get();
+        }
+        return res;
+    }
 int main()
 {
-        vector<int> nums={697035,181412,384958,575458};  // gcd(181412,384958)
+    vector<int> nums={1,2,5,6,1}, removeQueries={0,3,2,4,1};
+    maximumSegmentSum(nums,removeQueries);
+        /*vector<int> nums={697035,181412,384958,575458};  // gcd(181412,384958)
         sort(nums.begin(),nums.end()); 
         int score=0, turn=nums.size()/2;
         while (!nums.empty())
@@ -206,7 +261,7 @@ int main()
             score+=turn*gd;
             turn--;
         }
-        cout<<score;
+        cout<<score;*/
         return 0;   
     }
     // vector<vector<int>> questions={{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1}}; // {{3,2},{4,3},{4,4},{2,5}} {{21,2},{1,2},{12,5},{7,2},{35,3},{32,2},{80,2},{91,5},{92,3},{27,3},{19,1},{37,3},{85,2},{33,4},{25,1},{91,4},{44,3},{93,3},{65,4},{82,3},{85,5},{81,3},{29,2},{25,1},{74,2},{58,1},{85,1},{84,2},{27,2},{47,5},{48,4},{3,2},{44,3},{60,5},{19,2},{9,4},{29,5},{15,3},{1,3},{60,2},{63,3},{79,3},{19,1},{7,1},{35,1},{55,4},{1,4},{41,1},{58,5}}
