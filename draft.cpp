@@ -214,6 +214,8 @@ using namespace std;
         }
         void remove(vector<int>& nums,int n)
         {
+            if (intervals.empty())
+                return;
             auto it=intervals.upper_bound({n,INF});
             if (it!=intervals.begin())
             {
@@ -248,6 +250,8 @@ using namespace std;
         }
         int get()
         {
+            if (sum.empty())
+                return 0;
             return sum.rbegin()->first;
         }
     };
