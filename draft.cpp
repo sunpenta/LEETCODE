@@ -203,16 +203,15 @@ using namespace std;
         map<int, long long> lefts; // <left,sum>
         
         const int INF=1e9+1;
-        segement(vector<int>& nums)
+        segement(vector<int>& presum)
         {
-            long long sum1=0;
-            for (int num:nums)
-                sum1+=num;
-            intervals.insert({0,nums.size()-1});
+            
+            long long sum1=presum[presum.size()-1];
+            intervals.insert({0,presum.size()-1});
             sum[sum1]++;
             lefts[0]=sum1;
         }
-        void remove(vector<int>& nums,int n)
+        void remove(vector<int>& presum,int n)
         {
             if (intervals.empty())
                 return;
@@ -228,13 +227,12 @@ using namespace std;
             if (--sum[cursum]==0)
                 sum.erase(cursum);
 
-            long long sum1=0, sum2=0;
+            long long sum1, sum2;
             if (n>left)
             {
                 int left1=left, right1=n-1;
                 intervals.insert({left1,right1});
-                for (int i=left1; i<=right1; i++)
-                    sum1+=nums[i];
+                sum1=presum[right1]-presum[left1-1];
                 sum[sum1]++;
                 lefts[left1]=sum1;   
             }
@@ -242,27 +240,33 @@ using namespace std;
             {
                 int left2=n+1, right2=right;
                 intervals.insert({left2,right2});
-                for (int i=left2; i<=right2; i++)
-                    sum2+=nums[i];
+                sum2=presum[right2]-presum[left2-1];
                 sum[sum2]++;                 
                 lefts[left2]=sum2;             
             }  
         }
-        int get()
+        long long get() // return sum must be long long
         {
             if (sum.empty())
                 return 0;
             return sum.rbegin()->first;
         }
     };
+
     vector<long long> maximumSegmentSum(vector<int>& nums, vector<int>& removeQueries) {
         int n=removeQueries.size();
+        vector<int> presum(n);
+        presum[0]=nums[0];
+        for (int i=1; i<nums.size(); i++)
+        {
+            presum[i]=presum[i-1]+nums[i];
+        }
         vector<long long> res(n);
         segement s(nums);
         for (int i=0; i<n; i++)
         {
             int k=removeQueries[i];
-            s.remove(nums,k);
+            s.remove(presum,k);
             res[i]=s.get();
         }
         return res;
