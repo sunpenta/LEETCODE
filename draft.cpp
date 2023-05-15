@@ -223,7 +223,7 @@ using namespace std;
             }
             int left=it->first, right=it->second;
             intervals.erase(it);
-            int cursum=lefts[left];
+            long long cursum=lefts[left]; // 写错成int不提示错误，但cursum生成1个int范围的数
             lefts.erase(lefts.find(left));
             if (--sum[cursum]==0)
                 sum.erase(cursum);
