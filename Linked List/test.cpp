@@ -5,4 +5,5 @@ int main()
     vector<int> nums={1,2,3};
     ListNode* head=vectorToListNode(nums);
     head->print();
+    return 0;
 }
