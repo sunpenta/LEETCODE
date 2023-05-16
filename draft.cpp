@@ -313,7 +313,7 @@ using namespace std;
         {            
             if (ch=='(' || ch=='[' || ch=='{')
                 sk.push(ch);
-            else if (!sk.empty() && sk.top()==mp[ch])
+            else if (!sk.empty() && ch==mp[sk.top()])
                 sk.pop();
         }
         return sk.empty();
