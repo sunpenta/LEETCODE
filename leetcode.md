@@ -6,13 +6,13 @@
 * 2-D array:
 1572 Matrix Diagonal Sum
 ### 移除元素
-* 数组（原地）
+#### 数组（原地）
 27 Remove Element
 26 Remove Duplicates from Sorted Array
 283 Move Zeroes
-* 字符串
+#### 字符串
 844 Backspace String Compare
-* 链表
+#### 链表
 19 删除链表倒数第N个节点
 82 Remove Duplicates from Sorted List II
 83 Remove Duplicates from Sorted List
