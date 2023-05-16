@@ -43,10 +43,10 @@ Remove Duplicates From an Unsorted Linked List（会员）
 875 Koko Eating Bananas
 2300 Successful Pairs of Spells and Potions
 ### 滑动窗口
-* subarray
+#### subarray
 209 Minimum Size Subarray Sum
 904 Fruit Into Baskets
-* substring
+#### substring
 76 Minimum Window Substring
 ### 矩阵模拟
 54 Spiral Matrix
@@ -70,10 +70,12 @@ Remove Duplicates From an Unsorted Linked List（会员）
 选或不选：
 2140 Solving Questions With Brainpower
 ### 路径
-* 二叉树路径
+#### 二叉树路径
 2673 Make Costs of Paths Equal in a Binary Tree
-* 图路径
+#### 图路径
+* dp
 2684 Maximum Number of Moves in a Grid
+* dijkstra
 2662 Minimum Cost of a Path With Special Roads
 2577 Minimum Time to Visit a Cell In a Grid
 ### 设计类
