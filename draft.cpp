@@ -346,7 +346,7 @@ using namespace std;
     }
 int main()
 {
-    vector<string>tokens = {"2","1","+","3","*"};
+    vector<string>tokens = {"3","1","+","3","*"};
     evalRPN(tokens);
     //string s="()";
     //isValid(s);
