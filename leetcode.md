@@ -58,6 +58,13 @@ Remove Duplicates From an Unsorted Linked List（会员）
 ### hash set或map
 * hash map
 2661 First Completely Painted Row or Column
+### 链表
+#### 移除元素
+19 删除链表倒数第N个节点
+82 Remove Duplicates from Sorted List II
+83 Remove Duplicates from Sorted List
+Remove Duplicates From an Unsorted Linked List（会员）
+#### 
 ### 栈和队列
 
 ### 优先队列
