@@ -292,7 +292,7 @@ using namespace std;
             for (auto d:dir)
             {
                 int nx=i+d[0], ny=j+d[1];
-                if (nx<0 || ny>=m || nx<0 || ny>=n || visit[nx][ny])
+                if (nx<0 || nx>=m || ny<0 || ny>=n || visit[nx][ny])
                     continue;
                 
                 int wait= (grid[nx][ny]-time)%2==0; // even
