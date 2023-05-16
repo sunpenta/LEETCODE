@@ -74,7 +74,12 @@ Remove Duplicates From an Unsorted Linked List（会员）
 92 反转链表
 25 K个一组翻转链表
 ### 栈和队列
-
+#### 普通
+20 有效括号
+32 最长有效括号长度
+71 简化路径
+#### 单调
+239 slide window的最大值
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
