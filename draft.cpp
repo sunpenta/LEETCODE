@@ -318,10 +318,38 @@ using namespace std;
         }
         return sk.empty();
     }
+    int evalRPN(vector<string>& tokens) {
+        stack<int> sk;
+        for (string s:tokens)
+        {
+            if (s>="-200" && s<="200")
+            {                
+                sk.push(stoi(s));
+            }
+            else
+            {
+                int num1, num2, num;
+                num2=sk.top(); sk.pop();
+                num1=sk.top(); sk.pop();
+                if (s=="+") 
+                    num=num1+num2;
+                else if (s=="-")
+                    num=num1-num2;
+                else if (s=="*")
+                    num=num1*num2;
+                else
+                    num=num1/num2;
+                sk.push(num);                
+            }
+        }
+        return sk.top();
+    }
 int main()
 {
-    string s="()";
-    isValid(s);
+    vector<string>tokens = {"2","1","+","3","*"};
+    evalRPN(tokens);
+    //string s="()";
+    //isValid(s);
     //vector<vector<int>> grid = {{0,1,3,2},{5,1,2,5},{4,3,8,6}};
     //minimumTime(grid);
     //string s="abcab"; string t="ab";
