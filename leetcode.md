@@ -64,7 +64,15 @@ Remove Duplicates From an Unsorted Linked List（会员）
 82 Remove Duplicates from Sorted List II
 83 Remove Duplicates from Sorted List
 Remove Duplicates From an Unsorted Linked List（会员）
-#### 
+#### 合并或分割链表
+21 合并两个升序列表
+23 合并k个升序链表
+86 分隔链表
+#### 重新排序
+24 两两交换链表中的节点
+61 旋转链表
+92 反转链表
+25 K个一组翻转链表
 ### 栈和队列
 
 ### 优先队列
