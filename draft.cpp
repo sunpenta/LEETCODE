@@ -275,7 +275,7 @@ using namespace std;
     {
         int res=1e5+1;
         int m=grid.size(), n=grid[0].size();
-        if (i==m-1 && j==n-1)
+        if (i==m-1 || j==n-1)
             return 0;
         int dx[4]={1,-1,0,0};
         int dy[4]={0,0,1,-1};
