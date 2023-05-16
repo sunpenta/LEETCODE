@@ -5,7 +5,7 @@ ListNode* removeNthFromEnd(ListNode* head,int n);
 
 int main()
 {
-    vector<int> nums={2,1,4,3}; 
+    vector<int> nums={2,1,4,3};
     ListNode* head=ListNode::vectorToListNode(nums); int n=2;
     ListNode* res=removeNthFromEnd(head,n);
     res->print(); // output: 2 1 3
