@@ -5,12 +5,10 @@ ListNode* removeNthFromEnd(ListNode* head,int n);
 
 int main()
 {
-    std::cout << "Starting main()" << std::endl;
     int arr[4]={2,1,4,3}; 
     ListNode head(arr, 4); int n=2;
     ListNode* res=removeNthFromEnd(&head,n);
     res->print(); // output: 2 1 3
-    std::cout << "Exiting main()" << std::endl;
     return 0;
 }
 
