@@ -273,6 +273,8 @@ using namespace std;
     }
 int main()
 {
+    string s="abcab"; string t="ab";
+    s.find(t);
     vector<int> nums= {3,2,11,1},
     removeQueries={3,2,1,0};
     maximumSegmentSum(nums,removeQueries);
