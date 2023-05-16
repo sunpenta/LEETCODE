@@ -322,7 +322,7 @@ using namespace std;
         stack<int> sk;
         for (string s:tokens)
         {
-            if (stoi(s)>=-200 && stoi(s)<=200)
+            if (s!="+" && s!="-" && s!="*" && s!="/")
             {                
                 sk.push(stoi(s));
             }
