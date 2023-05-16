@@ -291,21 +291,39 @@ using namespace std;
             visit[i][j]=true;      
             for (auto d:dir)
             {
-                int nx=i+d[0], ny=j+d[1];
+                int nx=i+d[0], ny=j+d[1]; // 不能用i+=,会被之前的i影响
                 if (nx<0 || nx>=m || ny<0 || ny>=n || visit[nx][ny])
                     continue;
                 
                 int wait= (grid[nx][ny]-time)%2==0; // even
-                time=max(time+1,grid[nx][ny]+wait);
-                pq.push({time,nx,ny});
+                int ntime=max(time+1,grid[nx][ny]+wait); // 设新的变量ntime, 不能用time
+                pq.push({ntime,nx,ny});
             }
         }
         return -1;
     }
+    bool isValid(string s) {
+        unordered_map<char,char> mp={
+            {'(',')'},
+            {'[',']'},
+            {'{','}'}
+        };
+        stack<char> sk;
+        for (char ch:s)
+        {            
+            if (ch=='(' || ch=='[' || ch=='{')
+                sk.push(ch);
+            else if (!sk.empty() && sk.top()==mp[ch])
+                sk.pop();
+        }
+        return sk.empty();
+    }
 int main()
 {
-    vector<vector<int>> grid = {{0,1,3,2},{5,1,2,5},{4,3,8,6}};
-    minimumTime(grid);
+    string s="()";
+    isValid(s);
+    //vector<vector<int>> grid = {{0,1,3,2},{5,1,2,5},{4,3,8,6}};
+    //minimumTime(grid);
     //string s="abcab"; string t="ab";
     //s.find(t);
     //vector<int> nums= {3,2,11,1},
