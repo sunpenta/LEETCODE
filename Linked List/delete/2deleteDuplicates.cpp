@@ -7,7 +7,7 @@ ListNode* deleteDuplicates(ListNode* head);
 int main()
 {
     vector<int> nums={1,1,2,3,3};
-    ListNode* head=vectorToListNode(nums);
+    ListNode* head=ListNode::vectorToListNode(nums);
     ListNode* res=deleteDuplicates(head);
     res->print(); // output: 1 2 3
     return 0;

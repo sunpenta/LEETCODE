@@ -6,7 +6,7 @@ ListNode* rotateRight(ListNode* head, int k);
 int main()
 {
     vector<int> nums={1,2,3,4,5}; 
-    ListNode* head=vectorToListNode(nums); int k=2; // input
+    ListNode* head=ListNode::vectorToListNode(nums); int k=2; // input
     ListNode* res=rotateRight(head, k); // output: 4,5,1,2,3
     res->print();
     return 0;

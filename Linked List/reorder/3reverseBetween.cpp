@@ -5,7 +5,7 @@ ListNode* reverseBetween(ListNode*head,int left,int right);
 int main()
 {
     vector<int> nums={1,2,3,4,5}; 
-    ListNode* head=vectorToListNode(nums); int left = 2, right = 4; // input
+    ListNode* head=ListNode::vectorToListNode(nums); int left = 2, right = 4; // input
     ListNode* res=reverseBetween(head, left, right); // output: 1,4,3,2,5
     res->print();
 }

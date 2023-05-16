@@ -6,8 +6,8 @@ ListNode* mergeTwoLists(ListNode* l1,ListNode* l2);
 int main()
 {
     vector<int> nums1={1,2,4}, nums2={1,3,4}; 
-    ListNode* l1=vectorToListNode(nums1); 
-    ListNode* l2=vectorToListNode(nums2);
+    ListNode* l1=ListNode::vectorToListNode(nums1); 
+    ListNode* l2=ListNode::vectorToListNode(nums2);
     l1->print(); l2->print();
     ListNode* res=mergeTwoLists(l1,l2);
     res->print(); // output: 1,1,2,3,4,4

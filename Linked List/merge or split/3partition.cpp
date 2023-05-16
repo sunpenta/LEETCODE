@@ -7,7 +7,7 @@ ListNode* partition(ListNode*head, int x);
 int main()
 {
     vector<int> nums={1,2,3,4}; 
-    ListNode* l=vectorToListNode(nums); int x=2;
+    ListNode* l=ListNode::vectorToListNode(nums); int x=2;
     ListNode* res=partition(&l, x);
     res->print(); // output: 1 2 3
 }

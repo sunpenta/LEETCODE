@@ -6,7 +6,7 @@ ListNode* swapPairs(ListNode* head);
 int main()
 {
     vector<int> nums={2,1,4,3}; // input
-    ListNode* head=vectorToListNode(nums); 
+    ListNode* head=ListNode::vectorToListNode(nums); 
     ListNode* res=swapPairs(head); // output: 1 2 3 4
     res->print();
     return 0;

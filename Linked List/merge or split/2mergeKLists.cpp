@@ -13,7 +13,7 @@ int main()
     vector<ListNode*> lists(n);
     for (int i=0; i<n; ++i)
     {
-        lists[i]=vectorToListNode(nums[i]);
+        lists[i]=ListNode::vectorToListNode(nums[i]);
     }
     ListNode* res=mergeKLists(lists);
     res->print(); // output: 0 1 1 2 2 3 3 4 5

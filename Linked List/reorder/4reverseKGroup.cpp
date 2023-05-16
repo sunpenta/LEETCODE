@@ -5,7 +5,7 @@ ListNode* reverseKGroup(ListNode* head, int k);
 int main()
 {
     vector<int> nums={1,2,3,4,5}; 
-    ListNode* head=vectorToListNode(nums); int k=3; // input
+    ListNode* head=ListNode::vectorToListNode(nums); int k=3; // input
     ListNode* res=reverseKGroup(head, k); // output: 3,2,1,4,5
     res->print();
 }
