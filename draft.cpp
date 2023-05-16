@@ -271,31 +271,36 @@ using namespace std;
         }
         return res;
     }
-    int dfs(vector<vector<int>>& grid, vector<vector<int>>& dp, int i, int j)
-    {
-        int res=1e5+1;
-        int m=grid.size(), n=grid[0].size();
-        if (i==m-1 || j==n-1)
-            return 0;
-        int dx[4]={1,-1,0,0};
-        int dy[4]={0,0,1,-1};
-        for (int k=0; k<4; k++)
-        {
-            int nx=i+dx[k], ny=j+dy[k];
-            if (nx>=0 && nx<m && ny>=0 && ny<n &&  grid[nx][ny]<=res)
-            {
-                if(dp[nx][ny]==-1)
-                res=min(res,dfs(grid,dp,nx,ny)+1);
-            }    
-        }
-        dp[i][j]=res;
-        return res;
-    }
     int minimumTime(vector<vector<int>>& grid) {
         int m=grid.size(), n=grid[0].size();
-        vector<vector<int>> dp(m,vector<int>(n,-1));
-        dfs(grid,dp,0,0);
-        return dp[m-1][n-1];
+        if (grid[0][1]>1 && grid[1][0]>1)
+            return -1;
+        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>> > pq; // <time,row,col>
+        pq.push({grid[0][0],0,0});
+        vector<vector<int>> dir={{1,0},{-1,0},{0,1},{0,-1}};
+        vector<vector<bool>> visit(m,vector<bool>(n,false));
+        int i=0, j=0;
+        while (!pq.empty())
+        {
+            int time=pq.top()[0], i=pq.top()[1], j=pq.top()[2]; // cur
+            pq.pop();    
+            if (i==m-1 && j==n-1)
+                return time; 
+            if (visit[i][j])
+                continue;
+            visit[i][j]=true;      
+            for (auto d:dir)
+            {
+                int nx=i+d[0], ny=j+d[1];
+                if (nx<0 || ny>=m || nx<0 || ny>=n || visit[nx][ny])
+                    continue;
+                
+                int wait= (grid[nx][ny]-time)%2==0; // even
+                time=max(time+1,grid[nx][ny]+wait);
+                pq.push({time,nx,ny});
+            }
+        }
+        return -1;
     }
 int main()
 {

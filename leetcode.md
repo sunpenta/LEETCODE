@@ -50,15 +50,16 @@
 885 Spiral Matrix III
 ### string
 2663 Lexicographically Smallest Beautiful String
+### hash set或map
+* hash map
+2661 First Completely Painted Row or Column
+
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
 * 占据对象有限:
 1882 Process Tasks Using Servers
 2402 Meeting Rooms III
-### hash set或map
-* hash map
-2661 First Completely Painted Row or Column
 ### dp
 选或不选：
 2140 Solving Questions With Brainpower
@@ -66,7 +67,9 @@
 * 二叉树路径
 2673 Make Costs of Paths Equal in a Binary Tree
 * 图路径
+2684 Maximum Number of Moves in a Grid
 2662 Minimum Cost of a Path With Special Roads
+2577 Minimum Time to Visit a Cell In a Grid
 ### 设计类
 232 Implement Queue using Stacks
 641 Design Circular Deque
