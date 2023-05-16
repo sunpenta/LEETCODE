@@ -271,13 +271,41 @@ using namespace std;
         }
         return res;
     }
+    int dfs(vector<vector<int>>& grid, vector<vector<int>>& dp, int i, int j)
+    {
+        int res=1e5+1;
+        int m=grid.size(), n=grid[0].size();
+        if (i==m-1 && j==n-1)
+            return 0;
+        int dx[4]={1,-1,0,0};
+        int dy[4]={0,0,1,-1};
+        for (int k=0; k<4; k++)
+        {
+            int nx=i+dx[k], ny=j+dy[k];
+            if (nx>=0 && nx<m && ny>=0 && ny<n &&  grid[nx][ny]<=res)
+            {
+                if(dp[nx][ny]==-1)
+                res=min(res,dfs(grid,dp,nx,ny)+1);
+            }    
+        }
+        dp[i][j]=res;
+        return res;
+    }
+    int minimumTime(vector<vector<int>>& grid) {
+        int m=grid.size(), n=grid[0].size();
+        vector<vector<int>> dp(m,vector<int>(n,-1));
+        dfs(grid,dp,0,0);
+        return dp[m-1][n-1];
+    }
 int main()
 {
-    string s="abcab"; string t="ab";
-    s.find(t);
-    vector<int> nums= {3,2,11,1},
-    removeQueries={3,2,1,0};
-    maximumSegmentSum(nums,removeQueries);
+    vector<vector<int>> grid = {{0,1,3,2},{5,1,2,5},{4,3,8,6}};
+    minimumTime(grid);
+    //string s="abcab"; string t="ab";
+    //s.find(t);
+    //vector<int> nums= {3,2,11,1},
+    //removeQueries={3,2,1,0};
+    // maximumSegmentSum(nums,removeQueries);
         /*vector<int> nums={697035,181412,384958,575458};  // gcd(181412,384958)
         sort(nums.begin(),nums.end()); 
         int score=0, turn=nums.size()/2;
