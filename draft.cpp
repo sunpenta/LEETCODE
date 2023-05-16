@@ -355,7 +355,7 @@ using namespace std;
             dq.push_back(nums[i]);
         }
         res[0]=dq.front();
-        for (int i=k; i<n; k++)
+        for (int i=k; i<n; i++) // i++写成k++
         {
             if (!dq.empty() && dq.front()==nums[i-k])
                 dq.pop_front();
@@ -367,10 +367,29 @@ using namespace std;
         }
         return res;
     }
+    vector<int> topKFrequent(vector<int>& nums, int k) {
+        map<int,int> mp1; // <num,times>
+        multimap<int,int> mp2; // <times,num>
+        for (int num:nums)
+        {
+            mp1[num]++;
+            mp2.insert({mp1[num],num});
+        }
+        vector<int> res;
+        auto it=mp2.rbegin();
+        while (k--)
+        {
+            res.push_back(it->second);
+            it--;
+        }
+        return res;
+    }
 int main()
 {
-    vector<int> nums = {1,3,-1,-3,5,3,6,7}; int k = 3;
-    maxSlidingWindow(nums,k);
+    vector<int> nums={1,2}; int k=2;
+    topKFrequent(nums, k);
+    //vector<int> nums = {1,3,-1,-3,5,3,6,7}; int k = 3;
+    //maxSlidingWindow(nums,k);
     //vector<string>tokens = {"3","1","+","3","*"};
     //evalRPN(tokens);
     //string s="()";
