@@ -1,13 +1,12 @@
 // K个一组翻转链表(不修改节点内部的值,只能进行节点交换)  l-25
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 ListNode* reverseKGroup(ListNode* head, int k);
 
 int main()
 {
-    int arr[]={1,2,3,4,5}; 
-    int n=sizeof(arr)/sizeof(arr[0]);
-    ListNode head(arr, n); int k=3; // input
-    ListNode* res=reverseKGroup(&head, k); // output: 3,2,1,4,5
+    vector<int> nums={1,2,3,4,5}; 
+    ListNode* head=vectorToListNode(nums); int k=3; // input
+    ListNode* res=reverseKGroup(head, k); // output: 3,2,1,4,5
     res->print();
 }
 

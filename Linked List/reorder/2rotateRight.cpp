@@ -1,15 +1,15 @@
 // 旋转链表-链表节点右移  l-61
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 using namespace std;
 ListNode* rotateRight(ListNode* head, int k);
 
 int main()
 {
-    int arr[]={1,2,3,4,5}; 
-    int n=sizeof(arr)/sizeof(arr[0]);
-    ListNode head(arr, n); int k=2; // input
-    ListNode* res=rotateRight(&head, k); // output: 4,5,1,2,3
+    vector<int> nums={1,2,3,4,5}; 
+    ListNode* head=vectorToListNode(nums); int k=2; // input
+    ListNode* res=rotateRight(head, k); // output: 4,5,1,2,3
     res->print();
+    return 0;
 }
 
 ListNode* rotateRight(ListNode* head, int k) 

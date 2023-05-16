@@ -2,21 +2,19 @@
 // 0 <= k <= 10^4
 #include <vector>
 #include <queue>
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 using namespace std;
 ListNode* mergeKLists(vector<ListNode*>& lists);
 
 int main()
 {
-    vector<vector<int>> lists_v={{1,2,4}, {2,3,5}, {0,1,3}};
+    vector<vector<int>> nums={{1,2,4}, {2,3,5}, {0,1,3}};
     int n=lists_v.size();
     vector<ListNode*> lists(n);
     for (int i=0; i<n; ++i)
     {
-        ListNode* head=new ListNode(lists_v[i]);
-        lists[i]=head;
+        lists[i]=vectorToListNode(nums[i]);
     }
-    for (int i=0; i<n; ++i) lists[i]->print();
     ListNode* res=mergeKLists(lists);
     res->print(); // output: 0 1 1 2 2 3 3 4 5
     return 0;

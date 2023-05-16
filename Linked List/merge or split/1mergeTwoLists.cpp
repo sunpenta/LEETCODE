@@ -1,15 +1,15 @@
 // 合并两个升序列表-递归  l-21
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 using namespace std;
 ListNode* mergeTwoLists(ListNode* l1,ListNode* l2);
 
 int main()
 {
-    int arr1[]={1,2,4}, arr2[]={1,3,4}; 
-    int n1=sizeof(arr1)/sizeof(arr1[0]), n2=sizeof(arr2)/sizeof(arr2[0]);
-    ListNode l1(arr1, n1); ListNode l2(arr2,n2);
-    l1.print(); l2.print();
-    ListNode* res=mergeTwoLists(&l1,&l2);
+    vector<int> nums1={1,2,4}, nums2={1,3,4}; 
+    ListNode* l1=vectorToListNode(nums1); 
+    ListNode* l2=vectorToListNode(nums2);
+    l1->print(); l2->print();
+    ListNode* res=mergeTwoLists(l1,l2);
     res->print(); // output: 1,1,2,3,4,4
 }
 

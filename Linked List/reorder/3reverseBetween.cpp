@@ -1,13 +1,12 @@
 // 反转链表- 一次遍历-头插法  l-92
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 ListNode* reverseBetween(ListNode*head,int left,int right);
 
 int main()
 {
-    int arr[]={1,2,3,4,5}; 
-    int n=sizeof(arr)/sizeof(arr[0]);
-    ListNode head(arr, n); int left = 2, right = 4; // input
-    ListNode* res=reverseBetween(&head, left, right); // output: 1,4,3,2,5
+    vector<int> nums={1,2,3,4,5}; 
+    ListNode* head=vectorToListNode(nums); int left = 2, right = 4; // input
+    ListNode* res=reverseBetween(head, left, right); // output: 1,4,3,2,5
     res->print();
 }
 

@@ -1,15 +1,14 @@
 // 删除链表重复元素 l-83
 // 保留1个重复元素；长度[0, 300], 链表按升序排列, Node.val∈[-100,100] 
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 using namespace std;
 ListNode* deleteDuplicates(ListNode* head);
 
 int main()
 {
-    int arr[]={1,1,2,3,3};
-    int n=sizeof(arr)/sizeof(arr[0]);
-    ListNode head(arr, n);
-    ListNode* res=deleteDuplicates(&head);
+    vector<int> nums={1,1,2,3,3};
+    ListNode* head=vectorToListNode(nums);
+    ListNode* res=deleteDuplicates(head);
     res->print(); // output: 1 2 3
     return 0;
 }

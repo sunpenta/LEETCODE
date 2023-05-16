@@ -1,14 +1,13 @@
 // 分隔链表  l-86
 // -100 <= Node.val <= 100; -200 <= x <= 200
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 using namespace std;
 ListNode* partition(ListNode*head, int x);
 
 int main()
 {
-    int arr[]={1,2,3,4}; 
-    int n=sizeof(arr)/sizeof(arr[0]);
-    ListNode l(arr, n); int x=2;
+    vector<int> nums={1,2,3,4}; 
+    ListNode* l=vectorToListNode(nums); int x=2;
     ListNode* res=partition(&l, x);
     res->print(); // output: 1 2 3
 }
