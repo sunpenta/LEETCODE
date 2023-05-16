@@ -80,6 +80,10 @@ Remove Duplicates From an Unsorted Linked List（会员）
 71 简化路径
 #### 单调
 239 slide window的最大值
+42 接雨水
+84 柱状图中的最大矩形
+85 最大矩形
+739 每日温度
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
