@@ -372,8 +372,11 @@ using namespace std;
         multimap<int,int> mp2; // <times,num>
         for (int num:nums)
         {
-            mp1[num]++;
-            mp2.insert({mp1[num],num});
+            mp1[num]++;            
+        }
+        for (auto it:mp1)
+        {
+            mp2.insert({it.second,it.first});
         }
         vector<int> res;
         auto it=mp2.rbegin();
@@ -386,7 +389,7 @@ using namespace std;
     }
 int main()
 {
-    vector<int> nums={1,2}; int k=2;
+    vector<int> nums={1,1,1,2,2,2,3,3,3}; int k=3;
     topKFrequent(nums, k);
     //vector<int> nums = {1,3,-1,-3,5,3,6,7}; int k = 3;
     //maxSlidingWindow(nums,k);
