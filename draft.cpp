@@ -383,7 +383,7 @@ using namespace std;
         while (k--)
         {
             res.push_back(it->second);
-            it--;
+            it++;
         }
         return res;
     }
