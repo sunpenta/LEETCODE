@@ -344,10 +344,35 @@ using namespace std;
         }
         return sk.top();
     }
+    vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        deque<int> dq;
+        int n=nums.size(), maxnum=0;
+        vector<int> res(n-k+1);
+        for (int i=0; i<k; i++)
+        {
+            while (!dq.empty() && nums[i]>dq.back())
+                dq.pop_back();            
+            dq.push_back(nums[i]);
+        }
+        res[0]=dq.front();
+        for (int i=k; i<n; k++)
+        {
+            if (!dq.empty() && dq.front()==nums[i-k])
+                dq.pop_front();
+            
+            while (!dq.empty() && nums[i]>dq.back())
+                dq.pop_back();
+            dq.push_back(nums[i]);
+            res[i-k+1]=dq.front();
+        }
+        return res;
+    }
 int main()
 {
-    vector<string>tokens = {"3","1","+","3","*"};
-    evalRPN(tokens);
+    vector<int> nums = {1,3,-1,-3,5,3,6,7}; int k = 3;
+    maxSlidingWindow(nums,k);
+    //vector<string>tokens = {"3","1","+","3","*"};
+    //evalRPN(tokens);
     //string s="()";
     //isValid(s);
     //vector<vector<int>> grid = {{0,1,3,2},{5,1,2,5},{4,3,8,6}};
