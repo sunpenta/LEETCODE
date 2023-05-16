@@ -1,27 +1,14 @@
 // 删除链表倒数第N个节点  l-19
 #include "ListNode.h"
-#include <iostream>
+using namespace std;
 ListNode* removeNthFromEnd(ListNode* head,int n);
-void foo() {
-    std::cout << "Entering foo()" << std::endl;
 
-    // do some stuff
+int main()
+{
     int arr[4]={2,1,4,3}; 
     ListNode head(arr, 4); int n=2;
     ListNode* res=removeNthFromEnd(&head,n);
     res->print(); // output: 2 1 3
-
-    std::cout << "Leaving foo()" << std::endl;
-}
-int main()
-{
-    std::cout << "Starting main()" << std::endl;
-
-    foo();
-
-    std::cout << "Exiting main()" << std::endl;
-
-    return 0;
 }
 
 int getLength(ListNode* head)
