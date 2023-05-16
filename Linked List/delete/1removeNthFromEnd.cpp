@@ -1,5 +1,5 @@
 // 删除链表倒数第N个节点  l-19
-#include "C:\Users\Auly\Desktop\LEETCODE\leetcode\Linked List\ListNode.cpp"
+#include "ListNode.h"
 using namespace std;
 ListNode* removeNthFromEnd(ListNode* head,int n);
 
