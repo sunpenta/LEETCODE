@@ -1,4 +1,4 @@
-### sum
+### 数组sum
 * 1-D array:
 1 Two Sum (brute force, 2pointers, hash)
 2660 Determine the Winner of a Bowling Game
@@ -6,12 +6,16 @@
 * 2-D array:
 1572 Matrix Diagonal Sum
 ### 移除元素
-* 数组
+* 数组（原地）
 27 Remove Element
 26 Remove Duplicates from Sorted Array
 283 Move Zeroes
 * 字符串
 844 Backspace String Compare
+* 链表
+19 删除链表倒数第N个节点
+82 Remove Duplicates from Sorted List II
+83 Remove Duplicates from Sorted List
 ### 数组重排序
 977 Squares of a Sorted Array
 31 Next Permutation
@@ -53,6 +57,7 @@
 ### hash set或map
 * hash map
 2661 First Completely Painted Row or Column
+### 栈和队列
 
 ### 优先队列
 * 占据对象无限：
