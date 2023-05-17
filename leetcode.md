@@ -53,6 +53,7 @@ Remove Duplicates From an Unsorted Linked List（会员）
 59 Spiral Matrix II
 2326 Spiral Matrix IV
 885 Spiral Matrix III
+422 valid word square
 ### string
 2663 Lexicographically Smallest Beautiful String
 ### hash set或map
