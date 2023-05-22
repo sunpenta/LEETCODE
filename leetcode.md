@@ -4,6 +4,7 @@
 1 Two Sum (brute force, 2pointers, hash)
 2660 Determine the Winner of a Bowling Game
 209 Minimum Size Subarray Sum
+2640 Find the Score of All Prefixes of an Array
 * 2-D array:
 1572 Matrix Diagonal Sum
 #### 链表
@@ -99,6 +100,18 @@ Remove Duplicates From an Unsorted Linked List（会员）
 ### dp
 选或不选：
 2140 Solving Questions With Brainpower
+### 图
+* 包围问题
+130 Surrounded Regions
+1020 Number of Enclaves
+934 Shortest Bridge
+1254 Number of Closed Islands
+* 路径
+\* dp
+2684 Maximum Number of Moves in a Grid
+\* dijkstra
+2662 Minimum Cost of a Path With Special Roads
+2577 Minimum Time to Visit a Cell In a Grid
 ### 路径
 #### 二叉树路径
 2673 Make Costs of Paths Equal in a Binary Tree
