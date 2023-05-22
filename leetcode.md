@@ -112,6 +112,8 @@ Remove Duplicates From an Unsorted Linked List（会员）
 \* dijkstra
 2662 Minimum Cost of a Path With Special Roads
 2577 Minimum Time to Visit a Cell In a Grid
+\* 有权重，用adj[][]表示
+2642 Design Graph With Shortest Path Calculator
 ### 路径
 #### 二叉树路径
 2673 Make Costs of Paths Equal in a Binary Tree
