@@ -403,7 +403,7 @@ using namespace std;
     }
     int minCost(int n, vector<int>& cuts) {
         map<int,int> sticks;
-        sticks[0]=n;
+        sticks[0]=n-1;
         unordered_set<int> st(cuts.begin(),cuts.end());
         int res=0;
         while (!st.empty())
