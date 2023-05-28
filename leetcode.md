@@ -123,7 +123,10 @@ Remove Duplicates From an Unsorted Linked List（会员）
 * dijkstra
 2662 Minimum Cost of a Path With Special Roads
 2577 Minimum Time to Visit a Cell In a Grid
+* 有权重，用adj[][]表示
+2642 Design Graph With Shortest Path Calculator
 ### 设计类
 232 Implement Queue using Stacks
 641 Design Circular Deque
 2671 Frequency Tracker
+2642 Design Graph With Shortest Path Calculator
