@@ -388,10 +388,48 @@ using namespace std;
         }
         return res;
     }
+    int find_nearest(int start, int end, vector<int>& cuts)
+    {
+        int dif=end-start, mid=(start+end)/2, res=1e6+1;
+        for (int pos:cuts)
+        {
+            if (pos>start && pos<end && abs(pos-mid)<dif)
+            {
+                dif=abs(pos-mid);
+                res=pos;
+            }
+        }
+        return res;
+    }
+    int minCost(int n, vector<int>& cuts) {
+        map<int,int> sticks;
+        sticks[0]=n;
+        unordered_set<int> st(cuts.begin(),cuts.end());
+        int res=0;
+        while (!st.empty())
+        {
+            for (auto it:sticks)
+            {
+                int start=it.first, end=it.second;
+                int pos=find_nearest(start,end,cuts);
+                if (pos!=1e6+1)
+                {
+                    st.erase(pos);
+                    sticks[start]=pos;
+                    sticks[pos]=end;
+                    sticks.erase(start);
+                    res+=end-start+1;
+                }
+            }
+        }
+        return res;
+    }
 int main()
 {
-    vector<int> nums={1,1,1,2,2,2,3,3,3}; int k=3;
-    topKFrequent(nums, k);
+    int n=7; vector<int> cuts={1,3,4,5};
+    minCost(n,cuts);
+    // vector<int> nums={1,1,1,2,2,2,3,3,3}; int k=3;
+    // topKFrequent(nums, k);
     //vector<int> nums = {1,3,-1,-3,5,3,6,7}; int k = 3;
     //maxSlidingWindow(nums,k);
     //vector<string>tokens = {"3","1","+","3","*"};
