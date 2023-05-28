@@ -393,7 +393,7 @@ using namespace std;
         int dif=end-start, mid=(start+end)/2, res=1e6+1;
         for (int pos:st)
         {
-            if (pos>start && pos<end && abs(pos-mid)<dif)
+            if (pos>start && pos<end && (abs(pos-mid)<dif || abs(pos-mid)==dif && pos>res))
             {
                 dif=abs(pos-mid);
                 res=pos;
