@@ -388,10 +388,10 @@ using namespace std;
         }
         return res;
     }
-    int find_nearest(int start, int end, vector<int>& cuts)
+    int find_nearest(int start, int end, unordered_set<int> st)
     {
         int dif=end-start, mid=(start+end)/2, res=1e6+1;
-        for (int pos:cuts)
+        for (int pos:st)
         {
             if (pos>start && pos<end && abs(pos-mid)<dif)
             {
@@ -411,7 +411,7 @@ using namespace std;
             for (auto it:sticks)
             {
                 int start=it.first, end=it.second;
-                int pos=find_nearest(start,end,cuts);
+                int pos=find_nearest(start,end,st);
                 if (pos!=1e6+1)
                 {
                     st.erase(pos);
