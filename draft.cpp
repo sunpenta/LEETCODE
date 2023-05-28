@@ -420,6 +420,7 @@ using namespace std;
                     sticks[pos]=end;
                     
                     res+=end-start+1;
+                    break;
                 }
             }
         }
