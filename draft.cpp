@@ -415,9 +415,10 @@ using namespace std;
                 if (pos!=1e6+1)
                 {
                     st.erase(pos);
+                    sticks.erase(start);
                     sticks[start]=pos;
                     sticks[pos]=end;
-                    sticks.erase(start);
+                    
                     res+=end-start+1;
                 }
             }
