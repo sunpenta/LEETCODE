@@ -403,7 +403,7 @@ using namespace std;
     }
     int minCost(int n, vector<int>& cuts) {
         map<int,int> sticks;
-        sticks[0]=n-1;
+        sticks[0]=n;
         unordered_set<int> st(cuts.begin(),cuts.end());
         int res=0;
         while (!st.empty())
@@ -428,7 +428,7 @@ using namespace std;
     }
 int main()
 {
-    int n=7; vector<int> cuts={1,3,4,5};
+    int n=5; vector<int> cuts={3,1,4};
     minCost(n,cuts);
     // vector<int> nums={1,1,1,2,2,2,3,3,3}; int k=3;
     // topKFrequent(nums, k);
