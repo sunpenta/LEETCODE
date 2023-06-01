@@ -1,27 +1,27 @@
 ### sum
 #### 数组
 * 1-D array:
-[1 Two Sum (brute force, 2pointers, hash)](leetcode/)
-[2660 Determine the Winner of a Bowling Game](leetcode/)
-[209 Minimum Size Subarray Sum](leetcode/)
-[2640 Find the Score of All Prefixes of an Array](leetcode/)
+[1 Two Sum (brute force, 2pointers, hash)]()
+[2660 Determine the Winner of a Bowling Game]()
+[209 Minimum Size Subarray Sum]()
+[2640 Find the Score of All Prefixes of an Array]()
 * 2-D array:
-[1572 Matrix Diagonal Sum](leetcode/)
+[1572 Matrix Diagonal Sum]()
 #### 链表
 [2130 Maximum Twin Sum of a Linked List]()
 ### 移除元素
 #### 数组（原地）
 [27 Remove Element]()
 [26 Remove Duplicates from Sorted Array]()
-[283 Move Zeroes](leetcode/)
+[283 Move Zeroes]()
 #### 字符串
-[844 Backspace String Compare](leetcode/)
-[2663 Lexicographically Smallest Beautiful String](leetcode/)
+[844 Backspace String Compare]()
+[2663 Lexicographically Smallest Beautiful String]()
 #### 链表
-19 删除链表倒数第N个节点
-82 Remove Duplicates from Sorted List II
-83 Remove Duplicates from Sorted List
-Remove Duplicates From an Unsorted Linked List（会员）
+[19 删除链表倒数第N个节点](Linked List/delete/)
+[82 Remove Duplicates from Sorted List II]()
+[83 Remove Duplicates from Sorted List]()
+[Remove Duplicates From an Unsorted Linked List]()
 ### 数组重排序
 977 Squares of a Sorted Array
 31 Next Permutation
