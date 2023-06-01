@@ -6,17 +6,17 @@
 [209 Minimum Size Subarray Sum](leetcode/)
 [2640 Find the Score of All Prefixes of an Array](leetcode/)
 * 2-D array:
-1572 Matrix Diagonal Sum
+[1572 Matrix Diagonal Sum](leetcode/)
 #### 链表
-2130 Maximum Twin Sum of a Linked List
+[2130 Maximum Twin Sum of a Linked List]()
 ### 移除元素
 #### 数组（原地）
-27 Remove Element
-26 Remove Duplicates from Sorted Array
-283 Move Zeroes
+[27 Remove Element]()
+[26 Remove Duplicates from Sorted Array]()
+[283 Move Zeroes](leetcode/)
 #### 字符串
-844 Backspace String Compare
-2663 Lexicographically Smallest Beautiful String
+[844 Backspace String Compare](leetcode/)
+[2663 Lexicographically Smallest Beautiful String](leetcode/)
 #### 链表
 19 删除链表倒数第N个节点
 82 Remove Duplicates from Sorted List II
