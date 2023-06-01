@@ -11,20 +11,20 @@
 [2130 Maximum Twin Sum of a Linked List]()
 ### 移除元素
 #### 数组（原地）
-[27 Remove Element]()
-[26 Remove Duplicates from Sorted Array]()
-[283 Move Zeroes]()
+[27 Remove Element](/leetcode/array/removeElement(in%20place)/1removeElement.cpp)
+[26 Remove Duplicates from Sorted Array](/leetcode/array/removeElement(in%20place)/2removeDuplicates.cpp)
+[283 Move Zeroes](/leetcode/array/removeElement(in%20place)/3moveZeros~1.cpp)
 #### 字符串
-[844 Backspace String Compare]()
-[2663 Lexicographically Smallest Beautiful String]()
+[844 Backspace String Compare]
+[2663 Lexicographically Smallest Beautiful String]
 #### 链表
 [19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)
 [82 移除重复元素 II](/leetcode/Linked%20List/delete/2deleteDuplicates.cpp)
 [83 移除所有重复元素](/leetcode/Linked%20List/delete/3deleteDuplicates.cpp)
 [1836 Remove Duplicates From an Unsorted Linked List]()
 ### 数组重排序
-977 Squares of a Sorted Array
-31 Next Permutation
+[977 Squares of a Sorted Array]()
+[31 Next Permutation]()
 ### 双指针
 * 数组
 11 盛水最多的容器
