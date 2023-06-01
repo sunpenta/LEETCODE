@@ -1,4 +1,4 @@
-// 串联所有字符串的子串开始索引-滑动窗口+map  l-30
+// 串联所有字符串的子串开始索引 - 滑动窗口+map  l-30
 // 1 <= s.length <= 1e4; 1 <= words.length <= 5000; 1 <= words[i].length <= 30
 #include <bits/stdc++.h>
 using namespace std;
