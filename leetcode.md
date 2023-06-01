@@ -51,8 +51,10 @@
 [2300 Successful Pairs of Spells and Potions](/leetcode/BinarySearch/Application/successfulPairs.cpp)
 ### 滑动窗口
 #### subarray
-209 Minimum Size Subarray Sum
+[209 Minimum Size Subarray Sum]
 904 Fruit Into Baskets
+[643 寻找最大平均值](/leetcode/slidingWindow/vector/1findMaxAverage.cpp)
+[713 子数组积小于k](/leetcode/slidingWindow/vector/2numSubarrayProductLessThanK.cpp)
 #### substring
 76 Minimum Window Substring
 ### 矩阵模拟
