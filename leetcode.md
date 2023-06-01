@@ -18,7 +18,7 @@
 [844 Backspace String Compare]()
 [2663 Lexicographically Smallest Beautiful String]()
 #### 链表
-[19 删除链表倒数第N个节点](Linked List/delete/)
+[19 删除链表倒数第N个节点](Linked List/delete/1removeNthFromEnd.cpp)
 [82 Remove Duplicates from Sorted List II]()
 [83 Remove Duplicates from Sorted List]()
 [Remove Duplicates From an Unsorted Linked List]()
