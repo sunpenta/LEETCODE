@@ -18,10 +18,10 @@
 [844 Backspace String Compare]()
 [2663 Lexicographically Smallest Beautiful String]()
 #### 链表
-[19 删除链表倒数第N个节点](Linked List/delete/1removeNthFromEnd.cpp)
-[82 Remove Duplicates from Sorted List II]()
-[83 Remove Duplicates from Sorted List]()
-[Remove Duplicates From an Unsorted Linked List]()
+[19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)
+[82 移除重复元素 II](/leetcode/Linked%20List/delete/2deleteDuplicates.cpp)
+[83 移除所有重复元素](/leetcode/Linked%20List/delete/3deleteDuplicates.cpp)
+[1836 Remove Duplicates From an Unsorted Linked List]()
 ### 数组重排序
 977 Squares of a Sorted Array
 31 Next Permutation
