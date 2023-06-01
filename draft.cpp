@@ -426,10 +426,43 @@ using namespace std;
         }
         return res;
     }
+    string findLexSmallestString(string s, int a, int b) {
+        set<string> st;
+        queue<string> q;
+        st.insert(s);
+        q.push(s);
+        int n=s.length();
+        while (!q.empty())
+        {
+            string s=q.front();
+            q.pop();
+            string s1=s, s2=s;
+            for (int i=1; i<s1.length(); i+=2)
+            {
+                s1[i]=(s[i]-'0'+a)%10 + '0';
+            }
+            
+            if (!st.count(s1))
+            {
+                q.push(s1);
+                st.insert(s1);
+            }
+            rotate(s2.begin(), s2.end()+n-b, s2.end());
+            if (!st.count(s2))
+            {
+                q.push(s2);
+                st.insert(s2);
+            }       
+        }
+        string t=*st.begin();
+        return t;
+    }
 int main()
 {
-    int n=5; vector<int> cuts={3,1,4};
-    minCost(n,cuts);
+    string s="0011"; int a=4, b=2;
+    findLexSmallestString(s,a,b);
+    // int n=5; vector<int> cuts={3,1,4};
+    // minCost(n,cuts);
     // vector<int> nums={1,1,1,2,2,2,3,3,3}; int k=3;
     // topKFrequent(nums, k);
     //vector<int> nums = {1,3,-1,-3,5,3,6,7}; int k = 3;
