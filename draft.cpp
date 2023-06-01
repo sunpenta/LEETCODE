@@ -457,10 +457,11 @@ using namespace std;
         string t=*st.begin();
         return t;
     }
+
 int main()
 {
-    string s="0011"; int a=4, b=2;
-    findLexSmallestString(s,a,b);
+    // string s="0011"; int a=4, b=2;
+    // findLexSmallestString(s,a,b);
     // int n=5; vector<int> cuts={3,1,4};
     // minCost(n,cuts);
     // vector<int> nums={1,1,1,2,2,2,3,3,3}; int k=3;
