@@ -31,7 +31,8 @@
 [42 接雨水](/leetcode/two_pointers/1.2trap.cpp)
 [977 Squares of a Sorted Array]
 [16 三数之和](/leetcode/two_pointers/2.1threeSumClosest.cpp)
-[四数之和](/leetcode/two_pointers/2.2fourSum.cpp)
+[18 四数之和](/leetcode/two_pointers/2.2fourSum.cpp)
+[1574 移除最短子数组有序](/leetcode/two_pointers/3findShortestSubarray.cpp)
 * 链表
 中位数
 判断环的节点处

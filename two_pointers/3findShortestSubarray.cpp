@@ -1,4 +1,4 @@
-//  移除最短子数组使数组有序 - double ptr  l-1574  -DP/vector/1 | prefixSum
+//  移除最短子数组有序 - double ptr  l-1574  -DP/vector/1 | prefixSum
 // nums.length∈[1,1e5]
 #include <iostream>
 #include <vector>
