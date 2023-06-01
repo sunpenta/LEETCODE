@@ -1,4 +1,4 @@
-### sum
+### SUM
 #### 数组
 * 1-D array:
 [1 Two Sum (brute force, 2pointers, hash)]()
@@ -38,11 +38,11 @@
 判断环的节点处
 ### 二分查找
 #### 基础
-704 Binary Search
-35 Search Insert Position
-34 Find First and Last Position of Element in Sorted Array
-33 Search in Rotated Sorted Array
-81 Search in Rotated Sorted Array II
+[704 Binary Search](/leetcode/BinarySearch/Foundation/1search.cpp)
+[35 Search Insert Position](/leetcode/BinarySearch/Foundation/2searchInsert.cpp)
+[34 Find First and Last Position of Element in Sorted Array](/leetcode/BinarySearch/Foundation/3searchRange.cpp)
+[33 Search in Rotated Sorted Array](/leetcode/BinarySearch/Foundation/4search.cpp)
+[81 Search in Rotated Sorted Array II](/leetcode/BinarySearch/Foundation/5search.cpp)
 #### 应用
 69 Sqrt(x)
 367 Valid Perfect Square
