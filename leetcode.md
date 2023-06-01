@@ -30,6 +30,9 @@
 [11 盛水最多的容器](/leetcode/two_pointers/1.1maxArea.cpp)
 [42 接雨水](/leetcode/two_pointers/1.2trap.cpp)
 [977 Squares of a Sorted Array]
+[16 三数之和](/leetcode/two_pointers/2.1threeSumClosest.cpp)
+[四数之和](/leetcode/two_pointers/2.2fourSum.cpp)
+* 链表
 中位数
 判断环的节点处
 ### 二分查找
