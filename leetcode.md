@@ -27,11 +27,9 @@
 [31 Next Permutation]()
 ### 双指针
 * 数组
-11 盛水最多的容器
-42 接雨水
-977 Squares of a Sorted Array
-* 链表
-19 删除链表倒数第N个节点
+[11 盛水最多的容器](/leetcode/two_pointers/1.1maxArea.cpp)
+[42 接雨水](/leetcode/two_pointers/1.2trap.cpp)
+[977 Squares of a Sorted Array]
 中位数
 判断环的节点处
 ### 二分查找
