@@ -1,10 +1,10 @@
 ### sum
 #### 数组
 * 1-D array:
-1 Two Sum (brute force, 2pointers, hash)
-2660 Determine the Winner of a Bowling Game
-209 Minimum Size Subarray Sum
-2640 Find the Score of All Prefixes of an Array
+[1 Two Sum (brute force, 2pointers, hash)](leetcode/)
+[2660 Determine the Winner of a Bowling Game](leetcode/)
+[209 Minimum Size Subarray Sum](leetcode/)
+[2640 Find the Score of All Prefixes of an Array](leetcode/)
 * 2-D array:
 1572 Matrix Diagonal Sum
 #### 链表
