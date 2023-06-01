@@ -56,7 +56,9 @@
 [643 寻找最大平均值](/leetcode/slidingWindow/vector/1findMaxAverage.cpp)
 [713 子数组积小于k](/leetcode/slidingWindow/vector/2numSubarrayProductLessThanK.cpp)
 #### substring
-76 Minimum Window Substring
+[3 最长子串](/leetcode/slidingWindow/string/1lengthOfLongestSubstring.cpp)
+[76 Minimum Window Substring](/leetcode/slidingWindow/string/2.1minWindow.cpp)
+[30 串联所有字符串的子串开始索引](/leetcode/slidingWindow/string/3findSubstring.cpp)
 ### 矩阵模拟
 54 Spiral Matrix
 59 Spiral Matrix II
