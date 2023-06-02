@@ -30,11 +30,9 @@ string printJam(string s, int l, int h)
         return (s[i]<'a'+h && s[i]>='a'+'l'-1);
     };
     int n=s.length();
-    for (int i=n-1; i>=0; i++)
+    for (int i=n-1; i>=0; i--)
     {
         ++s[i];
-        while (!valid(i))
-            ++s[i];
         if (valid(i))
         {
             for (i = i + 1; i < n; ++i)
