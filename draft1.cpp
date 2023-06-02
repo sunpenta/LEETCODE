@@ -38,15 +38,16 @@ string printJam(string s, int l, int h)
         if (s[i]<'a'+h && s[i]>='a'+l-1)
         {
             char ch=s[i];
-            for (int j=i+1; j < n; ++j)
+            int j=i+1;
+            for (; j < n; ++j)
             {                
                 ch++;
                 s[j] = ch;
-                if (valid(j))
-                    return s;
-                else
-                    break;
-            }                      
+            } 
+            if (valid(j))
+                return s;
+            else
+                break;                    
         }
     }
     return "";
