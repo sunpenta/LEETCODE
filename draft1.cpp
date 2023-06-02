@@ -40,7 +40,7 @@ string printJam(string s, int l, int h)
             for (int j= 0; i+j+1 < n; ++j)
             {
                 s[i+j+1] = 'a'+l-1+j;
-                if (s[i]<=s[i-1]) continue;
+                if (s[i+1]<=s[i]) continue;
                 return s;
             }                      
         }
