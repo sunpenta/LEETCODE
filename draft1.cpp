@@ -39,13 +39,14 @@ string printJam(string s, int l, int h)
         {
             char ch=s[i];
             int j=i+1;
-            for (; j < n && valid(j); ++j)
+            for (; j < n; ++j)
             {                
                 ch++;
                 s[j] = ch;
+                if (!valid(j)) break;
             } 
             
-                return s;                   
+            return s;                   
         }
     }
     return "";
