@@ -27,7 +27,7 @@ string printJam(string s, int l, int h)
 {
     auto valid = [&](int i)
     {
-        return (s[i]<'a'+h && s[i]>='a'+l-1);
+        return (s[i]<'a'+h && s[i]>='a'+l-1 && s[i]>s[i-1]);
     };
     int n=s.length();
     for (int i=n-1; i>=0; i--)
@@ -36,7 +36,7 @@ string printJam(string s, int l, int h)
         if (valid(i))
         {
             for (i = i + 1; i < n; ++i)
-                s[i]='a'+l-1;
+                for (s[i] = 'a'+l-1; !valid(i); ++s[i]) ;
             return s;           
         }
     }
