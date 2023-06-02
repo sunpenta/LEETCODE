@@ -4,14 +4,12 @@ string printJam(string s, int l, int h);
 
 int main()
 {
-    // int l, h, w;
-    // cin>>l>>h>>w;
-    // string s;
-    // cin>>s;
+    int l, h, w;
+    cin>>l>>h>>w;
+    string s;
+    cin>>s;  
+    // string s="bdfij"; int l=2, h=10;
     int t=5;
-    string s="bdfij"; int l=2, h=10;
-    cout<<s<<endl;
-    cout<<printJam(s,l,h)<<endl;
     while (t--)
     {
         s=printJam(s,l,h);
