@@ -42,8 +42,8 @@ string printJam(string s, int l, int h)
             {                
                 ch++;
                 s[i] = ch;
-                if (s[i+1]<=s[i]) break;
-                return s;
+                if (valid(i))
+                    return s;
             }                      
         }
     }
