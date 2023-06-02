@@ -44,6 +44,8 @@ string printJam(string s, int l, int h)
                 s[i] = ch;
                 if (valid(i))
                     return s;
+                else
+                    break;
             }                      
         }
     }
