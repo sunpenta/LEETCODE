@@ -14,9 +14,9 @@ int main()
     cout<<printJam(s,l,h)<<endl;
     while (t--)
     {
-        string t=printJam(s,l,h);
-        if (t!="")
-            cout<<t<<endl;
+        s=printJam(s,l,h);
+        if (s!="")
+            cout<<s<<endl;
         else
             break;
     }
