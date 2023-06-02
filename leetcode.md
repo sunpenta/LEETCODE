@@ -72,10 +72,10 @@
 2661 First Completely Painted Row or Column
 ### 链表
 #### 移除元素
-19 删除链表倒数第N个节点
-82 Remove Duplicates from Sorted List II
-83 Remove Duplicates from Sorted List
-Remove Duplicates From an Unsorted Linked List（会员）
+[19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)
+[82 移除重复元素 II](/leetcode/Linked%20List/delete/2deleteDuplicates.cpp)
+[83 移除所有重复元素](/leetcode/Linked%20List/delete/3deleteDuplicates.cpp)
+[1836 Remove Duplicates From an Unsorted Linked List]()
 #### 合并或分割链表
 21 合并两个升序列表
 23 合并k个升序链表
