@@ -25,7 +25,7 @@ int main()
 
 string printJam(string s, int l, int h)
 {
-    auto valid = [&](int i)  // use subfunction TLE
+    auto valid = [&](int i)
     {
         return (s[i]<'a'+h && s[i]>='a'+'l'-1);
     };
@@ -36,7 +36,7 @@ string printJam(string s, int l, int h)
         if (valid(i))
         {
             for (i = i + 1; i < n; ++i)
-                for (s[i] = 'a'; !valid(i); ++s[i]) ;
+                s[i]='a'+'l'-1;
             return s;           
         }
     }
