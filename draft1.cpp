@@ -37,9 +37,9 @@ string printJam(string s, int l, int h)
             ++s[i];
         if (valid(i))
         {
-            for (i = i + 1; i < s.size(); ++i)
-                for (s[i] = s[i]+'l'-1; !valid(i); ++s[i]) ;
-                return s;           
+            for (i = i + 1; i < n; ++i)
+                for (s[i] = 'a'; !valid(i); ++s[i]) ;
+            return s;           
         }
     }
     return "";
