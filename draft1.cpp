@@ -12,14 +12,14 @@ int main()
     string s="bdfij"; int l=2, h=10;
     cout<<s<<endl;
     cout<<printJam(s,l,h)<<endl;
-    // while (t--)
-    // {
-    //     string t=printJam(s,l,h);
-    //     if (t!="")
-    //         cout<<t<<endl;
-    //     else
-    //         break;
-    // }
+    while (t--)
+    {
+        string t=printJam(s,l,h);
+        if (t!="")
+            cout<<t<<endl;
+        else
+            break;
+    }
     return 0;
 }
 
@@ -32,8 +32,7 @@ string printJam(string s, int l, int h)
     int n=s.length();
     for (int i=n-1; i>=0; i--)
     {
-        ++s[i];
-      
+        ++s[i];     
         if (s[i]<'a'+h && s[i]>='a'+l-1)
         {
             int j=i+1;
@@ -48,4 +47,3 @@ string printJam(string s, int l, int h)
     }
     return "";
 }
-// b-j
