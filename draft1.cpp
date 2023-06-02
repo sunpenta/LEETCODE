@@ -33,6 +33,8 @@ string printJam(string s, int l, int h)
     for (int i=n-1; i>=0; i--)
     {
         ++s[i];
+        while (!valid(i))
+            ++s[i];       
         if (valid(i))
         {
             for (i = i + 1; i < n; ++i)
@@ -42,3 +44,4 @@ string printJam(string s, int l, int h)
     }
     return "";
 }
+// b-j
