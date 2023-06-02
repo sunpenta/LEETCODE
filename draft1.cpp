@@ -35,7 +35,7 @@ string printJam(string s, int l, int h)
         ++s[i];
         while (!valid(i))
             ++s[i];       
-        if (valid(i))
+        if (s[i]<'a'+h && s[i]>='a'+l-1)
         {
             for (i = i + 1; i < n; ++i)
                 for (s[i] = 'a'+l-1; !valid(i); ++s[i]) ;
