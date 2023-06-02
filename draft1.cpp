@@ -33,20 +33,17 @@ string printJam(string s, int l, int h)
     for (int i=n-1; i>=0; i--)
     {
         ++s[i];
-        while (s[i]<=s[i-1])
-            ++s[i];       
+      
         if (s[i]<'a'+h && s[i]>='a'+l-1)
         {
-            char ch=s[i];
             int j=i+1;
             for (; j < n; ++j)
             {                
-                ch++;
-                s[j] = ch;
-                if (!valid(j)) break;
-            } 
-            
-            return s;                   
+                s[j] = s[j-1]+1;
+                if (s[j]>='a'+h) break;
+            }
+            if (j==n-1)           
+                return s;                   
         }
     }
     return "";
