@@ -9,14 +9,16 @@ int main()
     string s;
     cin>>s;
     int t=5;
-    while (t--)
-    {
-        string t=printJam(s,l,h);
-        if (t!="")
-            cout<<t<<endl;
-        else
-            break;
-    }
+
+    cout<<printJam(s,l,h);
+    // while (t--)
+    // {
+    //     string t=printJam(s,l,h);
+    //     if (t!="")
+    //         cout<<t<<endl;
+    //     else
+    //         break;
+    // }
     return 0;
 }
 
