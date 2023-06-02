@@ -42,7 +42,7 @@ string printJam(string s, int l, int h)
                 s[j] = s[j-1]+1;
                 if (s[j]>='a'+h) break;
             }
-            if (j==n-1)           
+            if (j==n)           
                 return s;                   
         }
     }
