@@ -1,4 +1,4 @@
-// 移位字符串分组-hash
+// 移位字符串分组 - hash
 #include <bits/stdc++.h>
 using namespace std;
 vector<vector<string>> groupStrings(vector<string>& strs);

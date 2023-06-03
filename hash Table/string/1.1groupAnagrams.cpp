@@ -1,4 +1,4 @@
-// 字母异位词分组-hash l-49
+// 字母异位词分组 - hash l-49
 #include <bits/stdc++.h>
 using namespace std;
 vector<vector<string>> groupAnagrams(vector<string>& strs);
