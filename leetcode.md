@@ -16,7 +16,6 @@
 [283 Move Zeroes](/leetcode/array/removeElement(in%20place)/3moveZeros~1.cpp)
 #### 字符串
 [844 Backspace String Compare]
-[2663 Lexicographically Smallest Beautiful String]
 #### 链表
 [19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)
 [82 移除重复元素 II](/leetcode/Linked%20List/delete/2deleteDuplicates.cpp)
@@ -140,12 +139,12 @@
 #### 二叉树路径
 2673 Make Costs of Paths Equal in a Binary Tree
 #### 图路径
-* dp
+\* dp
 2684 Maximum Number of Moves in a Grid
-* dijkstra
+\* dijkstra
 2662 Minimum Cost of a Path With Special Roads
 2577 Minimum Time to Visit a Cell In a Grid
-* 有权重，用adj[][]表示
+\* 有权重，用adj[][]表示
 2642 Design Graph With Shortest Path Calculator
 ### 设计类
 232 Implement Queue using Stacks
