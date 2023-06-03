@@ -96,11 +96,11 @@
 2130 Maximum Twin Sum of a Linked List
 ### 栈和队列
 #### 普通
-20 有效括号
-32 最长有效括号长度
-71 简化路径
+[20 有效括号](/leetcode/stack/stack/1.1isValid.cpp)
+[32 最长有效括号长度](/leetcode/stack/stack/1.2longestValidParentheses.cpp)
+[71 简化路径](/leetcode/stack/stack/simplifyPath.cpp)
 #### 单调
-239 slide window的最大值
+239 滑动窗口的最大值
 42 接雨水
 84 柱状图中的最大矩形
 85 最大矩形
