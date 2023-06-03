@@ -1,4 +1,4 @@
-// 最长连续序列-hash  l-128
+// 最长连续序列 - hash  l-128
 // num.length∈[0,1e5]; 时间复杂度:O(n)
 #include <bits/stdc++.h>
 using namespace std;
