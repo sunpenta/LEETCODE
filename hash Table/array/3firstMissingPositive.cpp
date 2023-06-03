@@ -11,7 +11,7 @@ int main()
     system("pause");
 }
 
-int firstMissingPositive(vector<int>&nums)
+int firstMissingPositive(vector<int>& nums)
 {
     bool flag=true;
     int n=nums.size();
@@ -35,7 +35,7 @@ int firstMissingPositive(vector<int>&nums)
         nums[pos-1]=nums[pos-1]<0 ? nums[pos-1]:-nums[pos-1];
     }
     // 第一个大于0的数
-    for (int i=0;i<n;i++)
+    for (int i=0; i<n; i++)
     {
         if (nums[i]>0) 
             return i+1;
