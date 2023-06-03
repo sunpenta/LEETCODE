@@ -16,7 +16,7 @@ int firstMissingPositive(vector<int>&nums)
     bool flag=true;
     int n=nums.size();
     // nums没1
-    for (int i=0;i<n;i++)
+    for (int i=0; i<n; i++)
     {
         if (nums[i]==1) flag=false;
     }
