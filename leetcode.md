@@ -100,11 +100,11 @@
 [32 最长有效括号长度](/leetcode/stack/stack/1.2longestValidParentheses.cpp)
 [71 简化路径](/leetcode/stack/stack/simplifyPath.cpp)
 #### 单调
-[239 滑动窗口的最大值]()
 [42 接雨水](/leetcode/stack/monotonic%20stack/2trap.cpp)
 [84 柱状图中的最大矩形](/leetcode/stack/monotonic%20stack/3.1maxArea.cpp)
 [85 最大矩形](/leetcode/stack/monotonic%20stack/3.2maximalRectangle.cpp)
 [739 每日温度](/leetcode/stack/monotonic%20stack/dailyTemperatures.cpp)
+[239 滑动窗口的最大值](/leetcode/deque%20or%20queue/1maxSlidingWindow.cpp)
 ### 优先队列
 * 占据对象无限：
 1942 The Number of the Smallest Unoccupied Chair
