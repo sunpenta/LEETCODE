@@ -34,7 +34,7 @@ int firstMissingPositive(vector<int>& nums)
         int pos=nums[i]>0? nums[i]:-nums[i];
         nums[pos-1]=nums[pos-1]<0 ? nums[pos-1]:-nums[pos-1];
     }
-    // 第一个大于0的数
+    // 第一个大于0的数即第一个缺失的正数
     for (int i=0; i<n; i++)
     {
         if (nums[i]>0) 
