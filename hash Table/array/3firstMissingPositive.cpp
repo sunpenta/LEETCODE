@@ -15,12 +15,12 @@ int firstMissingPositive(vector<int>&nums)
 {
     bool flag=true;
     int n=nums.size();
-    // nums没1
+  
     for (int i=0; i<n; i++)
     {
         if (nums[i]==1) flag=false;
     }
-    if (flag) return 1;
+    if (flag) return 1; // nums没1
 
     // nums范围内的正数：[1,n],在范围外的数置1
     for (int i=0;i<n;i++)
