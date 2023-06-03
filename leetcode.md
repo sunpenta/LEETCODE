@@ -49,6 +49,8 @@
 [658 find k elements closest to x](/leetcode/BinarySearch/Application/findClosestElements.cpp)
 [875 Koko Eating Bananas](/leetcode/BinarySearch/Application/minEatingSpeed.cpp)
 [2300 Successful Pairs of Spells and Potions](/leetcode/BinarySearch/Application/successfulPairs.cpp)
+[2702. Minimum Operations to Make Numbers non-positive]
+[]
 ### 滑动窗口
 #### subarray
 [209 Minimum Size Subarray Sum]
