@@ -23,16 +23,16 @@ int firstMissingPositive(vector<int>&nums)
     if (flag) return 1; // nums没1
 
     // nums范围内的正数：[1,n],在范围外的数置1
-    for (int i=0;i<n;i++)
+    for (int i=0; i<n; i++)
     {
         if (nums[i]<=0 || nums[i]>n) 
             nums[i]=1;
     }
     
-    for (int i=0;i<n;i++)
+    for (int i=0; i<n; i++)
     {
-        int pos=nums[i]>0?nums[i]:-nums[i];
-        nums[pos-1]=nums[pos-1]<0?nums[pos-1]:-nums[pos-1];
+        int pos=nums[i]>0? nums[i]:-nums[i];
+        nums[pos-1]=nums[pos-1]<0 ? nums[pos-1]:-nums[pos-1];
     }
     // 第一个大于0的数
     for (int i=0;i<n;i++)
