@@ -73,8 +73,12 @@
 ### string
 2663 Lexicographically Smallest Beautiful String
 ### Hash
-* hash map
-2661 First Completely Painted Row or Column
+\* 数组
+[2395 两数和相等的子数组](/leetcode/Hash%20Table/array/1findSubarrays.cpp)
+
+[2661 First Completely Painted Row or Column]
+\* 字符串
+
 ### 链表
 #### 移除元素
 [19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)

@@ -1,4 +1,4 @@
-// 两数和相等的子数组-hash  l-2395
+// 两数和相等的子数组 - hash  l-2395
 // 子数组:原数组中连续元素
 #include <bits/stdc++.h>
 using namespace std;
