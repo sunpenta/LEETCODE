@@ -82,14 +82,14 @@
 [83 移除所有重复元素](/leetcode/Linked%20List/delete/3deleteDuplicates.cpp)
 [1836 Remove Duplicates From an Unsorted Linked List]()
 #### 合并或分割链表
-21 合并两个升序列表
-23 合并k个升序链表
-86 分隔链表
+[21 合并两个升序列表](/leetcode/Linked%20List/merge%20or%20split/1mergeTwoLists.cpp)
+[23 合并k个升序链表](/leetcode/Linked%20List/merge%20or%20split/2mergeKLists.cpp)
+[86 分隔链表](/leetcode/Linked%20List/merge%20or%20split/3partition.cpp)
 #### 重新排序
-24 两两交换链表中的节点
-61 旋转链表
-92 反转链表
-25 K个一组翻转链表
+[24 两两交换链表中的节点](/leetcode/Linked%20List/reorder/1swapPairs~iteration.cpp)
+[61 旋转链表](/leetcode/Linked%20List/reorder/2rotateRight.cpp)
+[92 反转链表](/leetcode/Linked%20List/reorder/3reverseBetween.cpp)
+[25 K个一组翻转链表](/leetcode/Linked%20List/reorder/4reverseKGroup.cpp)
 #### sum
 2130 Maximum Twin Sum of a Linked List
 ### 栈和队列
