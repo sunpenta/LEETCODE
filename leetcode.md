@@ -74,8 +74,9 @@
 2663 Lexicographically Smallest Beautiful String
 ### Hash
 \* 数组
-[2395 两数和相等的子数组](/leetcode/Hash%20Table/array/1findSubarrays.cpp)
-
+[2395 和相等的子数组](/leetcode/Hash%20Table/array/1findSubarrays.cpp)
+[128 最长连续序列](/leetcode/Hash%20Table/array/2longestConsecutive.cpp)
+[41 缺失的第一个正数](/leetcode/Hash%20Table/array/3firstMissingPositive.cpp)
 [2661 First Completely Painted Row or Column]
 \* 字符串
 
