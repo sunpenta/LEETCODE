@@ -68,11 +68,11 @@
 54 Spiral Matrix
 59 Spiral Matrix II
 2326 Spiral Matrix IV
-885 Spiral Matrix III
+[885 Spiral Matrix III](/leetcode/simulation/matrix/2spiralMatrixIII.cpp)
 422 valid word square
 ### string
 2663 Lexicographically Smallest Beautiful String
-### hash set或map
+### Hash
 * hash map
 2661 First Completely Painted Row or Column
 ### 链表
