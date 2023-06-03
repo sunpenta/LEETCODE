@@ -80,7 +80,7 @@
 [2661 First Completely Painted Row or Column]
 \* 字符串
 [49 字母异位词分组](/leetcode/Hash%20Table/string/1.1groupAnagrams.cpp)
-[移位字符串分组](/leetcode/Hash%20Table/string/1.2groupStrings.cpp)
+[249 移位字符串分组](/leetcode/Hash%20Table/string/1.2groupStrings.cpp)
 [567 Permutation in string](/leetcode/Hash%20Table/string/2checkInclusion.cpp)
 
 ### 链表
