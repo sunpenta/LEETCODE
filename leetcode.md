@@ -90,6 +90,8 @@
 [61 旋转链表](/leetcode/Linked%20List/reorder/2rotateRight.cpp)
 [92 反转链表](/leetcode/Linked%20List/reorder/3reverseBetween.cpp)
 [25 K个一组翻转链表](/leetcode/Linked%20List/reorder/4reverseKGroup.cpp)
+#### 深拷贝
+[138 深拷贝带随机指针的链表](/leetcode/Linked%20List/other%20Linked%20List/copyRandomList.cpp)
 #### sum
 2130 Maximum Twin Sum of a Linked List
 ### 栈和队列
