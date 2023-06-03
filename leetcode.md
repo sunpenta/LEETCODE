@@ -61,6 +61,9 @@
 [3 最长子串](/leetcode/slidingWindow/string/1lengthOfLongestSubstring.cpp)
 [76 Minimum Window Substring](/leetcode/slidingWindow/string/2.1minWindow.cpp)
 [30 串联所有字符串的子串开始索引](/leetcode/slidingWindow/string/3findSubstring.cpp)
+### 贪心
+[2439 Minimize Maximum of Array]
+[2571 Minimum Operations to Reduce an Integer to 0]
 ### 矩阵模拟
 54 Spiral Matrix
 59 Spiral Matrix II
