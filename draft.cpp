@@ -464,7 +464,7 @@ using namespace std;
         {
             if (i%divisor1==0 && i%divisor2==0) 
                 continue;
-            else if (n%divisor1 && i%divisor2==0)
+            else if (i%divisor1 && i%divisor2==0)
                 count1++;
             else if (i%divisor1==0 && i%divisor2)
                 count2++;
