@@ -457,9 +457,38 @@ using namespace std;
         string t=*st.begin();
         return t;
     }
-
+    bool check(int divisor1, int cnt1, int divisor2, int cnt2,int n)
+    {
+        int count1=0, count2=0;
+        for (int i=1; i<=n; i++)
+        {
+            if (i%divisor1==0 && i%divisor2==0) 
+                continue;
+            else if (n%divisor1 && i%divisor2==0)
+                count1++;
+            else if (i%divisor1==0 && i%divisor2)
+                count2++;
+            else
+                count1++;
+        }
+        return (count1>=cnt1 && count2>=cnt2);
+    }
+    int minimizeSet(int divisor1, int divisor2, int uniqueCnt1, int uniqueCnt2) {
+        int left=1, right=1e9+1;
+        while (left<right)
+        {
+            int mid=(right-left)/2+left;
+            if (check(divisor1,uniqueCnt1,divisor2,uniqueCnt2,mid))
+                right=mid;
+            else
+                left=mid+1;
+        }
+        return left;
+    }
 int main()
 {
+    int divisor1 = 2, divisor2 = 7, uniqueCnt1 = 1, uniqueCnt2 = 3;
+    minimizeSet(divisor1, divisor2, uniqueCnt1,uniqueCnt2);
     // string s="0011"; int a=4, b=2;
     // findLexSmallestString(s,a,b);
     // int n=5; vector<int> cuts={3,1,4};
