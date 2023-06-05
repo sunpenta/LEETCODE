@@ -487,8 +487,11 @@ using namespace std;
     }
 int main()
 {
-    int divisor1 = 2, divisor2 = 7, uniqueCnt1 = 1, uniqueCnt2 = 3;
-    minimizeSet(divisor1, divisor2, uniqueCnt1,uniqueCnt2);
+    int x=5; char y='A';
+    y=y+x;
+    cout<<y<<endl;
+    // int divisor1 = 2, divisor2 = 7, uniqueCnt1 = 1, uniqueCnt2 = 3;
+    // minimizeSet(divisor1, divisor2, uniqueCnt1,uniqueCnt2);
     // string s="0011"; int a=4, b=2;
     // findLexSmallestString(s,a,b);
     // int n=5; vector<int> cuts={3,1,4};
