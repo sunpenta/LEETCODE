@@ -485,11 +485,59 @@ using namespace std;
         }
         return left;
     }
+    bool check(long long mid,vector<long long> &psum,int r,int k)
+    {
+        vector<long long> a(psum.size()+1,0);
+        long long j=(r*2)+1;
+        long long sum=0;
+        for(int i=0;i<psum.size();i++)
+        {
+            sum+=a[i];
+            if(psum[i]+sum<mid)
+            {
+                long long needed=mid-(psum[i]+sum);
+                if(needed>k)return false;
+                k-=needed;
+                sum+=needed;
+                if(i+j<psum.size())a[i+j]+=(-needed);
+            }
+
+        }
+        return true;
+    }
+    long long maxPower(vector<int>& s, int r, int k) {
+        if(s.size()==1)return s[0]+k;
+        int n=s.size();
+        vector<long long> psum(s.size(),0);
+        long long ri=0,l=0;
+        for(int i=0;i<r;i++)ri+=s[i];
+        for(int i=0;i<s.size();i++)
+        {
+            if(i+r<n)ri+=s[i+r];
+            psum[i]+=ri+l;
+            if(i>=r)l-=s[i-r];
+            l+=s[i];
+            ri-=s[i];
+        }
+        long long low=0,high=1e10+1e9+1,mid=0;
+        long long ans=0;
+        while(low<=high)
+        {
+            mid=(low+high)/2;
+            bool flag=check(mid,psum,r,k);
+            if(flag)
+            {
+                ans=max(ans,mid);
+                low=mid+1;
+            }
+            else high=mid-1;
+        }
+        return ans;
+    }
 int main()
 {
-    int x=5; char y='A';
-    y=y+x;
-    cout<<y<<endl;
+    vector<int>s={1,2,4,5,0}; int r=1, k=2;
+    maxPower(s, r,k);
     // int divisor1 = 2, divisor2 = 7, uniqueCnt1 = 1, uniqueCnt2 = 3;
     // minimizeSet(divisor1, divisor2, uniqueCnt1,uniqueCnt2);
     // string s="0011"; int a=4, b=2;
