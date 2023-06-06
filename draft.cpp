@@ -526,11 +526,10 @@ using namespace std;
             mid=(low+high)/2;
             bool flag=check(mid,psum,r,k);
             if(flag)
-            {
-                
-                low=mid;
+            {               
+                low=mid+1;
             }
-            else high=mid-1;
+            else high=mid;
         }
         return low;
     }
