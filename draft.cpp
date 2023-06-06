@@ -521,18 +521,18 @@ using namespace std;
         }
         long long low=0,high=accumulate(s.begin(), s.end(), 0LL) + k+1,mid=0;
         long long ans=0;
-        while(low<=high)
+        while(low<high)
         {
             mid=(low+high)/2;
             bool flag=check(mid,psum,r,k);
             if(flag)
             {
-                ans=max(ans,mid);
-                low=mid+1;
+                
+                low=mid;
             }
             else high=mid-1;
         }
-        return ans;
+        return low;
     }
 int main()
 {
