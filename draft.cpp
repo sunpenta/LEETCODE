@@ -485,53 +485,54 @@ using namespace std;
         }
         return left;
     }
-    bool check(vector<long long> power, int r, int k, int limit)
+    bool check(long long mid,vector<long long> &psum,int r,int k)
     {
-        int n=power.size();
-        vector<long long> add(n);
+        vector<long long> a(psum.size()+1,0);
+        long long j=(r*2)+1;
         long long sum=0;
-        for (int i=0; i<n; i++)
+        for(int i=0;i<psum.size();i++)
         {
-            sum+=add[i];
-            if (power[i]+sum<limit)
-            {               
-                long long dif=limit-(power[i]+sum);
-                if (dif>k) return false;
-                k-=dif;
-                sum+=dif;
-                if (i+2*r+1<n)
-                    add[i+2*r+1]-=dif;
-           }
+            sum+=a[i];
+            if(psum[i]+sum<mid)
+            {
+                long long needed=mid-(psum[i]+sum);
+                if(needed>k)return false;
+                k-=needed;
+                sum+=needed;
+                if(i+j<psum.size())a[i+j]+=(-needed);
+            }
+
         }
         return true;
     }
-    long long maxPower(vector<int>& stations, int r, int k) {
-        int n=stations.size();
-        vector<long long> prefix(n);
-        prefix[0]=stations[0];
-        for (int i=1; i<n; i++)
+    long long maxPower(vector<int>& s, int r, int k) {
+        if(s.size()==1)return s[0]+k;
+        int n=s.size();
+        vector<long long> psum(s.size(),0);
+        long long ri=0,l=0;
+        for(int i=0;i<r;i++)ri+=s[i];
+        for(int i=0;i<s.size();i++)
         {
-            prefix[i]=prefix[i-1]+stations[i];
+            if(i+r<n)ri+=s[i+r];
+            psum[i]+=ri+l;
+            if(i>=r)l-=s[i-r];
+            l+=s[i];
+            ri-=s[i];
         }
-        vector<long long> power(n);
-        for (int i=0; i<n; i++)
-        {            
-            power[i]=prefix[min(n-1,i+r)]- ((i-r-1>=0)?prefix[i-r-1]:0);
-        }        
-        long long left=0, right=1e11;
-        while (left<right)
+        long long low=0,high=1e10+1e9+1,mid=0;
+        long long ans=0;
+        while(low<=high)
         {
-            long long mid=(left+right)/2;
-            if (check(power,r,k,mid))
+            mid=(low+high)/2;
+            bool flag=check(mid,psum,r,k);
+            if(flag)
             {
-                left=mid+1;
+                ans=max(ans,mid);
+                low=mid+1;
             }
-            else
-            {
-                right=mid;
-            }
+            else high=mid-1;
         }
-        return left;
+        return ans;
     }
 int main()
 {
