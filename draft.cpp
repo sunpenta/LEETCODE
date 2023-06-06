@@ -518,7 +518,7 @@ using namespace std;
         {            
             power[i]=prefix[min(n-1,i+r)]- ((i-r-1>=0)?prefix[i-r-1]:0);
         }        
-        long long left=0, right=1e11;
+        long long left=0, right=accumulate(stations.begin(), stations.end(), 0LL) + k+1;;
         while (left<right)
         {
             long long mid=(right-left)/2+left;
