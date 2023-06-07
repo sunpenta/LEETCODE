@@ -14,7 +14,7 @@ int main()
 
 int mySqrt(int x)
 {
-    int left=0, right=x/2;
+    int left=0, right=x;
     while (left<=right)
     {
         int mid=(left+right)/2;

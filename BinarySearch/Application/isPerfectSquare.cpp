@@ -13,16 +13,16 @@ int main()
 
 int isPerfectSquare(int num)
 {
-    int left=0, right=x/2;
+    int left=0, right=x;
     while (left<=right)
     {
         int mid=(left+right)/2;
         if ((long)mid*mid==x) 
-            return mid;
+            return true;
         else if ((long)mid * mid > x)
             right=mid-1;
         else
             left=mid+1;
     }
-    return left-1;
+    return false;
 }
