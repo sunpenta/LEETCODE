@@ -82,7 +82,11 @@
 [249 移位字符串分组](/leetcode/Hash%20Table/string/1.2groupStrings.cpp)
 [567 Permutation in string](/leetcode/Hash%20Table/string/2checkInclusion.cpp)
 ### 位运算
-[1318 Minimum Flips to Make a OR b Equal to c]()
+[89 格雷编码](/leetcode/Bitwise/1grayCode.cpp)
+[136 只出现1次的数字](/leetcode/Bitwise/2.1singleNumber.cpp)
+[1318 Minimum Flips to Make a OR b Equal to c](/leetcode/Bitwise/minFlips.cpp)
+**dp位运算：**
+[1012 至少有1位重复数字](/leetcode/Bitwise/3numDupDigitsAtMostN.cpp)
 ### 链表
 #### 移除元素
 [19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)
