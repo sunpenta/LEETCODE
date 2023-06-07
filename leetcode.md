@@ -81,7 +81,8 @@
 [49 字母异位词分组](/leetcode/Hash%20Table/string/1.1groupAnagrams.cpp)
 [249 移位字符串分组](/leetcode/Hash%20Table/string/1.2groupStrings.cpp)
 [567 Permutation in string](/leetcode/Hash%20Table/string/2checkInclusion.cpp)
-
+### 位运算
+[1318 Minimum Flips to Make a OR b Equal to c]()
 ### 链表
 #### 移除元素
 [19 删除链表倒数第N个节点](/leetcode/Linked%20List/delete/1removeNthFromEnd.cpp)
