@@ -43,13 +43,14 @@
 [33 Search in Rotated Sorted Array](/leetcode/BinarySearch/Foundation/4search.cpp)
 [81 Search in Rotated Sorted Array II](/leetcode/BinarySearch/Foundation/5search.cpp)
 #### 应用
-[69 Sqrt(x)]
-[367 Valid Perfect Square]
+[69 Sqrt(x)]()
+[367 Valid Perfect Square]()
 [658 find k elements closest to x](/leetcode/BinarySearch/Application/findClosestElements.cpp)
 [875 Koko Eating Bananas](/leetcode/BinarySearch/Application/minEatingSpeed.cpp)
 [2300 Successful Pairs of Spells and Potions](/leetcode/BinarySearch/Application/successfulPairs.cpp)
 [2702 Minimum Operations to Make Numbers non-positive]
 [2517 Maximum Tastiness of Candy Basket]
+[2560 House Robber IV](/leetcode/BinarySearch/Application/minCapability.cpp)
 ### 滑动窗口
 #### subarray
 [209 Minimum Size Subarray Sum]

@@ -27,7 +27,7 @@ int minCapability(vector<int>& nums, int k)
             }
         }
         return count>=k;
-    }
+    };
 
     int left=0, right=1e9;
     while (left<right)
