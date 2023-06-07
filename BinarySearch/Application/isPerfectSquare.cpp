@@ -1,17 +1,17 @@
 // 完全平方根  l-367
 #include <iostream>
 using namespace std;
-int mySqrt(int x);
+int isPerfectSquare(int num);
 
 int main()
 {
     int x=7; // intput
-    int res=mySqrt(x); // output:2
-    cout<<res<<endl;
+    bool res=isPerfectSquare(x); // output:false
+    cout<<boolalpha<<res<<endl;
     return 0;
 }
 
-int mySqrt(int x)
+int isPerfectSquare(int num)
 {
     int left=0, right=x/2;
     while (left<=right)
