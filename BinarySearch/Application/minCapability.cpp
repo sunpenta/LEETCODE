@@ -7,8 +7,8 @@ int minCapability(vector<int>& nums, int k);
 
 int main()
 {
-    vector<int> nums={2,3,5,9}; int k=2;
-    int res=minCapability(nums,k);
+    vector<int> nums={2,3,5,9}; int k=2; // input
+    int res=minCapability(nums,k); // output:5
     cout<<res<<endl;
     return 0;
 }
