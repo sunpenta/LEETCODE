@@ -6,9 +6,9 @@ int minFlips(int a, int b, int c);
 
 int main()
 {
-    int a=2, b=4, c=7; // input
-    int flip=minFlips(a,b,c); // output
-    cout<<flip<<endl;
+    int a=2, b=4, c=7; // input             2: 0010
+    int flip=minFlips(a,b,c); // output:2   4: 0100
+    cout<<flip<<endl;                    // 7: 0111
     return 0;
 }
 
