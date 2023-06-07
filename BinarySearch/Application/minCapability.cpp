@@ -1,5 +1,5 @@
 // 房屋盗窃 IV  l-2560
-// 不能偷相邻房屋，至少偷k个房子 -> 最小偷窃袋子容量
+// 不能偷相邻房屋，至少偷k个房子 -> 最小偷窃袋子容量; 
 #include <iostream>
 #include <vector>
 using namespace std;
