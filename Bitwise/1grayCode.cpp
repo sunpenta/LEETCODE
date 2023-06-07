@@ -1,4 +1,4 @@
-// 格雷编码-位运算 l-89
+// 格雷编码 - 位运算 l-89
 // 第1位是0；每相邻两个整数的二进制只有1位不同；头尾两个数的二进制只有1位不同
 # include <bits/stdc++.h>
 using namespace std;
@@ -16,7 +16,7 @@ int main()
 vector<int>grayCode(int n)
 {
     vector<int>gray(1<<n);
-    for (int i=0;i<(1<<n);i++)
+    for (int i=0; i<(1<<n); i++)
         gray[i]=i^(i>>1); // 与前1位异或，最高位保持不变
     return gray;
 }
