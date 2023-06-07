@@ -1,5 +1,5 @@
 // sqrt(x)  l-69
-// -> 求√x 向下取整 
+// -> √x 向下取整 
 #include <iostream>
 using namespace std;
 int sqrt(int x);
