@@ -7,31 +7,25 @@ int main()
     int l, h, w;
     cin>>l>>h>>w;
     string s;
-    cin>>s;  
-    // string s="bdfij"; int l=2, h=10;
-    int t=5;
+    cin>>s;    
+    int t=5;           
     while (t--)
     {
         s=printJam(s,l,h);
-        if (s!="")
-            cout<<s<<endl;
-        else
+        if (s=="")
             break;
+        cout<<s<<endl;           
     }
     return 0;
 }
 
 string printJam(string s, int l, int h)
 {
-    auto valid = [&](int i)
-    {
-        return (s[i]<'a'+h && s[i]>='a'+l-1 && s[i]>s[i-1]);
-    };
     int n=s.length();
     for (int i=n-1; i>=0; i--)
     {
         ++s[i];     
-        if (s[i]<'a'+h && s[i]>='a'+l-1)
+        if (s[i]<'a'+h)
         {
             int j=i+1;
             for (; j < n; ++j)
