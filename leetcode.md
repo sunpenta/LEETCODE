@@ -44,7 +44,7 @@
 [81 Search in Rotated Sorted Array II](/leetcode/BinarySearch/Foundation/5search.cpp)
 #### 应用
 [69 Sqrt(x)](/leetcode/BinarySearch/Application/sqrt.cpp)
-[367 Valid Perfect Square]()
+[367 Valid Perfect Square](/leetcode/BinarySearch/Application/isPerfectSquare.cpp)
 [658 find k elements closest to x](/leetcode/BinarySearch/Application/findClosestElements.cpp)
 [875 Koko Eating Bananas](/leetcode/BinarySearch/Application/minEatingSpeed.cpp)
 [2300 Successful Pairs of Spells and Potions](/leetcode/BinarySearch/Application/successfulPairs.cpp)
