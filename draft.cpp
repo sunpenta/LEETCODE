@@ -533,10 +533,54 @@ using namespace std;
         }
         return low;
     }
+    int maxValue(int n, int index, int maxSum) {
+        auto check=[&](int mid)
+        {
+            long long sum=0; 
+            if (index>=mid) // [0,index-1]
+                sum+=(long long)mid*(mid-1)/2+(index-mid+1);
+            else
+                sum+=(long long)(mid+mid-index-1)*index/2; // mid-index ... mid-1
+            if (n-index>mid) // [index,n-1]
+                sum+=(long long)(mid+1)/2*mid+(n-index-mid);
+            else
+                sum+=(long long)(mid+mid-(n-index)+1)/2*(n-index);
+            return sum<=(long long)maxSum;                
+        };
+       int left=1, right=maxSum;
+       
+       while (left<right)
+       {
+           int mid=(left+right+1)/2;
+           if (check(mid))
+                left=mid;
+            else
+                right=mid-1;
+       }
+       return left;
+    }
+    long long subArrayRanges(vector<int>& nums) {
+        long long res=0;
+        deque<int> dq;
+        dq.push_front(nums[0]);
+        for (int i=1; i<nums.size(); i++)
+        {
+            if (!dq.empty() && nums[i]>dq.front())
+                dq.push_front(nums[i]);
+            if (!dq.empty() && nums[i]<dq.back())
+                dq.push_back(nums[i]);
+            res+=(dq.front()-dq.back());
+        }
+        return res;
+    }
 int main()
 {
-    vector<int>s={1,2,4,5,0}; int r=1, k=2;
-    maxPower(s, r,k);
+    vector<int> nums = {4,-2,-3,4,1};
+    subArrayRanges(nums);
+    // int n=4, index=2, maxSum=6;
+    // maxValue(n,index,maxSum);
+    // vector<int>s={1,2,4,5,0}; int r=1, k=2;
+    // maxPower(s, r,k);
     // int divisor1 = 2, divisor2 = 7, uniqueCnt1 = 1, uniqueCnt2 = 3;
     // minimizeSet(divisor1, divisor2, uniqueCnt1,uniqueCnt2);
     // string s="0011"; int a=4, b=2;
