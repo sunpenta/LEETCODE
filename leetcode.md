@@ -38,7 +38,8 @@
 ### 二分查找
 #### 基础
 [704 Binary Search](/leetcode/BinarySearch/Foundation/1search.cpp)
-[35 Search Insert Position](/leetcode/BinarySearch/Foundation/2searchInsert.cpp)
+[35 Search Insert Position(lower_bound)](/leetcode/BinarySearch/Foundation/2searchInsert.cpp)
+[744 Find Smallest Letter Greater Than Target(upper_bound)](/leetcode/BinarySearch/Foundation/nextGreatestLetter.cpp)
 [34 Find First and Last Position of Element in Sorted Array](/leetcode/BinarySearch/Foundation/3searchRange.cpp)
 [33 Search in Rotated Sorted Array](/leetcode/BinarySearch/Foundation/4search.cpp)
 [81 Search in Rotated Sorted Array II](/leetcode/BinarySearch/Foundation/5search.cpp)
@@ -51,6 +52,7 @@
 [2702 Minimum Operations to Make Numbers non-positive]
 [2517 Maximum Tastiness of Candy Basket]
 [2560 House Robber IV](/leetcode/BinarySearch/Application/minCapability.cpp)
+[2616 Minimize the Maximum Difference of Pairs](/leetcode/BinarySearch/Application/minimizeMax.cpp)
 ### 滑动窗口
 #### subarray
 [209 Minimum Size Subarray Sum]
