@@ -14,23 +14,18 @@ int main()
     return 0;
 }
 
+// 该for循环解法与第一种while的解法思路相同，写法不同
 vector<int> sortedSquares(vector<int> &nums)
 {
     int n = nums.size();
     vector<int> sorted(n);
     int i = 0, j = n - 1;
-    while (i <= j) // 忘记等号
+    for (int k = n - 1; k >= 0; k--)
     {
-        if (abs(nums[i]) < abs(nums[j])) // 比较绝对值，左右绝对值都加
-        {
-            sorted[--n] = nums[j] * nums[j]; // 写成前缀减，因为下标从n-1开始
-            --j;
-        }
+        if (abs(nums[i]) < abs(nums[j]))
+            sorted[k] = nums[j] * nums[j--];
         else
-        {
-            sorted[--n] = nums[i] * nums[i];
-            ++i;
-        }
+            sorted[k] = nums[i] * nums[i++];
     }
     return sorted;
 }
