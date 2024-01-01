@@ -1,12 +1,12 @@
 // 最小覆盖字串-滑动窗口+map l-76
-// 1 <= m, n <= 1e5
+// 1 <= m, n <= 1e5 超时
 #include <bits/stdc++.h>
 using namespace std;
 string minWindow(string s,string t);
 
 int main()
 {
-    string s="ADOBECODEBANC"; string t = "ABC"; // 输入
+    string s="ADOBECODEBANC"; string t = "ABC"; // 输入 // s="ab" t="a"
     cout<<minWindow(s,t)<<endl;
     system("pause");
 }
