@@ -1,3 +1,5 @@
+/*Count Numbers Of Nice Subarrays l-1248
+A continuous subarray is called nice if there are k odds numbers on it. */
 #include <iostream>
 #include <vector>
 using namespace std;
